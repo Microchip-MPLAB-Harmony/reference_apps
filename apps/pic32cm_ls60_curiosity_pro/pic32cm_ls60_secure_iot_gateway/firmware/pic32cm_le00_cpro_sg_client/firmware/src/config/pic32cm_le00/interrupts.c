@@ -48,11 +48,11 @@
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-
 #include "configuration.h"
 #include "device_vectors.h"
 #include "interrupts.h"
 #include "definitions.h"
+
 
 
 // *****************************************************************************
@@ -68,7 +68,7 @@ extern const H3DeviceVectors exception_table;
 extern void Dummy_Handler(void);
 
 /* Brief default interrupt handler for unused IRQs.*/
-void __attribute__((optimize("-O1"),section(".text.Dummy_Handler"),long_call, noreturn))Dummy_Handler(void)
+void __attribute__((optimize("-O1"), long_call, noreturn, used))Dummy_Handler(void)
 {
 #if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
     __builtin_software_breakpoint();
@@ -126,7 +126,7 @@ extern void TCC0_Handler               ( void ) __attribute__((weak, alias("Dumm
 extern void TCC1_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void TCC2_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void TCC3_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
-extern void ADC_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void ADC_OTHER_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void AC_Handler                 ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void DAC_UNDERRUN_Handler       ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void DAC_EMPTY_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -142,7 +142,7 @@ extern void TRAM_Handler               ( void ) __attribute__((weak, alias("Dumm
 
 
 
-__attribute__ ((section(".vectors")))
+__attribute__ ((section(".vectors"), used))
 const H3DeviceVectors exception_table=
 {
     /* Configure Initial Stack Pointer, using linker-generated symbols */
@@ -214,7 +214,7 @@ const H3DeviceVectors exception_table=
     .pfnTCC1_Handler               = TCC1_Handler,
     .pfnTCC2_Handler               = TCC2_Handler,
     .pfnTCC3_Handler               = TCC3_Handler,
-    .pfnADC_OTHER_Handler          = ADC_Handler,
+    .pfnADC_OTHER_Handler          = ADC_OTHER_Handler,
     .pfnADC_RESRDY_Handler         = ADC_RESRDY_InterruptHandler,
     .pfnAC_Handler                 = AC_Handler,
     .pfnDAC_UNDERRUN_Handler       = DAC_UNDERRUN_Handler,

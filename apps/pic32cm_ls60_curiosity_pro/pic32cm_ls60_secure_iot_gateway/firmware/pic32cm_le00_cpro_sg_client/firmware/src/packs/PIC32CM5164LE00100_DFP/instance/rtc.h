@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164LE00100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-25T15:37:41Z */
+/* file generated from device description version 2022-09-09T06:08:26Z */
 #ifndef _PIC32CMLE00_RTC_INSTANCE_
 #define _PIC32CMLE00_RTC_INSTANCE_
 
@@ -28,12 +28,12 @@
 /* ========== Instance Parameter definitions for RTC peripheral ========== */
 #define RTC_DMAC_ID_TIMESTAMP                    (1)        /* DMA RTC timestamp trigger */
 #define RTC_GPR_NUM                              (2)        /* Number of General-Purpose Registers */
+#define RTC_INSTANCE_ID                          (9)        /* Instance index for RTC */
 #define RTC_NUM_OF_ALARMS                        (1)        /* Number of Alarms */
 #define RTC_NUM_OF_BKREGS                        (0)        /* Number of Backup Registers */
 #define RTC_NUM_OF_COMP16                        (2)        /* Number of 16-bit Comparators */
 #define RTC_NUM_OF_COMP32                        (1)        /* Number of 32-bit Comparators */
 #define RTC_NUM_OF_TAMPERS                       (8)        /* Number of Tamper Inputs */
 #define RTC_PER_NUM                              (8)        /* Number of Periodic Intervals */
-#define RTC_INSTANCE_ID                          (9)        /* Instance index for RTC */
 
 #endif /* _PIC32CMLE00_RTC_INSTANCE_ */

@@ -55,6 +55,7 @@
 #include "peripheral/evsys/plib_evsys.h"
 #include "gfx/legato/generated/le_gen_harmony.h"
 #include "peripheral/sercom/i2c_master/plib_sercom5_i2c_master.h"
+#include "peripheral/pm/plib_pm.h"
 #include "peripheral/port/plib_port.h"
 #include "peripheral/clock/plib_clock.h"
 #include "peripheral/nvic/plib_nvic.h"
@@ -73,6 +74,7 @@
 #include "app.h"
 #include "app_sec.h"
 #include "app_transfer.h"
+
 
 
 // DOM-IGNORE-BEGIN

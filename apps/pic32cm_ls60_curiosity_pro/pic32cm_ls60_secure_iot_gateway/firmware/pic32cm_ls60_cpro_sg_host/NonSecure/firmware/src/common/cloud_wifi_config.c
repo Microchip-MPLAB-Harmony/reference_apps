@@ -62,7 +62,7 @@ int config_set_thing_id()
     }
         
     #ifdef CFG_ENABLE_CLI     
-        set_deviceId(config_thing_id);
+    //set_deviceId(config_thing_id);
     #endif
 
     return ATCA_SUCCESS;

@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164LE00100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-25T15:37:41Z */
+/* file generated from device description version 2022-09-09T06:08:26Z */
 #ifndef _PIC32CMLE00_AC_INSTANCE_
 #define _PIC32CMLE00_AC_INSTANCE_
 
@@ -28,8 +28,8 @@
 /* ========== Instance Parameter definitions for AC peripheral ========== */
 #define AC_COMPCTRL_MUXNEG_OPAMP                 (7)        /* OPAMP selection for MUXNEG */
 #define AC_GCLK_ID                               (29)       /* Index of Generic Clock */
+#define AC_INSTANCE_ID                           (13)       /* Instance index for AC */
 #define AC_NUM_CMP                               (4)        /* Number of comparators */
 #define AC_PAIRS                                 (2)        /* Number of pairs of comparators */
-#define AC_INSTANCE_ID                           (13)       /* Instance index for AC */
 
 #endif /* _PIC32CMLE00_AC_INSTANCE_ */

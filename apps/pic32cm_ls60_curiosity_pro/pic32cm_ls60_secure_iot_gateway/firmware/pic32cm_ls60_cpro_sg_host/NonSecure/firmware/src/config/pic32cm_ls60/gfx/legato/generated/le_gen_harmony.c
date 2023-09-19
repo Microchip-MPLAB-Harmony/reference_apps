@@ -36,7 +36,7 @@ static void touchUpHandler(const SYS_INP_TouchStateEvent* const evt);
 static void touchMoveHandler(const SYS_INP_TouchMoveEvent* const evt);
 
 
-LegatoState legatoState;
+static LegatoState legatoState;
 
 void Legato_Initialize(void)
 {

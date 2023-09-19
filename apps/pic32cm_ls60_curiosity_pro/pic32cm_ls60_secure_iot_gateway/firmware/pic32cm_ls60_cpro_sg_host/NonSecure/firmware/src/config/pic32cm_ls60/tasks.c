@@ -52,6 +52,7 @@
 
 #include "configuration.h"
 #include "definitions.h"
+#include "sys_tasks.h"
 
 
 
@@ -74,30 +75,41 @@ void SYS_Tasks ( void )
     /* Maintain system services */
     
 
-    SYS_CMD_Tasks();
+SYS_CMD_Tasks();
+
+
+
 
     /* Maintain Device Drivers */
-    WDRV_WINC_Tasks(sysObj.drvWifiWinc);
+        WDRV_WINC_Tasks(sysObj.drvWifiWinc);
 
 
     DRV_SSD1351_Update();
 
 
+
     /* Maintain Middleware & Other Libraries */
+    
     Legato_Tasks();
 
 
     SYS_INP_Tasks();
 
+
+
     /* Maintain the application's state machine. */
-    /* Call Application task APP for WINC tasks. */
+        /* Call Application task APP. */
     APP_Tasks();
 
-    /* Call Application task APP_SEC: Security tasks. */
+    /* Call Application task APP_SEC. */
     APP_SEC_Tasks();
 
-    /* Call Application task APP_TRANSFER: Data transfer tasks. */
+    /* Call Application task APP_TRANSFER. */
     APP_TRANSFER_Tasks();
+
+
+
+
 }
 
 /*******************************************************************************

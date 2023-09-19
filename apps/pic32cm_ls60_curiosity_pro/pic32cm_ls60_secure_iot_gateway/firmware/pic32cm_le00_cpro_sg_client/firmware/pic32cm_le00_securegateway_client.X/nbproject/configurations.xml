@@ -364,6 +364,7 @@
           <itemPath>../src/config/pic32cm_le00/device_cache.h</itemPath>
           <itemPath>../src/config/pic32cm_le00/interrupts.h</itemPath>
           <itemPath>../src/config/pic32cm_le00/device.h</itemPath>
+          <itemPath>../src/config/pic32cm_le00/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="packs" displayName="packs" projectFiles="true">
@@ -807,6 +808,7 @@
                 <itemPath>../src/config/pic32cm_le00/library/cryptoauthlib/calib/calib_sha.c</itemPath>
                 <itemPath>../src/config/pic32cm_le00/library/cryptoauthlib/calib/calib_verify.c</itemPath>
                 <itemPath>../src/config/pic32cm_le00/library/cryptoauthlib/calib/calib_write.c</itemPath>
+                <itemPath>../src/config/pic32cm_le00/library/cryptoauthlib/calib/calib_delete.c</itemPath>
               </logicalFolder>
               <logicalFolder name="crypto" displayName="crypto" projectFiles="true">
                 <logicalFolder name="hashes" displayName="hashes" projectFiles="true">
@@ -935,14 +937,14 @@
         <targetDevice>PIC32CM5164LE00100</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>EdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.21</languageToolchainVersion>
+        <languageToolchainVersion>4.30</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="CMSIS" vendor="ARM" version="5.4.0"/>
-        <pack name="PIC32CM-LE_DFP" vendor="Microchip" version="1.1.162"/>
+        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="PIC32CM-LE_DFP" vendor="Microchip" version="1.2.273"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -974,6 +976,7 @@
       <C32>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
@@ -1030,6 +1033,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -1069,6 +1073,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -1143,6 +1148,8 @@
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-7ffff"/>
         <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="D:/00_PIC32CMLEDemo/firmware/PIC3LE_OLED.X/debug/pic321e_oled/PIC3LE_OLED_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"

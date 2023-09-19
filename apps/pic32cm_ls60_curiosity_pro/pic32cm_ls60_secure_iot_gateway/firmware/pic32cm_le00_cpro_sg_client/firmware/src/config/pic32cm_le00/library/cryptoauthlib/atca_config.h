@@ -89,6 +89,9 @@
 /* Counter Command */
 #define ATCAB_COUNTER_EN                   (FEATURE_ENABLED)
 
+/* Delete Command */
+#define ATCAB_DELETE_EN                    (FEATURE_DISABLED)
+
 /* Derivekey Command */
 #define ATCAB_DERIVEKEY_EN                 (FEATURE_ENABLED)
 

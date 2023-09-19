@@ -1,7 +1,7 @@
 /*
  * Header file for PIC32CM5164LE00100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* File generated from device description version 2022-05-25T15:37:41Z */
+/* File generated from device description version 2022-09-09T06:08:26Z */
 #ifndef _PIC32CM5164LE00100_H_
 #define _PIC32CM5164LE00100_H_
 
@@ -83,10 +83,10 @@ typedef enum IRQn
 
 /******  PIC32CM5164LE00100 specific Interrupt Numbers ***********************************/
   MCLK_IRQn                 =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (MCLK) */
+  OSC32KCTRL_IRQn           =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (OSC32KCTRL) */
   OSCCTRL_IRQn              =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (OSCCTRL) */
   PM_IRQn                   =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (PM) */
   SUPC_IRQn                 =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (SUPC) */
-  OSC32KCTRL_IRQn           =   0, /* 0   Shared between MCLK OSCCTRL OSC32KCTRL PM SUPC (OSC32KCTRL) */
   WDT_IRQn                  =   1, /* 1   Watchdog Timer (WDT)                */
   RTC_IRQn                  =   2, /* 2   Real-Time Counter (RTC)             */
   EIC_EXTINT_0_IRQn         =   3, /* 3   External Interrupt Controller (EIC) */
@@ -689,7 +689,7 @@ void TRAM_Handler                  ( void );
 /* ************************************************************************** */
 /*   DEVICE SIGNATURES FOR PIC32CM5164LE00100                                 */
 /* ************************************************************************** */
-#define CHIP_DSU_DID                   _UINT32_(0X20850000)
+#define CHIP_DSU_DID                   _UINT32_(0X20850100)
 
 /* ************************************************************************** */
 /*   ELECTRICAL DEFINITIONS FOR PIC32CM5164LE00100                            */

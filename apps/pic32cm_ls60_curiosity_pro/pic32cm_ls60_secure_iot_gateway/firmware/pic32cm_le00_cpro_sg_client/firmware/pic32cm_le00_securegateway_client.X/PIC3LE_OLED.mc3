@@ -1,4 +1,4 @@
-<config configName="pic321e_oled" projectName="PIC3LE_OLED" configVersion="1.1" device="PIC32CM5164LE00100" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.0">
+<config configName="pic321e_oled" projectName="PIC3LE_OLED" configVersion="1.1" device="PIC32CM5164LE00100" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -119,7 +119,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.2.0"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -4274,22 +4274,11 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;Group0&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;180&quot; canvasWidth=&quot;157&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;Group0&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;adc&quot; x=&quot;180&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;sercom5&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;Group0&quot; x=&quot;122&quot; y=&quot;18&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;Group1&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;Group2&quot; x=&quot;670&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;Group3&quot; x=&quot;360&quot; y=&quot;21&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;Group4&quot; x=&quot;223&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;HarmonyCore&quot; x=&quot;778&quot; y=&quot;21&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;cryptoauthlib&quot; x=&quot;441&quot; y=&quot;16&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;gfx_hal_le&quot; x=&quot;776&quot; y=&quot;117&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
     &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;Group1&quot;&gt;
@@ -4302,14 +4291,7 @@
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;pm&quot; x=&quot;357&quot; y=&quot;18&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;Group3&quot;&gt;
-      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;atecc608&quot; x=&quot;304&quot; y=&quot;15&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;sercom1&quot; x=&quot;133&quot; y=&quot;94&quot;/&gt;
-      &lt;/ElementPositions&gt;
-    &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;180&quot; canvasWidth=&quot;157&quot; dnOrder=&quot;4&quot;/&gt;
-    &lt;ComponentGraph dnOrder=&quot;5&quot; id=&quot;Group2&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;3&quot; id=&quot;Group2&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;drv_spi&quot; x=&quot;129&quot; y=&quot;34&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;gfx_legato&quot; x=&quot;760&quot; y=&quot;20&quot;/&gt;
@@ -4321,9 +4303,27 @@
         &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;tc0&quot; x=&quot;333&quot; y=&quot;247&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;Group4&quot;&gt;
+    &lt;ComponentGraph dnOrder=&quot;4&quot; id=&quot;Group3&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;atecc608&quot; x=&quot;304&quot; y=&quot;15&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;sercom1&quot; x=&quot;133&quot; y=&quot;94&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;5&quot; id=&quot;Group4&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;sercom2&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+      &lt;/ElementPositions&gt;
+    &lt;/ComponentGraph&gt;
+    &lt;ComponentGraph dnOrder=&quot;6&quot; id=&quot;__ROOTVIEW&quot;&gt;
+      &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;Group0&quot; x=&quot;122&quot; y=&quot;18&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;Group1&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;Group2&quot; x=&quot;670&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;Group3&quot; x=&quot;360&quot; y=&quot;21&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;Group4&quot; x=&quot;223&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;HarmonyCore&quot; x=&quot;778&quot; y=&quot;21&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;cryptoauthlib&quot; x=&quot;441&quot; y=&quot;16&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;gfx_hal_le&quot; x=&quot;776&quot; y=&quot;117&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -21166,15 +21166,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\tasks.c</file>
-         <hash>f73bb82bf2b50dfdef3afa15bc2636aeda085a86eb63b26a6366af7da422202c</hash>
+         <hash>d0ac49be4f02d14ebf44b9f56892f4e5b42e9ddfca2054b81740905404912d5a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\interface\spi4\drv_gfx_disp_intf_spi4.c</file>
-         <hash>3048d25608d6b12f7e679ee3c78e3bc749ffe6c991f75e9ee48559bafe5bbe7c</hash>
+         <hash>00bf0b2c9ce901253bb8b9e6a904e5a53e7d2f1c569a0c1fb752b8dbe6887258</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_nonce.c</file>
-         <hash>2232ee6e0879add005d92e8d1eb322dd7c4f5611e9a41b5d92d6d5592055a61b</hash>
+         <hash>fb487f2f60f989a417e8e62a2ca1ac8913d823203c9fa43142c1fcf87001f4b4</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atca_helpers.c</file>
@@ -21190,11 +21190,11 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\adc.h</file>
-         <hash>1f0b1340c011f02f0348906a1f5bbffa15402bc506390eb83d01d2d5cce445c2</hash>
+         <hash>f7104797df72b41c06ce716700be478dca96f6f4e168c69bc4436ff40cb8d80c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\system\debug\sys_debug.h</file>
-         <hash>222cdc284bd651e83188b9641cc57c133cf86563dbeb5d5523766d4a36087165</hash>
+         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\crypto\hashes\sha2_routines.c</file>
@@ -21233,6 +21233,10 @@
          <hash>f0cb61c6d8a0a8753e57afc73f3f0c163153e2af8303388dcedc66c16159e89a</hash>
       </entry>
       <entry>
+         <file>..\src\config\pic32cm_le00\sys_tasks.h</file>
+         <hash>21f254f497a18a024cd00128d06c4776c2643f867a460c1ba9880a7dd41a8d56</hash>
+      </entry>
+      <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\radiobutton\legato_widget_radiobutton_skin_classic.c</file>
          <hash>8e512977c6570dec75502c1e1700ccf04aa62695fe6ecdb31adadb6a7104efa6</hash>
       </entry>
@@ -21242,7 +21246,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\oscctrl.h</file>
-         <hash>6483d2b5add6d78b9c05ac596f7b99197ce7ddad26d02334d3318ea7e2cf6f21</hash>
+         <hash>592f000fe470832af96a9e584760a99f20ec946c4354af2f5e4c09132967a3c1</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\generated\image\le_gen_images.c</file>
@@ -21254,19 +21258,19 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\toolchain_specifics.h</file>
-         <hash>c93f9d68b1623668727be21b4449250a7e4a5d7040776d6f6d604a7528ffc9eb</hash>
+         <hash>a4f1774c6f1f8c6cd522567536c9e9d75ca63259b868015ac9b0fb0aeeffe1f4</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\freqm.h</file>
-         <hash>44217c8a3a77c973180ea9b65f99988059e40f259a047b09b919c4dde39f026b</hash>
+         <hash>d8cc4585cb206d4f89a047644a2b2bac3280840529d9eccae33d84a4edfb7271</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\host\atca_host.c</file>
-         <hash>82cce04c014ff32c3881278b818b68fda6cb59af65b0e60f28070d04488412d0</hash>
+         <hash>2173bad21da48e8df6a817789d7b7553a01b0cf7edb2825ec4298696b45462fb</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\host\atca_host.h</file>
-         <hash>d728e4ee05edb8ae808838709c98636bf38864b50a1f243a86ad93989bc48c92</hash>
+         <hash>1f56d5cd068b53db41147ca9492830b859ec48ff084217107182cf3d0db02591</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armcc.h</file>
@@ -21274,11 +21278,11 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\port.h</file>
-         <hash>508ed972ab9524207f1bbd939a8eb0a662ffc039f7c81a0e3773cb29673c0733</hash>
+         <hash>4dfa8ebe2a7832f797f97fa43f69881edc4a4da8e291d2c4d0a4277317d0cc10</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\pio\pic32cm5164le00100.h</file>
-         <hash>884af14ca8cfee01a6b65331c1913f7609ff6262d95ec0450d9bf98dfa95482d</hash>
+         <hash>582da9fff8b96eac3b230a64db87a32623ff93e802f01ac092ab5561bceac631</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\piechart\legato_widget_pie_chart_skin_classic.c</file>
@@ -21302,11 +21306,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\system\system_module.h</file>
-         <hash>981fac23277aa77f682e7a9a28d436f892006cd5b4c7f23f50941b6d9a30e740</hash>
+         <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\rstc.h</file>
-         <hash>5db9731cb8855fd624f9640f178f8d20f4b3e1752bf041b4d183099e4af72be7</hash>
+         <hash>827045d30eb3372a2b02b5ec90c1a7b32938b069e307bf154482928fb78328db</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atca_helpers.h</file>
@@ -21314,7 +21318,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\dmac.h</file>
-         <hash>d0da0212adb55340f2e31ec4e3b3598b4e25291eb809e61c865585e33f22c074</hash>
+         <hash>0a17f6101b0c239892bc4883c50d0d67afe816c2b9e2ed73e80d93278b1b1996</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\image\raw\legato_imagedecoder_raw_write.c</file>
@@ -21322,7 +21326,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\usb.h</file>
-         <hash>4cfad8489a6a53a616587e2dc592050a25849691591ee104c547ad7580d31b2a</hash>
+         <hash>647d4d9ee704eedd5c43bdba8ffdf8fc34a7f40f3dba2cbd1c66f9ba0961b4e5</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\crypto\atca_crypto_hw_aes_cbcmac.c</file>
@@ -21342,11 +21346,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_gendig.c</file>
-         <hash>7d193b4c5563ca3b2f5e51f7c1833f6b9466b27cf1b55842cecfd4ef06134f2e</hash>
+         <hash>11942e9303f425ee3d29546c48a55ef0da972ec6bfe0bcc09e374efe3feedc9f</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\oscctrl.h</file>
-         <hash>8e802941a715ca032b463a0c35dea59d0cf60cc345e7f81dd6950d81eb8d27a5</hash>
+         <hash>aeae891397e51b42c20b8e58a3e62ee6c9c338532d94453ad6a633599a21d40d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\peripheral\pm\plib_pm.c</file>
@@ -21354,15 +21358,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atca_basic.c</file>
-         <hash>39663fb39b7331d23618f13d33877f4c279fc28c51e3997d783e9f9c4b4a9fca</hash>
+         <hash>09ae33218c050d1612d8dbc5eb0397707940fa9087c048e8cc5e6dbeba93797f</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\rtc.h</file>
-         <hash>66e28e12b42fbcdc311a3b7e55948c35d71002abb6fe2550c12efb9d8165d5bc</hash>
+         <hash>adca7213e1e00abe1919b23e232a3aa2cb3423e5741693ee6a3f1e2ef51d5cba</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atca_config.h</file>
-         <hash>136bc7974aae1818a07eb347a98e591587d325355bffdcf9e415f2c2de8e5ad6</hash>
+         <hash>48795df0c3c4a7d44d09a0b277ad88d9c7a60bbf10802ff011ef687e8c459953</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\string\legato_string_renderer_stream.c</file>
@@ -21370,11 +21374,11 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\sercom0.h</file>
-         <hash>6dfd4ea49999b4ed9c60068e27b5f45fcc86a56a23ca28dc2ce8ae440aa0b001</hash>
+         <hash>ad6bceb6afa14ebe26fd033ee1170155400a99eb104dafffe5a55b5ddd3be9ab</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atca_basic.h</file>
-         <hash>d27e15922d27efcb8568401e3b21b6eeded9d916416499ccf732f60bdbd6e0f6</hash>
+         <hash>c2630d23b56bc3e4a58239ad9f4e611c76ffb40726e66bdef68d67792c449f74</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\image\raw\legato_imagedecoder_raw_read_stream_color.c</file>
@@ -21382,11 +21386,11 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\tcc3.h</file>
-         <hash>00239e0020733c678541095dc171a8d70f33480f669d70a64471ebd517de6d67</hash>
+         <hash>24bd623f69c6770e2ce71a421df090ea4a383d99bca63fd3a31e88e8e6f7f138</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\cryptoauthlib.h</file>
-         <hash>e0845e025b2ca0077972bc6a99cc5b4e4321f3fc0e4ea6123bbdbe80c1d37698</hash>
+         <hash>f7d040c906bc7c471558d2110ad5f87ac7b8986a96d8d0fa75dc1651167fcde4</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_hmac.c</file>
@@ -21398,7 +21402,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\ac.h</file>
-         <hash>cecac959068a99a8f1f8544b42feb6121397f2db1af718e1c93346d5cd5e428a</hash>
+         <hash>8674359afad15379814c88ef98b5e38733181b48b0c796c696d334297dae8310</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\radialmenu\legato_widget_radial_menu.c</file>
@@ -21422,7 +21426,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\wdt.h</file>
-         <hash>78e0216bd630caee97137f050bd27eaafdc352c0a80cf06ec55a400780849a70</hash>
+         <hash>be1ecf213e3c6a06f261cc06844d26a04d63e58002c341df302d321b55e6ab4f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\font\legato_font.h</file>
@@ -21434,11 +21438,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\font\legato_font.c</file>
-         <hash>398421927fb718787cb904b8f56a9c93e7870d611c4f0c198de17371425a5537</hash>
+         <hash>2147f47f2298508c2cae98691a7157313c6f03375a706f3bae3ed799a1d9068d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\configuration.h</file>
-         <hash>f2c5c52d795eba20e4b8eafb32c431ea6d3545bae65027371e96d7b3b62fe169</hash>
+         <hash>1d5e34b9599705714a5843accd0b860fc8d047f16ce565a76e1da69b62f2e7ad</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\groupbox\legato_widget_groupbox_skin_classic.c</file>
@@ -21450,27 +21454,27 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_counter.c</file>
-         <hash>164dfef30de4f0f7a9ca5d1f02ad0d03975f5c575c85c2d36ca1775d9d529744</hash>
+         <hash>180fa50c9ad63b53664136264882853cfba6d79ca45b64689027bcf33fb3298a</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\trng.h</file>
-         <hash>2a3aa7f882cb32b1e46442fa2fb2ddd9210160d7d8e69bbd41ffc3cde9bd093e</hash>
+         <hash>d20f62f3818d134e53e3d2a911012e9f1c7939620c0bb3cbd91d2a3be145b483</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_sha.c</file>
-         <hash>b9fd4604b371d2695e75ad506015a224ebc6b7984a95fcfd0b1e028a38d1e091</hash>
+         <hash>12eb8f7d95e05491a768fa3a44f8c9d3865d8fcc4091fdbf14108d5368e9f4d1</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atcacert\atcacert_client.c</file>
-         <hash>76eefb538228c80c859eafd853d1dfa4528e95067cc3b69a69aa64d02d5e6b08</hash>
+         <hash>2d8ca36b525a172c80b4409b3e056a60223afd0472e98b1b143581cacf0d8450</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\eic.h</file>
-         <hash>f1f143ef1bf15a1e860ae8875c18c531135c44d0712b79f6ce0ccc00a82a6681</hash>
+         <hash>4a90c6c7886726e6864e83d3284a97fa410f24f546c895052f0321757dde81d5</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\pac.h</file>
-         <hash>c5a831fdab215ebe720a156ee5dcddf092c1c702b5a814ac86d3809fd0be0e33</hash>
+         <hash>2c088c7bff1f48044d1906dac2285cb4d4ed78406124e6abf8399bc9b0200c79</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atcacert\atcacert_client.h</file>
@@ -21482,11 +21486,11 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\nvmctrl.h</file>
-         <hash>778facd018fe8eb4d6e435cb6144abf5ce5c5a254f61ae071a77eddbebc3d5e8</hash>
+         <hash>5a8edbea9523488109b61049eb52beb94c0c52733d1705c3544f595d019084c3</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\ccl.h</file>
-         <hash>9c93eeb140b64bf273c14c685ba4de99d62d1975f81b9a2e09e8964ed037d76f</hash>
+         <hash>26f14cc421b5b31d2d868ca957136e4f1e9df441dc4410fa4f527128dfef4203</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\radiobutton\legato_widget_radiobutton.h</file>
@@ -21498,7 +21502,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\tcc2.h</file>
-         <hash>c02ddd19dd572a69a2f76a3ae3acde1b41e4cc03f27a151417202c6e31593a7c</hash>
+         <hash>8955f3c7adf08e65a0585ed3b2dcfa10360145f81f0ee9f110eb1e30881937b4</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\radiobutton\legato_widget_radiobutton.c</file>
@@ -21510,7 +21514,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\system\time\sys_time_definitions.h</file>
-         <hash>8a02a9fe9638f0afd2e1b4c65f4d4265cd34d8814defa74f9af6d75f52cd317d</hash>
+         <hash>b8c332f36f8a6ed230dc25b1f9f7f2970699947567f80cb06534d405b7a0dd9d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\image\raw\legato_imagedecoder_raw_read_stream_rleindex.c</file>
@@ -21526,7 +21530,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_command.h</file>
-         <hash>6b688487c36854c4c7956c04e61b86a7b3bec82047ff51fb7142ebca729e3af0</hash>
+         <hash>5760e37470f33b7e97c6cd99d88407e03acaf221c000d4af5bfd976056461b8e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\image\png\lodepng.c</file>
@@ -21546,7 +21550,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\fuses.h</file>
-         <hash>6f610ed9db1b48e01c5c88a5fcb5e9c54796e65a6d915ee6eb0afac2972c0247</hash>
+         <hash>d386e2c84c94897c687e6e0cdf3ef9babae54702f2505ff1e3183ffc50e419ce</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\imagescale\legato_widget_imagescale_skin_classic.c</file>
@@ -21554,7 +21558,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_command.c</file>
-         <hash>1b17ab835621f543e93af819967d0734a0220608a99c960def9ce4489c428b15</hash>
+         <hash>da491045ceb1f856ed3fb0c74f1d7c06a23ac9e4fb49ee1f470415b3bc79488c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\image\png\lodepng.h</file>
@@ -21562,7 +21566,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\peripheral\adc\plib_adc.c</file>
-         <hash>feff68ac41b378e4e5db84c64c56b21872e93e5d86ba74d97ea8c1361143eca0</hash>
+         <hash>d9c8d89aec13c0b11424fb3036f42b18baf3c6712477233d2ac4faa14e167be5</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\gradient\legato_widget_gradient_skin_classic.c</file>
@@ -21602,7 +21606,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\system\int\sys_int_mapping.h</file>
-         <hash>660e7081f93de17660144721849acf269925988a4f6510028d25903aaa866ea1</hash>
+         <hash>5abf8528dabc1b17378f5d137870597037214fddf33880fa40e9263352da3008</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\crypto\atca_crypto_sw_sha1.c</file>
@@ -21610,7 +21614,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\jwt\atca_jwt.c</file>
-         <hash>0687754192ae51121a4ab44fda80ec4488d2555fd9b58352f750449b1006eea3</hash>
+         <hash>657829776fa4cf35bd3ac4df9cc707bac294dffd73d263b5ed06d88f265517d9</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\generated\le_gen_init.h</file>
@@ -21630,7 +21634,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\pin_configurations.csv</file>
-         <hash>5380f0f6bfc0a00e9d6271c36688b976775cd9e05f15f7f391887f93880079ff</hash>
+         <hash>202efc6bd10900d40d96c38835a338ddd0a664792d3792a5490f19b24326d38c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\generated\le_gen_init.c</file>
@@ -21650,7 +21654,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\sercom2.h</file>
-         <hash>e1abf05ae948cef053029a82a2874ce44cb79b210462fde7ebec278fc110781c</hash>
+         <hash>e758dacbfa469170c31f9ad83085904e468a830e897a6452dce9052d50c4629c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\string\legato_stringtable.h</file>
@@ -21670,7 +21674,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\crypto\atca_crypto_hw_aes_cbc.c</file>
-         <hash>f87575eb35bd0c88f16f9490339fa5667f0bbc386492fa07b7566516f88cb948</hash>
+         <hash>da8567d7acfc77f9c606cc0af6110f5edcdd1ea964eb773b6c5e36fc36182c1e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\arc\legato_widget_arc.h</file>
@@ -21682,7 +21686,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\driver\spi\src\drv_spi.c</file>
-         <hash>97de9d513de54b354c83cad7f88ea1c1744b97248f3808d10f4a1c9bee7587fa</hash>
+         <hash>8139d3baf902c1b4b7215fc0aaefabc24e357bf02bf36fffb697ed703e29151d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\generated\le_gen_harmony.c</file>
@@ -21694,19 +21698,19 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_write.c</file>
-         <hash>bea0a6e0f98ad661792ae0cca7562a5390d457c3cccbe087c8a88269eef3eb3e</hash>
+         <hash>c6362ceb2f111e34b3c12d201de125c08f23c9f1416881c21ea676e6bf9a5bc0</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\port.h</file>
-         <hash>9653b4ce50da30dd65e37b69f35743b309f4dc33088016c3ca8ab67d13a14f1a</hash>
+         <hash>9880e09e347fbe9071d0523b2dafe2830b044f47ded40bdb85e25f8ae82b6bc7</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\trng.h</file>
-         <hash>fa065ab1214461ae880ad0d15884ea5f98612452664f65537cca2fa441c56403</hash>
+         <hash>53a76bb447cc3ba40a4d9bad1683b13269e0927e6194247d637cd53a222fbadc</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\driver\spi\drv_spi_definitions.h</file>
-         <hash>4af3642c3b9f007bb5b461a3d3c8c348efc6e69875439594c4b67d7a7751212d</hash>
+         <hash>92f0a3e5c52999719e33e290cd002b19a2bef4f1f003b80f6373d2ebaa1c07f3</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atca_device.c</file>
@@ -21722,7 +21726,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\opamp.h</file>
-         <hash>7042e9264245ef05228ecae7467c2840b86bbc267e37d2eec53a5a36225767ea</hash>
+         <hash>e19bbefc9bf0d482e3c8e10212aab58e89df520e93f9d407192b7a8b0c07a329</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\crypto\atca_crypto_pbkdf2.c</file>
@@ -21778,7 +21782,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\dac.h</file>
-         <hash>8d6e10962ace6bdfb892db5951d540838e4c8facd13e3ead6f48fddb8793cd40</hash>
+         <hash>9233b0299a12edd06564f3b049e6d8dc547b4333d29812d9ee1cd4e2f0e7e26d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\peripheral\port\plib_port.h</file>
@@ -21786,11 +21790,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atca_iface.c</file>
-         <hash>d970ceed6d8da23b4af9c2ad3d37a82794bcf406061eb807bc65fac9bb2fbb67</hash>
+         <hash>cb572268014982abf7fcd1fa4aeb32ceeb6778aa11bcec54fe344a027cbcc821</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\sercom1.h</file>
-         <hash>2a06051676a882ddd1bcca65de7a71c547946e6394cb49187b42dea8e7454d8e</hash>
+         <hash>eaa023596a88ccbfc6e31819e8cba27d913b4553520955852f6e02dab6c41572</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\peripheral\port\plib_port.c</file>
@@ -21798,15 +21802,15 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\wdt.h</file>
-         <hash>cf5363fcfc2c809b8f531667362f7c18fb3704801a6006342cb98d92a5bb412a</hash>
+         <hash>37262c97ebbd2235f3f44d6848f2eae3670e48ffa53068eb371cc3125c388daf</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_helpers.c</file>
-         <hash>6437701efee60e5dc1dd32316d91973c7490ced74c3d4a8e8f05428d23ca2bb3</hash>
+         <hash>c2f9943f15fef1e5f740bcc3903a36febacf11d5dfbbb26decffb71177411a15</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atcacert\atcacert_def.c</file>
-         <hash>79ab96c22f3808f72ae58a7bebfd41b5e48275d4fbf71530b3d8ebe742cd6527</hash>
+         <hash>d5cbcad53fb4823be85937ae552f837ef0454025f27eb6a4ddc0ffab48f368c6</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\radiobutton\legato_radiobutton_group.h</file>
@@ -21822,11 +21826,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\image\raw\legato_imagedecoder_raw_mask.c</file>
-         <hash>04a56f67ab3ef840d89ab44d03ddac16e4ad55dbbcce72d91174d19071c749d7</hash>
+         <hash>6aebd76da11fb7cb0a1ac48563b741391204857a673f384c34dde4e083889e9f</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\supc.h</file>
-         <hash>6e65815d607ff1d83d07134f852d1ce9f7791cae060612644d848fbca9413e4e</hash>
+         <hash>aba822b4d9a6b0e2648d985c735b261343e72b9ec3e584f61dab2174fbbc9738</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\string\legato_tablestring.c</file>
@@ -21834,15 +21838,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\peripheral\clock\plib_clock.c</file>
-         <hash>c0b4fdce5b24e1e0a17c79dde0e67ff803c683b9b8c18e0cd84e0a19048ba33a</hash>
+         <hash>a9b7ca9b716e3f2b9c42249717d9e464bc7d38f5493ddf997276d98b739c1b51</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\i2s.h</file>
-         <hash>4da49e7d0459ac0cfb584bef77faae4044bd8c9be70a13675a53ce8229277200</hash>
+         <hash>43b8d866d1838d33bc8bdcbed207a8a9a1200eea5414feb7621fdea3b2c49ec8</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_read.c</file>
-         <hash>656a88121ab773d601b40b56048378a93d0cd0e2c65f573213662309ae68eabf</hash>
+         <hash>0bcaad1b579329190e9bb0178f2860336f045452dd70622a93e8fce32f798efb</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\image\raw\legato_imagedecoder_raw_setup.c</file>
@@ -21914,15 +21918,15 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\tc.h</file>
-         <hash>850b03f9bc3ea0076defe9dd6f4ebda196932690614212ae3aaa83caf6ff39c1</hash>
+         <hash>80a0bb90df8589b38e8050f227ecd2ba20f4a457374b7ebd037c9030a7ac8501</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\nvmctrl.h</file>
-         <hash>073715baea070b26a5f17cf0bd964f1e6ca0ba4fd1253b65ddfe7151a66fbe51</hash>
+         <hash>725a0b0b4f8bc49880e348234042b4fc6eecd97da67f44072e757cc6e1cf2548</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\sercom4.h</file>
-         <hash>ed8af25cf03e15fecbdd607e9911f370d5a4efb11635194e575a36a99e228148</hash>
+         <hash>3e389ff57b5bd41a19669ddcfb6fcd2fad35baccbc2b4c4e4cff58e1f6ab03af</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\image\jpeg\jidctint.c</file>
@@ -21930,11 +21934,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\slider\legato_widget_slider.c</file>
-         <hash>598a95c15cc5096c046cefeeb2987dbbbd691a783c24e3521e40e07ed680e5ed</hash>
+         <hash>64bfd7a705db6c2f26865a9d2dfc4a6133ce29cc0fc3edd2be35916b7887f5e5</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\image\raw\legato_imagedecoder_raw_palette_internal.c</file>
-         <hash>89ebac404e6aa269ca0bcc895fc9e11d2d593ad53e1f423d0c1f33881068a39d</hash>
+         <hash>0cec862ead00d99e9cb82c61e943185c336660170b1f4ac3af84689428938e2b</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_iccarm.h</file>
@@ -21954,7 +21958,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atcacert\atcacert_pem.c</file>
-         <hash>4139cc9c4bf1c2962b0bcc223f32ca3efa57532cfff47856fb802de80ab0596b</hash>
+         <hash>a2e782b895f7a8b8031eb0a6b3d3f3323ae28a1a7e530c6cae5b8105585d4609</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atcacert\atcacert_pem.h</file>
@@ -21962,7 +21966,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_sign.c</file>
-         <hash>2e646d5a4bb4279d7e79581363b1aba62bdd8f6eb6232c4658015002ad6ee8eb</hash>
+         <hash>2abbacb8632c2c058d64b42cb0bc89f0072698526f09889f88fafa44afce487e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\generated\le_gen_globalpalette.c</file>
@@ -21974,7 +21978,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\system\int\src\sys_int.c</file>
-         <hash>23e798871ce6f7b4b0e0dbd5cb2cad7b43bd2dd1f38152f28d14f5a5b7a2938b</hash>
+         <hash>4281667cc2b84c9e4be1f0dfb3f7d42b77d36c5dcf6513d29ff40262f746cfc6</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\string\legato_dynamicstring.h</file>
@@ -21982,7 +21986,11 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\usb.h</file>
-         <hash>6e5695b5963d04eb68a1767d320d8a78d4a9a2cca3aca581c1d1fad87eaed5c3</hash>
+         <hash>8aae0c384aed009bb26996c9448639349d55f7fe848b057abeba972fbadb4474</hash>
+      </entry>
+      <entry>
+         <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_delete.c</file>
+         <hash>dfeda9b94ffde5cd3701dd197941dfa0b3d24fb016d4b670a276d87004d25c28</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\peripheral\evsys\plib_evsys.h</file>
@@ -21998,15 +22006,15 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\pm.h</file>
-         <hash>9f8889300ca6589fb1bd17ae9a9088d522c9c4827d924eae4f3645ea597d7c4f</hash>
+         <hash>749cf6146384c796fbe4822cbd396981ab4738333a8b54c340ac32e997a5d3ee</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\ac.h</file>
-         <hash>310bba7b271e67fed57ff677b3127c2d2679e34b0cb7a912c2f62ae9b080f235</hash>
+         <hash>d7758d1b111085a9db72d78b1789ace8ac9763f4109d0a19c03c7825e521e3a7</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\peripheral\sercom\i2c_master\plib_sercom1_i2c_master.c</file>
-         <hash>2bb3888e625b58502a6ef8eaaef652216167e28d9636fffa69885de71f4ffedc</hash>
+         <hash>2871577e4053aed7305b75c820ffa4228d530ef893249f5dca2aed76359b7317</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\hal\hal_cortex_m_delay.c</file>
@@ -22014,7 +22022,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atca_utils_sizes.c</file>
-         <hash>47b986afed8062f7768d71638a92194562814917b0bc4294e3768109595fa91b</hash>
+         <hash>5d2094f034597dbc48504fe175d11e6e56eb714b464e50a7ae472be763038c8e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\window\legato_widget_window.c</file>
@@ -22022,7 +22030,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\peripheral\sercom\usart\plib_sercom_usart_common.h</file>
-         <hash>3feca67a173d19d45961676a16f6153a6d849ecac98e906b62a343258c8bf43b</hash>
+         <hash>f19dafabe0928d60dd83d7e19f35889f200e3fbadff09e2f42523d320acf780a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\circulargauge\legato_widget_circular_gauge.c</file>
@@ -22030,7 +22038,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\gclk.h</file>
-         <hash>8232f132ef06d28f3098ac71853363f7196b1ad8bf218783d82e40b26e6f2c63</hash>
+         <hash>4f8f84105f193a129684230f3b6a9c491d78d366ec08d8e0e4f340c207878005</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\hal\hal_gpio_harmony.c</file>
@@ -22042,7 +22050,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\system\int\sys_int.h</file>
-         <hash>71e36331ee689ae305b3d8ec49948e3dde0324b65f51bf38f4472b900a421ed6</hash>
+         <hash>dc104ae181fd5309e1bb42896246644fae95915a8e639b23ecfccc8840850274</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\circulargauge\legato_widget_circular_gauge.h</file>
@@ -22050,11 +22058,11 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\evsys.h</file>
-         <hash>52a338c520e3bf095affbc7ad219989d47deab6fe529bf78af6d439a8810b47e</hash>
+         <hash>057fa2b30a63fa0060b6d0601647ad371b4031952e2555dcd1f29d82390e6da5</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\sercom3.h</file>
-         <hash>333e5cf940a434a72bbfba0d5467ae74f398db10d35ee96112d64e29d9f169dd</hash>
+         <hash>97376dee1dfe9f9960b7c661089dca1591e0fa43bc4d6f0f65b6a03d97e4439b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\bargraph\legato_widget_bar_graph_skin_classic.c</file>
@@ -22062,7 +22070,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\interrupts.c</file>
-         <hash>9a44e55e102e333c69e5d72d67fde672b28a8e11c67ab6be7359f945154ec9c0</hash>
+         <hash>80c6c044870abd53aad46e1e8bf87e5946943a2d3f1929144f902d829db24c6b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atcacert\atcacert.h</file>
@@ -22074,7 +22082,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\definitions.h</file>
-         <hash>f8659f5efde2204ba4fd1036aa1151808503dc6ae3bed9abf7dc1f3b5003ae7d</hash>
+         <hash>875a10c1bae37828dd91c9b945c3d444b7d9e50c8225c0dca0cb6bc9099bacf7</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\tz_context.h</file>
@@ -22094,7 +22102,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_lock.c</file>
-         <hash>aba5a699402e0828460829986141d2a5b1add805e2a9cc99ea52ab4d202377c8</hash>
+         <hash>5c3f92956088ad62d329346eb16b060afa144a5387f187a3d7479665e0c972ff</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\slider\legato_widget_slider.h</file>
@@ -22102,7 +22110,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\startup_xc32.c</file>
-         <hash>d7ba451f4fffc267a5da6a83377b2b935a88cd73342f8a1f38ea8c39a86d963f</hash>
+         <hash>e6227d89e36b74af1bc21e00e80b390502c97aaaa65796291f63b2d96cf0678e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\circularslider\legato_widget_circular_slider_skin_classic.c</file>
@@ -22114,7 +22122,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\image\raw\legato_imagedecoder_raw_blend.c</file>
-         <hash>ef046613a6fa79b2a6c085acc22e2eec7b2158ee9ba31019337e0c65a3055ec9</hash>
+         <hash>a618fa3bd1c9915c02143ae065c92200da98143a771af8355e3e4c9be83873c4</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\checkbox\legato_widget_checkbox_skin_classic.c</file>
@@ -22138,7 +22146,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\dac.h</file>
-         <hash>e9c26c271485b5ae710addcf30727166c614f1c35c7bbdf9a4b11415b8a53e74</hash>
+         <hash>960e66a67df49f75cdcc29529d64291931d83c2fca691b1b30d63dad47bf9079</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\common\legato_utils.c</file>
@@ -22158,7 +22166,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\supc.h</file>
-         <hash>ec8c52a98cfc3e30da8fcddb4794849c9efd5a01eea76df010405c3b9105ed2e</hash>
+         <hash>a78cb7cef7d368a4caefbc27b38567783e14e61d3712bad6be9b4d193a6806cb</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\system\input\sys_input.c</file>
@@ -22178,7 +22186,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\image\legato_widget_image.c</file>
-         <hash>5bb1d0e1c99405acc3ef79aebdbf413524d822466831e5d7326561e0f340f535</hash>
+         <hash>850da06063b06132ed4bc020af7fb28adef50b89517aa6507cc6febedcd07ab7</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\rectangle\legato_widget_rectangle_skin_classic.c</file>
@@ -22190,7 +22198,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atca_cfgs.c</file>
-         <hash>59483959d96411b3e022e657d157f91d4ebfd7ebe0d984e3f5add2e74488d2f2</hash>
+         <hash>f534b8add605a18d5e44663831a9661c03d8ce67e3e3ee5df000d3b6ab2b0354</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\peripheral\nvmctrl\plib_nvmctrl.h</file>
@@ -22206,7 +22214,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atca_cfgs.h</file>
-         <hash>2c3341451f8fb34eea9b966683e0b4fa6c51be858742bd2b96e034ab5794c548</hash>
+         <hash>673b095e37545ff7198ae8473e3a1fa5b28111180794fb92b9569835b864fbc3</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\piechart\legato_widget_pie_chart.h</file>
@@ -22214,11 +22222,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\peripheral\sercom\i2c_master\plib_sercom_i2c_master_common.h</file>
-         <hash>ff9e28a56c761d9cac20d42c6819063321f71c0d2726249be9bd818e44c3811d</hash>
+         <hash>f167b04b3c6a0f83fe41b7b6f810cbf0a48b8ca7d5a747b76463dd53d3c1a2a2</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\initialization.c</file>
-         <hash>b21e482366a920315707e8b5bc0dcd3a5d2853def7166f59a9fd563dc464065c</hash>
+         <hash>1db5c439c2d6ed290621ca3554683ff50573eadd6e3cf18d60b907084bac63a1</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\piechart\legato_widget_pie_chart.c</file>
@@ -22234,7 +22242,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atcacert\atcacert_check_config.h</file>
-         <hash>513baca28bfa1cba93195255df055c8e019fa91b661819a9cda16429b7f717f6</hash>
+         <hash>6c3873e130dd4df815f9e4b4359adf49476df15136f910f48dc9e5ccf8798335</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\linegraph\legato_widget_line_graph.c</file>
@@ -22266,7 +22274,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atcacert\atcacert_der.c</file>
-         <hash>3f2c8f5ace6a9b4342d07626dbd6d60ffbab97a7b570a5ef9ae82d8ee4284e79</hash>
+         <hash>c6b08c7a72339ff2f477f0b19ca6219ec34992abeff4778cba172148a1124ecc</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_verify.c</file>
@@ -22278,11 +22286,11 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\i2s.h</file>
-         <hash>caab6fac02df979ffa2d07dd59f8294ee26a992e73609f2ec2d4aa5c1e7c62b1</hash>
+         <hash>b3a537ad00e1469b478b352446002732217bc5970cf0d341bf822f1c9b555513</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\osal\osal.h</file>
-         <hash>d42702188d00d3e1d7219d7eef030485896bf8b5ebe55318656e82f0fbb89788</hash>
+         <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\drawsurface\legato_widget_drawsurface.c</file>
@@ -22326,7 +22334,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\sercom5.h</file>
-         <hash>a5d1abb9db7d50a4fc03a0fb4df26a12d163ec557ad7d6b9e65bbbf0d58d7195</hash>
+         <hash>64b091ec7368ab7d53fef5d17163777d453ff3908846db315a88ccbb5e95d8f7</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atca_debug.c</file>
@@ -22338,15 +22346,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\memory\legato_memory.c</file>
-         <hash>0703d9b8268ae3f2b07abe69b19b2055e8c959b1cb9ebce3e5845515a0479b9e</hash>
+         <hash>8047bcaf8c3b284df0c455e2a2067bceef3cfc1d3a91f19ec40933c7544ba207</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\exceptions.c</file>
-         <hash>cc07b84902bf881b410bee8cd4463b438ad2997c8fd8d3f308a16d926f75d601</hash>
+         <hash>3d788ce1bd25caaaf6b533ec5b06e4b1e753044c1a217dd5cdf8629628ae85a9</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\peripheral\tc\plib_tc0.c</file>
-         <hash>bef382782bf8d374ce7bcd3a4d5872d2bef6f4b6b7c8e3f02ec2b1ace6f27080</hash>
+         <hash>bd4aa06bd92c0c8151ae2b5b1a2d66d10386234c5ea23f59f9f21d81af10e1ce</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\memory\legato_memory.h</file>
@@ -22370,7 +22378,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\gclk.h</file>
-         <hash>08aa35a9254e7f24e1e7b3b610bfed080dc40a648b1e6144941ed1ba4f8c4aaf</hash>
+         <hash>b74339c4dbd06fb475440b8e2f7cb34cfc2ae8c45f4ad1f03d9c29dd6564b6c5</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_kdf.c</file>
@@ -22386,7 +22394,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\pic32cm5164le00100.h</file>
-         <hash>49936d2ffa5b9c8864d1630d86ff0153cc6059faeff2660f564bc9781c27c296</hash>
+         <hash>cd0d16ce0a967a88374656eeaee7950e8e823d318c432b7e2ed0467caaf9daed</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\string\legato_string.h</file>
@@ -22402,7 +22410,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atca_devtypes.h</file>
-         <hash>ccd1ee03dfe182952210b0344eb24b32706508bac2ed43b9ce7409c962c4a835</hash>
+         <hash>73635f185e9e767f3afa11c75890b92ddf85959751ed91d6ae38bd3fd06e0df1</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\string\legato_string.c</file>
@@ -22414,7 +22422,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\osc32kctrl.h</file>
-         <hash>5c0f6deeabd3d673dec993484a7bc8d11f18f6560b68c4e79f113fbc9bd2b8f1</hash>
+         <hash>bc362ce77ed909e7d156dccc18bf9bb9bd3c11e819d4d58a32ac79b0ffdd1842</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\label\legato_widget_label.c</file>
@@ -22422,7 +22430,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\osal\osal_impl_basic.h</file>
-         <hash>0c388837ef1d4e207a028ed31bfe07f1aac7ea8b0505caff58f737667ccbeaee</hash>
+         <hash>67ce72d34fd1e4dee0b6937fa026ab2c7bd285f82a24da09742c68333adaf0fc</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\label\legato_widget_label.h</file>
@@ -22438,7 +22446,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\osc32kctrl.h</file>
-         <hash>0b4978a7ecbea66538cf13d0cd6094c8fa267765bb28326904c3c906d516de26</hash>
+         <hash>3637bc93dbd93c8c765eafcedd8371d5c9fdf2066c2d7c3e8cfb71518e151892</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\circularslider\legato_widget_circular_slider.h</file>
@@ -22462,7 +22470,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atcacert\atcacert_date.c</file>
-         <hash>7a4d995e758fdc53674f9235f02ba4e754c03a59c25028a9750452a911ee32a8</hash>
+         <hash>b5e56938d057e54cc95c0771a8073b479a60ec6c235c12c1cd8159452a2c11bd</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\circularslider\legato_widget_circular_slider.c</file>
@@ -22470,11 +22478,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\peripheral\sercom\usart\plib_sercom2_usart.c</file>
-         <hash>6bb39cc06fe2b1cafd985c2ef0cbe039221960c52474334f35028dde2a27a17e</hash>
+         <hash>76072eff93eaa7d1bb592fc73d51a3d4f7d287581ff95151e88d1cc439ca75d7</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\peripheral\sercom\usart\plib_sercom2_usart.h</file>
-         <hash>acc648855dc27c83b25084c55e84018e0b5e1ab018cf2b9fe79acc24aa249c83</hash>
+         <hash>f3c2a11d23fbcb408e5bdd0573f2c7c919c35b82f14cdead26243d1a1eb8b9e3</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\drawsurface\legato_widget_drawsurface_skin_classic.c</file>
@@ -22494,7 +22502,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\sercom.h</file>
-         <hash>86ee634d23fb0b9be41cebca1097ab6dc077534cb7fdd348bf2972654d3b9441</hash>
+         <hash>962294823e13848980f454164af595bf492a011db51e5a903260efeb24869c8b</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\legato_editwidget.h</file>
@@ -22518,7 +22526,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\tram.h</file>
-         <hash>b00e391f903dc4a101d80c10c3296b7f9a66037ba6451252c02ea8b4e82d3d68</hash>
+         <hash>2ff60144459bc821a710a7ba3fa776351299a2525c567d412c2fb979a0a366a5</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\crypto\atca_crypto_sw_sha2.c</file>
@@ -22534,7 +22542,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atcacert\atcacert_host_sw.c</file>
-         <hash>b3995ce2bbc586b9f1d723fb6305fec5f69ac539ebe4c5c7ad5c0ca7671dff30</hash>
+         <hash>30f69dc795dd4e0a3f0dffaa6675a9251c51643f575edb4f47aeafc306442448</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\legato_editwidget.c</file>
@@ -22542,7 +22550,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\system\time\src\sys_time_local.h</file>
-         <hash>d3ef06b59d9a89efe9e8eb54fcf3b75120d56156cc21f6847ca4f9e902eb7c9d</hash>
+         <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\imagescale\legato_widget_imagescale.h</file>
@@ -22550,7 +22558,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atcacert\atcacert_host_hw.c</file>
-         <hash>b8647ea2509626a6a258ee1d3bdf97e89e6214536ab18d7e3865e3efcbfa813e</hash>
+         <hash>f29f9cdcae0f9b5ee0956cf22ca577d6f5ad7d9f467a374834ce10c9865dac16</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atcacert\atcacert_host_hw.h</file>
@@ -22574,7 +22582,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\ccl.h</file>
-         <hash>e3dd42157b227611a68e2744171e9cf57b84bb41f463acb49eb28bb22a692725</hash>
+         <hash>358404c8e91a1cf4e2d3e7cf65750685a9d9778c6541ba4322bec7ede5939170</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\common\legato_rect.h</file>
@@ -22582,7 +22590,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\rtc.h</file>
-         <hash>5efc0d29a8b0998b02fce318f474d89a78609580d278e31456b1478556cbab28</hash>
+         <hash>2bf3740530791f3ebef5e23e8bfc02a952489dae9722f3a64f04f0ce66fd5094</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_execution.h</file>
@@ -22594,27 +22602,27 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\peripheral\sercom\spi_master\plib_sercom3_spi_master.c</file>
-         <hash>3777c0dc4e943020157752b32ec32a2c7a93f764440840fca0bd8f54573ddd2c</hash>
+         <hash>0551db5c85f0be375a22dec2936767dc24ede934395860b6b76b2bddf6968071</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\pm.h</file>
-         <hash>b88c58deeef044491d4bc65247e7892acb5f19a4e82f9261f0fb0f969c408695</hash>
+         <hash>fb15c5f96ffbb3ba1adf96d966d0644749027120b7b03cb588722965c9bb652d</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\pac.h</file>
-         <hash>a817778d688791d66cea51aefb7badcee99b278412849196d075ac73a20a8507</hash>
+         <hash>b15c4748b82f87d6a5657686fbbc9e2afda018b716f77fb61ad1a754fe6b3256</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\rstc.h</file>
-         <hash>1d52a09d516b8a4cec8d27f2da84571ff6f391d6a107ea5a5e54d0e88e6f2591</hash>
+         <hash>7244b9cbc2b21d6e58f3a8af8fb2bf04d933d56dc0f9a7e475e0218fba53c71a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_execution.c</file>
-         <hash>b1019f671709c5e6105f42114be3d66e2e198ee3d9fd7f31c4f9f45139b9deb8</hash>
+         <hash>e5c65c8b4e51492ce9c3894cad905663b1e57fb14062c160ea2ffcc6158d89c8</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\driver\spi\src\drv_spi_local.h</file>
-         <hash>69124b110d6fc10296132457abff70a126afff95814fb8f4dfd943f84933ec87</hash>
+         <hash>d4a82d34346cb6e6a44e591a3e29824ba3a173be7fe0e31a18bd212de356e3a9</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atcacert\atcacert_host_sw.h</file>
@@ -22626,7 +22634,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\mclk.h</file>
-         <hash>b55fe9e37976810d29237fcd920d5cc992fa46ab1daad0913df6ecce9ba0bfca</hash>
+         <hash>10597c26f4fa9fcdbd9d111991cc07343d9228c991c5c3f08e603d275bad14b0</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cachel1_armv7.h</file>
@@ -22650,7 +22658,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\host\atca_host_config_check.h</file>
-         <hash>b839369934a035e686ccf3a5b728f89d96a182955bd346c2922f214884f5c6e8</hash>
+         <hash>aeb0900e4230fc9d4e851c195aabbf36af2e24d6888e53bcf90795e987da155f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\radialmenu\legato_widget_radial_menu_skin_classic.c</file>
@@ -22658,7 +22666,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\adc.h</file>
-         <hash>089cc88cc537dc664d6b035acdfb89d3b9e0053c0867824761dcf4ab8a7f7ca4</hash>
+         <hash>bd06dc049de602413d9e7ee5ffe9e53fe419681752093d0bff0d403494dd7757</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\common\legato_error.h</file>
@@ -22674,7 +22682,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\tcc1.h</file>
-         <hash>c94af1c3a7f6bdb8a4e2142d396c3d8f29ca4f8ac5c02fb0fb034970d0471fcb</hash>
+         <hash>cc470999cc855f3d8bcefbdab7878b4d3a2d55ccabff2ba942ab21753c24ed2c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\system\ports\sys_ports_mapping.h</file>
@@ -22698,7 +22706,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\core\legato_input.c</file>
-         <hash>065da654944d4bf2353d9d60f15cb1fa9f22ef1d669250dd05f25e6b15bf0ec6</hash>
+         <hash>131dfbe13dfee71707c492b03f12e3fd572955fdcf6a79de3d6a6522d3568041</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\image\raw\legato_imagedecoder_raw.h</file>
@@ -22710,7 +22718,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\peripheral\systick\plib_systick.c</file>
-         <hash>c1b047e8f20a70a3a72c08c585bdf0e360c4818d5733ed68162399241e24a20e</hash>
+         <hash>da0bd14778220cc5252d17bfe0641fa09e618d6cf5e4408bc21339dd0e7d28b8</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\renderer\legato_draw_line.c</file>
@@ -22722,11 +22730,11 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\fuses.h</file>
-         <hash>2c0528f611e1b012061b9e6a857203bbd4f6e118e91ea1e39985023df8b98e11</hash>
+         <hash>9595a8fa5e057545db13b81178da6dbc2942a1ff298fd276546a4335fe042e09</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_info.c</file>
-         <hash>3fe283971c26f253ac75311e5a4a8a37d4914e53b13a51c68bc9df1b7b147d74</hash>
+         <hash>3075983e542a5eee3c1601e30eada9d80dac4244062ec18289003c1f69ce5863</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\memory\legato_variableheap.h</file>
@@ -22734,7 +22742,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\memory\legato_variableheap.c</file>
-         <hash>e7d7931e13bcceca0d1238232693aabdaea793010004fa185ea0cf4f3e373813</hash>
+         <hash>1a9fb6e89e156bef847d47d58a552ac7e97a31b075d229559b487b479b1ebf4d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\font\legato_rasterfont_liberationmono8.c</file>
@@ -22754,7 +22762,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\tc0.h</file>
-         <hash>e71c89623be3de170c6ef5fb96e9ca6551660319efa24e85be5fd053054284a4</hash>
+         <hash>63702cfa83c82d93bbc3c3faa8e00e4f990908a9aa90d420e5d740e27bebdc90</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\renderer\legato_renderer.c</file>
@@ -22778,7 +22786,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\evsys.h</file>
-         <hash>8b48dd02a4ede835e5ffea74ebf4c16e7adb60b912d9a440fecd50cb60e38b3c</hash>
+         <hash>c09a2bf349b42d0076634ea0540321d499a0dec8c2eda99b81c69c93d8e0ea2a</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\font\legato_rasterfont_stream.c</file>
@@ -22786,7 +22794,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atca_version.h</file>
-         <hash>a1781e9c7684b813c6b86e60e3ec1f271866fb70f2c8d77a7d5a78af69f6ffcc</hash>
+         <hash>c2180ed044d26bc957a097fdba22494fa92657ebfeec5b9213b8d8b1ac00209f</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\system\system.h</file>
@@ -22798,7 +22806,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\tcc0.h</file>
-         <hash>3ba6832588340cb929c8a5b0346dd6b7fd09d5b06f0cd178b33ce5f485c56293</hash>
+         <hash>d06b14546c410db4e5f121dc1b92c32a61b4942894e012aa1c74e11d8f273bd6</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\legato_widget.c</file>
@@ -22834,7 +22842,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\dsu.h</file>
-         <hash>7f928c029b6ff23a9bf9f48ecc0aa463d79dd4a472e9af7d8f9eebc584090c01</hash>
+         <hash>a5b4eb275859245e5d05fed72b985051a99f40d0dc59e1b59b7cd41ad8bb1d26</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\imagerotate\legato_widget_imagerotate_skin_classic.c</file>
@@ -22846,11 +22854,11 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\eic.h</file>
-         <hash>08bc294df1db83b1dc78f7ccff16cacb201c011b549d1ea82a78ef95d8a1d77b</hash>
+         <hash>8f2691fe909577577d35eecf7af167b7e81969cc040d1c995cd32d4ed9949a9b</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\tram.h</file>
-         <hash>52c29e19fc9af1ecc14a8f4fa6146be56c230848ffcbdb9ad3dbc7c600dea645</hash>
+         <hash>2307cdb4deda6e07d9fd1bddfb0b58afa1727b6b893add9cc43d1bda0e99cd4a</hash>
       </entry>
       <entry>
          <file>..\src\main.c</file>
@@ -22878,7 +22886,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\dsu.h</file>
-         <hash>60cd382f7cc3179df94b3951c8e9ff2b25f4c9fc6cfcde701fe1228dc4588c36</hash>
+         <hash>ecdf6f6eab5c2c7ba76684688a7595ef4650ab623bb1e29a42c6953b3c8b64f6</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\string\legato_stringutils.h</file>
@@ -22906,7 +22914,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\driver\spi\drv_spi.h</file>
-         <hash>aed15b9971d20ddad5624af0d417eccb3d9acf31326b0d9ededffabb34c3ed15</hash>
+         <hash>9a6daa12b48114aa08202529bea2a2a3d9d98a4365d864f10380ad2244b139d2</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\driver\gfx_driver.c</file>
@@ -22914,7 +22922,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\opamp.h</file>
-         <hash>62cf25e2fc04937f1259ece667fa7c03f94e18df1aa62a531987a28adf0b4887</hash>
+         <hash>ec2e160f223185bd33f2660a58842db851a1528dd864688b56a726ccdf277215</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\libc_syscalls.c</file>
@@ -22958,7 +22966,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\ptc.h</file>
-         <hash>8276620ef955145d4bc6f5fe66f987f21909aab5b69ec2f2c21f779449d4e478</hash>
+         <hash>92a024cec73122a0954c7bf8bfdfb6af8e2cbb9a3ae9a44ac0c7ddae24809ded</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_aes_gcm.h</file>
@@ -22982,23 +22990,23 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\system\time\sys_time.h</file>
-         <hash>f21b100d8f0b8b79af9217315098d51df855d9015f05a7e25ad77414cd19b2c3</hash>
+         <hash>6357468f7670698b16bfb6439d9919ed38eba99d4f03277a8b43ac34586fa1b3</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\tc2.h</file>
-         <hash>6c332dd1c15ef2a85610006f99d283da5b6142377ff37ad2de2a2a9ab50f77cd</hash>
+         <hash>fcf17f989f899c0b3f09478a570e24ee72bf6b4aba5c71af8a2d66df5ece1e19</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\system\system_common.h</file>
-         <hash>0dbf2f60b29c97426e70187bc59c652ab5a355f51cfbe3f195ff1c8c6c0b1602</hash>
+         <hash>c9f34bd226f8efab12f5766e77f8355996cd0430b50e0f6ee30258664c494984</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atca_config_check.h</file>
-         <hash>fd8e4fc8d0da7715af7634f2181a78c9c3437077445f62a19d0171f26bc47b53</hash>
+         <hash>834953241a9711bc8f6921abc9f4fd1958439972f8e415921c6faf36796fa349</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\system\time\src\sys_time.c</file>
-         <hash>7e6aafa9e0d95093b7a04bf8a4515309eba402fe6ebe22a5581a9b693616abfb</hash>
+         <hash>fa2d85ab967b80157caf8483f6e28a23b12b548844a1d80f2fef760cd9b99271</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_privwrite.c</file>
@@ -23010,7 +23018,7 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\freqm.h</file>
-         <hash>3756396ff60c6b9798f163f5364d363157e41b8254aaae7b3fb2991cb8f73192</hash>
+         <hash>222ecf7f339ba715a58420b233387c8ffaaacbec61392cdce2d569a1c301bef1</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_ecdh.c</file>
@@ -23018,11 +23026,11 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\peripheral\sercom\i2c_master\plib_sercom5_i2c_master.c</file>
-         <hash>bab9abcce42fa0b26cd72119e2e85739ab05ece37f1f95377d53841c41d8bb04</hash>
+         <hash>c891ac5444ca06707cde1af45d99f34275973d788394155dfdfb4320d1c78405</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\mclk.h</file>
-         <hash>377636cc63248a931166b57fe99855f8f4359150324e5ea3808d4cbd976048cc</hash>
+         <hash>f421a5a6e436ff9ca867c86d528c8a3379959d830587ce7f3d7a3cbccdfff3f2</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\system\input\sys_input_keyboard.h</file>
@@ -23030,15 +23038,15 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_checkmac.c</file>
-         <hash>31254e97ba2295a30b703349d7bdfc399dcf7e4875da2385ab6aad51a93333b0</hash>
+         <hash>9f390c0afe5addc80449364affc260481e8444b693f2a29b63e000813514a99c</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\PIC32CM5164LE00100.ld</file>
-         <hash>35f282d5ec070ee44f7e7dbab48abc74218fbf78edc8a43a87bc544753d57fc3</hash>
+         <hash>5e9738417c176a2639e595cf0cd21437fddba454a06527b255c450ce5b144c6b</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\tcc.h</file>
-         <hash>bbc783dc79d3fef11f9c8bc18064b032d11693626355d3ca3c9f61eeb9bab347</hash>
+         <hash>3573617e4b34d7ceb56977d06ddd75bf898bf3c80bdaa2beb15f1f9a90bc8000</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\peripheral\nvic\plib_nvic.h</file>
@@ -23050,7 +23058,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_basic.c</file>
-         <hash>49afd2f39e682807a36afb6cab38607c98d3ff334a42b3fd952ef8f697c612a7</hash>
+         <hash>259de4446b1b8761c7cd7141a1b7a8ca8ad23d12ded39873cf8f475ada88d795</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\image\jpeg\legato_imagedecoder_jpeg_common.c</file>
@@ -23062,27 +23070,27 @@
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\dmac.h</file>
-         <hash>0196c435c1fe4c4ac749dc8a113e28eb2a0f3c7ac159e4dd7b4dcb25e0c30880</hash>
+         <hash>647b6cfd552a0f68102dacab19f0bf49f7b8c5ee6378175debd3c1a29ea1be04</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\component\ptc.h</file>
-         <hash>b594a51ad761c432917c96595fe9aa184ee3e828d66af2b44771d9d230f2360b</hash>
+         <hash>019d5256ca1b2a0793ee514c9884de0ae7511b90c9fa2001c24d89e0ff55ed42</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\osal\osal_definitions.h</file>
-         <hash>0a5ca28c4812bb37babfebc1fe30a90b13583504d81910ad159feb746a5b002c</hash>
+         <hash>5f0a2513a093b6d228e2b50646b204923a82047335a47f3d35a2938309ab6f37</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\bargraph\legato_widget_bar_graph.c</file>
-         <hash>7437fbc8b9a263bbd7a897f98d44a76665ee809bd10b6f9e8b7aef2bda6d446a</hash>
+         <hash>538b84190cc1d2db631d693d81834a123ab41a96b89e780a79c7bcf7bd773f2f</hash>
       </entry>
       <entry>
          <file>..\src\packs\PIC32CM5164LE00100_DFP\instance\tc1.h</file>
-         <hash>3403db2ce990a9aa38785b6ac1c63ad4647d6eab02900a2d08d1b245cf7e9d21</hash>
+         <hash>8535488fad0ed9b881216907f626636662a3f207f5e895ec136c2bf148faceb7</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\peripheral\nvic\plib_nvic.c</file>
-         <hash>4ce648035fb24d3f66db86f99956a11b0882327dd3e9721f77503fc05c4a54f0</hash>
+         <hash>ac3766fd0f85d43b5378388a4c85e670c3eb42ed1870a8cafd62f509d8ed933e</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\atca_platform.h</file>
@@ -23090,7 +23098,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_basic.h</file>
-         <hash>6344c161a279551cb81deb77949d14b3a3f95ed3d1fb5ae2ac0fdc3fafdeda52</hash>
+         <hash>68e3b9d31bf9027e0f5b5dc84832416129eaeb154f3fe784512088741953221d</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\gfx\legato\widget\bargraph\legato_widget_bar_graph.h</file>
@@ -23102,7 +23110,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00\library\cryptoauthlib\calib\calib_config_check.h</file>
-         <hash>54960dc4de0e6ee0ae52c4cf553f6282f406bb07fc71ad6b13abba1a5bdecf4e</hash>
+         <hash>d702af64983babc2cf0e0c21d2ab3fcf330ba3455d0054d60cfdaf75cb8acdfe</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

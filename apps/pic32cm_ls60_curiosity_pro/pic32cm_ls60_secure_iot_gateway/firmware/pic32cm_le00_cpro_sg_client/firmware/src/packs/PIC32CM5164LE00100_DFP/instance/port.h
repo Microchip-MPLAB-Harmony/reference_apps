@@ -1,7 +1,7 @@
 /*
  * Instance header file for PIC32CM5164LE00100
  *
- * Copyright (c) 2022 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
  *
  * Subject to your compliance with these terms, you may use Microchip software and any derivatives
  * exclusively with Microchip products. It is your responsibility to comply with third party license
@@ -20,7 +20,7 @@
  *
  */
 
-/* file generated from device description version 2022-05-25T15:37:41Z */
+/* file generated from device description version 2022-09-09T06:08:26Z */
 #ifndef _PIC32CMLE00_PORT_INSTANCE_
 #define _PIC32CMLE00_PORT_INSTANCE_
 
@@ -30,11 +30,11 @@
 #define PORT_DRVSTR                              (1)        /* DRVSTR supported? */
 #define PORT_EV_NUM                              (4)        
 #define PORT_GROUPS                              (3)        
+#define PORT_INSTANCE_ID                         (12)       /* Instance index for PORT */
 #define PORT_MSB                                 (92)       
 #define PORT_ODRAIN                              (0)        /* ODRAIN supported? */
 #define PORT_PPP_IMPLEMENTED                     (0)        /* IOBUS2 implemented? */
 #define PORT_SECURE_IMPLEMENTED                  (1)        /* Secure I/Os supported? */
 #define PORT_SLEWLIM                             (0)        /* SLEWLIM supported? */
-#define PORT_INSTANCE_ID                         (12)       /* Instance index for PORT */
 
 #endif /* _PIC32CMLE00_PORT_INSTANCE_ */

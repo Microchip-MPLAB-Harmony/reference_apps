@@ -59,7 +59,7 @@
 #include "click_routines/oled_c/oled_c_example.h"
 #include "click_routines/oled_c/oled_c.h"
 #include "gfx/legato/generated/le_gen_harmony.h"
-
+#include "debug_print.h"
 
 // *****************************************************************************
 // *****************************************************************************
@@ -179,14 +179,13 @@ void APP_TRANSFER_Tasks ( void )
         }
         case APP_STATE_TRANSMIT_RN:
         {
-            if((legatoState==LEGATO_STATE_RUNNING)&&(screenInit==0))
-            {
                 oled_c_example_initialize();
                 oled_c_dispaly_refresh();
                 oled_c_example();
                 screenInit=1;
-            }
+                
             if(SW0_Get()==0){
+                debug_print("Initiating Authentication \r\n");
                 while(SW0_Get()==0);
                 if(RandomGen==1){
                     SERCOM2_USART_Write(num_in,sizeof(num_in));

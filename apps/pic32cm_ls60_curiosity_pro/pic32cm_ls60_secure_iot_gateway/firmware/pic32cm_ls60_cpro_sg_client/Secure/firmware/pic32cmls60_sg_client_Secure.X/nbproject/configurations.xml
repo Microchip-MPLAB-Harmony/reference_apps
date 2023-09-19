@@ -279,6 +279,7 @@
                 <itemPath>../src/config/pic32cm_ls60/library/cryptoauthlib/calib/calib_sha.c</itemPath>
                 <itemPath>../src/config/pic32cm_ls60/library/cryptoauthlib/calib/calib_updateextra.c</itemPath>
                 <itemPath>../src/config/pic32cm_ls60/library/cryptoauthlib/calib/calib_nonce.c</itemPath>
+                <itemPath>../src/config/pic32cm_ls60/library/cryptoauthlib/calib/calib_delete.c</itemPath>
               </logicalFolder>
               <logicalFolder name="crypto" displayName="crypto" projectFiles="true">
                 <logicalFolder name="hashes" displayName="hashes" projectFiles="true">
@@ -389,8 +390,8 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32CM-LS_DFP" vendor="Microchip" version="1.1.162"/>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="PIC32CM-LS_DFP" vendor="Microchip" version="1.2.274"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>

@@ -1,4 +1,4 @@
-<config configName="pic32cm_ls60" projectName="pic32cmls60_sg_host_Secure" configVersion="1.1" device="PIC32CM5164LS60100" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.0">
+<config configName="pic32cm_ls60" projectName="pic32cmls60_sg_host_Secure" configVersion="1.1" device="PIC32CM5164LS60100" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -139,7 +139,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.3.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -7699,7 +7699,7 @@
   &lt;core dnOrder=&quot;0&quot; id=&quot;XC32_HEAP_SIZE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
       &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;1024&quot;/&gt;
-      &lt;User dnOrder=&quot;1&quot; value=&quot;512&quot;/&gt;
+      &lt;User dnOrder=&quot;1&quot; value=&quot;10240&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -14205,7 +14205,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\spi_flash\spi_flash_map.h</file>
-         <hash>69264da53c0fb2e601080c765157010662ac876b089e9a15dc1b565c77fecdf2</hash>
+         <hash>26ac9cd4b5384b298f9d43c347cc5565835fe248c71577983abf95c3ee70ab85</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\peripheral\dmac\plib_dmac.h</file>
@@ -14225,7 +14225,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\memory\legato_variableheap.c</file>
-         <hash>e7d7931e13bcceca0d1238232693aabdaea793010004fa185ea0cf4f3e373813</hash>
+         <hash>1a9fb6e89e156bef847d47d58a552ac7e97a31b075d229559b487b479b1ebf4d</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\packs\PIC32CM5164LS60100_DFP\component\pac.h</file>
@@ -14237,11 +14237,11 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\wdrv_winc_wps.c</file>
-         <hash>2695f9ad3dfa06ece0b5e020f23f46fcf62e100175381efead0abc9e76e10011</hash>
+         <hash>ac14a1ed576da563cbfffa4466a9f0addc056eb01e4ab78a3ab663c8b7691c7e</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\wdrv_winc_sta.c</file>
-         <hash>913ab3d988ab30dc58ed029da3e97e6b5b5d7874ffefa97428b23d92e6045700</hash>
+         <hash>866f3bbdf54faecfc15fd6f125e886cfaf868a9d109a24532a8b845677ba7276</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\radiobutton\legato_radiobutton_group.h</file>
@@ -14273,7 +14273,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\driver\nmdrv.h</file>
-         <hash>e300d9b67404d9fce44b6e1d2db58c75dbae68fdd0fc86bc20e6694aee29e4d9</hash>
+         <hash>5d2ed4d99b832aad94250b89b74b9d9970455bb1a177a73a822a1a59425f7657</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\radiobutton\legato_radiobutton_group.c</file>
@@ -14293,7 +14293,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\int\src\sys_int.c</file>
-         <hash>23e798871ce6f7b4b0e0dbd5cb2cad7b43bd2dd1f38152f28d14f5a5b7a2938b</hash>
+         <hash>4281667cc2b84c9e4be1f0dfb3f7d42b77d36c5dcf6513d29ff40262f746cfc6</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\calib\calib_aes.c</file>
@@ -14321,11 +14321,11 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_client_api.h</file>
-         <hash>a24e8af21a445d837cc0e05852017d8ca16e5f4c442e54b0cabdc89a5586cac9</hash>
+         <hash>9967c909183b72459d7e24890fd7a36b722780b30d63d7f6a7d318320cea8581</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\wdrv_winc_socket.c</file>
-         <hash>c276a2066d76f837b7dcf80de974e58b6d66facd6f5403a11f0a5d15709a544c</hash>
+         <hash>ed424b31e4181f2ed64545420510bdfe791fd54baf578255e91a0032a37448e4</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\packs\PIC32CM5164LS60100_DFP\component\usb.h</file>
@@ -14341,7 +14341,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\command\sys_command.h</file>
-         <hash>8d8b4c4f428355afecc0771ff799785869386e7cfb079e327773628226ee2e2d</hash>
+         <hash>7ef4ded141f7f71e84038aa39c414929ee9cbd9cdacb92e06544f5bf53915dca</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\common\legato_rect.h</file>
@@ -14365,7 +14365,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\spi\drv_spi.h</file>
-         <hash>aed15b9971d20ddad5624af0d417eccb3d9acf31326b0d9ededffabb34c3ed15</hash>
+         <hash>9a6daa12b48114aa08202529bea2a2a3d9d98a4365d864f10380ad2244b139d2</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\peripheral\tc\plib_tc_common.h</file>
@@ -14397,7 +14397,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\memory\legato_memory.c</file>
-         <hash>0703d9b8268ae3f2b07abe69b19b2055e8c959b1cb9ebce3e5845515a0479b9e</hash>
+         <hash>8047bcaf8c3b284df0c455e2a2067bceef3cfc1d3a91f19ec40933c7544ba207</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\config\pic32cm_ls60\peripheral\nvmctrl\plib_nvmctrl.c</file>
@@ -14405,7 +14405,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\driver\m2m_ota.h</file>
-         <hash>18c0ce55493ef337f4ddf68be5d2698eb3f3ea1da81851c2c05e320d81561b84</hash>
+         <hash>774e304ae01a0c84170b7ef79aed252277f07112f75e4b5222d18008af1b5904</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\config\pic32cm_ls60\libc_syscalls.c</file>
@@ -14417,7 +14417,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\drv\spi_flash\spi_flash.c</file>
-         <hash>affcf785fa29ac0831a7718c9186e85a0846cffb73e1914cfbcbcfc05dd942b8</hash>
+         <hash>bca178a950af41f44c557bffd19f5766a17ec9cca85de8471f3e3b2ca3d2002d</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\packs\PIC32CM5164LS60100_DFP\component\i2s.h</file>
@@ -14465,7 +14465,7 @@
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\config\pic32cm_ls60\definitions.h</file>
-         <hash>6488cf6d32ac4d950aba0065ed7c45439213e0945ec75bd9c4b6c51ddbc32fa7</hash>
+         <hash>6ef2d682ef72926e0c75e798129a3fa9bbe90af1cda664116e4881512eadf0c4</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\crypto\atca_crypto_sw_sha2.c</file>
@@ -14473,7 +14473,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\drv\driver\nmdrv.c</file>
-         <hash>1d5e662a17ba145a078597dfbae0c5605400f0340026a37fe38f04bfb5afa0a6</hash>
+         <hash>80ff11490bc52f8835ff5a702ca6cc72cccf90baa3f284eabc18971fce3cf442</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\touchtest\legato_widget_touchtest.c</file>
@@ -14493,7 +14493,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\image\raw\legato_imagedecoder_raw_blend.c</file>
-         <hash>ef046613a6fa79b2a6c085acc22e2eec7b2158ee9ba31019337e0c65a3055ec9</hash>
+         <hash>a618fa3bd1c9915c02143ae065c92200da98143a771af8355e3e4c9be83873c4</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\touchtest\legato_widget_touchtest.h</file>
@@ -14509,7 +14509,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_softap.h</file>
-         <hash>ac664aa8b9152266c355efa8a295e64683cc64b47cd4ba3a3203edbd5ceb0035</hash>
+         <hash>d3f33749a7987c666c2798220f619faf929bdeb53e88408520ff13b789a13a13</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\config\pic32cm_ls60\peripheral\nvic\plib_nvic.h</file>
@@ -14521,7 +14521,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\drv\driver\m2m_periph.c</file>
-         <hash>600ede9c91a9f356e5bf5c817110f0d5a497af17e33c8291c04eb31ab4359ef9</hash>
+         <hash>3a66c394ab09b4dfebf66ef1f843241a2b22b983e26dc647a0241e52aef119cc</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\input\sys_input_touch.h</file>
@@ -14545,7 +14545,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\font\legato_font.c</file>
-         <hash>398421927fb718787cb904b8f56a9c93e7870d611c4f0c198de17371425a5537</hash>
+         <hash>2147f47f2298508c2cae98691a7157313c6f03375a706f3bae3ed799a1d9068d</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\atcacert\atcacert_date.c</file>
@@ -14601,7 +14601,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_api.h</file>
-         <hash>cab8dd9724c46a8023aab31d4af7121164b52c624529822041d4bd4f25b64738</hash>
+         <hash>a2aaa71e2b00ef9984da243674e53ef1d6931435aedc7f3ef9351703f01513e2</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\driver_common.h</file>
@@ -14641,7 +14641,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\image\raw\legato_imagedecoder_raw_mask.c</file>
-         <hash>04a56f67ab3ef840d89ab44d03ddac16e4ad55dbbcce72d91174d19071c749d7</hash>
+         <hash>6aebd76da11fb7cb0a1ac48563b741391204857a673f384c34dde4e083889e9f</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\image\legato_image_utils.c</file>
@@ -14657,7 +14657,7 @@
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\config\pic32cm_ls60\initialization.c</file>
-         <hash>9d46dd280256555a9c440451dd9f133e60c6d575aca8e7b78cbdd154756980c5</hash>
+         <hash>50cf9e4a727a2d6cc875073371dbd1266ed07c065df7aa48268f156286a729a5</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\bargraph\legato_widget_bar_graph_skin_classic.c</file>
@@ -14677,11 +14677,11 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\debug\sys_debug.h</file>
-         <hash>222cdc284bd651e83188b9641cc57c133cf86563dbeb5d5523766d4a36087165</hash>
+         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\bargraph\legato_widget_bar_graph.c</file>
-         <hash>7437fbc8b9a263bbd7a897f98d44a76665ee809bd10b6f9e8b7aef2bda6d446a</hash>
+         <hash>538b84190cc1d2db631d693d81834a123ab41a96b89e780a79c7bcf7bd773f2f</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\tng\tng_root_cert.c</file>
@@ -14725,7 +14725,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_httpprovctx.h</file>
-         <hash>180410be0a198f8f8c7c6d20f6968dcb8ac8cbeebd192ab6ef66095260a65770</hash>
+         <hash>450c007d360885933485e857fd8ba26b265a34fc77c23f45c2290e15856b3174</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\label\legato_widget_label.h</file>
@@ -14749,7 +14749,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\drv\driver\m2m_ota.c</file>
-         <hash>041ce0b154ce86468dee3d5bdbee161e235b6c62c1225849b56c6bf31a4c4e01</hash>
+         <hash>a25c728a6199a955ad30d647c930413f9ecba6b68b76f140c1dce25b5bd178c3</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\atcacert\atcacert.h</file>
@@ -14773,11 +14773,11 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\int\sys_int.h</file>
-         <hash>71e36331ee689ae305b3d8ec49948e3dde0324b65f51bf38f4472b900a421ed6</hash>
+         <hash>dc104ae181fd5309e1bb42896246644fae95915a8e639b23ecfccc8840850274</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\command\src\sys_command.c</file>
-         <hash>f6ffa260b5a6f1e0134c8845c405d0e21dcdc5fd02e95dcc7a4a5fccf1cb23ae</hash>
+         <hash>e2e011b221d372dbb81cd7af594d7da29d7ae18966a99a3fd72b3c5772c237bf</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\image\png\legato_imagedecoder_png.h</file>
@@ -14801,7 +14801,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\dev\wdrv_winc_gpio.h</file>
-         <hash>e4e6c8983d2de502c7cade2f031faaf1552b4752a903fe937c7d7d3a6d4e88d3</hash>
+         <hash>5cac8b19a0a37ba6fefb4c6a9886bc0e15dbfb04c4cc9fc24c7fe370981af653</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\common\legato_color_lerp.c</file>
@@ -14833,7 +14833,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\wdrv_winc_bssctx.c</file>
-         <hash>17ccb297fcc756b0d053a2730fca29e8ec1fd175b3ff0f97073cca4abc24bf9f</hash>
+         <hash>2a77572626c22641ffeed1c3ac09e87334abe05fde3a0dc453d14f1e7432acfa</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\string\legato_string_renderer_stream.c</file>
@@ -14925,7 +14925,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_socket.h</file>
-         <hash>7d7d0d6f147a7b026a6418d5c6549af910439155a684c0ae53ea40b6e5a2183b</hash>
+         <hash>57e5e61fe06543339e609b133920b2d7924edaecb070635c5678d5b21da1e09b</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\core\legato_scheme.c</file>
@@ -14933,7 +14933,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\drv\driver\m2m_hif.c</file>
-         <hash>f61e76d401615b022909b1f58c0c9c3115260dd731d0a32f34637728cb45c343</hash>
+         <hash>0a1c0a6e2b21a6f859c229b947fa834a1973c0d40d1eca5a8f311ed78e1c2199</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\common\legato_color_blend.c</file>
@@ -14993,7 +14993,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\time\src\sys_time_local.h</file>
-         <hash>d3ef06b59d9a89efe9e8eb54fcf3b75120d56156cc21f6847ca4f9e902eb7c9d</hash>
+         <hash>df56f970664902417d798760e44978cf4b84c108cf0761647a383e91db76980c</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\core\legato_state.c</file>
@@ -15009,11 +15009,11 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\common\nm_debug.h</file>
-         <hash>49dc0a0565bff89163dbff21fca031f786dc82fbb3aa8877aabf1a9613658f51</hash>
+         <hash>bc8277edc9b9ec645376c469deec6192796ea4161f30a28efb4d3f53dcb6c576</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\image\legato_widget_image.c</file>
-         <hash>5bb1d0e1c99405acc3ef79aebdbf413524d822466831e5d7326561e0f340f535</hash>
+         <hash>850da06063b06132ed4bc020af7fb28adef50b89517aa6507cc6febedcd07ab7</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\packs\PIC32CM5164LS60100_DFP\instance\tc1.h</file>
@@ -15033,7 +15033,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\driver\nmbus.h</file>
-         <hash>79d38be9e498c636431f9aaf057bb97410ca5bd3ed1214e27082f7e8777086eb</hash>
+         <hash>31d22227e2cd2d299bcade26ef384380fddd833acce0e313253b7592a0a3f8dc</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\string\legato_tablestring.c</file>
@@ -15041,11 +15041,15 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\console\sys_console.h</file>
-         <hash>e8a97986345fb2c80389834b113384eba523837ee43f7798d9b56be630a6e7b3</hash>
+         <hash>cc82ba93f8d69bf31a9dfcfe1e425de3924bcf9e4e4b31f7efad9c2d062dcbf6</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\socket\socket.h</file>
-         <hash>1408040bd59538d7debd7e518014392adc63692b4be97ada12b5b46153549c49</hash>
+         <hash>978bbf0a3935a2fae5d54d66462adf9a20e48411a606ac6ec2e53190a78cc211</hash>
+      </entry>
+      <entry>
+         <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\sys_tasks.h</file>
+         <hash>21f254f497a18a024cd00128d06c4776c2643f867a460c1ba9880a7dd41a8d56</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\packs\PIC32CM5164LS60100_DFP\component\pm.h</file>
@@ -15053,7 +15057,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\dma\sys_dma_mapping.h</file>
-         <hash>f40fd52b9e96c213abb3996b309103da33f134a85f90c874a99d2184c61c0ece</hash>
+         <hash>ce3b0fb5a381953a0804e467742d198578a5abb4b419c667565553953c4d27c7</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\window\legato_widget_window_skin_classic.c</file>
@@ -15065,7 +15069,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_host_file.h</file>
-         <hash>4204244c2ee051abc018659bdec04d7d87bb20b54cbed6542b8a414c234f19d6</hash>
+         <hash>b33e4fe06149e5ec33381e01f4a2ec98237001b43a4d8a55155d0659367e4659</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\piechart\legato_widget_pie_chart_skin_classic.c</file>
@@ -15089,7 +15093,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\slider\legato_widget_slider.c</file>
-         <hash>598a95c15cc5096c046cefeeb2987dbbbd691a783c24e3521e40e07ed680e5ed</hash>
+         <hash>64bfd7a705db6c2f26865a9d2dfc4a6133ce29cc0fc3edd2be35916b7887f5e5</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\packs\PIC32CM5164LS60100_DFP\instance\sercom4.h</file>
@@ -15105,7 +15109,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_wps.h</file>
-         <hash>d21b67d338ba48ab294c073ccef9de32f3e3469c39a8f2bbde327c7fed321b68</hash>
+         <hash>d105554d4c3b1170b80ac3405dca33f5e5808dabbd5fa0a416c6a8a73edf8abd</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\atca_compiler.h</file>
@@ -15129,7 +15133,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\int\sys_int_mapping.h</file>
-         <hash>660e7081f93de17660144721849acf269925988a4f6510028d25903aaa866ea1</hash>
+         <hash>5abf8528dabc1b17378f5d137870597037214fddf33880fa40e9263352da3008</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\packs\PIC32CM5164LS60100_DFP\instance\port.h</file>
@@ -15153,7 +15157,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\dev\gpio\wdrv_winc_gpio.c</file>
-         <hash>d98fab863365a8e8e04c6b0a83290195156e0a17bc723eb1dcfaf1654adbf260</hash>
+         <hash>6fcff5874cbbe61574cb693279ac45ea4528e0e33b5733cd394e371ea1c64cad</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\calib\calib_secureboot.c</file>
@@ -15185,7 +15189,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\drv\driver\nmbus.c</file>
-         <hash>cead2bbd58227be853e8a9326880429b6ecdcc9158a96f2c2f7367c6d58391b6</hash>
+         <hash>d4496dd84899d7faac1930d03ecad8d4a144eefac950f06b5a03ca946c4a7d6a</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\packs\PIC32CM5164LS60100_DFP\instance\dmac.h</file>
@@ -15269,11 +15273,11 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\drv\driver\m2m_ssl.c</file>
-         <hash>6d13b6efe5b10ec7d681f97a75581536b7e94c08a223641704eab3685ae1d8c8</hash>
+         <hash>0b45dd0901f2d1ac99d7d3a09fff885e93fdf2e9b29fe2d26e717c8b7bb966c5</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_systime.h</file>
-         <hash>d067449e28b4fe9754b2df6f9f239e62886586dc85b1155804ef5f225ada8c1e</hash>
+         <hash>ddb858f48ace0816b9d11d8813a4a03e56aa33d7d008b1443acbbe7eb1df5856</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\renderer\legato_renderer.h</file>
@@ -15301,7 +15305,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_sta.h</file>
-         <hash>565033acd7e3576e6a82632f31aa5d2fb86474f2f9a72a0f6e1e3c0d03210ea0</hash>
+         <hash>78c812977f6dc63a0c2299ca34bf134f22ee3c29653895319efb8fa3072159f5</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\calib\calib_delete.c</file>
@@ -15373,7 +15377,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_custie.h</file>
-         <hash>e1d0a46ef8eb660124d2a08065c5320bc76aeba51e70d1e6945c68c52594626a</hash>
+         <hash>6da49fc0a73ce64fbc2538bb29e7ead376aeff0ed05fabee2f54cb720b8b3e2d</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\memory\legato_fixedheap.c</file>
@@ -15429,7 +15433,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\spi_flash\flexible_flash.h</file>
-         <hash>4a48dd676499923991a5316c946305f888ade2fac8cf82d10508ae012036eaa3</hash>
+         <hash>8859bb940f651d3a6c109a8582f24a5b4fe9871091880f0ae12d6c5c60fa27a1</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\image\raw\legato_imagedecoder_raw_read_stream_rleindex.c</file>
@@ -15461,7 +15465,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\interface\spi4\drv_gfx_disp_intf_spi4.c</file>
-         <hash>0e0897dcaaf82a0d7ceadd9d4260248dcd2ba1b0d76c76d99c0e4c7483fb9521</hash>
+         <hash>7708f839a15866fe9e2f2e9185553bd0112e34467cdf680932832f7365ebb19f</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\legato_widget_skin_classic_common.h</file>
@@ -15553,7 +15557,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\spi_flash\spi_flash.h</file>
-         <hash>3e5dea48202f7555c0449038b76a23568bcafc2fdd98a4ed30b27ae3f79149ff</hash>
+         <hash>f647e66517e9999c075f37409f8dab3e2af8ecc0bced1dfd8f8e6909fdf11987</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\packs\CMSIS\CMSIS\Core\Include\cmsis_iccarm.h</file>
@@ -15573,7 +15577,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\drv\driver\m2m_wifi.c</file>
-         <hash>1aa3d91b3e0e44b279d7fd7099643631dd3d2fdd3a4836602215f07925c89aba</hash>
+         <hash>4280ec63395508d55c5c91fecc7eedd2f4d9613d789536c7f61e53ec4d8793e8</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\common\legato_pixelbuffer.h</file>
@@ -15617,7 +15621,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\spi\src\drv_spi.c</file>
-         <hash>96937f051d09857d615928e842980833a61e3c60f7d0bcc7f996cb41d450c560</hash>
+         <hash>0882f1587b3c48b541a94f0255b942c7d61206dc1fa5d89c4ac2ed0d9a92cd3d</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\piechart\legato_widget_pie_chart.h</file>
@@ -15705,11 +15709,11 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\spi\drv_spi_definitions.h</file>
-         <hash>c0bb59cb4e0db78819626219e773cea55748a8207b9afc31617e9af24662650d</hash>
+         <hash>ba06e15b49c559da9db2e2c1756bf29738c224a13a47fa77cd2722267fe3e68f</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\socket\netinet_in.h</file>
-         <hash>f59e91a763eee76db80df0f257ba2578abf0e800b96e93d840fd627fac404ab4</hash>
+         <hash>39012a2cf3ccfbd8177e40075fde22961e19763cd902ff9b3110960d755b253c</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\config\pic32cm_ls60\peripheral\pm\plib_pm.h</file>
@@ -15725,7 +15729,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\drv\driver\nmspi.c</file>
-         <hash>d1a5e05b7a74e6f82be0edf75e948b8f57b11632f6ae8e9f6f219954317732eb</hash>
+         <hash>345d3827cac630a826340da79ba93892260c48be51660bf8ca07ef28e181008b</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\atca_helpers.h</file>
@@ -15737,7 +15741,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\definitions.h</file>
-         <hash>07899244b7e153886db07ab41f216e04bf6e43b853690bcc9be9a74e9e170cbd</hash>
+         <hash>c334ccda4e37fc457602dced507d958f887bee63e1e402159f747f99081ada02</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\atca_helpers.c</file>
@@ -15749,11 +15753,11 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_ssl.h</file>
-         <hash>0defcb01e4a20d9b9d1c3b154af7c0d44efa5be5ae0fea3c8b6d8adbe66ddc4d</hash>
+         <hash>10b31383339e504591e066322ec559e19b0a2d48b8321ea3b8cc715fd2619ea7</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\osal\wdrv_winc_osal.c</file>
-         <hash>da57986c63138b89f2a2887b75b2aa81f2339431b4a1d71b91e05f32c5f74841</hash>
+         <hash>24bc41d45730a1833ba621750008ba919ec045855e75ebcc1ea254103bbbbcf1</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\driver\gfx_driver.c</file>
@@ -15789,7 +15793,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_debug.h</file>
-         <hash>d4ee725f3f1e4c9baa8afae67f1cbba9df0181b0f0d54c99a3c602316dc262c7</hash>
+         <hash>75242f7d6a3ac3724f9da7f072f68c363458e18088a278576fc455758310cebe</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\scrollbar\legato_widget_scrollbar.c</file>
@@ -15817,11 +15821,11 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\tasks.c</file>
-         <hash>c4a527bd54675b43dea5e651bacc2d49f547bc58d52fd0e34f48b728710e680d</hash>
+         <hash>817cf517eed33d92553baaf5b760ce833fb64f5b3b802e0151b256466974dfb9</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\wdrv_winc_systime.c</file>
-         <hash>740bfa85d241095598526c40510657ad8191665ca2c14ac7820ef1d879a4f575</hash>
+         <hash>4ae18a250095125548713031a340912c39c9a373cbd33e1183a4c82aa19cd10b</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\tng\tngtls_cert_def_3_device.h</file>
@@ -15833,7 +15837,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\dev\wdrv_winc_spi.h</file>
-         <hash>21bcdea3495b4d9e5664710e87fd42d82ce326308c9f9e0eccbac473c0890bb6</hash>
+         <hash>8f0352418cb20cbfd71426ccea30c596df1cf0b602a730980486f9579202e095</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\packs\CMSIS\CMSIS\Core\Include\cmsis_compiler.h</file>
@@ -15841,7 +15845,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\wdrv_winc.c</file>
-         <hash>ad1ee1cc4c9591b5390c2609898cadf5fafd09141c4e8dd25e648eb00a0e2c4d</hash>
+         <hash>6a5418d7d0b7d3b0326554cd2bf21f45dba7bc4b971caef4301db36edb3fa0be</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\calib\calib_counter.c</file>
@@ -15889,7 +15893,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\drv\driver\nmasic.c</file>
-         <hash>7ff51e7c0c9fd779550b193b1c2ff9e4ca5804db2fac04484cc41582e3af0b0c</hash>
+         <hash>e43c5e8b5b5b97cf8de88c95370e40330e30fcd3560491b94b44b1948b807063</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\packs\PIC32CM5164LS60100_DFP\component\dsu.h</file>
@@ -15909,7 +15913,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_bssfind.h</file>
-         <hash>9ae92ee890fe91f4065cf68a9e42321f81ca2c18e37fc21092ee2fdef7dd072a</hash>
+         <hash>7b080af28903ff6ab643222b72e5cfae15880b42351cec5e8a1b4bb08648adcb</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\packs\PIC32CM5164LS60100_DFP\component\rstc.h</file>
@@ -15917,11 +15921,11 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\osal\osal_definitions.h</file>
-         <hash>0a5ca28c4812bb37babfebc1fe30a90b13583504d81910ad159feb746a5b002c</hash>
+         <hash>5f0a2513a093b6d228e2b50646b204923a82047335a47f3d35a2938309ab6f37</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\driver\nmspi.h</file>
-         <hash>ce86d5fd3500b42b133e91f2f700ecc042a60fd8f5b0212a0232d21a15f2346c</hash>
+         <hash>c67f32e460fe6e11358a1ce77c018d126c1844c425cd1f05befda03c434486e4</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\packs\CMSIS\CMSIS\Core\Include\mpu_armv8.h</file>
@@ -15929,7 +15933,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\configuration.h</file>
-         <hash>5a92b7cd311ab7ad8b8b5ff2aac764227123549f1f57a26ddaf8eaaf8ecf64c1</hash>
+         <hash>8c2ef6724c890bff86b57451441e9254fd930bae4da45820efb4bb740b213f6e</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\packs\PIC32CM5164LS60100_DFP\component\port.h</file>
@@ -15945,7 +15949,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\driver\m2m_hif.h</file>
-         <hash>52d9e66e4c9cfabd2aa4c6ff125584f210b1855184217dafbaad48074593d38d</hash>
+         <hash>6ea5099161599ffb564009a0a4521fe48c3c7a3ac3cf203abbe726720caf4189</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\crypto\atca_crypto_hw_aes_cbc.c</file>
@@ -15981,7 +15985,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\dev\gpio\wdrv_winc_eint.c</file>
-         <hash>8ffc0f79262c44908c380a3ad15d46449d63fc532e94c8a4d10156b2a1d42493</hash>
+         <hash>6bb5b37df5fea90d4f888a2e68e5b0257fb0eb185d8ee1a56a39a5ab1733079c</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\circle\legato_widget_circle.c</file>
@@ -16009,7 +16013,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_nvm.h</file>
-         <hash>4cbede751b2b4c888b5263892a534d9421e3369582ea524c57abb396e03eaa9b</hash>
+         <hash>57ba21e9983af6c20b94196f885b7bf86d47267173b8f7a2abacf2c576d01b0a</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\image\png\lodepng.h</file>
@@ -16017,7 +16021,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\driver\m2m_periph.h</file>
-         <hash>ed53fd27a3d1ab126d21e7eacb5e26a722d8959814f49edb3ea5940d5c920370</hash>
+         <hash>6afc6b662861be2c74d5275822a5262899ee46635b66e5e7ced20cd94dbe4c83</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\circle\legato_widget_circle.h</file>
@@ -16025,7 +16029,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_common.h</file>
-         <hash>313498377406dad481bdb8ca07cea79f6d57fdf0367c3476f9a11f4ee7d3d292</hash>
+         <hash>03bd2ff262875c439c2a1047270df62d7a7b81d2a28e6e53871acc0eda83e0ba</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\listwheel\legato_widget_listwheel_skin_classic.c</file>
@@ -16061,7 +16065,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\driver\ecc_types.h</file>
-         <hash>7fd433e67ea602cd3053730815dd934e14a7f6e0db3dbfebd03789c2143808c4</hash>
+         <hash>850551d63bb9c706dceebe15cdfb9a02f930f1751f3b4b92036913be415d7431</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\font\legato_rasterfont_liberationmono8.c</file>
@@ -16069,7 +16073,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_authctx.h</file>
-         <hash>5ebbae8c58e20ac4f4ecee27abd17ced9cb634a2d67d57037fbc79525e376358</hash>
+         <hash>3b40acf5d56e6f738c40322ccce49a3d24ce0b0f7e8c79ae993c2af2f431aef8</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\button\legato_widget_button_skin_classic.c</file>
@@ -16089,7 +16093,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\drv\common\nm_common.c</file>
-         <hash>1a47abd5e195b350cd6c564441df943594ec4769e457793ce45114277da88289</hash>
+         <hash>2daaf64817a7733267c308b4c6bcf7982b0463c0144ff15a787b383a985e26fb</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\radiobutton\legato_widget_radiobutton.h</file>
@@ -16105,7 +16109,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\wdrv_winc_authctx.c</file>
-         <hash>237cca2043eb9fd94d48d0915cf191839d8d379926623bc38e698682a50257db</hash>
+         <hash>5e157361ad36c27ff2478ba5cede190ac291b00a88c92a97aaca78fdb8cb70f5</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\packs\PIC32CM5164LS60100_DFP\component\tcc.h</file>
@@ -16185,7 +16189,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_powersave.h</file>
-         <hash>4c6cdfe1d725b0c3f79ce72b0d23ecdeb821ed89229849364222c11f369318dd</hash>
+         <hash>7c18edd78c70c95f7f935d6a90073f379268155962a1710312a4cce64bd1486d</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\packs\PIC32CM5164LS60100_DFP\component\fuses.h</file>
@@ -16209,7 +16213,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\osal\osal_impl_basic.h</file>
-         <hash>0c388837ef1d4e207a028ed31bfe07f1aac7ea8b0505caff58f737667ccbeaee</hash>
+         <hash>67ce72d34fd1e4dee0b6937fa026ab2c7bd285f82a24da09742c68333adaf0fc</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\image\raw\legato_imagedecoder_raw_setup.c</file>
@@ -16221,7 +16225,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\common\nm_common.h</file>
-         <hash>342b8123b79b1d97f99b1e65748587d4ecc842088b7fb56e36dfab9606fcf813</hash>
+         <hash>39c4e479d3db7ce7e411e0c91f2b3c3b673ab79338427bace045b450559a9eb7</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\input\sys_input.c</file>
@@ -16237,7 +16241,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\driver\m2m_ssl.h</file>
-         <hash>66b55cf12c59cb60a2625e3e2a582ec700102c46faa8b619136513d4ece15bf7</hash>
+         <hash>57f5021a8c53d537ec47c281f307f2ddbc279f4ef95162b8d6c0695a4c3980a6</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\input\sys_input.h</file>
@@ -16269,7 +16273,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\wdrv_winc_custie.c</file>
-         <hash>b6c8ae94866927cc95e2a771d4f15535aa568c0030974c7d17dd2185c62de966</hash>
+         <hash>5d0cf1993b2459fec3d2a5772bc507ae58c008a9a84c193a02b62fb1c54de99e</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\renderer\legato_draw_line.c</file>
@@ -16281,7 +16285,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\socket\m2m_socket_host_if.h</file>
-         <hash>0d7e2cdba63f111d71acfd936aee70c72360222d3e0a79b66b8f53aa91f6b46b</hash>
+         <hash>c52f89a34bb63b1f3b8ddd49f9e863d9088044976d5a5c9af1e0d5cbaf527848</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\image\jpeg\legato_imagedecoder_jpeg.c</file>
@@ -16309,7 +16313,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\drv\spi_flash\flexible_flash.c</file>
-         <hash>120ba6e39eed73bebd944329e7868bb1abcf0a9120d38014e0a0e90b934b6e8f</hash>
+         <hash>a4b2b2555dd05377590a1487b86a4c5957917698647dcfebd46691e5fdefcf7f</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\core\legato_input.h</file>
@@ -16337,7 +16341,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\core\legato_input.c</file>
-         <hash>065da654944d4bf2353d9d60f15cb1fa9f22ef1d669250dd05f25e6b15bf0ec6</hash>
+         <hash>131dfbe13dfee71707c492b03f12e3fd572955fdcf6a79de3d6a6522d3568041</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\image\jpeg\legato_imagedecoder_jpeg.h</file>
@@ -16357,7 +16361,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\image\raw\legato_imagedecoder_raw_palette_internal.c</file>
-         <hash>89ebac404e6aa269ca0bcc895fc9e11d2d593ad53e1f423d0c1f33881068a39d</hash>
+         <hash>0cec862ead00d99e9cb82c61e943185c336660170b1f4ac3af84689428938e2b</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\packs\PIC32CM5164LS60100_DFP\component\ccl.h</file>
@@ -16409,7 +16413,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\console\src\sys_console.c</file>
-         <hash>40aa2013385ec344c267d5779ef941d663ecc0739ebe962ad906324e71666c43</hash>
+         <hash>622a27844a650b4fa265c7a4739ba3768a76e4148600be42e44eec2e0673d7c6</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\tng\tnglora_cert_def_1_signer.h</file>
@@ -16429,7 +16433,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\wdrv_winc_httpprovctx.c</file>
-         <hash>1a430631c6ef6d3215bf1261a6f9ca881dae31d75bb5ad8f616931339494bbca</hash>
+         <hash>a04d0f3ff68d848908af8d31d58231d00e093b209ca4c12f3e6c31a6b8220017</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\peripheral\rtc\plib_rtc_timer.c</file>
@@ -16485,7 +16489,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\bsp\nm_bsp.h</file>
-         <hash>f556dbd45898c7951ed9ab337073b5d4f87f7a8957e3852d736df527466bcdc6</hash>
+         <hash>829ff13eadeaf24617628fc323f015716847cc78d1ad15c6aa2e560afa74bcc1</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\image\raw\legato_imagedecoder_raw.h</file>
@@ -16513,7 +16517,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\console\src\sys_console_uart_definitions.h</file>
-         <hash>0b8c26a32e6ab6cb50039434ed379044bfa539b4ed2ed4b65a281d943a8868d8</hash>
+         <hash>bf403c11673266a5a861fd99253c377030c1a7f9e912eef446101e416b4f8c9a</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\progressbar\legato_widget_progressbar_skin_classic.c</file>
@@ -16529,7 +16533,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\wdrv_winc_host_file.c</file>
-         <hash>be8bd384cb74a54ac41aba62160f27ea5110f07c878c25a8a82bbbca2cca51b3</hash>
+         <hash>bb0a8e15568df5a9aaf6494f6bec343e2368efb2a92aee79f0b978bef8ab9b41</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\packs\PIC32CM5164LS60100_DFP\instance\opamp.h</file>
@@ -16613,7 +16617,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\system_module.h</file>
-         <hash>981fac23277aa77f682e7a9a28d436f892006cd5b4c7f23f50941b6d9a30e740</hash>
+         <hash>96c74368801b0a7aaa25aec3ec2cb0d483250385f103ffc1ff64089b4ca2c6d9</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\button\legato_widget_button.h</file>
@@ -16625,7 +16629,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\wdrv_winc_ssl.c</file>
-         <hash>efa0ba1e5352582a9424b43a3c6c3b6d61fac3b07f35a4bc95eff4e64ce95883</hash>
+         <hash>880e6eeba9378e2f43e09936877c35d358ca61858e0ad594d7b4d248bfff97f2</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\common\legato_color_convert.c</file>
@@ -16633,7 +16637,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc.h</file>
-         <hash>f580ef83f5d4bacab065222f46a4c7ccd1799c61b685dd06ba4c703cbd319782</hash>
+         <hash>28d676e635654da70b19be36e2ef67689b1b43d7bde94a96c6b5903a126e66cc</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\packs\PIC32CM5164LS60100_DFP\instance\sercom4.h</file>
@@ -16673,7 +16677,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\driver\m2m_types.h</file>
-         <hash>318dc4db727fad4ed0b1b736f382207b636b9a35debf2c3c77adefdd6bce0bf5</hash>
+         <hash>0f6018bd0701dd6a61f20c00d825189cff1be54afe8b2e68277c2ddb41054c9f</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\packs\PIC32CM5164LS60100_DFP\component\osc32kctrl.h</file>
@@ -16697,11 +16701,11 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\spi\src\drv_spi_local.h</file>
-         <hash>f416bb5ff297e44b00f9e83f79070b03bac197d4b6710742ed82379d967a07fb</hash>
+         <hash>ad0de54fbffad399c5a1cf1b803300cb4e4cbf2d0e611387deec39c24ce74f4f</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\dev\spi\wdrv_winc_spi.c</file>
-         <hash>8ef6ddbeb1cfcd750c3fdf4a40a0ed0b93426401b7053c864eb90e98a804b1c0</hash>
+         <hash>cbd3ce1848529897eccaa0ae9a58deb70aed23ee70c8d130c865825c225de53d</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\atca_utils_sizes.c</file>
@@ -16709,7 +16713,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\wdrv_winc_powersave.c</file>
-         <hash>8a777fd07c2e3c84bbc5ea38fbb5be4334fb3d1a368b65317886c0daeaf53c14</hash>
+         <hash>4ddec3052ce114a3583c76586e7ef90deddc376e9ce182726c187339c1371d98</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\packs\PIC32CM5164LS60100_DFP\instance\i2s.h</file>
@@ -16777,7 +16781,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_bssctx.h</file>
-         <hash>8033a19c5bfb3248291eaa8c9e247134ddf1e4af01536305c0415ab356195346</hash>
+         <hash>80205273796b0b9ae2408bacac6de26dbe86d572ecfd9bd4620ed1d4a9782eb7</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\packs\PIC32CM5164LS60100_DFP\instance\sercom3.h</file>
@@ -16817,7 +16821,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\wdrv_winc_assoc.c</file>
-         <hash>7b5b0ef753c73eed7bdd87deb81d0c14a17fa3a0377b4e6be0d65df0cf05a6b6</hash>
+         <hash>c7e3bb261698a791d4bdc9f2728181a0dd5314da6cf8d693242d2fe27db3d6a0</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\image\raw\legato_imagedecoder_raw_convert.c</file>
@@ -16833,7 +16837,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\system_common.h</file>
-         <hash>0dbf2f60b29c97426e70187bc59c652ab5a355f51cfbe3f195ff1c8c6c0b1602</hash>
+         <hash>c9f34bd226f8efab12f5766e77f8355996cd0430b50e0f6ee30258664c494984</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\library\cryptoauthlib\atcacert\atcacert_pem.c</file>
@@ -16841,7 +16845,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\wdrv_winc_bssfind.c</file>
-         <hash>dc9d5072363b5262881adae6900111e8f0dff87dbcf9e2c1b499101309f776d2</hash>
+         <hash>4dfe1ce18d583e671443b442d2079b31d33fdd0f9c4b975ede8568bd64861418</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\string\legato_dynamicstring.c</file>
@@ -16849,7 +16853,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\osal\osal.h</file>
-         <hash>d42702188d00d3e1d7219d7eef030485896bf8b5ebe55318656e82f0fbb89788</hash>
+         <hash>8404fbe44807fa0484ffb38843a72cb9af8e31c9c30bd1b2594e609b8ea317d9</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\packs\PIC32CM5164LS60100_DFP\component\trng.h</file>
@@ -16861,7 +16865,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\time\src\sys_time.c</file>
-         <hash>7e6aafa9e0d95093b7a04bf8a4515309eba402fe6ebe22a5581a9b693616abfb</hash>
+         <hash>fa2d85ab967b80157caf8483f6e28a23b12b548844a1d80f2fef760cd9b99271</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\console\src\sys_console_uart.h</file>
@@ -16881,7 +16885,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\wdrv_winc_nvm.c</file>
-         <hash>3a70032ef299a9ce4edebd819178c53c0e79ceac88366a918a0ab0413789fb9e</hash>
+         <hash>4ab2a6ea56eb7d8e9777d2d5d961bcabbdd36fc4a3436776503680737d7ce995</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\image\raw\legato_imagedecoder_raw_palette_stream.c</file>
@@ -16905,7 +16909,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\wdrv_winc_softap.c</file>
-         <hash>b1e1b7f5d7a9abe62b709e6b1435c0dfcabca6f8f21e385bbf2ee4dbd1e90f8e</hash>
+         <hash>f786f300532a8b907ed26fccc666bdcaafc823e43ca864af3d0c1da5accb093f</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\linegraph\legato_widget_line_graph.h</file>
@@ -16925,11 +16929,11 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\driver\m2m_wifi.h</file>
-         <hash>476103cf1eaaafa3401b91f72dcccaa97ca61cd4abe74a8c2c63f418aaff6526</hash>
+         <hash>f8371242f4abb375194d412cddcb10572019d1cb019e46eb7f6478ec8e664218</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\console\src\sys_console_uart.c</file>
-         <hash>ac0304a177b5e152c80d648da5f5cd87f7d926814f093131b76142c41fde6473</hash>
+         <hash>ff3d1854f469e4fc41d96adce6f7ec38afad5d1b076c295eb4777936777673d0</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\textfield\legato_widget_textfield_skin_classic.c</file>
@@ -16945,7 +16949,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\drv\socket\socket.c</file>
-         <hash>d5706be0c3627e6b453f63de845c615be924e64f8b6608a19fac29d26a1153f5</hash>
+         <hash>5866a2980d57d8f71cdc21ff22af374aca3169efafec16830da78c921d77f44a</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\circulargauge\legato_widget_circular_gauge.c</file>
@@ -16969,7 +16973,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\wdrv_winc_assoc.h</file>
-         <hash>0dfa352e4fdce8325360352f70320f5e68cfd4318cec4009cdbda31dee2bbb80</hash>
+         <hash>77345b69f42b42e3df18e4559df59ecdbeee1851de1925c01f3ae527e5ae5fa2</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\circulargauge\legato_widget_circular_gauge.h</file>
@@ -16985,7 +16989,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\drv\socket\inet_addr.c</file>
-         <hash>b4642de539c486530be79d848007596bb8496fcc2ff89a2db4f61dea88ddf9f1</hash>
+         <hash>209021acba3e624d93d61a965cf29501666096426be5180d379d041d21422989</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\system.h</file>
@@ -17005,11 +17009,11 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\time\sys_time.h</file>
-         <hash>f21b100d8f0b8b79af9217315098d51df855d9015f05a7e25ad77414cd19b2c3</hash>
+         <hash>6357468f7670698b16bfb6439d9919ed38eba99d4f03277a8b43ac34586fa1b3</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\include\drv\driver\nmasic.h</file>
-         <hash>8a8cc93180c55098d699c1aa95286d9e3b982b6b1a8143ab14a8aa47ff04c1f5</hash>
+         <hash>21fd1e1f1ab6aa9c8bce6b2dfec0ae3670f53e0284ad7f28f31eed669ab4dcf6</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\packs\CMSIS\CMSIS\Core\Include\core_cm23.h</file>
@@ -17057,15 +17061,15 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\time\sys_time_definitions.h</file>
-         <hash>8a02a9fe9638f0afd2e1b4c65f4d4265cd34d8814defa74f9af6d75f52cd317d</hash>
+         <hash>b8c332f36f8a6ed230dc25b1f9f7f2970699947567f80cb06534d405b7a0dd9d</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\dma\sys_dma.c</file>
-         <hash>857103c3cdd998ea45f31516f435a01901a28afe894c8cce719240297d6c7546</hash>
+         <hash>b898eb7b174f17cd7dcaff8afef4fa2b878dcbc3b4db44b23810c78af55ffd6b</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\initialization.c</file>
-         <hash>5f46d5639da34583b2d34d29a8f4caf44570b1092917979f272fdfd14c43b5fa</hash>
+         <hash>00e60ff59a29b0a7bd28330180c50006bca8e5756fc2da4a81fad1a08b906fc8</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\packs\CMSIS\CMSIS\Core\Include\cmsis_armclang_ltm.h</file>
@@ -17077,7 +17081,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\system\dma\sys_dma.h</file>
-         <hash>81899d4fd8407677e39de171b4d412b7e68ce1da2dc7e2ca63900f41014b900d</hash>
+         <hash>153b47b6dfb1ceaf33660ee253a4b3142f1064dff4f9030ac14afef59db33423</hash>
       </entry>
       <entry>
          <file>..\..\..\Secure\firmware\src\packs\PIC32CM5164LS60100_DFP\component\gclk.h</file>
@@ -17085,7 +17089,7 @@
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\driver\winc\drv\socket\inet_ntop.c</file>
-         <hash>bb8fc388923733bb10643e4526837393803fe500576ea89123c47da605489668</hash>
+         <hash>a7dce391923bcfc6f2233ad9b4ce42a44d5c6df0036c3f026cb0db73ea48acd8</hash>
       </entry>
       <entry>
          <file>..\..\..\NonSecure\firmware\src\config\pic32cm_ls60\gfx\legato\widget\checkbox\legato_widget_checkbox.h</file>
