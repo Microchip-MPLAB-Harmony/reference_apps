@@ -14,7 +14,6 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 | --- | --- | -- |
 | 1 | [Getting Started](./pic32cmmc_getting_started/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cmmc_getting_started.zip) |
 | 2 | [Smart Appliance Control](./pic32cmmc_smart_appliance_control/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cmmc_smart_appliance_control.zip) |
-| 3 | [Smart Tag Google Clound IoT Core Application](./pic32cmmc_smart_tag_google_cloud_iot_core/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cmmc_smart_tag_google_cloud_iot_core.zip) |
 
 ### More Application Demos
 
