@@ -28,7 +28,6 @@ The following reference applications are provided to evaluate solutions on 32-bi
 |  <img src = "./pic32mk_mcm_curiosity_pro/image.jpg"> | [PIC32MK MCM Curiosity Pro Development Board](./pic32mk_mcm_curiosity_pro/readme.md) |
 |  <img src = "./pic32cm_mc00_curiosity_pro/image.jpg">  | [PIC32CM MC00 Curiosity Pro Development Board](./pic32cm_mc00_curiosity_pro/readme.md) |
 |  <img src = "./pic32cm_mc00_cnano/image.jpg">  | [PIC32CM MC00 Curiosity Nano Evaluation Kit](./pic32cm_mc00_cnano/readme.md) |
-|  <img src = "./sam_d21_iot/image.jpg">  | [SAM D21 IoT Development Board](./sam_d21_iot/readme.md) |
 |  <img src = "./sam_e51_cnano/image.jpg">  | [SAM E51 Curiosity Nano Evaluation Kit](./sam_e51_cnano/readme.md) |
 |  <img src = "./pic32mz_da_curiosity/image.jpg">  | [PIC32MZ DA Curiosity Development Kit](./pic32mz_da_curiosity/readme.md) |
 |  <img src = "./sam_d21_cnano/image.jpg">  | [SAM D21 Curiosity Nano Evaluation Kit](./sam_d21_cnano/readme.md) |
