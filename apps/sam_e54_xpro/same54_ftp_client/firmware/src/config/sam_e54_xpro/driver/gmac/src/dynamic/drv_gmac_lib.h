@@ -19,30 +19,28 @@
     thus hiding differences from one microcontroller variant to another.
 *******************************************************************************/
 //DOM-IGNORE-BEGIN
-/*****************************************************************************
- Copyright (C) 2017-2018 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2017-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 //DOM-IGNORE-END
 
@@ -57,279 +55,17 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 #include "system/sys_time_h2_adapter.h"
 #include "tcpip/tcpip_ethernet.h"
 #include "driver/gmac/src/dynamic/_gmac_dcpt_lists.h"
+#if defined (DRV_ETH)
+    #if defined (DRV_PIC32CZ)
+        #include "driver/gmac/src/dynamic/drv_gmac_lib_pic32cz.h"
+    #elif defined (DRV_PIC32CK)
+        #include "driver/gmac/src/dynamic/drv_gmac_lib_pic32ck.h"
+    #endif
+#else
+	#include "driver/gmac/src/dynamic/drv_gmac_lib_sam.h"
+#endif
 #include "driver/gmac/src/drv_gmac_local.h"
 #include "device.h"
-/******************************************************************************/
-
-// *****************************************************************************
-// *****************************************************************************
-// Section: Constants & Data Types
-// *****************************************************************************
-// *****************************************************************************
-// *****************************************************************************
-/* Ethernet Descriptor Types
-
-  Summary:
-    Enumeration defining the Ethernet descriptor types.
-
-  Description:
-    This enumeration defines the Ethernet descriptor types.
-
-  Remarks:
-    Most descriptor operations support just one type, but multiple flags can be
-    set.
-*/
-
-typedef enum
-{
-    // TX descriptor
-    DRV_GMAC_DCPT_TYPE_RX    /*DOM-IGNORE-BEGIN*/ = 0x1 /*DOM-IGNORE-END*/,
-
-    // RX descriptor
-    DRV_GMAC_DCPT_TYPE_TX    /*DOM-IGNORE-BEGIN*/ = 0x2 /*DOM-IGNORE-END*/,
-
-    // All (both) types.  Some descriptor operations support multiple types.
-    DRV_GMAC_DCPT_TYPE_ALL   /*DOM-IGNORE-BEGIN*/ = (DRV_GMAC_DCPT_TYPE_RX|DRV_GMAC_DCPT_TYPE_TX) /*DOM-IGNORE-END*/
-
-} DRV_GMAC_DCPT_TYPE;      // descriptor types
-/*------------------------------------------------------------------------------
-                            Definitions
-------------------------------------------------------------------------------
-*/
-/// The buffer addresses written into the descriptors must be aligned so the
-/// last few bits are zero.  These bits have special meaning for the GMAC
-/// peripheral and cannot be used as part of the address.
-#define GMAC_RX_ADDRESS_MASK   ((unsigned int)0xFFFFFFFC)
-#define GMAC_LENGTH_FRAME   ((unsigned int)0x3FFF)    /// Length of frame mask
-
-// receive buffer descriptor bits
-#define GMAC_RX_OWNERSHIP_BIT   (1u <<  0)
-#define GMAC_RX_WRAP_BIT        (1u <<  1)
-#define GMAC_RX_SOF_BIT         (1u << 14)
-#define GMAC_RX_EOF_BIT         (1u << 15)
-
-// Transmit buffer descriptor bits
-#define GMAC_TX_LAST_BUFFER_BIT (1u << 15)
-#define GMAC_TX_WRAP_BIT        (1u << 30)
-#define GMAC_TX_USED_BIT        (1u << 31)
-#define GMAC_TX_RLE_BIT         (1u << 29) /// Retry Limit Exceeded
-#define GMAC_TX_LCOL_BIT        (1u << 28) /// Tx error due to late collision
-#define GMAC_TX_AHB_ERR_BIT     (1u << 27) /// Frame corruption due to AHB Error
-#define GMAC_TX_ERR_BITS        (GMAC_TX_RLE_BIT | GMAC_TX_LCOL_BIT | GMAC_TX_AHB_ERR_BIT)
-
-// Interrupt bits
-// All interrupts
-#define GMAC_INT_ALL 0xFFFFFFFF
-// RX Interrupts
-#define GMAC_INT_RX_BITS  \
-	(GMAC_IER_RCOMP_Msk  | GMAC_IER_RXUBR_Msk  | GMAC_IER_ROVR_Msk )
-// TX err interrupts
-#define GMAC_INT_TX_ERR_BITS  \
-	(GMAC_IER_TUR_Msk  | GMAC_IER_RLEX_Msk  | GMAC_IER_TFC_Msk  | GMAC_IER_HRESP_Msk)
-// TX interrupts
-#define GMAC_INT_TX_BITS  (GMAC_INT_TX_ERR_BITS)
-// Interrupt Status bits
-#define GMAC_INT_RX_STATUS_BITS  \
-	(GMAC_ISR_RCOMP_Msk  | GMAC_ISR_RXUBR_Msk  | GMAC_ISR_ROVR_Msk )
-#define GMAC_INT_TX_STATUS_ERR_BITS  \
-	(GMAC_ISR_TUR_Msk  | GMAC_ISR_RLEX_Msk  | GMAC_ISR_TFC_Msk  | GMAC_ISR_HRESP_Msk )
-
-#define DRV_GMAC_DUMMY_PRIORITY (0xFF)
-#define DRV_GMAC_NO_ACTIVE_QUEUE (0xFF)
-// *****************************************************************************
-/* Ethernet Receive Filter Flags
-
-  Summary:
-    Defines the receive filter flags
-
-  Description:
-    This enumeration defines the receive filter flags.
-
-  Remarks:
-    Multiple values can be OR-ed together.
-
-    The values in this enumeration are displayed in the order of priority
-    that the receive filter state machine works, with the highest priority first.
-    Once a filter accepts or rejects a packet, further filters are not tried.
-    If a packet isn't rejected/accepted after all filters are tried, it will be rejected by
-    default!
-*/
-typedef enum{
-	// Frames with wrong Preamble are accepted
-	GMAC_FILT_PREAMBLE_ERR_ACCEPT
-	/*DOM-IGNORE-BEGIN*/ = GMAC_NCFGR_RXBP_Msk /*DOM-IGNORE-END*/,
-
-	// Frames with wrong CRC are accepted
-	GMAC_FILT_CRC_ERR_ACCEPT
-	/*DOM-IGNORE-BEGIN*/ = GMAC_NCFGR_IRXFCS_Msk /*DOM-IGNORE-END*/,
-
-	// Frames with Maximum frame size accepted
-	GMAC_FILT_MAXFRAME_ACCEPT
-	/*DOM-IGNORE-BEGIN*/ = GMAC_NCFGR_MAXFS_Msk /*DOM-IGNORE-END*/,
-
-	// Frames with Unicast Hash match accepted
-	GMAC_FILT_UCASTHASH_ACCEPT
-	/*DOM-IGNORE-BEGIN*/ = GMAC_NCFGR_UNIHEN_Msk /*DOM-IGNORE-END*/,
-	
-	// Frames with Multicast Hash match accepted
-	GMAC_FILT_MCASTHASH_ACCEPT
-	/*DOM-IGNORE-BEGIN*/ = GMAC_NCFGR_MTIHEN_Msk /*DOM-IGNORE-END*/,
-	
-	// All Broadcast rejected
-	GMAC_FILT_BCAST_REJECT
-	/*DOM-IGNORE-BEGIN*/ = GMAC_NCFGR_NBC_Msk /*DOM-IGNORE-END*/,
-	
-	// All valid frames accepted
-	GMAC_FILT_ALLFRAME_ACCEPT
-	/*DOM-IGNORE-BEGIN*/ = GMAC_NCFGR_CAF_Msk /*DOM-IGNORE-END*/,
-	
-	// Jumbo frames accepted
-	GMAC_FILT_JUMBOFRAME_ACCEPT
-	/*DOM-IGNORE-BEGIN*/ = GMAC_NCFGR_JFRAME_Msk /*DOM-IGNORE-END*/,	
-	
-	GMAC_FILT_ALL_FILTERS
-	/*DOM-IGNORE-BEGIN*/    =	GMAC_FILT_PREAMBLE_ERR_ACCEPT	|	GMAC_FILT_CRC_ERR_ACCEPT	|
-								GMAC_FILT_MAXFRAME_ACCEPT		|	GMAC_FILT_UCASTHASH_ACCEPT	|
-								GMAC_FILT_MCASTHASH_ACCEPT		|	GMAC_FILT_BCAST_REJECT		|
-								GMAC_FILT_ALLFRAME_ACCEPT		|	GMAC_FILT_ALLFRAME_ACCEPT	|
-								GMAC_FILT_JUMBOFRAME_ACCEPT	/*DOM-IGNORE-END*/
-} GMAC_RX_FILTERS;
-
-/**************************************************************************
-  Summary:
-    Defines the possible results of Ethernet operations that can succeed or
-    fail
-  Description:
-    Ethernet Operation Result Codes
-    
-    This enumeration defines the possible results of any of the Ethernet
-    library operations that have the possibility of failing. This result
-    should be checked to ensure that the operation achieved the desired
-    result.                                                                
-**************************************************************************/
-
-typedef enum
-{
-    /* Everything ok */
-    DRV_PIC32CGMAC_RES_OK       /*DOM-IGNORE-BEGIN*/ =  0 /*DOM-IGNORE-END*/,
-
-    /* Ethernet RX, TX, acknowledge packet codes */
-    /* No such packet exist */
-    DRV_PIC32CGMAC_RES_NO_PACKET,
-
-    /* Packet is queued (not transmitted or received and not processed) */
-    DRV_PIC32CGMAC_RES_PACKET_QUEUED,
-
-    /* Not enough descriptors available */
-    DRV_PIC32CGMAC_RES_NO_DESCRIPTORS,
-            
-    /* Not enough nodes in Tx Queues */
-    DRV_PIC32CGMAC_RES_NO_TX_QUEUE,   
-            
-    /* Not enough nodes in Rx Queues */
-    DRV_PIC32CGMAC_RES_NO_RX_QUEUE,            
-             
-    /* Errors: Ethernet buffers, descriptors */
-	DRV_PIC32CGMAC_RES_DESC_CNT_ERR,
-            
-    /* Some memory allocation failed */
-    DRV_PIC32CGMAC_RES_OUT_OF_MEMORY        /*DOM-IGNORE-BEGIN*/ =  -1 /*DOM-IGNORE-END*/,
-
-    /* We don't support user space buffers. */
-    DRV_PIC32CGMAC_RES_USPACE_ERR           /*DOM-IGNORE-BEGIN*/ =  -2 /*DOM-IGNORE-END*/,
-
-    /* The size of the receive buffers too small */
-    DRV_PIC32CGMAC_RES_RX_SIZE_ERR          /*DOM-IGNORE-BEGIN*/ =  -3 /*DOM-IGNORE-END*/,
-
-    /* A received packet spans more buffers/descriptors than supplied */
-    DRV_PIC32CGMAC_RES_RX_PKT_SPLIT_ERR     /*DOM-IGNORE-BEGIN*/ =  -4 /*DOM-IGNORE-END*/,
-	
-	DRV_PIC32CGMAC_RES_EMPTY_BUFFER			/*DOM-IGNORE-BEGIN*/  =  -5 /*DOM-IGNORE-END*/,
-            
-    /* Descriptor Queue Error*/        
-    DRV_PIC32CGMAC_RES_QUEUE_ERR			/*DOM-IGNORE-BEGIN*/  =  -6 /*DOM-IGNORE-END*/,
-            
-    /* Transmission Errors*/        
-    DRV_PIC32CGMAC_RES_TX_ERR			    /*DOM-IGNORE-BEGIN*/  =  -7 /*DOM-IGNORE-END*/,
-
-} DRV_PIC32CGMAC_RESULT; 
-
-
-/**************************************************************************
-  Summary:
-    Defines the different states of RX receive state machine
-  Description:
-    GMAC RX engine copies frame packet to single/multiple RX buffers and update the 
-    status in associated RX descriptors. The RX state machine reads the different
-    RX descriptors to detect a valid RX packet
-**************************************************************************/
-typedef enum  
-{
-	GMAC_RX_NO_FRAME_STATE,
-	GMAC_RX_SOF_DETECTED_STATE,
-	GMAC_RX_VALID_FRAME_DETECTED_STATE
-} GMAC_RXFRAME_STATE;
-
-/**************************************************************************
-  Summary:
-    Defines the different TX Frame Ack Status
-  Description:
-    GMAC Tx packets after transmission should be removed from Tx Descriptors.
-    Following are the states used for searching Tx buffers already transmitted
-**************************************************************************/
-typedef enum  
-{
-	GMAC_TX_NO_FRAME_DETECTED,
-	GMAC_TX_FIRST_BUFFER_DETECTED,
-	GMAC_TX_LAST_BUFFER_DETECTED,
-    GMAC_TX_ERROR_DETECTED,        
-} GMAC_TXBUFFER_STATE;
-
-/**************************************************************************
-  Summary:
-     GMAC Rx descriptor data packet attributes
-  Description:
-	 These attributes used during the search for valid Rx packet,on GMAC Rx Interrupt.
-**************************************************************************/
-typedef struct
-{
-	uint16_t startIndex;
-	uint16_t endIndex;
-	uint16_t buffer_count;	
-} DRV_PIC32CGMAC_RX_FRAME_INFO; 
-
-/**************************************************************************
-  Summary:
-     GMAC TX descriptor Data packet Attributes
-  Description:
-    These attributes used during the search for transmitted Tx packets
-**************************************************************************/
-typedef struct
-{
-	uint16_t startIndex;
-	uint16_t endIndex;
-	uint16_t buffer_count;	
-} DRV_GMAC_TX_FRAME_INFO; 
-
-// *****************************************************************************
-/* Ethernet Close Flags
-
-  Summary:
-    Defines the possible disable codes of Ethernet controller "DRV_PIC32CGMAC_LibClose" call.
-
-  Description:
-    This enumeration defines the close capabilities of the Ethernet module.
-*/
-
-typedef enum
-{
-    /* Wait for the current TX/RX operation to finish */
-    DRV_PIC32CGMAC_CLOSE_GRACEFUL  /*DOM-IGNORE-BEGIN*/ = 0x1 /*DOM-IGNORE-END*/,
-
-    // Default close options
-    DRV_PIC32CGMAC_CLOSE_DEFAULT /*DOM-IGNORE-BEGIN*/ = 0 /*DOM-IGNORE-END*/,
-
-} DRV_PIC32CGMAC_CLOSE_FLAGS; 
 
 // *****************************************************************************
 // *****************************************************************************
@@ -554,30 +290,6 @@ void DRV_PIC32CGMAC_LibTransferEnable (DRV_GMAC_DRIVER* pMACDrv);
 
 /*******************************************************************************
   Function:
-      void DRV_PIC32CGMAC_LibSetInterruptSrc (DRV_GMAC_DRIVER* pMACDrv)
-
-  Summary:
-    Update GMAC Queue structure with interrupt source
-  Description:
-
-  Precondition:
-    None
-  Parameters:
-    pMACDrv -  GMAC device driver structure.
-  Returns:
-    None
-
-  Remarks:
-    None
-
-    Replaces:
-
-    <b><c>void EthInit(void)</c></b>
-  ************************************************************************/
-void DRV_PIC32CGMAC_LibSetInterruptSrc(DRV_GMAC_DRIVER* pMACDrv);
-
-/*******************************************************************************
-  Function:
       bool DRV_PIC32CGMAC_LibSetPriorityToQueueNum(DRV_GMAC_DRIVER* pMACDrv)
 
   Summary:
@@ -628,7 +340,7 @@ uint8_t DRV_PIC32CGMAC_LibGetPriorityFromQueueNum(DRV_GMAC_DRIVER* pMACDrv, GMAC
 
 /*******************************************************************************
   Function:
-      uint8_t DRV_PIC32CGMAC_LibGetHighPrioReadyQue(void)
+      uint8_t DRV_PIC32CGMAC_LibGetHighPrioReadyQue(DRV_GMAC_DRIVER* pMACDrv)
 
   Summary:
     Return the highest priority queue ready
@@ -637,7 +349,7 @@ uint8_t DRV_PIC32CGMAC_LibGetPriorityFromQueueNum(DRV_GMAC_DRIVER* pMACDrv, GMAC
   Precondition:
     None
   Parameters:
-    None
+    pMACDrv -  GMAC device driver structure.
   Returns:
     priority Queue index
 
@@ -648,7 +360,7 @@ uint8_t DRV_PIC32CGMAC_LibGetPriorityFromQueueNum(DRV_GMAC_DRIVER* pMACDrv, GMAC
 
     <b><c>void EthInit(void)</c></b>
   ************************************************************************/
-uint8_t DRV_PIC32CGMAC_LibGetHighPrioReadyQue(void);
+uint8_t DRV_PIC32CGMAC_LibGetHighPrioReadyQue(DRV_GMAC_DRIVER* pMACDrv);
 
 /*******************************************************************************
   Function:
@@ -779,7 +491,7 @@ void DRV_PIC32CGMAC_LibSysInt_Restore(DRV_GMAC_DRIVER *pMACDrv, uint32_t queMask
 
 /*******************************************************************************
   Function:
-      uint32_t DRV_PIC32CGMAC_LibReadInterruptStatus(GMAC_QUE_LIST queueIdx)
+      uint32_t DRV_PIC32CGMAC_LibReadInterruptStatus(DRV_GMAC_DRIVER *pMACDrv, GMAC_QUE_LIST queueIdx)
 
   Summary:
     Read GMAC interrupt status
@@ -788,6 +500,7 @@ void DRV_PIC32CGMAC_LibSysInt_Restore(DRV_GMAC_DRIVER *pMACDrv, uint32_t queMask
   Precondition:
     None
   Parameters:
+    pMACDrv -  GMAC device driver structure.
     queueIdx - queue index
   Returns:
     GMAC interrupt status
@@ -799,11 +512,11 @@ void DRV_PIC32CGMAC_LibSysInt_Restore(DRV_GMAC_DRIVER *pMACDrv, uint32_t queMask
 
     <b><c>void EthInit(void)</c></b>
   ************************************************************************/
-uint32_t DRV_PIC32CGMAC_LibReadInterruptStatus(GMAC_QUE_LIST queueIdx);
+uint32_t DRV_PIC32CGMAC_LibReadInterruptStatus(DRV_GMAC_DRIVER *pMACDrv, GMAC_QUE_LIST queueIdx);
 
 /*******************************************************************************
   Function:
-      void DRV_PIC32CGMAC_LibEnableInterrupt(GMAC_QUE_LIST queueIdx, GMAC_EVENTS ethEvents)
+      void DRV_PIC32CGMAC_LibEnableInterrupt(DRV_GMAC_DRIVER *pMACDrv, GMAC_QUE_LIST queueIdx, GMAC_EVENTS ethEvents)
 
   Summary:
     Enable GMAC interrupt events
@@ -812,6 +525,7 @@ uint32_t DRV_PIC32CGMAC_LibReadInterruptStatus(GMAC_QUE_LIST queueIdx);
   Precondition:
     None
   Parameters:
+    pMACDrv -  GMAC device driver structure.
     queueIdx - queue index
     ethEvents - interrupt events
   Returns:
@@ -824,11 +538,11 @@ uint32_t DRV_PIC32CGMAC_LibReadInterruptStatus(GMAC_QUE_LIST queueIdx);
 
     <b><c>void EthInit(void)</c></b>
   ************************************************************************/
-void DRV_PIC32CGMAC_LibEnableInterrupt(GMAC_QUE_LIST queueIdx, GMAC_EVENTS ethEvents);
+void DRV_PIC32CGMAC_LibEnableInterrupt(DRV_GMAC_DRIVER *pMACDrv, GMAC_QUE_LIST queueIdx, GMAC_EVENTS ethEvents);
 
 /*******************************************************************************
   Function:
-      void DRV_PIC32CGMAC_LibDisableInterrupt(GMAC_QUE_LIST queueIdx, GMAC_EVENTS ethEvents)
+      void DRV_PIC32CGMAC_LibDisableInterrupt(DRV_GMAC_DRIVER *pMACDrv, GMAC_QUE_LIST queueIdx, GMAC_EVENTS ethEvents)
 
   Summary:
     Disable GMAC interrupt events
@@ -837,6 +551,7 @@ void DRV_PIC32CGMAC_LibEnableInterrupt(GMAC_QUE_LIST queueIdx, GMAC_EVENTS ethEv
   Precondition:
     None
   Parameters:
+    pMACDrv -  GMAC device driver structure.
     queueIdx - queue index
     ethEvents - interrupt events
   Returns:
@@ -849,7 +564,7 @@ void DRV_PIC32CGMAC_LibEnableInterrupt(GMAC_QUE_LIST queueIdx, GMAC_EVENTS ethEv
 
     <b><c>void EthInit(void)</c></b>
   ************************************************************************/
-void DRV_PIC32CGMAC_LibDisableInterrupt(GMAC_QUE_LIST queueIdx, GMAC_EVENTS ethEvents);
+void DRV_PIC32CGMAC_LibDisableInterrupt(DRV_GMAC_DRIVER *pMACDrv, GMAC_QUE_LIST queueIdx, GMAC_EVENTS ethEvents);
 
 /*******************************************************************************
   Function:
@@ -1338,7 +1053,7 @@ DRV_PIC32CGMAC_RESULT DRV_PIC32CGMAC_LibRxGetPacket (DRV_GMAC_DRIVER * pMACDrv, 
 
 /*******************************************************************************
   Function:
-      DRV_PIC32CGMAC_RESULT DRV_PIC32CGMAC_LibSetMacAddr (const uint8_t * pMacAddr)
+      DRV_PIC32CGMAC_RESULT DRV_PIC32CGMAC_LibSetMacAddr (DRV_GMAC_DRIVER* pMACDrv, const uint8_t * pMacAddr)
 
   Summary:
     Set MAC address for Ethernet controller
@@ -1349,17 +1064,18 @@ DRV_PIC32CGMAC_RESULT DRV_PIC32CGMAC_LibRxGetPacket (DRV_GMAC_DRIVER * pMACDrv, 
     None.
 
   Parameters:
+    pMACDrv  - driver instance.
     pMacAddr -  address of MAC Address array.
 
   Returns:
     DRV_PIC32CGMAC_RESULT
 
   ************************************************************************/
-DRV_PIC32CGMAC_RESULT DRV_PIC32CGMAC_LibSetMacAddr (const uint8_t * pMacAddr);
+DRV_PIC32CGMAC_RESULT DRV_PIC32CGMAC_LibSetMacAddr (DRV_GMAC_DRIVER* pMACDrv, const uint8_t * pMacAddr);
 
 /*******************************************************************************
   Function:
-      DRV_PIC32CGMAC_RESULT DRV_PIC32CGMAC_LibGetMacAddr (uint8_t * pMacAddr)
+      DRV_PIC32CGMAC_RESULT DRV_PIC32CGMAC_LibGetMacAddr (DRV_GMAC_DRIVER* pMACDrv, uint8_t * pMacAddr)
 
   Summary:
     Get MAC address for Ethernet controller
@@ -1370,13 +1086,14 @@ DRV_PIC32CGMAC_RESULT DRV_PIC32CGMAC_LibSetMacAddr (const uint8_t * pMacAddr);
     None.
 
   Parameters:
+    pMACDrv  - driver instance.
     pMacAddr -  address of MAC Address array.
 
   Returns:
     DRV_PIC32CGMAC_RESULT
 
   ************************************************************************/
-DRV_PIC32CGMAC_RESULT DRV_PIC32CGMAC_LibGetMacAddr (uint8_t * pMacAddr);
+DRV_PIC32CGMAC_RESULT DRV_PIC32CGMAC_LibGetMacAddr (DRV_GMAC_DRIVER* pMACDrv, uint8_t * pMacAddr);
 
 /*******************************************************************************
   Function:
@@ -1402,231 +1119,141 @@ DRV_PIC32CGMAC_RESULT DRV_PIC32CGMAC_LibGetMacAddr (uint8_t * pMacAddr);
   ************************************************************************/
 DRV_PIC32CGMAC_RESULT DRV_PIC32CGMAC_LibRxBuffersCountGet(DRV_GMAC_DRIVER* pMACDrv, int* pendBuffs, int* schedBuffs);
 
-// *****************************************************************************
-// *****************************************************************************
-// Section: Mutex Locks
-// *****************************************************************************
-// *****************************************************************************
-// RX lock functions
-#if defined(DRV_GMAC_USE_RX_SEMAPHORE_LOCK)
-static __inline__ bool __attribute__((always_inline)) _DRV_GMAC_RxCreate(DRV_GMAC_DRIVER * pMACDrv)
-{
-	return (pMACDrv->sGmacData._synchF == 0) ? true : (*pMACDrv->sGmacData._synchF)(&pMACDrv->sGmacData._syncRxH, TCPIP_MAC_SYNCH_REQUEST_OBJ_CREATE);
-}
-
-static __inline__ void __attribute__((always_inline)) _DRV_GMAC_RxDelete(DRV_GMAC_DRIVER * pMACDrv)
-{
-	if(pMACDrv->sGmacData._synchF != 0)
-	{
-		(*pMACDrv->sGmacData._synchF)(&pMACDrv->sGmacData._syncRxH, TCPIP_MAC_SYNCH_REQUEST_OBJ_DELETE);
-	}
-}
-
-static __inline__ void __attribute__((always_inline)) _DRV_GMAC_RxLock(DRV_GMAC_DRIVER * pMACDrv)
-{
-	if(pMACDrv->sGmacData._synchF != 0)
-	{
-		(*pMACDrv->sGmacData._synchF)(&pMACDrv->sGmacData._syncRxH, TCPIP_MAC_SYNCH_REQUEST_OBJ_LOCK);
-	}
-}
-
-static __inline__ void __attribute__((always_inline)) _DRV_GMAC_RxUnlock(DRV_GMAC_DRIVER * pMACDrv)
-{
-	if(pMACDrv->sGmacData._synchF != 0)
-	{
-		(*pMACDrv->sGmacData._synchF)(&pMACDrv->sGmacData._syncRxH, TCPIP_MAC_SYNCH_REQUEST_OBJ_UNLOCK);
-	}
-}
-
-#else
-// use critical sections
-static __inline__ bool __attribute__((always_inline)) _DRV_GMAC_RxCreate(DRV_GMAC_DRIVER * pMACDrv)
-{
-	return true;
-}
-
-static __inline__ void __attribute__((always_inline)) _DRV_GMAC_RxDelete(DRV_GMAC_DRIVER * pMACDrv)
-{
-}
-
-static __inline__ void __attribute__((always_inline)) _DRV_GMAC_RxLock(DRV_GMAC_DRIVER * pMACDrv)
-{
-	if(pMACDrv->sGmacData._synchF != 0)
-	{
-		(*pMACDrv->sGmacData._synchF)(&pMACDrv->sGmacData._syncRxH, TCPIP_MAC_SYNCH_REQUEST_CRIT_ENTER);
-	}
-}
-
-static __inline__ void __attribute__((always_inline)) _DRV_GMAC_RxUnlock(DRV_GMAC_DRIVER * pMACDrv)
-{
-	if(pMACDrv->sGmacData._synchF != 0)
-	{
-		(*pMACDrv->sGmacData._synchF)(&pMACDrv->sGmacData._syncRxH, TCPIP_MAC_SYNCH_REQUEST_CRIT_LEAVE);
-	}
-}
-#endif  // defined(DRV_GMAC_USE_RX_SEMAPHORE_LOCK)
-
-
-// TX lock functions
-#if defined(DRV_GMAC_USE_TX_SEMAPHORE_LOCK)
-static __inline__ bool __attribute__((always_inline)) _DRV_GMAC_TxCreate(DRV_GMAC_DRIVER * pMACDrv)
-{
-	return (pMACDrv->sGmacData._synchF == 0) ? true : (*pMACDrv->sGmacData._synchF)(&pMACDrv->sGmacData._syncTxH, TCPIP_MAC_SYNCH_REQUEST_OBJ_CREATE);
-}
-
-static __inline__ void __attribute__((always_inline)) _DRV_GMAC_TxDelete(DRV_GMAC_DRIVER * pMACDrv)
-{
-
-	if(pMACDrv->sGmacData._synchF != 0)
-	{
-		(*pMACDrv->sGmacData._synchF)(&pMACDrv->sGmacData._syncTxH, TCPIP_MAC_SYNCH_REQUEST_OBJ_DELETE);
-	}
-}
-
-static __inline__ void __attribute__((always_inline)) _DRV_GMAC_TxLock(DRV_GMAC_DRIVER * pMACDrv)
-{
-	if(pMACDrv->sGmacData._synchF != 0)
-	{
-		(*pMACDrv->sGmacData._synchF)(&pMACDrv->sGmacData._syncTxH, TCPIP_MAC_SYNCH_REQUEST_OBJ_LOCK);
-	}
-}
-
-static __inline__ void __attribute__((always_inline)) _DRV_GMAC_TxUnlock(DRV_GMAC_DRIVER * pMACDrv)
-{
-
-	if(pMACDrv->sGmacData._synchF != 0)
-	{
-		(*pMACDrv->sGmacData._synchF)(&pMACDrv->sGmacData._syncTxH, TCPIP_MAC_SYNCH_REQUEST_OBJ_UNLOCK);
-	}
-}
-#else
-// use critical sections
-static __inline__ bool __attribute__((always_inline)) _DRV_GMAC_TxCreate(DRV_GMAC_DRIVER * pMACDrv)
-{
-	return true;
-}
-
-static __inline__ void __attribute__((always_inline)) _DRV_GMAC_TxDelete(DRV_GMAC_DRIVER * pMACDrv)
-{
-}
-
-static __inline__ void __attribute__((always_inline)) _DRV_GMAC_TxLock(DRV_GMAC_DRIVER * pMACDrv)
-{
-	if(pMACDrv->sGmacData._synchF != 0)
-	{
-		(*pMACDrv->sGmacData._synchF)(&pMACDrv->sGmacData._syncTxH, TCPIP_MAC_SYNCH_REQUEST_CRIT_ENTER);
-	}
-}
-
-static __inline__ void __attribute__((always_inline)) _DRV_GMAC_TxUnlock(DRV_GMAC_DRIVER * pMACDrv)
-{
-	if(pMACDrv->sGmacData._synchF != 0)
-	{
-		(*pMACDrv->sGmacData._synchF)(&pMACDrv->sGmacData._syncTxH, TCPIP_MAC_SYNCH_REQUEST_CRIT_LEAVE);
-	}
-}
-#endif  // defined(DRV_GMAC_USE_TX_SEMAPHORE_LOCK)
-
+/****************************************************************************
+  Function: 
+    void DRV_PIC32CGMAC_LibSetRxFilter(DRV_GMAC_DRIVER* pMACDrv, GMAC_RX_FILTERS  gmacRxFilt)
+ 
+  Summary: 
+    Set GMAC Rx Filters
+ 
+  Precondition: 
+    None
+ 
+  Parameters: 
+    pMACDrv    - driver instance.
+    gmacRxFilt - RX Filter for GMAC
+ 
+  Returns:
+    None
+ *****************************************************************************/
+void DRV_PIC32CGMAC_LibSetRxFilter(DRV_GMAC_DRIVER* pMACDrv, GMAC_RX_FILTERS  gmacRxFilt);
 
 /****************************************************************************
- * Function:        _DRV_GMAC_HashValueSet
- * Summary: Set Hash Value in GMAC register
+  Function: 
+    void DRV_PIC32CGMAC_LibClearTxComplete(DRV_GMAC_DRIVER* pMACDrv)
+ 
+  Summary: 
+    Clear GMAC Tx Complete status
+ 
+  Precondition: 
+    None
+ 
+  Parameters: 
+    pMACDrv    - driver instance. 
+     
+  Returns:
+    None
  *****************************************************************************/
-static __inline__ void __attribute__((always_inline)) _DRV_GMAC_HashValueSet(uint64_t hash_value)
-{
-    GMAC_REGS->GMAC_HRB = hash_value & 0xffffffff;
-    GMAC_REGS->GMAC_HRT = (hash_value >> 32) & 0xffffffff;    
-}
+void DRV_PIC32CGMAC_LibClearTxComplete(DRV_GMAC_DRIVER* pMACDrv);
 
 /****************************************************************************
- * Function:        _DRV_GMAC_HashValueGet
- * Summary: Read Hash Value in GMAC register
+  Function: 
+    bool DRV_PIC32CGMAC_LibIsTxComplete(DRV_GMAC_DRIVER* pMACDrv)
+ 
+  Summary: 
+    Check GMAC Tx Complete status
+ 
+  Precondition: 
+    None
+ 
+  Parameters: 
+    pMACDrv    - driver instance. 
+     
+  Returns:
+    true or false
  *****************************************************************************/
-static __inline__ uint64_t __attribute__((always_inline)) _DRV_GMAC_HashValueGet(void)
-{
-    uint64_t hash_value = 0;    
-    hash_value = GMAC_REGS->GMAC_HRT;
-    hash_value = (hash_value << 32) | GMAC_REGS->GMAC_HRB;
-    return hash_value;
-}
-// *****************************************************************************
-// *****************************************************************************
-// Section: Helper Macros
-// *****************************************************************************
-// *****************************************************************************
+bool DRV_PIC32CGMAC_LibIsTxComplete(DRV_GMAC_DRIVER* pMACDrv);
 
 /****************************************************************************
- * Function: _DRV_GMAC_DescSpace
- * Summary:  Returns number of available GMAC descriptors
+  Function: 
+    void DRV_PIC32CGMAC_LibTxEnable(DRV_GMAC_DRIVER* pMACDrv, bool enable)
+ 
+  Summary: 
+    Enable/Disable GMAC Transmit
+ 
+  Precondition: 
+    None
+   
+  Parameters: 
+    pMACDrv    - driver instance. 
+    bool enable - true/false
+ 
+  Returns:
+    None
  *****************************************************************************/
-static __inline__ uint16_t __attribute__((always_inline)) _DRV_GMAC_DescSpace(uint16_t head, uint16_t tail, uint16_t size)
-{
-    return (tail > head)? (tail - head) : (size - head + tail);
-}
+void DRV_PIC32CGMAC_LibTxEnable(DRV_GMAC_DRIVER* pMACDrv, bool enable);
 
-/** ISO/IEC 14882:2003(E) - 5.6 Multiplicative operators:
- * The binary / operator yields the quotient, and the binary % operator yields
- * the remainder from the division of the first expression by the second.
- * If the second operand of / or % is zero the behaviour is undefined; otherwise
- *  (a/b)*b + a%b is equal to a.
- * If both operands are non-negative then the remainder is non-negative;
- * if not, the sign of the remainder is implementation-defined 74).
- */
-__STATIC_INLINE int fixed_mod(int a, int b)
-{
-	int rem = a % b;
-
-	while (rem < 0)
-		rem += b;
-
-	return rem;
-}
-
-/** Return count in buffer */
-#define GCIRC_CNT(head,tail,size)  fixed_mod((head) - (tail), (size))
-
-/** Return space available, 0..size-1. always leave one free char as a
-    completely full buffer has head == tail, which is the same as empty */
-#define GCIRC_SPACE(head,tail,size) GCIRC_CNT((tail),((head)+1),(size))
-
-#define GCIRC_BUFFCNT(head,tail,size) (size - GCIRC_SPACE(head,tail,size))
-/** Return count up to the end of the buffer. Carefully avoid accessing head
-    and tail more than once, so they can change underneath us without returning
-    inconsistent results */
-#define GCIRC_CNT_TO_END(head,tail,size) \
-	({int end = (size) - (tail); \
-		int n = fixed_mod((head) + end, (size));    \
-		n < end ? n : end;})
-
-/** Return space available up to the end of the buffer */
-#define GCIRC_SPACE_TO_END(head,tail,size) \
-	({int end = (size) - 1 - (head); \
-		int n = fixed_mod(end + (tail), (size));    \
-		n <= end ? n : end+1;})
-
-/** Increment head or tail */
-#define GCIRC_INC(headortail,size) \
-	headortail++;             \
-	if (headortail >= size) {  \
-		headortail = 0;       \
-	}
-
-/** Decrement head or tail */
-#define GCIRC_DEC(headortail,size) \
-	headortail = headortail;	\
-	if(headortail == 0)	{			\
-		headortail = size - 1;	\
-	}					\
-	else				\
-	{					\
-		headortail--;	\
-	}
-
-/** Circular buffer is empty ? */
-#define GCIRC_EMPTY(head, tail)     (head == tail)
-
-/** Clear circular buffer */
-#define GCIRC_CLEAR(head, tail)  (head = tail = 0)
-
+/****************************************************************************
+  Function: 
+    uint32_t DRV_PIC32CGMAC_LibGetxxxxxx(void)
+ 
+  Summary: 
+    Read GMAC Statistics registers 
+ 
+  Precondition: 
+    None
+ 
+  Parameters: 
+    pMACDrv    - driver instance. 
+ 
+  Returns:
+    32-bit statistics register value
+ *****************************************************************************/
+uint32_t DRV_PIC32CGMAC_LibGetTxOctetLow(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTxOctetHigh(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTxFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTxBCastFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTxMCastFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTxPauseFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTx64ByteFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTx127ByteFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTx255ByteFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTx511ByteFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTx1023ByteFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTx1518ByteFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTxGT1518ByteFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTxUnderRunFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTxSingleCollFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTxMultiCollFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTxExcessCollFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTxLateCollFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTxDeferFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetTxCSErrorFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxOctetLow(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxOctetHigh(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxBCastFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxMCastFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxPauseFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRx64ByteFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRx127ByteFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRx255ByteFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRx511ByteFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRx1023ByteFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRx1518ByteFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxGT1518ByteFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxUnderSizeFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxOverSizeFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxJabberFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxFCSErrorFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxLFErrorFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxSymErrorFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxAlignErrorFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxResErrorFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxOverRunFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxIPHdrCSErrorFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxTCPCSErrorFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+uint32_t DRV_PIC32CGMAC_LibGetRxUDPCSErrorFrameCount(DRV_GMAC_DRIVER* pMACDrv);
+// *****************************************************************************
 #endif  // _DRV_PIC32CGMAC_LIB_H_
 

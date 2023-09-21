@@ -12,30 +12,28 @@
   Description:
 *******************************************************************************/
 // DOM-IGNORE-BEGIN
-/*****************************************************************************
- Copyright (C) 2012-2018 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2012-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 
 
@@ -89,6 +87,17 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 // the min value of the data offset field, in 32 bit words
 #define TCP_DATA_OFFSET_VAL_MIN    5       // 20 bytes
 
+
+// maximum retransmission time for exp backoff - 64 seconds
+#define _TCP_SOCKET_MAX_RETX_TIME       64000
+
+#if defined(TCP_RETRANSMISSION_TMO) && (TCP_RETRANSMISSION_TMO != 0)
+#define _TCP_SOCKET_RETX_TMO    TCP_RETRANSMISSION_TMO
+#else
+#define _TCP_SOCKET_RETX_TMO    1500        // default value, 1.5 sec
+#endif
+
+
 /****************************************************************************
   Section:
 	State Machine Variables
@@ -109,19 +118,39 @@ typedef struct
 // TCP Control Block (TCB) stub data storage. 
 typedef struct
 {
-	uint8_t*            txStart;		            // First byte of TX buffer
-	uint8_t*            txEnd;			            // Last byte of TX buffer
+	uint8_t*            txStart;		            // First byte of skt TX buffer
+	uint8_t*            txEnd;			            // Last byte of skt TX buffer
 	uint8_t*            txHead;			            // Head pointer for TX - user write pointer
 	uint8_t*            txTail;			            // Tail pointer for TX - socket read pointer
 	uint8_t*	        txUnackedTail;	            // TX tail pointer for data that is not yet acked
-	uint8_t*            rxStart;		            // First byte of RX buffer.
-	uint8_t*            rxEnd;			            // Last byte of RX buffer
+                                                    // Note: This TX buffer is for the user/app to write data, and the skt to read and transmit it
+                                                    // So:
+                                                    //      - tx total size: txEnd - rxStart
+                                                    //      - txBuffSize = txEnd - txStart - 1;     usable size  
+                                                    //      - put space = txTail - txHead - 1 (+ txEnd - txStart; if txHead is behind txTail)
+                                                    //      - unack data = txUnackedTail - txTail
+                                                    //      - can send data = txHead - txUnackedTail
+                                                    //      - init: txBuff = alloc txBuffSize + 1)
+                                                    //              txStart = txBuff; txEnd = txBuff + txBuffSize + 1;
+                                                    //
+	uint8_t*            rxStart;		            // First byte of the socket RX buffer.
+	uint8_t*            rxEnd;			            // Last byte of the socket RX buffer
 	uint8_t*            rxHead;			            // Head pointer for RX - socket write pointer
 	uint8_t*            rxTail;			            // Tail pointer for RX - user read pointer
+                                                    // Note: This RX buffer is for the skt to write data (as it receives), and the user/app to read it
+                                                    // So:
+                                                    //      - rx total size: rxEnd - rxStart + 1 (created with 1 extra byte) 
+                                                    //      - rxBuffSize = avlbl slots =  rxEnd - rxStart;     usable size  
+                                                    //      - avlbl read bytes == rxHead - rxTail (+ rxEnd - rxStart + 1; if rxHead is behind rxTail)
+                                                    //      - init: rxBuff = alloc(rxBuffSize + 1);
+                                                    //              rxStart = rxBuff; rxEnd = rxBuff + rxBuffSize; 
+                                                    //
     uint32_t            eventTime;			        // Packet retransmissions, state changes
 	uint32_t            eventTime2;		            // Window updates, automatic transmission
     uint32_t            delayedACKTime;             // Delayed Acknowledgment timer
     uint32_t            closeWaitTime;		        // TCP_CLOSE_WAIT, TCP_FIN_WAIT_2, TCP_TIME_WAIT timeout
+    uint32_t            retxTmo;                    // current retransmission timeout, ms
+    uint32_t            retxTime;                   // current retransmission time, ticks
 
     TCP_SOCKET   sktIx;                             // socket number
     struct
@@ -172,8 +201,8 @@ typedef struct
 		uint16_t openAddType    : 2;		        // the address type used at open
         uint16_t bFINSent       : 1;		        // A FIN has been sent
 		uint16_t bSYNSent       : 1;		        // A SYN has been sent
-		uint16_t bRXNoneACKed1  : 1;	            // A duplicate ACK was likely received
-		uint16_t bRXNoneACKed2  : 1;	            // A second duplicate ACK was likely received
+		uint16_t res1           : 1;	            // not used
+		uint16_t res2           : 1;	            // not used
 		uint16_t nonLinger      : 1; 		        // linger option
 		uint16_t nonGraceful    : 1; 		        // graceful close
         uint16_t ackSent        : 1;                // acknowledge sent in this pass
@@ -194,6 +223,8 @@ typedef struct
     TCPIP_TCP_SIGNAL_FUNCTION sigHandler;           // socket signal handler
     const void*         sigParam;                   // socket signal parameter
     uint8_t             keepAliveLim;               // current limit
+    uint8_t ttl;                                    // socket TTL value
+    uint8_t tos;                                    // socket TOS value
     union
     {
         uint8_t         val;
@@ -205,8 +236,6 @@ typedef struct
         };
     }dbgFlags;
 
-    uint8_t ttl;                    // socket TTL value
-    uint8_t tos;                    // socket TOS value
     uint8_t pad[];                  // padding; not used
 } TCB_STUB;
 

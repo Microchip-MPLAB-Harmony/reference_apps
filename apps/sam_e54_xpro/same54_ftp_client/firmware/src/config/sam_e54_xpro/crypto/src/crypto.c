@@ -414,7 +414,8 @@ int CRYPT_RNG_Deinitialize(CRYPT_RNG_CTX* rng)
     {
         return BAD_FUNC_ARG;
     }
-    WC_RNG* myRng = (WC_RNG*)(rng);
+	
+    WC_RNG* __attribute__((unused))myRng = (WC_RNG*)(rng);
     wc_FreeRng(myRng);
 
     return 0;

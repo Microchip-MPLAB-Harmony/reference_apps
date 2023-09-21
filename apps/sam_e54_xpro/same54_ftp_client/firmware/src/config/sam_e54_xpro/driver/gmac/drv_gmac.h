@@ -17,30 +17,28 @@
   ***********************************************************************/
 
 //DOM-IGNORE-BEGIN
-/*****************************************************************************
- Copyright (C) 2013-2018 Microchip Technology Inc. and its subsidiaries.
+/*
+Copyright (C) 2013-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
-Microchip Technology Inc. and its subsidiaries.
+The software and documentation is provided by microchip and its contributors
+"as is" and any express, implied or statutory warranties, including, but not
+limited to, the implied warranties of merchantability, fitness for a particular
+purpose and non-infringement of third party intellectual property rights are
+disclaimed to the fullest extent permitted by law. In no event shall microchip
+or its contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to, procurement
+of substitute goods or services; loss of use, data, or profits; or business
+interruption) however caused and on any theory of liability, whether in contract,
+strict liability, or tort (including negligence or otherwise) arising in any way
+out of the use of the software and documentation, even if advised of the
+possibility of such damage.
 
-Subject to your compliance with these terms, you may use Microchip software 
-and any derivatives exclusively with Microchip products. It is your 
-responsibility to comply with third party license terms applicable to your 
-use of third party software (including open source software) that may 
-accompany Microchip software.
-
-THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER 
-EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED 
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR 
-PURPOSE.
-
-IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, 
-INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND 
-WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS 
-BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE 
-FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN 
-ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY, 
-THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
-*****************************************************************************/
+Except as expressly permitted hereunder and subject to the applicable license terms
+for any third-party software incorporated in the software and any applicable open
+source software license terms, no license or other rights, whether express or
+implied, are granted under any patent or other intellectual property rights of
+Microchip or any third party.
+*/
 
 //DOM-IGNORE-END
 
@@ -62,6 +60,7 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 
 #include "tcpip/tcpip_mac.h"
 #include "tcpip/tcpip_ethernet.h"
+#include "system/int/sys_int.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -77,22 +76,6 @@ THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 // *****************************************************************************
 
 // *****************************************************************************
-/* Ethernet Driver Module Index Count
-
-  Summary:
-    Number of valid Ethernet driver indices.
-
-  Description:
-    This constant identifies number of valid Ethernet driver indices.
-
-  Remarks:
-    This constant should be used in place of hard-coded numeric literals.
-
-    This value is derived from part-specific header files defined as part of the
-    peripheral libraries.
-*/
-
-#define DRV_GMAC_INDEX_COUNT  GMAC_NUMBER_OF_MODULES
 
 /**
  * Configuration Structure for Queues in GMAC.
@@ -126,8 +109,16 @@ typedef struct
 	uint8_t queueTxEnable;
     /** Queue Rx Enable status */
 	uint8_t queueRxEnable;
+    /** interrupt source for GMAC queue */
+    INT_SOURCE   queueIntSrc;
 } TCPIP_MODULE_GMAC_QUEUE_CONFIG;
 
+/* GMAC Reference Clock Source options */
+typedef enum  
+{
+	GMAC_REF_INTERNAL_GCLK = 0,
+	GMAC_REF_EXTERNAL_GCLK = 1,
+} GMAC_REFCLK_SRC;
 
 /**
  * Configuration structure for GMAC Rx Queue Filter Type1
@@ -187,15 +178,13 @@ typedef struct
 typedef struct DRV_GMAC_RXQUE_FILTER_INIT
 {
     uint8_t type1FiltCount;
-#if (TCPIP_GMAC_SCREEN1_COUNT_QUE)
     /* Configuration for GMAC Rx Queue Type 1 Filter*/
-    DRV_GMAC_TYPE1_FILTER_INIT   type1FiltInit[TCPIP_GMAC_SCREEN1_COUNT_QUE]; 
-#endif
+    DRV_GMAC_TYPE1_FILTER_INIT  * type1FiltInit;
+
     uint8_t type2FiltCount;
-#if (TCPIP_GMAC_SCREEN2_COUNT_QUE)
     /* Configuration for GMAC Rx Queue Type 2 Filter*/
-    DRV_GMAC_TYPE2_FILTER_INIT   type2FiltInit[TCPIP_GMAC_SCREEN2_COUNT_QUE];
-#endif    
+    DRV_GMAC_TYPE2_FILTER_INIT  * type2FiltInit;
+ 
 }DRV_GMAC_RXQUE_FILTER_INIT;
 
 /*  GMAC Initialization Data
@@ -213,9 +202,13 @@ typedef struct DRV_GMAC_RXQUE_FILTER_INIT
 typedef struct
 {
 	TCPIP_MAC_ADDR                  macAddress;
+    
 	/* Configuration for each GMAC queues*/
-	TCPIP_MODULE_GMAC_QUEUE_CONFIG  gmac_queue_config[DRV_GMAC_NUMBER_OF_QUEUES];    
+	TCPIP_MODULE_GMAC_QUEUE_CONFIG  * gmac_queue_config;    
 
+    /* number of Queues supported by MAC*/
+    uint8_t macQueNum;
+    
     /*  Delay to wait after the lomk is coming up (milliseconds) */
     /*  for insuring that the PHY is ready to transmit data. */
     uint16_t                        linkInitDelay;
@@ -231,24 +224,31 @@ typedef struct
 
     /* Non-volatile pointer to the PHY initialization data */
     const struct DRV_ETHPHY_INIT*   pPhyInit;  
+    
+    /* reference clock source */
+    GMAC_REFCLK_SRC macRefClkSrc;
+    
 	/* Rx Checksum offload Enable */
     TCPIP_MAC_CHECKSUM_OFFLOAD_FLAGS    checksumOffloadRx;
+    
     /* Tx Checksum offload Enable */
     TCPIP_MAC_CHECKSUM_OFFLOAD_FLAGS    checksumOffloadTx;
         
     /* number of Tx priorities supported by MAC*/
     uint8_t macTxPrioNum;
+    
     /* array to translate Transmit priority to  queue index */
-    uint8_t txPrioNumToQueIndx[DRV_GMAC_NUMBER_OF_QUEUES];
+    uint8_t * txPrioNumToQueIndx;
     
     /* number of Rx priorities supported by MAC*/
     uint8_t macRxPrioNum;
+    
     /* array to translate receive priority to  queue index */
-    uint8_t rxPrioNumToQueIndx[DRV_GMAC_NUMBER_OF_QUEUES];
+    uint8_t * rxPrioNumToQueIndx;
     
+    TCPIP_MAC_RX_FILTER_TYPE macRxFilt;
     /* Configuration for GMAC RX Filters*/
-    const struct DRV_GMAC_RXQUE_FILTER_INIT*   pRxQueFiltInit; 
-    
+    const struct DRV_GMAC_RXQUE_FILTER_INIT*   pRxQueFiltInit;     
    
 }TCPIP_MODULE_MAC_PIC32C_CONFIG;
 
