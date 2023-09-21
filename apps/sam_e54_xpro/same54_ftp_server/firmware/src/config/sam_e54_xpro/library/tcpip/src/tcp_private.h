@@ -87,6 +87,17 @@ Microchip or any third party.
 // the min value of the data offset field, in 32 bit words
 #define TCP_DATA_OFFSET_VAL_MIN    5       // 20 bytes
 
+
+// maximum retransmission time for exp backoff - 64 seconds
+#define _TCP_SOCKET_MAX_RETX_TIME       64000
+
+#if defined(TCP_RETRANSMISSION_TMO) && (TCP_RETRANSMISSION_TMO != 0)
+#define _TCP_SOCKET_RETX_TMO    TCP_RETRANSMISSION_TMO
+#else
+#define _TCP_SOCKET_RETX_TMO    1500        // default value, 1.5 sec
+#endif
+
+
 /****************************************************************************
   Section:
 	State Machine Variables
@@ -107,19 +118,39 @@ typedef struct
 // TCP Control Block (TCB) stub data storage. 
 typedef struct
 {
-	uint8_t*            txStart;		            // First byte of TX buffer
-	uint8_t*            txEnd;			            // Last byte of TX buffer
+	uint8_t*            txStart;		            // First byte of skt TX buffer
+	uint8_t*            txEnd;			            // Last byte of skt TX buffer
 	uint8_t*            txHead;			            // Head pointer for TX - user write pointer
 	uint8_t*            txTail;			            // Tail pointer for TX - socket read pointer
 	uint8_t*	        txUnackedTail;	            // TX tail pointer for data that is not yet acked
-	uint8_t*            rxStart;		            // First byte of RX buffer.
-	uint8_t*            rxEnd;			            // Last byte of RX buffer
+                                                    // Note: This TX buffer is for the user/app to write data, and the skt to read and transmit it
+                                                    // So:
+                                                    //      - tx total size: txEnd - rxStart
+                                                    //      - txBuffSize = txEnd - txStart - 1;     usable size  
+                                                    //      - put space = txTail - txHead - 1 (+ txEnd - txStart; if txHead is behind txTail)
+                                                    //      - unack data = txUnackedTail - txTail
+                                                    //      - can send data = txHead - txUnackedTail
+                                                    //      - init: txBuff = alloc txBuffSize + 1)
+                                                    //              txStart = txBuff; txEnd = txBuff + txBuffSize + 1;
+                                                    //
+	uint8_t*            rxStart;		            // First byte of the socket RX buffer.
+	uint8_t*            rxEnd;			            // Last byte of the socket RX buffer
 	uint8_t*            rxHead;			            // Head pointer for RX - socket write pointer
 	uint8_t*            rxTail;			            // Tail pointer for RX - user read pointer
+                                                    // Note: This RX buffer is for the skt to write data (as it receives), and the user/app to read it
+                                                    // So:
+                                                    //      - rx total size: rxEnd - rxStart + 1 (created with 1 extra byte) 
+                                                    //      - rxBuffSize = avlbl slots =  rxEnd - rxStart;     usable size  
+                                                    //      - avlbl read bytes == rxHead - rxTail (+ rxEnd - rxStart + 1; if rxHead is behind rxTail)
+                                                    //      - init: rxBuff = alloc(rxBuffSize + 1);
+                                                    //              rxStart = rxBuff; rxEnd = rxBuff + rxBuffSize; 
+                                                    //
     uint32_t            eventTime;			        // Packet retransmissions, state changes
 	uint32_t            eventTime2;		            // Window updates, automatic transmission
     uint32_t            delayedACKTime;             // Delayed Acknowledgment timer
     uint32_t            closeWaitTime;		        // TCP_CLOSE_WAIT, TCP_FIN_WAIT_2, TCP_TIME_WAIT timeout
+    uint32_t            retxTmo;                    // current retransmission timeout, ms
+    uint32_t            retxTime;                   // current retransmission time, ticks
 
     TCP_SOCKET   sktIx;                             // socket number
     struct
@@ -170,8 +201,8 @@ typedef struct
 		uint16_t openAddType    : 2;		        // the address type used at open
         uint16_t bFINSent       : 1;		        // A FIN has been sent
 		uint16_t bSYNSent       : 1;		        // A SYN has been sent
-		uint16_t bRXNoneACKed1  : 1;	            // A duplicate ACK was likely received
-		uint16_t bRXNoneACKed2  : 1;	            // A second duplicate ACK was likely received
+		uint16_t res1           : 1;	            // not used
+		uint16_t res2           : 1;	            // not used
 		uint16_t nonLinger      : 1; 		        // linger option
 		uint16_t nonGraceful    : 1; 		        // graceful close
         uint16_t ackSent        : 1;                // acknowledge sent in this pass
@@ -192,6 +223,8 @@ typedef struct
     TCPIP_TCP_SIGNAL_FUNCTION sigHandler;           // socket signal handler
     const void*         sigParam;                   // socket signal parameter
     uint8_t             keepAliveLim;               // current limit
+    uint8_t ttl;                                    // socket TTL value
+    uint8_t tos;                                    // socket TOS value
     union
     {
         uint8_t         val;
@@ -203,8 +236,6 @@ typedef struct
         };
     }dbgFlags;
 
-    uint8_t ttl;                    // socket TTL value
-    uint8_t tos;                    // socket TOS value
     uint8_t pad[];                  // padding; not used
 } TCB_STUB;
 

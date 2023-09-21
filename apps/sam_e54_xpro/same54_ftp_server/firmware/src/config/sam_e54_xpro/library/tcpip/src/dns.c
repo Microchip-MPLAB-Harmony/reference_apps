@@ -1526,6 +1526,7 @@ static bool _DNS_RESPONSE_HashEntryUpdate(TCPIP_DNS_RX_DATA* dnsRxData, TCPIP_DN
     IP_MULTI_ADDRESS        ipAddr;
     bool                    discardData;
 
+    memset(&DNSAnswerHeader, 0, sizeof(DNSAnswerHeader));
     if(!_DNSGetData(dnsRxData, (uint8_t *)&DNSAnswerHeader, sizeof(TCPIP_DNS_ANSWER_HEADER)))
     {   // failed to read the RR header
         return false;
@@ -1547,6 +1548,7 @@ static bool _DNS_RESPONSE_HashEntryUpdate(TCPIP_DNS_RX_DATA* dnsRxData, TCPIP_DN
             }
 
             // read the buffer
+            ipAddr.v4Add.Val = 0;
             if(!_DNSGetData(dnsRxData, ipAddr.v4Add.v, sizeof(IPV4_ADDR)))
             {
                 return false;
@@ -1572,6 +1574,7 @@ static bool _DNS_RESPONSE_HashEntryUpdate(TCPIP_DNS_RX_DATA* dnsRxData, TCPIP_DN
             }           
 
             // read the buffer
+            memset(ipAddr.v6Add.v, 0, sizeof(IPV6_ADDR));
             if(!_DNSGetData(dnsRxData, ipAddr.v6Add.v, sizeof (IPV6_ADDR)))
             {
                 return false;
@@ -1782,6 +1785,7 @@ static bool _DNS_ProcessPacket(TCPIP_DNS_DCPT* pDnsDcpt)
     _DNSInitRxData(&dnsRxData, dnsRxBuffer, dnsPacketSize);
 
     // Retrieve the DNS header and de-big-endian it
+    memset(&DNSHeader, 0, sizeof(DNSHeader));
     if(!_DNSGetData(&dnsRxData, &DNSHeader, sizeof(DNSHeader)))
     {   // incomplete packet?
         return false;
@@ -1941,6 +1945,7 @@ static int _DNS_ReadName(TCPIP_DNS_RR_PROCESS* pProc, char* nameBuff, int buffSi
     {
         // Get first byte which will tell us if this is a 16-bit pointer or the
         // length of the first of a series of labels
+        labelLen = 0;
         if(!_DNSGetData(xtractBuff, &labelLen, sizeof(labelLen)))
         {   // failed to get label
             nameFail = true;
@@ -1956,6 +1961,7 @@ static int _DNS_ReadName(TCPIP_DNS_RR_PROCESS* pProc, char* nameBuff, int buffSi
         if((labelLen & 0xc0) == 0xc0)
         {   // get the offset
             labelOffset = (uint16_t)(labelLen & 0x3f) << 8;
+            offset = 0;
             if(!_DNSGetData(xtractBuff, &offset, sizeof(offset)))
             {   // failed to get the offset
                 nameFail = true;

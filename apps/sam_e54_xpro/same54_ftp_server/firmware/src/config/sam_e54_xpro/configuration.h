@@ -361,6 +361,10 @@ extern "C" {
 #define TCPIP_IPV6_EXTERN_PACKET_PROCESS   false
 
 
+#define TCPIP_IPV6_G3_PLC_SUPPORT                       false
+
+
+
 /*** IPv4 Configuration ***/
 #define TCPIP_IPV4_ARP_SLOTS                        10
 #define TCPIP_IPV4_EXTERN_PACKET_PROCESS   false
@@ -441,6 +445,7 @@ extern "C" {
 
 #define TCPIP_STACK_TICK_RATE		        		5
 #define TCPIP_STACK_SECURE_PORT_ENTRIES             10
+#define TCPIP_STACK_LINK_RATE		        		333
 
 #define TCPIP_STACK_ALIAS_INTERFACE_SUPPORT   false
 
@@ -465,6 +470,7 @@ extern "C" {
 
 /*** GMAC Configuration ***/
 #define DRV_GMAC
+#define DRV_SAME5x
 #define TCPIP_GMAC_TX_DESCRIPTORS_COUNT_DUMMY    1
 #define TCPIP_GMAC_RX_DESCRIPTORS_COUNT_DUMMY    1
 #define TCPIP_GMAC_RX_BUFF_SIZE_DUMMY            64

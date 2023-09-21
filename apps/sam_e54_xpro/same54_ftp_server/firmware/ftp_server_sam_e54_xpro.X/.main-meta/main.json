@@ -10,21 +10,21 @@
       "shortDescription":"FTP Server configuration demonstrates creating an application where FTP server will use FAT FS.",
       "ide":{
          "name":"MPLABX",
-         "semverRange":">=6.00.0"
+         "semverRange":">=6.15.0"
       },
       "compiler":[
          {
             "name":"XC32",
-            "semverRange":">=4.1.0"
+            "semverRange":">=4.30.0"
          }
       ],
       "dfp":{
          "name":"SAME54_DFP",
-         "semverRange":"^3.7.122"
+         "semverRange":"^3.8.234"
       },
       "configurator":{
          "name":"MCC",
-         "semverRange":">=5.1.17"
+         "semverRange":">=5.3.7"
       },
       "device":{
          "metaDataVersion":"1.0.0",
