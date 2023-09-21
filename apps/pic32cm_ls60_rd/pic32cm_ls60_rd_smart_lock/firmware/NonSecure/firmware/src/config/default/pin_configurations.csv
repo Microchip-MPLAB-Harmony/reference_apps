@@ -1,13 +1,13 @@
-"Pin Number","Pin ID","Custom Name","Function","Mode", "Direction","Latch","Pull Up","Pull Down","Drive Strength"
+Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,Drive Strength
 1,PA00,TOUCH_ENABLE,GPIO,Digital,In,n/a,Yes,No,NORMAL
 2,PA01,ENABLE_6V,GPIO,Digital,Out,Low,,,NORMAL
-3,PA02,,ADC_AIN0,Analog,High Impedance,n/a,,,NORMAL
+3,PA02,,Available,,,,,,NORMAL
 4,PA03,,Available,,,,,,NORMAL
 5,PB04,BLE_RESET,GPIO,Digital,Out,Low,,,NORMAL
 6,PB05,,Available,,,,,,NORMAL
 9,PB06,,Available,,,,,,NORMAL
 10,PB07,,Available,,,,,,NORMAL
-11,PB08,,ADC_AIN18,Analog,High Impedance,n/a,,,NORMAL
+11,PB08,,Available,,,,,,NORMAL
 12,PB09,,Available,,,,,,NORMAL
 13,PA04, QT_LED_COL2,GPIO,Digital,Out,Low,,,NORMAL
 14,PA05, QT_LED_COL0,GPIO,Digital,Out,Low,,,NORMAL
@@ -37,7 +37,7 @@
 44,PA23,PC_COM_RX,SERCOM2_PAD1,Digital,High Impedance,n/a,No,No,NORMAL
 45,PA24,,Available,,,,,,NORMAL
 46,PA25,,Available,,,,,,NORMAL
-49,PB22,BLE_STATUS,GPIO,Digital,In,n/a,No,No,NORMAL
+49,PB22,BLE_STATUS,GPIO,Digital,In,n/a,Yes,No,NORMAL
 50,PB23,,Available,,,,,,NORMAL
 57,PA30,,Available,,,,,,NORMAL
 58,PA31,,Available,,,,,,NORMAL

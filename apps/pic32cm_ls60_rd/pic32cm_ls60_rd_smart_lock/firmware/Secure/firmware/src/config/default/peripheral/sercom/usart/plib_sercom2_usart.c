@@ -20,7 +20,7 @@
 *******************************************************************************/
 
 /*******************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -59,7 +59,7 @@
 
 
 /* SERCOM2 USART baud value for 115200 Hz baud rate */
-#define SERCOM2_USART_INT_BAUD_VALUE            (35337UL)
+#define SERCOM2_USART_INT_BAUD_VALUE            (55469UL)
 
 
 // *****************************************************************************
@@ -134,7 +134,7 @@ void SERCOM2_USART_Initialize( void )
 
 uint32_t SERCOM2_USART_FrequencyGet( void )
 {
-    return 4000000UL;
+    return 12000000UL;
 }
 
 bool SERCOM2_USART_SerialSetup( USART_SERIAL_SETUP * serialSetup, uint32_t clkFrequency )
@@ -225,6 +225,34 @@ USART_ERROR SERCOM2_USART_ErrorGet( void )
     }
 
     return errorStatus;
+}
+
+void SERCOM2_USART_Enable( void )
+{
+    if((SERCOM2_REGS->USART_INT.SERCOM_CTRLA & SERCOM_USART_INT_CTRLA_ENABLE_Msk) == 0U)
+    {
+        SERCOM2_REGS->USART_INT.SERCOM_CTRLA |= SERCOM_USART_INT_CTRLA_ENABLE_Msk;
+
+        /* Wait for sync */
+        while((SERCOM2_REGS->USART_INT.SERCOM_SYNCBUSY) != 0U)
+        {
+            /* Do nothing */
+        }
+    }
+}
+
+void SERCOM2_USART_Disable( void )
+{
+    if((SERCOM2_REGS->USART_INT.SERCOM_CTRLA & SERCOM_USART_INT_CTRLA_ENABLE_Msk) != 0U)
+    {
+        SERCOM2_REGS->USART_INT.SERCOM_CTRLA &= ~SERCOM_USART_INT_CTRLA_ENABLE_Msk;
+
+        /* Wait for sync */
+        while((SERCOM2_REGS->USART_INT.SERCOM_SYNCBUSY) != 0U)
+        {
+            /* Do nothing */
+        }
+    }
 }
 
 

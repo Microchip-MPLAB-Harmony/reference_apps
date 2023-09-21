@@ -22,7 +22,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -77,7 +77,7 @@ void EIC_Initialize (void)
     eicCallbackObject[3].eicPinNo = EIC_PIN_3;
     eicCallbackObject[4].eicPinNo = EIC_PIN_4;
     eicCallbackObject[5].eicPinNo = EIC_PIN_MAX;
-    eicCallbackObject[6].eicPinNo = EIC_PIN_6;
+    eicCallbackObject[6].eicPinNo = EIC_PIN_MAX;
     eicCallbackObject[7].eicPinNo = EIC_PIN_MAX;
     eicCallbackObject[8].eicPinNo = EIC_PIN_MAX;
     eicCallbackObject[9].eicPinNo = EIC_PIN_MAX;
@@ -110,7 +110,7 @@ void EIC_CallbackRegister(EIC_PIN pin, EIC_CALLBACK callback, uintptr_t context)
     }
 }
 
-void EIC_EXTINT_3_InterruptHandler(void)
+void __attribute__((used)) EIC_EXTINT_3_InterruptHandler(void)
 {
     /* Clear interrupt flag */
     EIC_REGS->EIC_INTFLAG = (1UL << 3);
@@ -121,7 +121,7 @@ void EIC_EXTINT_3_InterruptHandler(void)
     }
 
 }
-void EIC_EXTINT_4_InterruptHandler(void)
+void __attribute__((used)) EIC_EXTINT_4_InterruptHandler(void)
 {
     /* Clear interrupt flag */
     EIC_REGS->EIC_INTFLAG = (1UL << 4);
@@ -132,7 +132,7 @@ void EIC_EXTINT_4_InterruptHandler(void)
     }
 
 }
-void EIC_EXTINT_6_InterruptHandler(void)
+void __attribute__((used)) EIC_EXTINT_6_InterruptHandler(void)
 {
     /* Clear interrupt flag */
     EIC_REGS->EIC_INTFLAG = (1UL << 6);

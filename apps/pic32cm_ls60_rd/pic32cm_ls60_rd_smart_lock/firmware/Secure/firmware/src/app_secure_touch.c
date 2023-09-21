@@ -101,7 +101,7 @@ void APP_SECURE_SetMeasurementDoneTouch(uint8_t val)
  */
 bool APP_SECURE_GetLowPowerMeasurementStatus (void)
 {
-    return measurement_mode;
+    return 0; // Update this with low power measurement status as per application
 }
 
 /* *****************************************************************************

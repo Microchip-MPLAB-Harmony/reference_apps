@@ -14,14 +14,15 @@
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
-/*******************************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
-
- * Subject to your compliance with these terms, you may use this Microchip software
- * and any derivatives exclusively with Microchip products. You are responsible for
- * complying with third party license terms applicable to your use of third party
- * software (including open source software) that may accompany this Microchip software.
-
+/*******************************************************************************
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+*
+* Subject to your compliance with these terms, you may use Microchip software
+* and any derivatives exclusively with Microchip products. It is your
+* responsibility to comply with third party license terms applicable to your
+* use of third party software (including open source software) that may
+* accompany Microchip software.
+*
 * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
 * EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
 * WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
@@ -34,7 +35,7 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
- *******************************************************************************************/
+ *******************************************************************************/
 // DOM-IGNORE-END
 
 // *****************************************************************************
@@ -44,32 +45,31 @@
 // *****************************************************************************
 #include "definitions.h"
 #include "device.h"
-#include "unsecure_interface.h"
 
 // ****************************************************************************
 // ****************************************************************************
 // Section: Configuration Bits
 // ****************************************************************************
 // ****************************************************************************
-#pragma config NVMCTRL_SULCK = 0x7
-#pragma config NVMCTRL_NSULCK = 0x6
-#pragma config BOD33USERLEVEL = 0x6
-#pragma config BOD33_DIS = SET
-#pragma config BOD33_ACTION = 0x1
+#pragma config NVMCTRL_SULCK = 0x7U
+#pragma config NVMCTRL_NSULCK = 0x6U
+#pragma config BOD33USERLEVEL = 0x6U
+#pragma config BOD33_DIS = CLEAR
+#pragma config BOD33_ACTION = 0x1U
 #pragma config WDT_RUNSTDBY = CLEAR
 #pragma config WDT_ENABLE = CLEAR
 #pragma config WDT_ALWAYSON = CLEAR
-#pragma config WDT_PER = 0xb
-#pragma config WDT_WINDOW = 0xb
-#pragma config WDT_EWOFFSET = 0xb
+#pragma config WDT_PER = 0xbU
+#pragma config WDT_WINDOW = 0xbU
+#pragma config WDT_EWOFFSET = 0xbU
 #pragma config WDT_WEN = CLEAR
 #pragma config BOD33_HYST = CLEAR
 #pragma config IDAU_RXN = CLEAR
 #pragma config NVMCTRL_DXN = SET
-#pragma config IDAU_AS = 0x400
-#pragma config IDAU_ANSC = 0x86
-#pragma config IDAU_DS = 0x38
-#pragma config IDAU_RS = 0x100
+#pragma config IDAU_AS = 0x400U
+#pragma config IDAU_ANSC = 0x86U
+#pragma config IDAU_DS = 0x38U
+#pragma config IDAU_RS = 0x100U
 #pragma config NVMCTRL_URWEN = SET
 #pragma config NONSECA_PAC = CLEAR
 #pragma config NONSECA_PM = CLEAR
@@ -112,64 +112,64 @@
 #pragma config NONSECC_I2S = CLEAR
 #pragma config NONSECC_OPAMP = CLEAR
 #pragma config NONSECC_TRAM = CLEAR
-#pragma config BOOTROM_CDIROFFSET = 0x0
-#pragma config BOOTROM_USERCRC = 0xe87673b6
-#pragma config IDAU_BNSC = 0x0
-#pragma config BOOTROM_BOOTOPT = 0x0
-#pragma config IDAU_BOOTPROT = 0x0
+#pragma config BOOTROM_CDIROFFSET = 0x0U
+#pragma config BOOTROM_USERCRC = 0xe87673b6U
+#pragma config IDAU_BNSC = 0x0U
+#pragma config BOOTROM_BOOTOPT = 0x0U
+#pragma config IDAU_BOOTPROT = 0x0U
 #pragma config BOOTROM_SECCFGLOCK = SET
 #pragma config BOOTROM_DICEEN = CLEAR
 #pragma config NVMCTRL_BCWEN = SET
 #pragma config NVMCTRL_BCREN = SET
-#pragma config BOOTROM_BOCORCRC = 0xc0349acc
-#pragma config BOOTROM_CEKEY0_0 = 0xffffffff
-#pragma config BOOTROM_CEKEY0_1 = 0xffffffff
-#pragma config BOOTROM_CEKEY0_2 = 0xffffffff
-#pragma config BOOTROM_CEKEY0_3 = 0xffffffff
-#pragma config BOOTROM_CEKEY1_0 = 0xffffffff
-#pragma config BOOTROM_CEKEY1_1 = 0xffffffff
-#pragma config BOOTROM_CEKEY1_2 = 0xffffffff
-#pragma config BOOTROM_CEKEY1_3 = 0xffffffff
-#pragma config BOOTROM_CEKEY2_0 = 0xffffffff
-#pragma config BOOTROM_CEKEY2_1 = 0xffffffff
-#pragma config BOOTROM_CEKEY2_2 = 0xffffffff
-#pragma config BOOTROM_CEKEY2_3 = 0xffffffff
-#pragma config BOOTROM_CRCKEY_0 = 0xffffffff
-#pragma config BOOTROM_CRCKEY_1 = 0xffffffff
-#pragma config BOOTROM_CRCKEY_2 = 0xffffffff
-#pragma config BOOTROM_CRCKEY_3 = 0xffffffff
-#pragma config BOOTROM_BOOTKEY_0 = 0xffffffff
-#pragma config BOOTROM_BOOTKEY_1 = 0xffffffff
-#pragma config BOOTROM_BOOTKEY_2 = 0xffffffff
-#pragma config BOOTROM_BOOTKEY_3 = 0xffffffff
-#pragma config BOOTROM_BOOTKEY_4 = 0xffffffff
-#pragma config BOOTROM_BOOTKEY_5 = 0xffffffff
-#pragma config BOOTROM_BOOTKEY_6 = 0xffffffff
-#pragma config BOOTROM_BOOTKEY_7 = 0xffffffff
-#pragma config BOOTROM_UDS_0 = 0xffffffff
-#pragma config BOOTROM_UDS_1 = 0xffffffff
-#pragma config BOOTROM_UDS_2 = 0xffffffff
-#pragma config BOOTROM_UDS_3 = 0xffffffff
-#pragma config BOOTROM_UDS_4 = 0xffffffff
-#pragma config BOOTROM_UDS_5 = 0xffffffff
-#pragma config BOOTROM_UDS_6 = 0xffffffff
-#pragma config BOOTROM_UDS_7 = 0xffffffff
-#pragma config BOOTROM_IOPROTKEY_0 = 0xffffffff
-#pragma config BOOTROM_IOPROTKEY_1 = 0xffffffff
-#pragma config BOOTROM_IOPROTKEY_2 = 0xffffffff
-#pragma config BOOTROM_IOPROTKEY_3 = 0xffffffff
-#pragma config BOOTROM_IOPROTKEY_4 = 0xffffffff
-#pragma config BOOTROM_IOPROTKEY_5 = 0xffffffff
-#pragma config BOOTROM_IOPROTKEY_6 = 0xffffffff
-#pragma config BOOTROM_IOPROTKEY_7 = 0xffffffff
-#pragma config BOOTROM_BOCORHASH_0 = 0xffffffff
-#pragma config BOOTROM_BOCORHASH_1 = 0xffffffff
-#pragma config BOOTROM_BOCORHASH_2 = 0xffffffff
-#pragma config BOOTROM_BOCORHASH_3 = 0xffffffff
-#pragma config BOOTROM_BOCORHASH_4 = 0xffffffff
-#pragma config BOOTROM_BOCORHASH_5 = 0xffffffff
-#pragma config BOOTROM_BOCORHASH_6 = 0xffffffff
-#pragma config BOOTROM_BOCORHASH_7 = 0xffffffff
+#pragma config BOOTROM_BOCORCRC = 0xc0349accU
+#pragma config BOOTROM_CEKEY0_0 = 0xffffffffU
+#pragma config BOOTROM_CEKEY0_1 = 0xffffffffU
+#pragma config BOOTROM_CEKEY0_2 = 0xffffffffU
+#pragma config BOOTROM_CEKEY0_3 = 0xffffffffU
+#pragma config BOOTROM_CEKEY1_0 = 0xffffffffU
+#pragma config BOOTROM_CEKEY1_1 = 0xffffffffU
+#pragma config BOOTROM_CEKEY1_2 = 0xffffffffU
+#pragma config BOOTROM_CEKEY1_3 = 0xffffffffU
+#pragma config BOOTROM_CEKEY2_0 = 0xffffffffU
+#pragma config BOOTROM_CEKEY2_1 = 0xffffffffU
+#pragma config BOOTROM_CEKEY2_2 = 0xffffffffU
+#pragma config BOOTROM_CEKEY2_3 = 0xffffffffU
+#pragma config BOOTROM_CRCKEY_0 = 0xffffffffU
+#pragma config BOOTROM_CRCKEY_1 = 0xffffffffU
+#pragma config BOOTROM_CRCKEY_2 = 0xffffffffU
+#pragma config BOOTROM_CRCKEY_3 = 0xffffffffU
+#pragma config BOOTROM_BOOTKEY_0 = 0xffffffffU
+#pragma config BOOTROM_BOOTKEY_1 = 0xffffffffU
+#pragma config BOOTROM_BOOTKEY_2 = 0xffffffffU
+#pragma config BOOTROM_BOOTKEY_3 = 0xffffffffU
+#pragma config BOOTROM_BOOTKEY_4 = 0xffffffffU
+#pragma config BOOTROM_BOOTKEY_5 = 0xffffffffU
+#pragma config BOOTROM_BOOTKEY_6 = 0xffffffffU
+#pragma config BOOTROM_BOOTKEY_7 = 0xffffffffU
+#pragma config BOOTROM_UDS_0 = 0xffffffffU
+#pragma config BOOTROM_UDS_1 = 0xffffffffU
+#pragma config BOOTROM_UDS_2 = 0xffffffffU
+#pragma config BOOTROM_UDS_3 = 0xffffffffU
+#pragma config BOOTROM_UDS_4 = 0xffffffffU
+#pragma config BOOTROM_UDS_5 = 0xffffffffU
+#pragma config BOOTROM_UDS_6 = 0xffffffffU
+#pragma config BOOTROM_UDS_7 = 0xffffffffU
+#pragma config BOOTROM_IOPROTKEY_0 = 0xffffffffU
+#pragma config BOOTROM_IOPROTKEY_1 = 0xffffffffU
+#pragma config BOOTROM_IOPROTKEY_2 = 0xffffffffU
+#pragma config BOOTROM_IOPROTKEY_3 = 0xffffffffU
+#pragma config BOOTROM_IOPROTKEY_4 = 0xffffffffU
+#pragma config BOOTROM_IOPROTKEY_5 = 0xffffffffU
+#pragma config BOOTROM_IOPROTKEY_6 = 0xffffffffU
+#pragma config BOOTROM_IOPROTKEY_7 = 0xffffffffU
+#pragma config BOOTROM_BOCORHASH_0 = 0xffffffffU
+#pragma config BOOTROM_BOCORHASH_1 = 0xffffffffU
+#pragma config BOOTROM_BOCORHASH_2 = 0xffffffffU
+#pragma config BOOTROM_BOCORHASH_3 = 0xffffffffU
+#pragma config BOOTROM_BOCORHASH_4 = 0xffffffffU
+#pragma config BOOTROM_BOCORHASH_5 = 0xffffffffU
+#pragma config BOOTROM_BOCORHASH_6 = 0xffffffffU
+#pragma config BOOTROM_BOCORHASH_7 = 0xffffffffU
 
 
 
@@ -220,6 +220,8 @@ void SYS_Initialize ( void* data )
 
     STDIO_BufferModeSet();
 
+
+  
     PORT_Initialize();
 
     CLOCK_Initialize();
@@ -229,17 +231,18 @@ void SYS_Initialize ( void* data )
     NVMCTRL_Initialize();
 
     SUPC_Initialize();
-    
-  
-    
+
     RTC_Initialize();
+    
 	touch_init();
 
     TC0_TimerInitialize();
 
+   
+
 	TRNG_Initialize();
 
-   SERCOM2_USART_Initialize();
+    SERCOM2_USART_Initialize();
 
     SERCOM1_I2C_Initialize();
 
@@ -248,11 +251,11 @@ void SYS_Initialize ( void* data )
     EVSYS_Initialize();
 
     DMAC_Initialize();
-    
+
     SERCOM5_USART_Initialize();
 
     EIC_Initialize();
-    
+
 
     NVIC_Initialize();
 

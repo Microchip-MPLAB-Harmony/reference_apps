@@ -66,6 +66,8 @@
 
 #define DEF_NUM_SENSORS 13
 
+#define INACTIVE_TIMEOUT 200
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: External variables
@@ -104,6 +106,8 @@ uint8_t pressed_key = 13;
 
 /*Long Press Counter*/
 uint32_t long_press_cnt = 0;
+
+uint32_t inactive_timeout =0;
 
 /*Flag to check de-bouncing*/
 volatile bool key_pressed = false;
@@ -307,7 +311,7 @@ void APP_NONSECURE_TOUCH_Tasks ( void )
             if (appInitialized)
             {
 
-              app_touchData.state = APP_NONSECURE_TOUCH_STATE_LUMP_MEASURE;
+              app_touchData.state = APP_NONSECURE_TOUCH_STATE_MEASURE;
             
             }
             break;
@@ -368,6 +372,7 @@ void APP_NONSECURE_TOUCH_Tasks ( void )
         case APP_NONSECURE_TOUCH_STATE_READ:
         {
             app_touchData.state = APP_NONSECURE_TOUCH_STATE_UPDATE_LED;
+            inactive_timeout++;
             for (uint8_t cnt = 0; cnt < DEF_NUM_SENSORS-1; cnt++) 
                 {
                     //At least one key pressed
@@ -375,6 +380,7 @@ void APP_NONSECURE_TOUCH_Tasks ( void )
                     {
                         pressed_key = cnt;
                         key_pressed = true;
+                        inactive_timeout = 0;
                     }
 
                 }
@@ -676,92 +682,100 @@ void APP_NONSECURE_TOUCH_Tasks ( void )
         
         case APP_NONSECURE_TOUCH_STATE_UPDATE_LED:
         {
-            uint8_t column_mask = 0;
-            uint8_t row_mask    = 0;
-
-            QT_LED_COL0_Clear();
-            QT_LED_COL1_Clear();
-            QT_LED_COL2_Clear();
-            QT_LED_COL3_Clear();
-
-            QT_LED_ROW0_Clear();
-            QT_LED_ROW1_Clear();
-            QT_LED_ROW2_Clear();
-            QT_LED_ROW3_Clear();
+            if(inactive_timeout >= INACTIVE_TIMEOUT)
+            {
+                APP_NONSECURE_TOUCH_Backlight(false);
+            }
             
-            /* get the touch button status as column and row */
-            for (uint8_t cnt = 0; cnt < DEF_NUM_SENSORS-1; cnt++) {
-                if (APP_NONSECURE_ENTRY_GetSensorState(cnt) & 0x80) {
-                    column_mask |= (1 << (cnt % 3));
-                    row_mask |= (1 << (cnt / 3)); 
-                }
-            }
-
-            /* turn on corresponding column line based on touch status */
-            if (column_mask & (1 << 0))
+            else
             {
+                uint8_t column_mask = 0;
+                uint8_t row_mask    = 0;
+
                 QT_LED_COL0_Clear();
-                QT_LED_COL1_Set();
-                QT_LED_COL2_Set();
-                QT_LED_COL3_Set();
-            }
-
-
-            if (column_mask & (1 << 1))
-            {
                 QT_LED_COL1_Clear();
-                QT_LED_COL0_Set();
-                QT_LED_COL2_Set();
-                QT_LED_COL3_Set();
-            }
-
-            if (column_mask & (1 << 2))
-            {
                 QT_LED_COL2_Clear();
-                QT_LED_COL0_Set();
-                QT_LED_COL1_Set();
-                QT_LED_COL3_Set();
-            }
-
-            if (column_mask & (1 << 3))
-            {
                 QT_LED_COL3_Clear();
-                QT_LED_COL0_Set();
-                QT_LED_COL1_Set();
-                QT_LED_COL2_Set();
-            }
 
-            /* turn on corresponding row line based on touch status */
-            if (row_mask & (1 << 0))
-            {
                 QT_LED_ROW0_Clear();
-                QT_LED_ROW1_Set();
-                QT_LED_ROW2_Set();
-                QT_LED_ROW3_Set();
-            }
-
-            if (row_mask & (1 << 1))
-            {
                 QT_LED_ROW1_Clear();
-                QT_LED_ROW0_Set();
-                QT_LED_ROW2_Set();
-                QT_LED_ROW3_Set();
-            }
-
-            if (row_mask & (1 << 2))
-            {
                 QT_LED_ROW2_Clear();
-                QT_LED_ROW0_Set();
-                QT_LED_ROW1_Set();
-                QT_LED_ROW3_Set();
-            }
-
-            if (row_mask & (1 << 3))
-            {
                 QT_LED_ROW3_Clear();
-                QT_LED_ROW0_Set();
-                QT_LED_ROW1_Set();
-                QT_LED_ROW2_Set();
+
+                /* get the touch button status as column and row */
+                for (uint8_t cnt = 0; cnt < DEF_NUM_SENSORS-1; cnt++) {
+                    if (APP_NONSECURE_ENTRY_GetSensorState(cnt) & 0x80) {
+                        column_mask |= (1 << (cnt % 3));
+                        row_mask |= (1 << (cnt / 3)); 
+                    }
+                }
+
+                /* turn on corresponding column line based on touch status */
+                if (column_mask & (1 << 0))
+                {
+                    QT_LED_COL0_Clear();
+                    QT_LED_COL1_Set();
+                    QT_LED_COL2_Set();
+                    QT_LED_COL3_Set();
+                }
+
+
+                if (column_mask & (1 << 1))
+                {
+                    QT_LED_COL1_Clear();
+                    QT_LED_COL0_Set();
+                    QT_LED_COL2_Set();
+                    QT_LED_COL3_Set();
+                }
+
+                if (column_mask & (1 << 2))
+                {
+                    QT_LED_COL2_Clear();
+                    QT_LED_COL0_Set();
+                    QT_LED_COL1_Set();
+                    QT_LED_COL3_Set();
+                }
+
+                if (column_mask & (1 << 3))
+                {
+                    QT_LED_COL3_Clear();
+                    QT_LED_COL0_Set();
+                    QT_LED_COL1_Set();
+                    QT_LED_COL2_Set();
+                }
+
+                /* turn on corresponding row line based on touch status */
+                if (row_mask & (1 << 0))
+                {
+                    QT_LED_ROW0_Clear();
+                    QT_LED_ROW1_Set();
+                    QT_LED_ROW2_Set();
+                    QT_LED_ROW3_Set();
+                }
+
+                if (row_mask & (1 << 1))
+                {
+                    QT_LED_ROW1_Clear();
+                    QT_LED_ROW0_Set();
+                    QT_LED_ROW2_Set();
+                    QT_LED_ROW3_Set();
+                }
+
+                if (row_mask & (1 << 2))
+                {
+                    QT_LED_ROW2_Clear();
+                    QT_LED_ROW0_Set();
+                    QT_LED_ROW1_Set();
+                    QT_LED_ROW3_Set();
+                }
+
+                if (row_mask & (1 << 3))
+                {
+                    QT_LED_ROW3_Clear();
+                    QT_LED_ROW0_Set();
+                    QT_LED_ROW1_Set();
+                    QT_LED_ROW2_Set();
+                }
             }
             app_touchData.state = APP_NONSECURE_TOUCH_STATE_MEASURE;
             break;

@@ -19,14 +19,15 @@
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
-/*******************************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
-
- * Subject to your compliance with these terms, you may use this Microchip software
- * and any derivatives exclusively with Microchip products. You are responsible for
- * complying with third party license terms applicable to your use of third party
- * software (including open source software) that may accompany this Microchip software.
-
+/*******************************************************************************
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+*
+* Subject to your compliance with these terms, you may use Microchip software
+* and any derivatives exclusively with Microchip products. It is your
+* responsibility to comply with third party license terms applicable to your
+* use of third party software (including open source software) that may
+* accompany Microchip software.
+*
 * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
 * EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
 * WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
@@ -39,7 +40,7 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
- *******************************************************************************************/
+ *******************************************************************************/
 // DOM-IGNORE-END
 
 // *****************************************************************************
@@ -47,11 +48,11 @@
 // Section: Included Files
 // *****************************************************************************
 // *****************************************************************************
-
 #include "configuration.h"
 #include "device_vectors.h"
 #include "interrupts.h"
 #include "definitions.h"
+
 
 
 // *****************************************************************************
@@ -67,7 +68,7 @@ extern const H3DeviceVectors exception_table;
 extern void Dummy_Handler(void);
 
 /* Brief default interrupt handler for unused IRQs.*/
-void __attribute__((optimize("-O1"),section(".text.Dummy_Handler"),long_call, noreturn))Dummy_Handler(void)
+void __attribute__((optimize("-O1"), long_call, noreturn, used))Dummy_Handler(void)
 {
 #if defined(__DEBUG) || defined(__DEBUG_D) && defined(__XC32)
     __builtin_software_breakpoint();
@@ -78,11 +79,12 @@ void __attribute__((optimize("-O1"),section(".text.Dummy_Handler"),long_call, no
 }
 
 /* MISRAC 2012 deviation block start */
-/* MISRA C-2012 Rule 8.6 deviated 7 times.  Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
+/* MISRA C-2012 Rule 8.6 deviated 8 times.  Deviation record ID -  H3_MISRAC_2012_R_8_6_DR_1 */
 /* Device vectors list dummy definition*/
 extern void SVCall_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void PendSV_Handler             ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void SysTick_Handler            ( void ) __attribute__((weak, alias("Dummy_Handler")));
+extern void EIC_EXTINT_6_Handler       ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void TC2_Handler                ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void TCC0_Handler               ( void ) __attribute__((weak, alias("Dummy_Handler")));
 extern void ADC_OTHER_Handler          ( void ) __attribute__((weak, alias("Dummy_Handler")));
@@ -95,7 +97,7 @@ extern void ADC_RESRDY_Handler         ( void ) __attribute__((weak, alias("Dumm
 
 
 
-__attribute__ ((section(".vectors")))
+__attribute__ ((section(".vectors"), used))
 const H3DeviceVectors exception_table=
 {
     /* Configure Initial Stack Pointer, using linker-generated symbols */
@@ -109,7 +111,7 @@ const H3DeviceVectors exception_table=
     .pfnSysTick_Handler            = SysTick_Handler,
     .pfnEIC_EXTINT_3_Handler       = EIC_EXTINT_3_InterruptHandler,
     .pfnEIC_EXTINT_4_Handler       = EIC_EXTINT_4_InterruptHandler,
-    .pfnEIC_EXTINT_6_Handler       = EIC_EXTINT_6_InterruptHandler,
+    .pfnEIC_EXTINT_6_Handler       = EIC_EXTINT_6_Handler,
     .pfnTC1_Handler                = TC1_TimerInterruptHandler,
     .pfnTC2_Handler                = TC2_Handler,
     .pfnTCC0_Handler               = TCC0_Handler,

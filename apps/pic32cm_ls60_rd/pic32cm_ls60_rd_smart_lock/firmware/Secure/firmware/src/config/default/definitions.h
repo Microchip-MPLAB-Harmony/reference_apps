@@ -12,15 +12,16 @@
 
  *******************************************************************************/
 
-// DOM-IGNORE-BEGIN
-/*******************************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
-
- * Subject to your compliance with these terms, you may use this Microchip software
- * and any derivatives exclusively with Microchip products. You are responsible for
- * complying with third party license terms applicable to your use of third party
- * software (including open source software) that may accompany this Microchip software.
-
+//DOM-IGNORE-BEGIN
+/*******************************************************************************
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+*
+* Subject to your compliance with these terms, you may use Microchip software
+* and any derivatives exclusively with Microchip products. It is your
+* responsibility to comply with third party license terms applicable to your
+* use of third party software (including open source software) that may
+* accompany Microchip software.
+*
 * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
 * EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
 * WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
@@ -33,8 +34,8 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
- *******************************************************************************************/
-// DOM-IGNORE-END
+ *******************************************************************************/
+//DOM-IGNORE-END
 
 #ifndef DEFINITIONS_H
 #define DEFINITIONS_H
@@ -51,19 +52,19 @@
 #include "peripheral/nvmctrl/plib_nvmctrl.h"
 #include "peripheral/supc/plib_supc.h"
 #include "touch/touch.h"
-#include "peripheral/rtc/plib_rtc.h"
 #include "peripheral/tc/plib_tc0.h"
+#include "peripheral/rtc/plib_rtc.h"
 #include "peripheral/trng/plib_trng.h"
 #include "peripheral/sercom/usart/plib_sercom2_usart.h"
 #include "peripheral/sercom/i2c_master/plib_sercom1_i2c_master.h"
-#include "peripheral/sercom/usart/plib_sercom0_usart.h"
 #include "peripheral/evsys/plib_evsys.h"
+#include "peripheral/sercom/usart/plib_sercom0_usart.h"
 #include "peripheral/port/plib_port.h"
 #include "peripheral/clock/plib_clock.h"
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/dmac/plib_dmac.h"
-#include "peripheral/sercom/usart/plib_sercom5_usart.h"
 #include "peripheral/pm/plib_pm.h"
+#include "peripheral/sercom/usart/plib_sercom5_usart.h"
 #include "peripheral/eic/plib_eic.h"
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -75,6 +76,12 @@ extern "C" {
 
 /* Non-secure start address */
 #define TZ_START_NS 0x40000
+
+/* Device Information */
+#define DEVICE_NAME			 "PIC32CM5164LS60064"
+#define DEVICE_ARCH			 "CORTEX-M23"
+#define DEVICE_FAMILY		 "PIC32CM"
+#define DEVICE_SERIES		 "PIC32CMLS60"
 
 /* CPU clock frequency */
 #define CPU_CLOCK_FREQUENCY 12000000

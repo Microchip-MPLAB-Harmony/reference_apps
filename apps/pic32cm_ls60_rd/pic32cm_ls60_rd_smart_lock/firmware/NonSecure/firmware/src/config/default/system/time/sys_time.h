@@ -24,14 +24,15 @@
 *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
-/*******************************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
-
- * Subject to your compliance with these terms, you may use this Microchip software
- * and any derivatives exclusively with Microchip products. You are responsible for
- * complying with third party license terms applicable to your use of third party
- * software (including open source software) that may accompany this Microchip software.
-
+/*******************************************************************************
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+*
+* Subject to your compliance with these terms, you may use Microchip software
+* and any derivatives exclusively with Microchip products. It is your
+* responsibility to comply with third party license terms applicable to your
+* use of third party software (including open source software) that may
+* accompany Microchip software.
+*
 * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
 * EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
 * WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
@@ -44,7 +45,7 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
- *******************************************************************************************/
+*******************************************************************************/
 // DOM-IGNORE-END
 
 #ifndef SYS_TIME_H    // Guards against multiple inclusion
@@ -93,7 +94,7 @@
     sys_time_definitions.h.
 */
 
-typedef struct _SYS_TIME_INIT SYS_TIME_INIT;
+typedef struct SYS_TIME_INIT_ SYS_TIME_INIT;
 
 // *****************************************************************************
 /* System Time Result
@@ -199,8 +200,7 @@ typedef enum
 
   Example:
     <code>
-    //"MY_APP_DATA_STRUCT" is a user defined data structure with "isTimerExpired" as
-    //one of the structure members.
+  
     void MyCallback ( uintptr_t context )
     {
         MY_APP_DATA_STRUCT* pAppData = (MY_APP_DATA_STRUCT *) context;
@@ -272,7 +272,7 @@ typedef void ( * SYS_TIME_CALLBACK ) ( uintptr_t context );
         objSysTime = SYS_TIME_Initialize(SYS_TIME_INDEX_0, (SYS_MODULE_INIT *)&sysTimeInitData);
         if (objSysTime == SYS_MODULE_OBJ_INVALID)
         {
-            // Handle error
+            
         }
         </code>
 
@@ -307,15 +307,13 @@ SYS_MODULE_OBJ SYS_TIME_Initialize( const SYS_MODULE_INDEX index, const SYS_MODU
        None.
 
   Example:
-        <code>
-        // Handle "objSysTime" value must have been returned from SYS_TIME_Initialize.
+        <code>       
 
         SYS_TIME_Deinitialize (objSysTime);
 
         if (SYS_TIME_Status (objSysTime) != SYS_STATUS_UNINITIALIZED)
         {
-            // Check again later if you need to know
-            // when the SYS TIME is De-initialized.
+        
         }
         </code>
 
@@ -352,10 +350,10 @@ void  SYS_TIME_Deinitialize ( SYS_MODULE_OBJ object );
 
   Example:
        <code>
-       // Handle "objSysTime" value must have been returned from SYS_TIME_Initialize.
+    
        if (SYS_TIME_Status (objSysTime) == SYS_STATUS_READY)
        {
-           // Time system service is initialized and ready to accept new requests.
+           
        }
        </code>
 
@@ -410,11 +408,11 @@ SYS_STATUS SYS_TIME_Status ( SYS_MODULE_OBJ object );
 
        if (SYS_TIME_DelayUS(50, &timer) != SYS_TIME_SUCCESS)
        {
-           // Handle error
+          
        }
        else if (SYS_TIME_DelayIsComplete(timer) != true)
        {
-           // Wait till the delay has not expired
+        
            while (SYS_TIME_DelayIsComplete(timer) == false);
        }
        </code>
@@ -469,11 +467,11 @@ SYS_TIME_RESULT SYS_TIME_DelayUS ( uint32_t us, SYS_TIME_HANDLE* handle );
 
        if (SYS_TIME_DelayMS(100, &timer) != SYS_TIME_SUCCESS)
        {
-           // Handle error
+          
        }
        else if(SYS_TIME_DelayIsComplete(timer) != true)
        {
-           // Wait till the delay has not expired
+          
            while (SYS_TIME_DelayIsComplete(timer) == false);
        }
        </code>
@@ -519,10 +517,10 @@ SYS_TIME_RESULT SYS_TIME_DelayMS ( uint32_t ms, SYS_TIME_HANDLE* handle );
 
   Example:
        <code>
-       // Check if the delay has expired.
+      
        if (SYS_TIME_DelayIsComplete(timer) != true)
        {
-           // Delay has not expired
+          
        }
        </code>
 
@@ -596,11 +594,11 @@ bool SYS_TIME_DelayIsComplete ( SYS_TIME_HANDLE handle );
       The following example call will register it, requesting a 500 microsecond
       periodic callback.
       <code>
-      //Give a SYS_TIME_CALLBACK function "MyCallback",
+     
       SYS_TIME_HANDLE handle = SYS_TIME_CallbackRegisterUS(MyCallback, (uintptr_t)0, 500, SYS_TIME_PERIODIC);
       if (handle != SYS_TIME_HANDLE_INVALID)
       {
-            //timer is created successfully.
+           
       }
       </code>
 
@@ -670,11 +668,11 @@ SYS_TIME_HANDLE SYS_TIME_CallbackRegisterUS ( SYS_TIME_CALLBACK callback, uintpt
       The following example call will register it, requesting a 50 millisecond
       periodic callback.
       <code>
-      //Give a SYS_TIME_CALLBACK function "MyCallback",
+     
       SYS_TIME_HANDLE handle = SYS_TIME_CallbackRegisterMS(MyCallback, (uintptr_t)0, 50, SYS_TIME_PERIODIC);
       if (handle != SYS_TIME_HANDLE_INVALID)
       {
-            //timer is created successfully.
+           
       }
       </code>
       
@@ -766,17 +764,10 @@ uint32_t SYS_TIME_FrequencyGet ( void );
     uint32_t timeStamp1;
     uint32_t timeStamp2;
     uint32_t timeDiffMs;
-
-    // Take first time stamp
+ 
     timeStamp1 = SYS_TIME_CounterGet();
-
-    //Perform some tasks....
-
-    // Take second time stamp
-    timeStamp2 = SYS_TIME_CounterGet();
-
-    //Calculate the time difference. Use the appropriate function -
-    //SYS_TIME_CountToMS or SYS_TIME_CountToUS to calculate the time difference.
+   
+    timeStamp2 = SYS_TIME_CounterGet();    
 
     timeDiffMs = SYS_TIME_CountToMS((timeStamp2 - timeStamp1));
     </code>
@@ -815,16 +806,11 @@ uint32_t SYS_TIME_CounterGet ( void );
     uint64_t timeStamp1;
     uint64_t timeStamp2;
     uint64_t timeDiffMs;
-
-    // Take first time stamp
+  
     timeStamp1 = SYS_TIME_Counter64Get();
-
-    //Perform some tasks....
-
-    // Take second time stamp
+ 
     timeStamp2 = SYS_TIME_Counter64Get();
-
-    //Calculate the time difference.
+  
     timeDiffMs = timeStamp2 - timeStamp1;
     timeDiffMs = (uint64_t)(((double)timeDiffMs/SYS_TIME_FrequencyGet())*1000.0);
     </code>
@@ -1094,11 +1080,11 @@ uint32_t SYS_TIME_MSToCount ( uint32_t ms );
     The following example creates a software timer instance.
     <code>
     SYS_TIME_HANDLE handle;
-    //myData is the user-defined data that will be passed back in the registered callback function.
+  
     handle = SYS_TIME_TimerCreate(0, SYS_TIME_MSToCount(200), &MyCallback, (uintptr_t)&myData, SYS_TIME_SINGLE);
     if (handle != SYS_TIME_HANDLE_INVALID)
     {
-        //timer is created successfully.
+        
     }
     </code>
 
@@ -1106,10 +1092,10 @@ uint32_t SYS_TIME_MSToCount ( uint32_t ms );
     None.
 */
 
-SYS_TIME_HANDLE SYS_TIME_TimerCreate (
+SYS_TIME_HANDLE SYS_TIME_TimerCreate(
     uint32_t count,
     uint32_t period,
-    SYS_TIME_CALLBACK callback,
+    SYS_TIME_CALLBACK callBack,
     uintptr_t context,
     SYS_TIME_CALLBACK_TYPE type
 );
@@ -1172,10 +1158,10 @@ SYS_TIME_HANDLE SYS_TIME_TimerCreate (
     </code>
     The following example updates a software timer instance.
     <code>
-    //myNewData is the user-defined data that will be passed back in the registered callback function.
+   
     if (SYS_TIME_TimerReload(timer, 0, SYS_TIME_MSToCount(500), &MyNewCallback, (uintptr_t)&myNewData, SYS_TIME_PERIODIC) != SYS_TIME_SUCCESS )
     {
-        // Handle error
+       
     }
     </code>
 
@@ -1183,11 +1169,11 @@ SYS_TIME_HANDLE SYS_TIME_TimerCreate (
     This function facilitates changing multiple timer parameters quickly and
     atomically.
 */
-SYS_TIME_RESULT SYS_TIME_TimerReload (
+SYS_TIME_RESULT SYS_TIME_TimerReload(
     SYS_TIME_HANDLE handle,
     uint32_t count,
     uint32_t period,
-    SYS_TIME_CALLBACK callback,
+    SYS_TIME_CALLBACK callBack,
     uintptr_t context,
     SYS_TIME_CALLBACK_TYPE type
 );
@@ -1218,10 +1204,10 @@ SYS_TIME_RESULT SYS_TIME_TimerReload (
 
   Example:
     <code>
-    // "timer" is the handle to the software timer to be destroyed.
+  
     if (SYS_TIME_TimerDestroy(timer) != SYS_TIME_SUCCESS)
     {
-        // Handle Error
+       
     }
     </code>
 
@@ -1274,7 +1260,7 @@ SYS_TIME_RESULT SYS_TIME_TimerDestroy ( SYS_TIME_HANDLE handle );
        uint32_t count;
        if (SYS_TIME_TimerCounterGet(timer, &count) != SYS_TIME_SUCCESS)
        {
-           // Handle error
+          
        }
        </code>
 
@@ -1396,7 +1382,7 @@ SYS_TIME_RESULT SYS_TIME_TimerStop ( SYS_TIME_HANDLE handle );
        <code>
        if (SYS_TIME_TimerPeriodHasExpired(timer) == true)
        {
-           // Timer has expired. Take desired action.
+           
        }
        </code>
 

@@ -16,7 +16,7 @@
 *******************************************************************************/
 
 /*******************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -61,7 +61,6 @@ void NVIC_Initialize( void )
     NVIC_EnableIRQ(RTC_IRQn);
     NVIC_SetTargetState(EIC_EXTINT_3_IRQn);
     NVIC_SetTargetState(EIC_EXTINT_4_IRQn);
-    NVIC_SetTargetState(EIC_EXTINT_6_IRQn);
     NVIC_SetPriority(DMAC_0_IRQn, 1);
     NVIC_EnableIRQ(DMAC_0_IRQn);
     NVIC_SetPriority(DMAC_1_IRQn, 1);
@@ -95,6 +94,7 @@ void NVIC_Initialize( void )
     NVIC_SetTargetState(TC1_IRQn);
     NVIC_SetPriority(PTC_IRQn, 3);
     NVIC_EnableIRQ(PTC_IRQn);
+
 
 
 

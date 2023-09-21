@@ -22,7 +22,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -62,7 +62,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
-static TC_TIMER_CALLBACK_OBJ TC0_CallbackObject;
+volatile static TC_TIMER_CALLBACK_OBJ TC0_CallbackObject;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -89,7 +89,7 @@ void TC0_TimerInitialize( void )
     TC0_REGS->COUNT16.TC_WAVE = (uint8_t)TC_WAVE_WAVEGEN_MPWM;
 
     /* Configure timer period */
-    TC0_REGS->COUNT16.TC_CC[0U] = 24000U;
+    TC0_REGS->COUNT16.TC_CC[0U] = 23999U;
 
     /* Clear all interrupt flags */
     TC0_REGS->COUNT16.TC_INTFLAG = (uint8_t)TC_INTFLAG_Msk;
@@ -136,7 +136,7 @@ void TC0_TimerCommandSet(TC_COMMAND command)
     while((TC0_REGS->COUNT16.TC_SYNCBUSY) != 0U)
     {
         /* Wait for Write Synchronization */
-    }    
+    }
 }
 
 /* Get the current timer counter value */
@@ -197,7 +197,7 @@ void TC0_TimerCallbackRegister( TC_TIMER_CALLBACK callback, uintptr_t context )
 }
 
 /* Timer Interrupt handler */
-void TC0_TimerInterruptHandler( void )
+void __attribute__((used)) TC0_TimerInterruptHandler( void )
 {
     if (TC0_REGS->COUNT16.TC_INTENSET != 0U)
     {
@@ -205,9 +205,10 @@ void TC0_TimerInterruptHandler( void )
         status = (TC_TIMER_STATUS) TC0_REGS->COUNT16.TC_INTFLAG;
         /* Clear interrupt flags */
         TC0_REGS->COUNT16.TC_INTFLAG = (uint8_t)TC_INTFLAG_Msk;
-        if((status != TC_TIMER_STATUS_NONE) && (TC0_CallbackObject.callback != NULL))
+        if((TC0_CallbackObject.callback != NULL) && (status != TC_TIMER_STATUS_NONE))
         {
-            TC0_CallbackObject.callback(status, TC0_CallbackObject.context);
+            uintptr_t context = TC0_CallbackObject.context;
+            TC0_CallbackObject.callback(status, context);
         }
     }
 }

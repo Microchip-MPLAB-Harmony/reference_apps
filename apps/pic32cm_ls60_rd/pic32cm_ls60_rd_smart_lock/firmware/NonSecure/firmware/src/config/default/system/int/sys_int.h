@@ -20,14 +20,15 @@
 *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
-/*******************************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
-
- * Subject to your compliance with these terms, you may use this Microchip software
- * and any derivatives exclusively with Microchip products. You are responsible for
- * complying with third party license terms applicable to your use of third party
- * software (including open source software) that may accompany this Microchip software.
-
+/*******************************************************************************
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+*
+* Subject to your compliance with these terms, you may use Microchip software
+* and any derivatives exclusively with Microchip products. It is your
+* responsibility to comply with third party license terms applicable to your
+* use of third party software (including open source software) that may
+* accompany Microchip software.
+*
 * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
 * EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
 * WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
@@ -40,7 +41,7 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
- *******************************************************************************************/
+*******************************************************************************/
 // DOM-IGNORE-END
 
 #ifndef SYS_INT_H    // Guards against multiple inclusion
@@ -165,12 +166,8 @@ void SYS_INT_Enable( void );
     <code>
       bool interruptState;
 
-      // Save global interrupt state and disable interrupt
       interruptState = SYS_INT_Disable();
-
-      // Critical Section
-
-      // Restore interrupt state
+     
       SYS_INT_Restore(interruptState)
     </code>
 
@@ -206,13 +203,16 @@ bool SYS_INT_Disable( void );
     <code>
        if(true == SYS_INT_IsEnabled())
        {
-             // Gloable Interrupt is enabled
+            
        }
     </code>
 
   Remarks:
     None.
 */
+
+/* MISRA C-2012 Rule 5.5, 8.6 deviated below. Deviation record ID -  
+   H3_MISRAC_2012_R_5_5_DR_1 & H3_MISRAC_2012_R_8_6_DR_1*/
 
 bool SYS_INT_IsEnabled( void );
 
@@ -240,13 +240,9 @@ bool SYS_INT_IsEnabled( void );
   Example:
     <code>
       bool interruptState;
-
-      // Save global interrupt state and disable interrupt
+    
       interruptState = SYS_INT_Disable();
-
-      // Critical Section
-
-      // Restore interrupt state
+      
       SYS_INT_Restore(interruptState)
     </code>
 
@@ -289,7 +285,7 @@ void SYS_INT_Restore( bool state );
     interrupt for TXRDY or RXRDY or Error interrupts are not enabled.
 */
 
-void SYS_INT_SourceEnable( INT_SOURCE source );
+void SYS_INT_SourceEnable( INT_SOURCE aSrcSelection  );
 
 
 // *****************************************************************************
@@ -327,7 +323,7 @@ void SYS_INT_SourceEnable( INT_SOURCE source );
     USART0 module level interrupt for TX or RX or Error are enabled.
 */
 
-bool SYS_INT_SourceDisable( INT_SOURCE source );
+bool SYS_INT_SourceDisable( INT_SOURCE source);
 
 
 // *****************************************************************************
@@ -353,13 +349,9 @@ bool SYS_INT_SourceDisable( INT_SOURCE source );
   Example:
     <code>
       bool aState;
-
-      // Save interrupt vector state and disable interrupt
+     
       aState = SYS_INT_SourceDisable( aSrcId );
-
-      // Critical Section
-
-      // Restore interrupt vector state
+      
       SYS_INT_SourceRestore( aSrcId, aState )
     </code>
 
@@ -367,7 +359,7 @@ bool SYS_INT_SourceDisable( INT_SOURCE source );
     None.
 */
 
-void SYS_INT_SourceRestore( INT_SOURCE source, bool aState );
+void SYS_INT_SourceRestore( INT_SOURCE source , bool status );
 
 
 // *****************************************************************************
@@ -402,7 +394,7 @@ void SYS_INT_SourceRestore( INT_SOURCE source, bool aState );
     disable the interrupt line.
 */
 
-bool SYS_INT_SourceIsEnabled( INT_SOURCE source );
+bool SYS_INT_SourceIsEnabled( INT_SOURCE aSrcSelection  );
 
 
 // *****************************************************************************
@@ -436,7 +428,7 @@ bool SYS_INT_SourceIsEnabled( INT_SOURCE source );
     corresponding interrupt vector executes on some devices.
 */
 
-bool SYS_INT_SourceStatusGet( INT_SOURCE source );
+bool SYS_INT_SourceStatusGet( INT_SOURCE aSrcSelection  );
 
 
 // *****************************************************************************
@@ -462,8 +454,7 @@ bool SYS_INT_SourceStatusGet( INT_SOURCE source );
     None.
 
   Example:
-    <code>
-       //Trigger USART0 ISR handler manually
+    <code>       
     SYS_INT_SourceStatusSet(USART0_IRQn);
     </code>
 
@@ -471,7 +462,7 @@ bool SYS_INT_SourceStatusGet( INT_SOURCE source );
     This feature may not be supported by some devices.
 */
 
-void SYS_INT_SourceStatusSet( INT_SOURCE source );
+void SYS_INT_SourceStatusSet( INT_SOURCE aSrcSelection  );
 
 
 // *****************************************************************************
@@ -496,8 +487,7 @@ void SYS_INT_SourceStatusSet( INT_SOURCE source );
     None.
 
   Example:
-    <code>
-       //Clear a pending interrupt.
+    <code>      
        SYS_INT_SourceStatusClear(USART0_IRQn);
     </code>
 
@@ -505,8 +495,9 @@ void SYS_INT_SourceStatusSet( INT_SOURCE source );
     None.
 */
 
-void SYS_INT_SourceStatusClear( INT_SOURCE source );
+void SYS_INT_SourceStatusClear( INT_SOURCE aSrcSelection  );
 
+/* MISRAC 2012 deviation block end */
 
 #include "sys_int_mapping.h"
 

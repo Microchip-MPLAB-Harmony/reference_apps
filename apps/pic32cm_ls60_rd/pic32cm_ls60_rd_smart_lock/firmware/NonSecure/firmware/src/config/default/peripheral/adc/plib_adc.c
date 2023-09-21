@@ -22,7 +22,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -87,11 +87,11 @@ void ADC_Initialize( void )
     }
     /* Write linearity calibration in BIASREFBUF and bias calibration in BIASCOMP */
     uint32_t calib_low_word = (uint32_t)(*(uint64_t*)SW_CALIB_ADDR);
-    ADC_REGS->ADC_CALIB = (uint16_t)((ADC_CALIB_BIASREFBUF((calib_low_word & ADC_LINEARITY_Msk) >> ADC_LINEARITY_POS)) | 
+    ADC_REGS->ADC_CALIB = (uint16_t)((ADC_CALIB_BIASREFBUF((calib_low_word & ADC_LINEARITY_Msk) >> ADC_LINEARITY_POS)) |
                                       (ADC_CALIB_BIASCOMP((calib_low_word & ADC_BIASCAL_Msk) >> ADC_BIASCAL_POS)));
 
     /* Prescaler */
-    ADC_REGS->ADC_CTRLB = (uint8_t)ADC_CTRLB_PRESCALER_DIV32;
+    ADC_REGS->ADC_CTRLB = (uint8_t)ADC_CTRLB_PRESCALER_DIV8;
     /* Sampling length */
     ADC_REGS->ADC_SAMPCTRL = (uint8_t)ADC_SAMPCTRL_SAMPLEN(3UL);
 
@@ -99,13 +99,11 @@ void ADC_Initialize( void )
     ADC_REGS->ADC_REFCTRL = (uint8_t)ADC_REFCTRL_REFSEL_INTREF;
 
     /* Input pin */
-    ADC_REGS->ADC_INPUTCTRL = (uint16_t) ADC_POSINPUT_AIN18;
+    ADC_REGS->ADC_INPUTCTRL = (uint16_t) ADC_POSINPUT_AIN0;
 
     /* Resolution & Operation Mode */
-    ADC_REGS->ADC_CTRLC = (uint16_t)(ADC_CTRLC_RESSEL_16BIT | ADC_CTRLC_WINMODE(0UL) );
+    ADC_REGS->ADC_CTRLC = (uint16_t)(ADC_CTRLC_RESSEL_12BIT | ADC_CTRLC_WINMODE(0UL) | ADC_CTRLC_FREERUN_Msk);
 
-    /* Result averaging */
-    ADC_REGS->ADC_AVGCTRL = (uint8_t)(ADC_AVGCTRL_SAMPLENUM(4UL) | ADC_AVGCTRL_ADJRES(4UL));
 
     /* Clear all interrupt flags */
     ADC_REGS->ADC_INTFLAG = (uint8_t)ADC_INTFLAG_Msk;
@@ -184,7 +182,7 @@ void ADC_ComparisonWindowSet(uint16_t low_threshold, uint16_t high_threshold)
 
 void ADC_WindowModeSet(ADC_WINMODE mode)
 {
-	ADC_REGS->ADC_CTRLC =  (ADC_REGS->ADC_CTRLC & (uint16_t)(~ADC_CTRLC_WINMODE_Msk)) | (uint16_t)((uint32_t)mode << ADC_CTRLC_WINMODE_Pos);
+    ADC_REGS->ADC_CTRLC =  (ADC_REGS->ADC_CTRLC & (uint16_t)(~ADC_CTRLC_WINMODE_Msk)) | (uint16_t)((uint32_t)mode << ADC_CTRLC_WINMODE_Pos);
     while(0U != (ADC_REGS->ADC_SYNCBUSY))
     {
         /* Wait for Synchronization */

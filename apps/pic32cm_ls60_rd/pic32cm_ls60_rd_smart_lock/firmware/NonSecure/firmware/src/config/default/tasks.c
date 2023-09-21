@@ -20,14 +20,15 @@
  *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
-/*******************************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
-
- * Subject to your compliance with these terms, you may use this Microchip software
- * and any derivatives exclusively with Microchip products. You are responsible for
- * complying with third party license terms applicable to your use of third party
- * software (including open source software) that may accompany this Microchip software.
-
+/*******************************************************************************
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+*
+* Subject to your compliance with these terms, you may use Microchip software
+* and any derivatives exclusively with Microchip products. It is your
+* responsibility to comply with third party license terms applicable to your
+* use of third party software (including open source software) that may
+* accompany Microchip software.
+*
 * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
 * EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
 * WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
@@ -40,7 +41,7 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
- *******************************************************************************************/
+ *******************************************************************************/
 // DOM-IGNORE-END
 
 // *****************************************************************************
@@ -51,6 +52,7 @@
 
 #include "configuration.h"
 #include "definitions.h"
+#include "sys_tasks.h"
 
 
 
@@ -80,23 +82,22 @@ void SYS_Tasks ( void )
     
 
     /* Maintain the application's state machine. */
-        /* Call Application task APP_DB_MOTOR. */
-    /* Call Application task APP_TOUCH. */
-    APP_NONSECURE_TOUCH_Tasks();
-
-    /* Call Application task APP_SECURITY. */
-    APP_NONSECURE_SECURITY_Tasks();
-
-    /* Call Application task APP_DB_MOTOR. */
-    APP_NONSECURE_DEADBOLT_CONTROL_Tasks();
-    
-    /* Call Application task APP_BAT_MGMT. */
+        /* Call Application task APP_NONSECURE_BATTERY_MANAGEMENT. */
     APP_NONSECURE_BATTERY_MANAGEMENT_Tasks();
 
-#ifdef WIFI_ENABLE
-    /* Call Application task APP_BRIDGE_WIFI. */
+    /* Call Application task APP_NONSECURE_DEADBOLT_CONTROL. */
+    APP_NONSECURE_DEADBOLT_CONTROL_Tasks();
+
+    /* Call Application task APP_NONSECURE_SECURITY. */
+    APP_NONSECURE_SECURITY_Tasks();
+
+    /* Call Application task APP_NONSECURE_TOUCH. */
+    APP_NONSECURE_TOUCH_Tasks();
+
+    /* Call Application task APP_NONSECURE_WIFI_BRIDGE. */
     APP_NONSECURE_WIFI_BRIDGE_Tasks();
-#endif
+
+
 
 
 }

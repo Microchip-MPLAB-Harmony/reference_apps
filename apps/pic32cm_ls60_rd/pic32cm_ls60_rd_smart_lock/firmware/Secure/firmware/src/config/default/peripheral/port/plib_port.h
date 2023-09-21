@@ -17,7 +17,7 @@
 *******************************************************************************/
 
 /*******************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -185,97 +185,62 @@ typedef enum
 {
     /* PA02 pin */
     PORT_PIN_PA02 = 2U,
-
     /* PA03 pin */
     PORT_PIN_PA03 = 3U,
-
     /* PB04 pin */
-    PORT_PIN_PB04 = 4U,
-
+    PORT_PIN_PB04 = 36U,
     /* PB05 pin */
-    PORT_PIN_PB05 = 5U,
-
+    PORT_PIN_PB05 = 37U,
     /* PB06 pin */
-    PORT_PIN_PB06 = 6U,
-
+    PORT_PIN_PB06 = 38U,
     /* PB07 pin */
-    PORT_PIN_PB07 = 7U,
-
+    PORT_PIN_PB07 = 39U,
     /* PB08 pin */
-    PORT_PIN_PB08 = 8U,
-
+    PORT_PIN_PB08 = 40U,
     /* PB09 pin */
-    PORT_PIN_PB09 = 9U,
-
+    PORT_PIN_PB09 = 41U,
     /* PA08 pin */
     PORT_PIN_PA08 = 8U,
-
     /* PA09 pin */
     PORT_PIN_PA09 = 9U,
-
     /* PA10 pin */
     PORT_PIN_PA10 = 10U,
-
     /* PA11 pin */
     PORT_PIN_PA11 = 11U,
-
     /* PA17 pin */
     PORT_PIN_PA17 = 17U,
-
     /* PA18 pin */
     PORT_PIN_PA18 = 18U,
-
     /* PA19 pin */
     PORT_PIN_PA19 = 19U,
-
     /* PB16 pin */
-    PORT_PIN_PB16 = 16U,
-
+    PORT_PIN_PB16 = 48U,
     /* PB17 pin */
-    PORT_PIN_PB17 = 17U,
-
+    PORT_PIN_PB17 = 49U,
     /* PA20 pin */
     PORT_PIN_PA20 = 20U,
-
     /* PA21 pin */
     PORT_PIN_PA21 = 21U,
-
     /* PA22 pin */
     PORT_PIN_PA22 = 22U,
-
     /* PA23 pin */
     PORT_PIN_PA23 = 23U,
-
     /* PA24 pin */
     PORT_PIN_PA24 = 24U,
-
     /* PA25 pin */
     PORT_PIN_PA25 = 25U,
-
     /* PB22 pin */
-    PORT_PIN_PB22 = 22U,
-
+    PORT_PIN_PB22 = 54U,
     /* PB23 pin */
-    PORT_PIN_PB23 = 23U,
-
+    PORT_PIN_PB23 = 55U,
     /* PA30 pin */
     PORT_PIN_PA30 = 30U,
-
     /* PA31 pin */
     PORT_PIN_PA31 = 31U,
-
-    /* PB30 pin */
-    PORT_PIN_PB30 = 30U,
-
-    /* PB31 pin */
-    PORT_PIN_PB31 = 31U,
-
     /* PB01 pin */
-    PORT_PIN_PB01 = 1U,
-
+    PORT_PIN_PB01 = 33U,
     /* PB03 pin */
-    PORT_PIN_PB03 = 3U,
-
+    PORT_PIN_PB03 = 35U,
     /* This element should not be used in any of the PORT APIs.
      * It will be used by other modules or application to denote that none of
      * the PORT Pin is used */

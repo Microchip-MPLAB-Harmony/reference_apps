@@ -65,6 +65,7 @@ bool        DISCONNECT_IN_COURSE;
 /** RESET BLE BM70 MODULE
  */
 void APP_SECURE_BLE_MANAGER_ModuleReset( void ){
+    EIC_SEC_REGS->EIC_INTENSET = 0x00; 
     BLE_RESET_Clear();
     BLE_DISCONNECT_Set();
     pic32cm_sleep_ms(700);

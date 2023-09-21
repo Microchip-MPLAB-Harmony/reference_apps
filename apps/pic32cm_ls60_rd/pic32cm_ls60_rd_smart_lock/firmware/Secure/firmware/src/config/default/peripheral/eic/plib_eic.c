@@ -21,14 +21,15 @@
 *******************************************************************************/
 
 // DOM-IGNORE-BEGIN
-/*******************************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
-
- * Subject to your compliance with these terms, you may use this Microchip software
- * and any derivatives exclusively with Microchip products. You are responsible for
- * complying with third party license terms applicable to your use of third party
- * software (including open source software) that may accompany this Microchip software.
-
+/*******************************************************************************
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+*
+* Subject to your compliance with these terms, you may use Microchip software
+* and any derivatives exclusively with Microchip products. It is your
+* responsibility to comply with third party license terms applicable to your
+* use of third party software (including open source software) that may
+* accompany Microchip software.
+*
 * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
 * EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
 * WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
@@ -41,7 +42,7 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
- *******************************************************************************************/
+*******************************************************************************/
 // DOM-IGNORE-END
 
 // *****************************************************************************
@@ -62,7 +63,7 @@
 // *****************************************************************************
 
 /* EIC Channel Callback object */
-static EIC_CALLBACK_OBJ    eicCallbackObject[EXTINT_COUNT];
+volatile static EIC_CALLBACK_OBJ    eicCallbackObject[EXTINT_COUNT];
 
 
 void EIC_Initialize (void)
@@ -87,7 +88,7 @@ void EIC_Initialize (void)
         | EIC_CONFIG0_SENSE3_FALL | EIC_CONFIG0_FILTEN3_Msk
         | EIC_CONFIG0_SENSE4_FALL | EIC_CONFIG0_FILTEN4_Msk
         | EIC_CONFIG0_SENSE5_NONE 
-        | EIC_CONFIG0_SENSE6_LOW
+        | EIC_CONFIG0_SENSE6_LOW 
         | EIC_CONFIG0_SENSE7_NONE ;
 
     EIC_SEC_REGS->EIC_CONFIG1 =  EIC_CONFIG1_SENSE8_NONE 
@@ -106,7 +107,7 @@ void EIC_Initialize (void)
 
 
     /* External Interrupt enable*/
-    EIC_SEC_REGS->EIC_INTENSET = 0x0;
+    EIC_SEC_REGS->EIC_INTENSET = 0x18;
     /* Callbacks for enabled interrupts */
     eicCallbackObject[0].eicPinNo = EIC_PIN_MAX;
     eicCallbackObject[1].eicPinNo = EIC_PIN_MAX;
@@ -125,7 +126,7 @@ void EIC_Initialize (void)
     eicCallbackObject[14].eicPinNo = EIC_PIN_MAX;
     eicCallbackObject[15].eicPinNo = EIC_PIN_MAX;
 
-    EIC_SEC_REGS->EIC_NONSEC = 0x58 ;
+    EIC_SEC_REGS->EIC_NONSEC = 0x18 ;
     /* Enable the EIC */
     EIC_SEC_REGS->EIC_CTRLA |= EIC_CTRLA_ENABLE_Msk;
 

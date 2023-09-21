@@ -158,11 +158,6 @@ void Callback_from_simpleMAP(uint8_t callbacktype){
     }
 }
 
-void EIC_Wake_CB(uintptr_t context)
-{
-    APP_NONSECURE_ENTRY_EIC_Disable();
-    
-}
 
 
 
@@ -190,8 +185,6 @@ int main ( void )
        
     //-- INITIALIZE SIMPLEMAP CALLBACK
     APP_NONSECURE_ENTRY_simpleMAP_Initialize(simpleMAP_SETTINGS_DEBUG,&SIMPLEMAPMESSAGE_RX_BUFFER,(funcptr_ns)Callback_from_simpleMAP);
-    
-    EIC_CallbackRegister(EIC_PIN_6, EIC_Wake_CB, 0);
     
     while ( true )
     {

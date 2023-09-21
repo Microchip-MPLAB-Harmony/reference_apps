@@ -22,7 +22,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -216,10 +216,10 @@ typedef struct
     size_t                      readCount;
 
     /* State */
-    volatile SERCOM_I2C_STATE   state;
+    SERCOM_I2C_STATE            state;
 
     /* Transfer status */
-    volatile SERCOM_I2C_ERROR   error;
+    SERCOM_I2C_ERROR            error;
 
     /* Transfer Event Callback */
     SERCOM_I2C_CALLBACK         callback;

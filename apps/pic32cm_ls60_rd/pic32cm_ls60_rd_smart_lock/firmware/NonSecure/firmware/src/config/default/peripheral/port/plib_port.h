@@ -16,15 +16,15 @@
 
 *******************************************************************************/
 
-// DOM-IGNORE-BEGIN
-/*******************************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
-
- * Subject to your compliance with these terms, you may use this Microchip software
- * and any derivatives exclusively with Microchip products. You are responsible for
- * complying with third party license terms applicable to your use of third party
- * software (including open source software) that may accompany this Microchip software.
-
+/*******************************************************************************
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+*
+* Subject to your compliance with these terms, you may use Microchip software
+* and any derivatives exclusively with Microchip products. It is your
+* responsibility to comply with third party license terms applicable to your
+* use of third party software (including open source software) that may
+* accompany Microchip software.
+*
 * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
 * EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
 * WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
@@ -37,8 +37,7 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
- *******************************************************************************************/
-// DOM-IGNORE-END
+*******************************************************************************/
 
 #ifndef PLIB_PORT_H
 #define PLIB_PORT_H
@@ -239,64 +238,42 @@ typedef enum
 {
     /* PA00 pin */
     PORT_PIN_PA00 = 0,
-
     /* PA01 pin */
     PORT_PIN_PA01 = 1,
-
-    /* PA02 pin */
-    PORT_PIN_PA02 = 2,
-
     /* PA04 pin */
     PORT_PIN_PA04 = 4,
-
     /* PA05 pin */
     PORT_PIN_PA05 = 5,
-
     /* PA06 pin */
     PORT_PIN_PA06 = 6,
-
     /* PA07 pin */
     PORT_PIN_PA07 = 7,
-
     /* PB12 pin */
-    PORT_PIN_PB12 = 12,
-
+    PORT_PIN_PB12 = 44,
     /* PB13 pin */
-    PORT_PIN_PB13 = 13,
-
+    PORT_PIN_PB13 = 45,
     /* PB14 pin */
-    PORT_PIN_PB14 = 14,
-
+    PORT_PIN_PB14 = 46,
     /* PB15 pin */
-    PORT_PIN_PB15 = 15,
-
+    PORT_PIN_PB15 = 47,
     /* PA12 pin */
     PORT_PIN_PA12 = 12,
-
     /* PA13 pin */
     PORT_PIN_PA13 = 13,
-
     /* PA14 pin */
     PORT_PIN_PA14 = 14,
-
     /* PA15 pin */
     PORT_PIN_PA15 = 15,
-
     /* PA16 pin */
     PORT_PIN_PA16 = 16,
-
     /* PB30 pin */
-    PORT_PIN_PB30 = 30,
-
+    PORT_PIN_PB30 = 62,
     /* PB31 pin */
-    PORT_PIN_PB31 = 31,
-
+    PORT_PIN_PB31 = 63,
     /* PB00 pin */
-    PORT_PIN_PB00 = 0,
-
+    PORT_PIN_PB00 = 32,
     /* PB02 pin */
-    PORT_PIN_PB02 = 2,
-
+    PORT_PIN_PB02 = 34,
     /* This element should not be used in any of the PORT APIs.
      * It will be used by other modules or application to denote that none of
      * the PORT Pin is used */

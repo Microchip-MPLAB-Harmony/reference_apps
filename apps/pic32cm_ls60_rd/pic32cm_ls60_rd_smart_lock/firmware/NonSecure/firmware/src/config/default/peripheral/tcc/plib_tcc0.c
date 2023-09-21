@@ -19,7 +19,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -66,10 +66,12 @@ void TCC0_PWMInitialize(void)
         /* Wait for sync */
     }
     /* Clock prescaler */
-    TCC0_REGS->TCC_CTRLA = TCC_CTRLA_PRESCALER_DIV4 ;
+    TCC0_REGS->TCC_CTRLA = TCC_CTRLA_PRESCALER_DIV4 
+                            | TCC_CTRLA_PRESCSYNC_PRESC ;
     TCC0_REGS->TCC_WEXCTRL = TCC_WEXCTRL_OTMX(0UL);
 
-    TCC0_REGS->TCC_WAVE = TCC_WAVE_WAVEGEN_NPWM | TCC_WAVE_POL0_Msk | TCC_WAVE_POL1_Msk | TCC_WAVE_POL2_Msk | TCC_WAVE_POL3_Msk;
+    TCC0_REGS->TCC_WAVE = TCC_WAVE_WAVEGEN_NPWM | TCC_WAVE_RAMP_RAMP1 | TCC_WAVE_POL0_Msk | TCC_WAVE_POL1_Msk | TCC_WAVE_POL2_Msk | TCC_WAVE_POL3_Msk;
+
 
     /* Configure duty cycle values */
     TCC0_REGS->TCC_CC[0] = 0U;
@@ -149,10 +151,31 @@ bool TCC0_PWMPatternSet(uint8_t pattern_enable, uint8_t pattern_output)
 }
 
 
-/* Set the counter*/
-void TCC0_PWM24bitCounterSet (uint32_t count)
+
+/* Get the current counter value */
+uint32_t TCC0_PWM24bitCounterGet( void )
 {
-    TCC0_REGS->TCC_COUNT = count & 0xFFFFFFU;
+    /* Write command to force COUNT register read synchronization */
+    TCC0_REGS->TCC_CTRLBSET |= (uint8_t)TCC_CTRLBSET_CMD_READSYNC;
+
+    while((TCC0_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_CTRLB_Msk) == TCC_SYNCBUSY_CTRLB_Msk)
+    {
+        /* Wait for Write Synchronization */
+    }
+
+    while((TCC0_REGS->TCC_CTRLBSET & TCC_CTRLBSET_CMD_Msk) != 0U)
+    {
+        /* Wait for CMD to become zero */
+    }
+
+    /* Read current count value */
+    return TCC0_REGS->TCC_COUNT;
+}
+
+/* Set the counter*/
+void TCC0_PWM24bitCounterSet (uint32_t countVal)
+{
+    TCC0_REGS->TCC_COUNT = countVal & 0xFFFFFFU;
     while ((TCC0_REGS->TCC_SYNCBUSY & TCC_SYNCBUSY_COUNT_Msk) != 0U)
     {
         /* Wait for sync */

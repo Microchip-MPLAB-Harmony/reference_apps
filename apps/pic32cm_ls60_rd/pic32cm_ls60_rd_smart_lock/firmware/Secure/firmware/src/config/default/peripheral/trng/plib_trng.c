@@ -16,7 +16,7 @@
 *******************************************************************************/
 
 /*******************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -49,13 +49,13 @@ void TRNG_Initialize( void )
 
 uint32_t TRNG_ReadData( void )
 {
-	TRNG_REGS->TRNG_CTRLA |= TRNG_CTRLA_ENABLE_Msk;
-	while(((TRNG_REGS->TRNG_INTFLAG) & (TRNG_INTFLAG_DATARDY_Msk)) != TRNG_INTFLAG_DATARDY_Msk)
-	{
+   TRNG_REGS->TRNG_CTRLA |= TRNG_CTRLA_ENABLE_Msk;
+   while(((TRNG_REGS->TRNG_INTFLAG) & (TRNG_INTFLAG_DATARDY_Msk)) != TRNG_INTFLAG_DATARDY_Msk)
+   {
        /* Do Nothing */
-	}				
-	TRNG_REGS->TRNG_CTRLA &= ~(TRNG_CTRLA_ENABLE_Msk);
-	return (TRNG_REGS->TRNG_DATA);
+   }
+   TRNG_REGS->TRNG_CTRLA &= ~(TRNG_CTRLA_ENABLE_Msk);
+   return (TRNG_REGS->TRNG_DATA);
 }
 
 

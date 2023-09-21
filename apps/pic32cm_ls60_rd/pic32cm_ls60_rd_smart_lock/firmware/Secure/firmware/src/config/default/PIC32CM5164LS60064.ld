@@ -1,7 +1,7 @@
 /*--------------------------------------------------------------------------
  * MPLAB XC32 Compiler -  PIC32CM5164LS60064 linker script
  * 
- * Copyright (c) 2022, Microchip Technology Inc. and its subsidiaries ("Microchip")
+ * Copyright (c) 2023, Microchip Technology Inc. and its subsidiaries ("Microchip")
  * All rights reserved.
  * 
  * This software is developed by Microchip Technology Inc. and its
@@ -145,6 +145,11 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
 #  define SECURE
 #endif
 
+#ifndef BOOTPROT_SIZE
+#  warning "Boot protection size (BOOTPROT_SIZE) not specified (e.g. -Wl,-DBOOTPROT_SIZE=size). Assuming 0 bytes."
+#  define BOOTPROT_SIZE 0x0
+#endif
+
 #if defined(SECURE) || defined(NONSECURE)
 #  ifndef AS_SIZE
 #    warning "Secure app length (AS_SIZE) not specified (e.g. -Wl,-DAS_SIZE=size). Assuming half of ROM (0x40000 bytes)."
@@ -164,11 +169,6 @@ ENTRY(__XC32_RESET_HANDLER_NAME)
 #    warning "Non-secure callable length (ANSC_SIZE) not specified (e.g. -Wl,-DANSC_SIZE=size). Assuming 0 bytes."
 #    define ANSC_SIZE 0x0
 #  endif
-#endif
-
-#ifndef BOOTPROT_SIZE
-#  warning "Boot protection size (BOOTPROT_SIZE) not specified (e.g. -Wl,-DBOOTPROT_SIZE=size). Assuming 0 bytes."
-#  define BOOTPROT_SIZE 0x0
 #endif
 
 #ifndef RS_SIZE
@@ -229,6 +229,9 @@ MEMORY
  * 
  * CODE_REGION defaults to 'rom', if rom is present (non-zero length),
  * and 'ram' otherwise.
+ * N.B. The BFA will still allocate code to any MEMORY named 'rom' regardless
+ * of CODE_REGION's value. If you wish to use rom for something else please
+ * rename the MEMORY entry.
  * DATA_REGION defaults to 'ram', which must be present.
  * VECTOR_REGION defaults to CODE_REGION, unless 'boot_rom' is present.
  */

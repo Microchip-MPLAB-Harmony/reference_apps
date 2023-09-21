@@ -22,7 +22,7 @@
 
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2019 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -89,7 +89,7 @@ void SUPC_Initialize( void )
     SUPC_REGS->SUPC_VREG = SUPC_VREG_ENABLE_Msk | SUPC_VREG_VSVSTEP(0) | SUPC_VREG_VSPER(0UL) | SUPC_VREG_STDBYPL0_Msk;
 
     /* Configure VREF */
-    SUPC_REGS->SUPC_VREF = SUPC_VREF_SEL(0x6UL) | SUPC_VREF_VREFOE_Msk;
+    SUPC_REGS->SUPC_VREF = SUPC_VREF_SEL(0x6UL);
 
 }
 

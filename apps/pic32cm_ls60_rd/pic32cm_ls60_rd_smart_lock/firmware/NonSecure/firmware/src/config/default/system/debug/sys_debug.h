@@ -17,15 +17,16 @@
     errors and debug information to the user.
  *******************************************************************************/
 
-// DOM-IGNORE-BEGIN
-/*******************************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
-
- * Subject to your compliance with these terms, you may use this Microchip software
- * and any derivatives exclusively with Microchip products. You are responsible for
- * complying with third party license terms applicable to your use of third party
- * software (including open source software) that may accompany this Microchip software.
-
+//DOM-IGNORE-BEGIN
+/*******************************************************************************
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
+*
+* Subject to your compliance with these terms, you may use Microchip software
+* and any derivatives exclusively with Microchip products. It is your
+* responsibility to comply with third party license terms applicable to your
+* use of third party software (including open source software) that may
+* accompany Microchip software.
+*
 * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
 * EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
 * WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
@@ -38,8 +39,8 @@
 * FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
 * ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
- *******************************************************************************************/
-// DOM-IGNORE-END
+ *******************************************************************************/
+//DOM-IGNORE-END
 
 #ifndef SYS_DEBUG_H
 #define SYS_DEBUG_H
@@ -207,7 +208,7 @@ typedef struct
     objectHandle = SYS_DEBUG_Initialize(SYS_DEBUG_INDEX_0, (SYS_MODULE_INIT*)&debugInit);
     if (objectHandle == SYS_MODULE_OBJ_INVALID)
     {
-        // Handle error
+        
     }
     </code>
 
@@ -257,13 +258,13 @@ SYS_MODULE_OBJ SYS_DEBUG_Initialize(
 
   Example:
     <code>
-    SYS_MODULE_OBJ      object;     // Returned from SYS_CONSOLE_Initialize
+    SYS_MODULE_OBJ      object;     
     SYS_STATUS          debugStatus;
 
     debugStatus = SYS_DEBUG_Status (object);
     if (debugStatus == SYS_STATUS_READY)
     {
-        // Debug service is initialized and ready to accept requests.
+        
     }
     </code>
 
@@ -365,10 +366,10 @@ SYS_ERROR_LEVEL SYS_DEBUG_ErrorLevelGet(void);
 
   Example:
     <code>
-    // Re-direct debug system service calls to console index 1
+    
     if (SYS_DEBUG_Redirect(SYS_CONSOLE_INDEX_1) == true)
     {
-        // SYS Debug output will now be re-directed to SYS Console Instance - 1
+       
     }
     </code>
 
@@ -439,10 +440,7 @@ SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void);
 
   Example:
     <code>
-    // In configuration.h file: #define SYS_DEBUG_USE_CONSOLE
-    // In sys_debug.h file: #define SYS_DEBUG_MESSAGE(level,message)  _SYS_DEBUG_MESSAGE(level,message)
-
-    // In source code
+   
     SYS_DEBUG_MESSAGE(SYS_ERROR_WARNING, "My debug warning message\r\n");
     </code>
 
@@ -455,8 +453,8 @@ SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void);
     SYS_DEBUG_MESSAGE macro.
 */
 #ifdef SYS_DEBUG_USE_CONSOLE
-#ifndef _SYS_DEBUG_MESSAGE
-    #define _SYS_DEBUG_MESSAGE(level, message)  do { if((level) <= SYS_DEBUG_ErrorLevelGet()) SYS_CONSOLE_Message(SYS_DEBUG_ConsoleInstanceGet(), message); }while(0)
+#ifndef SYS_DEBUG_MESSAGE
+    #define SYS_DEBUG_MESSAGE(level, message)  do { if((level) <= SYS_DEBUG_ErrorLevelGet()) SYS_CONSOLE_Message(SYS_DEBUG_ConsoleInstanceGet(), message); }while(0)
 #endif
 #endif
 
@@ -488,17 +486,13 @@ SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void);
 
   Example:
     <code>
-    // In configuration.h file: #define SYS_DEBUG_USE_CONSOLE
-    // In sys_debug.h file: #define SYS_DEBUG_PRINT(level, fmt, ...) _SYS_DEBUG_PRINT(level, fmt, ##__VA_ARGS__)
-
-    // In source code
+    
     int result;
 
     result = SomeOperation();
     if (result > MAX_VALUE)
     {
-        SYS_DEBUG_PRINT(SYS_ERROR_WARNING, "Result of %d exceeds max value\r\n", result);
-        // Take appropriate action
+        SYS_DEBUG_PRINT(SYS_ERROR_WARNING, "Result of %d exceeds max value\r\n", result);       
     }
     </code>
 
@@ -511,8 +505,8 @@ SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void);
     SYS_DEBUG_PRINT macro.
 */
 #ifdef SYS_DEBUG_USE_CONSOLE
-#ifndef _SYS_DEBUG_PRINT
-    #define _SYS_DEBUG_PRINT(level, format, ...)    do { if((level) <= SYS_DEBUG_ErrorLevelGet()) SYS_CONSOLE_Print(SYS_DEBUG_ConsoleInstanceGet(), format, ##__VA_ARGS__); } while (0)
+#ifndef SYS_DEBUG_PRINT
+    #define SYS_DEBUG_PRINT(level, format, ...)    do { if((level) <= SYS_DEBUG_ErrorLevelGet()) SYS_CONSOLE_Print(SYS_DEBUG_ConsoleInstanceGet(), format, ##__VA_ARGS__); } while (0)
 #endif
 #endif
 
@@ -574,9 +568,7 @@ SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void);
     None.
 
   Example:
-    <code>
-    // In configuration.h file: #define SYS_DEBUG_USE_CONSOLE
-    // In sys_debug.h file: #define SYS_DEBUG_MESSAGE(level, message) _SYS_DEBUG_MESSAGE(level, message)
+    <code>   
 
     SYS_DEBUG_ErrorLevelSet(SYS_ERROR_DEBUG);
     SYS_DEBUG_MESSAGE(SYS_ERROR_WARNING, "System Debug Message \r\n");
@@ -627,17 +619,13 @@ SYS_MODULE_INDEX SYS_DEBUG_ConsoleInstanceGet(void);
 
   Example:
     <code>
-    // In configuration.h file: #define SYS_DEBUG_USE_CONSOLE
-    // In sys_debug.h: #define SYS_DEBUG_PRINT(level, fmt, ...) _SYS_DEBUG_PRINT(level, fmt, ##__VA_ARGS__)
-
-    // In source code
+   
     int result;
 
     result = SomeOperation();
     if (result > MAX_VALUE)
     {
-        SYS_DEBUG_PRINT(SYS_ERROR_WARNING, "Result of %d exceeds max value\r\n", result);
-        // Take appropriate action
+        SYS_DEBUG_PRINT(SYS_ERROR_WARNING, "Result of %d exceeds max value\r\n", result);       
     }
     </code>
 

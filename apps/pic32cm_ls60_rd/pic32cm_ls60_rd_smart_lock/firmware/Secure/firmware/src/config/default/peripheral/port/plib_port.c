@@ -17,7 +17,7 @@
 *******************************************************************************/
 
 /*******************************************************************************
-* Copyright (C) 2023 Microchip Technology Inc. and its subsidiaries.
+* Copyright (C) 2018 Microchip Technology Inc. and its subsidiaries.
 *
 * Subject to your compliance with these terms, you may use Microchip software
 * and any derivatives exclusively with Microchip products. It is your
@@ -75,7 +75,6 @@ void PORT_Initialize(void)
    PORT_SEC_REGS->GROUP[0].PORT_OUT = 0xc001U;
    PORT_SEC_REGS->GROUP[0].PORT_PINCFG[0] = 0x6U;
    PORT_SEC_REGS->GROUP[0].PORT_PINCFG[1] = 0x0U;
-   PORT_SEC_REGS->GROUP[0].PORT_PINCFG[2] = 0x1U;
    PORT_SEC_REGS->GROUP[0].PORT_PINCFG[4] = 0x0U;
    PORT_SEC_REGS->GROUP[0].PORT_PINCFG[5] = 0x0U;
    PORT_SEC_REGS->GROUP[0].PORT_PINCFG[6] = 0x0U;
@@ -92,7 +91,6 @@ void PORT_Initialize(void)
    PORT_SEC_REGS->GROUP[0].PORT_PINCFG[23] = 0x1U;
 
    PORT_SEC_REGS->GROUP[0].PORT_PMUX[0] = 0x0U;
-   PORT_SEC_REGS->GROUP[0].PORT_PMUX[1] = 0x1U;
    PORT_SEC_REGS->GROUP[0].PORT_PMUX[2] = 0x0U;
    PORT_SEC_REGS->GROUP[0].PORT_PMUX[3] = 0x0U;
    PORT_SEC_REGS->GROUP[0].PORT_PMUX[6] = 0x99U;
@@ -101,14 +99,13 @@ void PORT_Initialize(void)
    PORT_SEC_REGS->GROUP[0].PORT_PMUX[9] = 0x33U;
    PORT_SEC_REGS->GROUP[0].PORT_PMUX[11] = 0x33U;
 
-   PORT_SEC_REGS->GROUP[0].PORT_NONSEC = 0x1f0f7U;
+   PORT_SEC_REGS->GROUP[0].PORT_NONSEC = 0x1f0f3U;
    /************************** GROUP 1 Initialization *************************/
    PORT_SEC_REGS->GROUP[1].PORT_DIR = 0x1f015U;
    PORT_SEC_REGS->GROUP[1].PORT_OUT = 0x400005U;
-   PORT_SEC_REGS->GROUP[1].PORT_PINCFG[0] = 0x4; // Need pull-up on RX indication line
+   PORT_SEC_REGS->GROUP[1].PORT_PINCFG[0] = 0x0U;
    PORT_SEC_REGS->GROUP[1].PORT_PINCFG[2] = 0x0U;
    PORT_SEC_REGS->GROUP[1].PORT_PINCFG[4] = 0x0U;
-   PORT_SEC_REGS->GROUP[1].PORT_PINCFG[8] = 0x1U;
    PORT_SEC_REGS->GROUP[1].PORT_PINCFG[12] = 0x0U;
    PORT_SEC_REGS->GROUP[1].PORT_PINCFG[13] = 0x0U;
    PORT_SEC_REGS->GROUP[1].PORT_PINCFG[14] = 0x0U;
@@ -121,14 +118,13 @@ void PORT_Initialize(void)
    PORT_SEC_REGS->GROUP[1].PORT_PMUX[0] = 0x0U;
    PORT_SEC_REGS->GROUP[1].PORT_PMUX[1] = 0x0U;
    PORT_SEC_REGS->GROUP[1].PORT_PMUX[2] = 0x0U;
-   PORT_SEC_REGS->GROUP[1].PORT_PMUX[4] = 0x1U;
    PORT_SEC_REGS->GROUP[1].PORT_PMUX[6] = 0x0U;
    PORT_SEC_REGS->GROUP[1].PORT_PMUX[7] = 0x0U;
    PORT_SEC_REGS->GROUP[1].PORT_PMUX[8] = 0x0U;
    PORT_SEC_REGS->GROUP[1].PORT_PMUX[11] = 0x0U;
    PORT_SEC_REGS->GROUP[1].PORT_PMUX[15] = 0x33U;
 
-   PORT_SEC_REGS->GROUP[1].PORT_NONSEC = 0xf005U;
+   PORT_SEC_REGS->GROUP[1].PORT_NONSEC = 0xc000f005U;
 
 }
 // *****************************************************************************
