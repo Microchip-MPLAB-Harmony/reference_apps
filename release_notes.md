@@ -56,6 +56,7 @@ nav_order: 99
 | samiot2_google_cloud_core | Google Cloud IoT Core | Removed as the Google has discontinued cloud services. Alternative cloud demo on [AWS Cloud IoT Core](./apps/sam_d21_iot_v2/samiot2_aws_cloud_core/readme.md) and [Microsoft Azure Cloud IoT Core](./apps/sam_d21_iot_v2/samiot2_azure_cloud_core/readme.md)) is available|
 | same51n_google_cloud_iot_core | Google Cloud IoT Core | Removed as the Google has discontinued cloud services. Alternative cloud demo on [AWS Cloud IoT Core](./apps/sam_d21_iot_v2/samiot2_aws_cloud_core/readme.md) and [Microsoft Azure Cloud IoT Core](./apps/sam_d21_iot_v2/samiot2_azure_cloud_core/readme.md)) is available|
 | pic32cmmc_smart_tag_google_cloud_iot_core | Smart Tag Google Cloud IoT Core  | Removed as the Google has discontinued cloud services. Alternative cloud demo on [AWS Cloud IoT Core](./apps/sam_d21_iot_v2/samiot2_aws_cloud_core/readme.md) and [Microsoft Azure Cloud IoT Core]((./apps/sam_d21_iot_v2/samiot2_azure_cloud_core/readme.md)) is available|
+| same54_sdcard_usb_audio_player | SD Card USB Audio Player | Removed the demo. This would be added in a subsequent release on the v2 version of SAM E54 Curiosity Ultra Development Board |
 
 
 
