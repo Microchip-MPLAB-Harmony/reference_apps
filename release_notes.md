@@ -63,7 +63,8 @@ nav_order: 99
 
 
 ### Known Issues
-- None
+- If you regenerate and build the AWS IoT applications, you could encounter a build error "wdrv_winc_enterprise.h: No such file or directory". This can be overcome by commenting the line of code "//#include "wdrv_winc_enterprise.h" in driver/winc/include/wdrv_winc_client_api.h file. This patch is applied due to a known issue in "wireless_wifi" repo. The issue is expected to be fixed in a future release of "wireless_wifi" repository.
+ 
 
 ### Development Tools
 - [MPLAB® X IDE v6.15](https://www.microchip.com/mplab/mplab-x-ide)
