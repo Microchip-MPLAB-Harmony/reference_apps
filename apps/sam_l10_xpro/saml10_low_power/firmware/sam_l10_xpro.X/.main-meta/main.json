@@ -37,16 +37,14 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM L10 Xplained Pro Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"I2C", "RTC", "USART", "DMAC", "ADC", "PM", "SUPC", "EIC", "EVSYS"
+			"EIC",
+			"EVSYS",
+			"GPIO",
+			"RTC",
+			"I2C",
+			"USART",
+			"DMA"
 		],
 		"keywords": [
 			"MCC",
@@ -69,7 +67,7 @@
 			"I/O1",
 			"Xplained"
 
-			
+
 		],
 		"additionalData": {
 			"longDescription": {

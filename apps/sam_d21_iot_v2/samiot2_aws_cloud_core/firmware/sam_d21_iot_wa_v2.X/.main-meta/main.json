@@ -37,31 +37,27 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM D21 IoT WX v2 Development Board"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"EIC", "Timer", "GPIO", "SERCOM(USART)"
+			"EIC",
+			"TMR",
+			"GPIO",
+			"SERCOM",
+			"USART"
 		],
 		"keywords": [
             "MCC",
-			"Harmony",		
+			"Harmony",
 			"Click Board",
 			"IoT",
 			"AWS",
 			"Sensor",
 			"Sensor Node",
-			"Edge Node",		
+			"Edge Node",
 			"Cloud",
 			"WINC1510",
 			"ATECC608B",
 			"CryptoAuthentication",
-			"Security"			
+			"Security"
 		],
 		"additionalData": {
 			"longDescription": {

@@ -37,18 +37,8 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit"
-         ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
-         "Core Timer",
+         "TMR",
          "UART"
       ],
       "keywords":[

@@ -37,20 +37,13 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM L11 Xplained Pro Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"Non-secure USART", "Non-secure DMAC", "Non-secure PORT Pins (USART Pins only)", 
-			"Secure PORT Pins (All pins by default are secure)",
-			"Secure I2C",
-			"Secure RTC",
-			"Secure EIC"			
+			"EIC",
+			"GPIO",
+			"RTC",
+			"I2C",
+			"USART",
+			"DMA"
 		],
 		"keywords": [
 			"MCC",
@@ -65,7 +58,7 @@
 			"GPIO",
 			"Secure Element",
 			"Security",
-			"Temperature",			
+			"Temperature",
 			"TrustZone",
 			"I/O1",
 			"Xplained"

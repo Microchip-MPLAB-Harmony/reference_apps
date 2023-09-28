@@ -37,16 +37,11 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM C21 Xplained Pro Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"PORTS", "SERCOM(USART)", "SERCOM(I2C)"
+			"GPIO",
+			"SERCOM",
+			"USART",
+			"I2C"
 		],
 		"keywords": [
             "MCC",

@@ -37,16 +37,12 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "PIC32MZ DA Curiosity Development Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"UART", "SPI", "Timer", "GPIO", "DMA"
+			"USART",
+			"SPI",
+			"TMR",
+			"GPIO",
+			"DMA"
 		],
 		"keywords": [
 			"MHC",

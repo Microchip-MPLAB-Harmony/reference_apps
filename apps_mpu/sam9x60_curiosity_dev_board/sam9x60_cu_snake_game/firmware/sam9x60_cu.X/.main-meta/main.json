@@ -37,21 +37,11 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "SAM9X60 Curiosity Development Board"
-         ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
-         "LCDC",
+         "LCD",
          "GPIO",
-		 "TC0",
-         "FLEXCOM (I2C)"
+		 "TMR",
+         "I2C"
       ],
       "keywords":[
             "Harmony",

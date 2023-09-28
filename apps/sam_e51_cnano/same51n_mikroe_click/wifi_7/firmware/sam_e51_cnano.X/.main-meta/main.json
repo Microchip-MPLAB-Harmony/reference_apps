@@ -7,7 +7,7 @@
 		"version": "1.6.0",
 		"displayName": "WIFI 7 Click example on SAM E51 Curiosity Nano Evaluation Kit",
 		"projectName": "wifi_7_sam_e51_cnano",
-		"shortDescription": "Demonstrates the WIFI capability of WIFI 7 Click board on SAM E51 Curiosity Nano Evaluation Kit",		
+		"shortDescription": "Demonstrates the WIFI capability of WIFI 7 Click board on SAM E51 Curiosity Nano Evaluation Kit",
 		"ide": {
 			"name": "MPLABX",
 			"semverRange": ">=6.15"
@@ -37,16 +37,13 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM E51 Curiosity Nano Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"EIC", "SYSTICK", "GPIO", "SERCOM(SPI)", "SERCOM(UART)", "CONSOLE", "DEBUG", "WINC", "CORE", "TIME"
+			"EIC",
+			"SYSTEM",
+			"GPIO",
+			"SERCOM",
+			"UART",
+			"SPI"
 		],
 		"keywords": [
 			"MHC",

@@ -37,16 +37,17 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM E54 Xplained Pro Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"PORTS", "RTC", "EIC", "SERCOM(USART)", "SERCOM(I2C)", "DMAC", "ADC", "PM", "SUPC", "EVSYS", "CMCC", "NVMCTRL"
+			"GPIO",
+			"RTC",
+			"EIC",
+			"SERCOM",
+			"USART",
+			"I2C",
+			"DMA",
+			"ADC",
+			"EVSYS",
+			"NVMCTRL"
 		],
 		"keywords": [
             "MCC",
@@ -69,8 +70,8 @@
 			"Sensor",
 			"Xplained",
 			"I/O1",
-			"Power Debugger"			
-	
+			"Power Debugger"
+
 		],
 		"additionalData": {
 			"longDescription": {

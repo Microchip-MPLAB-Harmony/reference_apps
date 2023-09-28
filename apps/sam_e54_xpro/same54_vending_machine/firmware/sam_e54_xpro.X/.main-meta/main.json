@@ -37,16 +37,13 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM E54 Xplained Pro Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"TC", "NVMCTRL", "EIC", "SERCOM(SPI)", "SERCOM(USART)"
+			"TMR",
+			"NVMCTRL",
+			"EIC",
+			"SERCOM",
+			"SPI",
+			"USART"
 		],
 		"keywords": [
 			"MCC",

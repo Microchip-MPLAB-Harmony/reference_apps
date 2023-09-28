@@ -37,21 +37,8 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "SAMA7G54 Evaluation Kit"
-         ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
-         "BSP",
-         "QSPI",
-		 "XIP",
-         "DBGU"
+         "QSPI"
       ],
       "keywords":[
             "Harmony",

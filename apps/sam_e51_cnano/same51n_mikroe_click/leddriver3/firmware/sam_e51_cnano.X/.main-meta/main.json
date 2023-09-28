@@ -7,7 +7,7 @@
 		"version": "1.6.0",
 		"displayName": "LED DRIVER 3 Click example on SAM E51 Curiosity Nano Evaluation Kit",
 		"projectName": "leddriver3_click_sam_e51_cnano",
-		"shortDescription": "Demonstrates RGB color at 500ms rate on SAM E51 Curiosity Nano Evaluation Kit using LED DRIVER 3 Click",		
+		"shortDescription": "Demonstrates RGB color at 500ms rate on SAM E51 Curiosity Nano Evaluation Kit using LED DRIVER 3 Click",
 		"ide": {
 			"name": "MPLABX",
 			"semverRange": ">=6.15"
@@ -37,16 +37,13 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM E51 Curiosity Nano Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"EIC", "SYSTICK", "GPIO", "SERCOM(I2C)", "SERCOM(USART)"
+			"EIC",
+			"SYSTEM",
+			"GPIO",
+			"SERCOM",
+			"UART",
+			"I2C"
 		],
 		"keywords": [
 			"MHC",

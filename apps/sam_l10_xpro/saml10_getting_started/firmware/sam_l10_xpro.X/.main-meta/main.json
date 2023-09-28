@@ -37,16 +37,12 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM L10 Xplained Pro Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"RTC", "PORTS", "SERCOM(I2C)", "SERCOM(USART)", "DMAC"
+			"GPIO",
+			"RTC",
+			"I2C",
+			"USART",
+			"DMA"
 		],
 		"keywords": [
 			"MCC",
@@ -62,7 +58,7 @@
 			"Temperature",
 			"I/O1",
 			"Xplained"
-			
+
 		],
 		"additionalData": {
 			"longDescription": {

@@ -37,23 +37,10 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "SAM E54 Xplained pro Evaluation Kit"
-         ],
-         [
-            "Harmony", "Middleware", "TCP/IP", "same54_ftp_client"
-		   ],
-		   [
-            "Middleware" , "TCP/IP", "same54_ftp_client"
-         ]
-      ],
       "peripherals":[
 	      "MAC",
          "NVMCTRL",
-         "Timer",
-         "SDHC",
+         "TMR",
 		"SERCOM"
       ],
       "keywords":[

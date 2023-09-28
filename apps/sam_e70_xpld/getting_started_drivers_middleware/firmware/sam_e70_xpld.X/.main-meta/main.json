@@ -37,20 +37,10 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "SAM E70 Xplained Evaluation Kit"
-         ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
-         "PORTS",
-         "Timer",
-         "TWIHS (I2C)",
+         "GPIO",
+         "Timers",
+         "I2C",
          "USART",
          "USB",
          "ADC"

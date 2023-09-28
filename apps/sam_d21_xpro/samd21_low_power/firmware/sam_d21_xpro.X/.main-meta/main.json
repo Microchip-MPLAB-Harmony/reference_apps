@@ -37,16 +37,13 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM D21 Xplained Pro Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"I2C", "RTC", "USART", "AC", "PM", "EIC", "EVSYS"
+			"I2C",
+			"RTC",
+			"USART",
+			"AC",
+			"EIC",
+			"EVSYS"
 		],
 		"keywords": [
 			"MCC",
@@ -63,7 +60,7 @@
 			"Temperature",
 			"Lighting",
 			"Sensor"
-			
+
 		],
 		"additionalData": {
 			"longDescription": {

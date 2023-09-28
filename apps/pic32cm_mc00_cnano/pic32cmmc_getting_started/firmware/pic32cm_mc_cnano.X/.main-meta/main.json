@@ -37,28 +37,19 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "PIC32CM MC00 Curiosity Nano Evaluation Kit"
-         ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
          "EIC",
          "RTC",
          "GPIO",
-         "SERCOM (USART)"
+         "SERCOM",
+         "USART"
       ],
       "keywords":[
             "Harmony",
 			"MCC",
             "UART",
             "Serial Communication",
-			"Getting Started",			
+			"Getting Started",
             "USART",
             "SERCOM",
             "Getting Started",

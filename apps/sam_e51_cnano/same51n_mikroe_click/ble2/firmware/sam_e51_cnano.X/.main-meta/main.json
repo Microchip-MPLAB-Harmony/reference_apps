@@ -7,7 +7,7 @@
 		"version": "1.6.0",
 		"displayName": "BLE 2 Click example on SAM E51 Curiosity Nano Evaluation Kit",
 		"projectName": "ble2_click_sam_e51_cnano",
-		"shortDescription": "Demonstrates the BLE capability of BLE 2 Click board on SAM E51 Curiosity Nano Evaluation Kit",		
+		"shortDescription": "Demonstrates the BLE capability of BLE 2 Click board on SAM E51 Curiosity Nano Evaluation Kit",
 		"ide": {
 			"name": "MPLABX",
 			"semverRange": ">=6.15"
@@ -37,16 +37,12 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM E51 Curiosity Nano Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"EIC", "SYSTICK", "GPIO", "SERCOM(UART)", "CONSOLE", "DEBUG", "CORE", "TIME"
+			"EIC",
+			"SYSTEM",
+			"GPIO",
+			"SERCOM",
+			"UART"
 		],
 		"keywords": [
             "MCC",

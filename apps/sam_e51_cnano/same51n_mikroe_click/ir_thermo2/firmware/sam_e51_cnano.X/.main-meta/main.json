@@ -7,7 +7,7 @@
 		"version": "1.6.0",
 		"displayName": "IR Thermo 2 example on SAM E51 Curiosity Nano Evaluation Kit",
 		"projectName": "ir_thermo2_click_sam_e51_cnano",
-		"shortDescription": "Demonstrates how to read contactless reading of object temperature using IR Thermo 2 board",		
+		"shortDescription": "Demonstrates how to read contactless reading of object temperature using IR Thermo 2 board",
 		"ide": {
 			"name": "MPLABX",
 			"semverRange": ">=6.15"
@@ -37,16 +37,12 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM E51 Curiosity Nano Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"EIC", "SYSTICK", "GPIO", "SERCOM(I2C)"
+			"EIC",
+			"SYSTEM",
+			"GPIO",
+			"SERCOM",
+			"I2C"
 		],
 		"keywords": [
 			"MCC",

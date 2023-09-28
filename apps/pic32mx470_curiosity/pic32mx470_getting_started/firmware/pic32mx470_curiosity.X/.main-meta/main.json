@@ -37,16 +37,12 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "Curiosity PIC32MX470 Development Board"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"UART", "SPI", "Timer", "Core Timer", "GPIO", "DMA"
+			"USART",
+			"SPI",
+			"TMR",
+			"GPIO",
+			"DMA"
 		],
 		"keywords": [
 			"MCC",

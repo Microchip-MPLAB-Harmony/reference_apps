@@ -36,16 +36,12 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM E54 Xplained Pro Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"PORTS", "RTC", "EIC", "SERCOM(USART)", "SERCOM(I2C)"
+			"RTC",
+			"GPIO",
+			"SERCOM",
+			"UART",
+			"I2C"
 		],
 		"keywords": [
 			"MCC",
@@ -60,10 +56,10 @@
 			"GPIO",
 			"I2C",
 			"Temperature",
-			"Sensor",	
+			"Sensor",
 			"Xplained",
 			"I/O1"
-	
+
 		],
 		"additionalData": {
 			"longDescription": {

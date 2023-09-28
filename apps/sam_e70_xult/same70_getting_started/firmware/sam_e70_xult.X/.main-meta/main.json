@@ -37,16 +37,12 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM E70 Xplained Ultra Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"PORTS", "Timer", "TWIHS (I2C)", "USART", "XDMAC"
+			"GPIO",
+			"TMR",
+			"I2C",
+			"USART",
+			"DMA"
 		],
 		"keywords": [
 			"MCC",
@@ -57,8 +53,8 @@
 			"Getting Started",
 			"TMR",
 			"GPIO",
-			"Temperature",	
-			"Sensor",	
+			"Temperature",
+			"Sensor",
 			"I/O1",
 			"Xplained"
 		],

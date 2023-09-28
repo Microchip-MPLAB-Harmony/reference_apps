@@ -37,16 +37,11 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "PIC32CM MC00 Curiosity Nano Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]			
-		],
 		"peripherals": [
-			"Timer", "SERCOM (I2C)", "SERCOM (SPI)"
+			"TMR",
+			"SERCOM",
+			"I2C",
+			"SPI"
 		],
 		"keywords": [
 			"Harmony",
@@ -60,9 +55,9 @@
             "RTC",
             "Curiosity",
 			"Curiosity Nano",
-			"Host Bus Adapter",			
+			"Host Bus Adapter",
             "I2C",
-            "GPIO",		
+            "GPIO",
 			"Bluetooth",
 			"BLE",
 			"EIC",

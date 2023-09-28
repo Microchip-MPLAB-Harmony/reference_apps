@@ -37,16 +37,12 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "PIC32CZ CA80 Curiosity Ultra Development Board"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"I2C", "RTC", "GPIO", "UART", "DMA"
+			"I2C",
+			"RTC",
+			"GPIO",
+			"USART",
+			"DMA"
 		],
 		"keywords": [
 			"MCC",
@@ -54,7 +50,7 @@
 			"SERCOM",
 			"UART",
 			"Serial Communication",
-			"USART",			
+			"USART",
 			"Getting Started",
 			"I2C",
 			"RTC",
@@ -62,7 +58,7 @@
 			"DMA",
 			"Temperature",
 			"Curiosity"
-			
+
 		],
 		"additionalData": {
 			"longDescription": {

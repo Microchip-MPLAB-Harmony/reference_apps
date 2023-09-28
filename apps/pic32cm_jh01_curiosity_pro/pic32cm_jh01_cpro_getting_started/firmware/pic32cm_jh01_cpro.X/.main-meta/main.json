@@ -37,16 +37,13 @@
             }
         },
         "author": "Microchip",
-        "subcategories": [
-            [
-                "Development Kit", "PIC32CM JH01 Curiosity Pro Development Board"
-            ],
-            [
-                "Harmony", "Reference Apps"
-            ]            
-        ],
         "peripherals": [
-            "EIC","RTC","GPIO","SERCOM (USART)","SERCOM (I2C)"
+            "EIC",
+            "RTC",
+            "GPIO",
+            "SERCOM",
+            "USART",
+            "I2C"
         ],
         "keywords": [
             "MCC",

@@ -37,16 +37,11 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "PIC32CM MC00 Curiosity Pro Development Board"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]			
-		],
 		"peripherals": [
-			"ADC", "SERCOM (USART)", "SERCOM2(I2C)"
+			"ADC",
+			"SERCOM",
+			"I2C",
+			"SPI"
 		],
 		"keywords": [
 			"MHC",

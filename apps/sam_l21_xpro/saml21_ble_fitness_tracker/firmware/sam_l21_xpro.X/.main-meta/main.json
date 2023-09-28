@@ -37,16 +37,12 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM L21 Xplained Pro Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"EIC", "Timer", "SERCOM(USART)", "SERCOM(SPI)", "PM", "SUPC"
+			"EIC",
+			"TMR",
+			"SPI",
+			"USART",
+			"DMA"
 		],
 		"keywords": [
 			"MCC",

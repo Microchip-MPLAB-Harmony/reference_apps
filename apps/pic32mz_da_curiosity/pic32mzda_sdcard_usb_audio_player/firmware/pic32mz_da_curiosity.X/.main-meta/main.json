@@ -37,16 +37,11 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "PIC32MZ DA Curiosity Development Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"I2C", "I2S", "Timer", "USB"
+			"I2C",
+			"I2S",
+			"Timer",
+			"USB"
 		],
 		"keywords": [
 			"MHC",

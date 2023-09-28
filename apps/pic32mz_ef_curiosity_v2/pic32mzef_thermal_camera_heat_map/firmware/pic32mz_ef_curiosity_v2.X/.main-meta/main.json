@@ -37,21 +37,10 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "Curiosity PIC32MZ EF 2.0 Development Board"
-         ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
          "SPI",
          "I2C",
-         "Timer",
-         "Core Timer"
+         "TMR"
       ],
       "keywords":[
          "MHC",

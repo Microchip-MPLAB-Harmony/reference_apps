@@ -37,16 +37,13 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM E51 Curiosity Nano Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"EIC", "Timer", "SERCOM(USART)", "SERCOM(SPI)", "SERCOM(I2C)"
+			"EIC",
+			"TMR",
+			"SERCOM",
+			"USART",
+			"SPI",
+			"I2C"
 		],
 		"keywords": [
 			"MCC",
@@ -65,7 +62,7 @@
 			"Low Power",
 			"Health",
 			"Curiosity Nano"
-],
+		],
 		"additionalData": {
 			"longDescription": {
 				"metaDataVersion": "1.0.0",

@@ -37,16 +37,12 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "PIC32CX SG41 Curiosity Ultra Evaluation Board"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"I2C", "RTC", "GPIO", "UART", "DMA"
+			"I2C",
+			"RTC",
+			"GPIO",
+			"USART",
+			"DMA"
 		],
 		"keywords": [
 			"MCC",
@@ -62,7 +58,7 @@
 			"DMA",
 			"Temperature",
 			"Curiosity"
-			
+
 		],
 		"additionalData": {
 			"longDescription": {

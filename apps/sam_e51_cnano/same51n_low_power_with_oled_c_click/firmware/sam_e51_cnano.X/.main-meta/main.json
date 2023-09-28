@@ -37,16 +37,18 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM E51 Curiosity Nano Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"RTC", "DMAC","ADC","PM","SUPC","EIC","EVSYS","SPI","Systick","Timer", "SERCOM(USART), SERCOM(SPI)"
+			"RTC",
+			"DMA",
+			"ADC",
+			"EIC",
+			"EVSYS",
+			"SPI",
+			"System",
+			"TMR",
+			"SERCOM",
+			"USART",
+			"SPI"
 		],
 		"keywords": [
 			"MCC",
@@ -55,13 +57,13 @@
 			"Low Power",
 			"Idle",
 			"Temperature",
-			"Sensor",			
+			"Sensor",
 			"OLED",
 			"Display",
 			"Curiosity Nano",
 			"Legato",
 			"Graphics",
-			"Weather"			
+			"Weather"
 		],
 		"additionalData": {
 			"longDescription": {

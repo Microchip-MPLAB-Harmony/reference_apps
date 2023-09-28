@@ -37,28 +37,13 @@
             }
         },
         "author": "Microchip",
-        "subcategories": [
-            [
-                "Development Kit",
-                "PIC32CM LS00 Curiosity Pro Evaluation Kit"
-            ],
-            [
-                "Harmony",
-                "Reference Apps"
-            ]
-        ],
         "peripherals": [
-            "Non-secure USART",
-            "Non-secure DMAC",
-            "Non-secure PORT Pins (USART Pins only)",
-            "Secure PORT Pins (All pins by default are secure)",
-            "Secure I2C",
-            "Secure RTC",
-            "DMAC",
+            "USART",
+            "DMA",
             "GPIO",
-            "STDIO",
-            "SERCOM (USART)",
-            "SERCOM (I2C)"
+            "I2C",
+            "RTC",
+            "SERCOM"
         ],
         "keywords": [
             "Harmony",

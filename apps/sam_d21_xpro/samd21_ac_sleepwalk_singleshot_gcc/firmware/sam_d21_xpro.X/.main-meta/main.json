@@ -37,22 +37,12 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "SAM D21 Xplained Pro Evaluation Kit"
-         ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
          "AC",
          "RTC",
-         "PORTS",
-         "PM",
-         "SERCOM(USART)"
+         "GPIO",
+         "SERCOM",
+         "USART"
       ],
       "keywords":[
          "MHC",

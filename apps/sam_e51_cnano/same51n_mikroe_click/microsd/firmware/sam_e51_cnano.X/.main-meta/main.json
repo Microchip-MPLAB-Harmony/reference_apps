@@ -37,16 +37,13 @@
             }
         },
         "author": "Microchip",
-        "subcategories": [
-            [
-                "Development Kit", "SAM E51 Curiosity Nano Evaluation Kit"
-            ],
-            [
-                "Harmony", "Reference Apps"
-            ]
-        ],
         "peripherals": [
-            "TC0", "GPIO", "SERCOM(SPI)", "FILE SYSTEM", "SDSPI", "CORE", "TIME"
+			"EIC",
+			"TMR",
+			"SYSTEM",
+			"GPIO",
+			"SERCOM",
+			"SPI"
         ],
         "keywords": [
             "MCC",

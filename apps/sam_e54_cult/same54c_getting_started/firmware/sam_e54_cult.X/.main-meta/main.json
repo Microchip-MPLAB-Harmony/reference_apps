@@ -37,22 +37,13 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "SAM E54 Curiosity Ultra Development Board"
-         ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
-         "PORTS",
+         "GPIO",
          "RTC",
          "EIC",
-         "SERCOM(USART)",
-         "SERCOM(I2C)"
+         "SERCOM",
+         "USART",
+         "SERCOM"
       ],
       "keywords":[
          "MHC",

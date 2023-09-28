@@ -37,16 +37,10 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM D21 Curiosity Nano Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"EIC", "Timer", "GPIO"
+			"EIC",
+			"TMR",
+			"GPIO"
 		],
 		"keywords": [
             "MCC",

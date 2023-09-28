@@ -38,18 +38,16 @@
         },
         "author": "Microchip",
         "peripherals": [
-            "TC",
+            "TMR",
 			"SERCOM",
 			"NVMCTRL",
 			"ADC",
 			"EVSYS",
-			"External Interrupt Controller",
+			"EIC",
 			"PTC",
 			"I2C",
-			"UART",
+			"USART",
 			"SPI"
-
-
         ],
         "keywords": [
             "Harmony",

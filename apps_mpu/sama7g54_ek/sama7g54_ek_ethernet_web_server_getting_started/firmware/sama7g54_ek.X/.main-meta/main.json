@@ -37,21 +37,9 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "SAMA7G54 Evaluation Kit"
-         ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
-         "BSP",
-         "FLEXCOM",
-		 "SDMMC",
-         "DBGU"
+		 "Memory",
+         "GPIO"
       ],
       "keywords":[
             "Harmony",

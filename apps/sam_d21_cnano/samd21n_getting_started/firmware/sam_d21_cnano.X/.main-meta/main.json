@@ -37,16 +37,12 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM D21 Curiosity Nano Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"EIC", "RTC", "GPIO", "SERCOM(USART)"
+			"EIC",
+			"RTC",
+			"GPIO",
+			"SERCOM",
+			"USART"
 		],
 		"keywords": [
 			"MHC",
@@ -59,7 +55,7 @@
 			"Getting Started",
 			"EIC",
 			"RTC",
-			"GPIO"		
+			"GPIO"
 		],
 		"additionalData": {
 			"longDescription": {

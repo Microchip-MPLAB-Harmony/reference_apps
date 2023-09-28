@@ -37,16 +37,11 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAMC21N Xplained Pro Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"SDADC", "SUPC", "EVSYS", "SERCOM(USART)"
+			"SDADC",
+			"EVSYS",
+			"SERCOM",
+			"USART"
 		],
 		"keywords": [
 			"MCC",
@@ -57,7 +52,7 @@
 			"FLEXCOM",
 			"Getting Started",
 			"SDADC",
-			"EVSYS"		
+			"EVSYS"
 		],
 		"additionalData": {
 			"longDescription": {

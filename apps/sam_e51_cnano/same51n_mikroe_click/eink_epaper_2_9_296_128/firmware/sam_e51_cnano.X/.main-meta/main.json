@@ -7,7 +7,7 @@
 		"version": "1.6.0",
 		"displayName": "eink_epaper_2_9_296_128 display example on SAM E51 Curiosity Nano Evaluation Kit",
 		"projectName": "eink_epaper_2_9_296_128_sam_e51_cnano",
-		"shortDescription": "Demonstrates the display capability of Eink E-Paper display 2_9 296x128 dots board on SAM E51 Curiosity Nano Evaluation Kit",		
+		"shortDescription": "Demonstrates the display capability of Eink E-Paper display 2_9 296x128 dots board on SAM E51 Curiosity Nano Evaluation Kit",
 		"ide": {
 			"name": "MPLABX",
 			"semverRange": ">=6.15"
@@ -37,16 +37,12 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM E51 Curiosity Nano Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"SYSTICK", "GPIO", "SERCOM(SPI)"
+			"EIC",
+			"SYSTEM",
+			"GPIO",
+			"SERCOM",
+			"SPI"
 		],
 		"keywords": [
 			"MCC",

@@ -37,22 +37,12 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "SAM E70 Xplained Ultra Evaluation Kit"
-         ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
-         "EFC",
-         "MPU",
+         "EIC",
+         "Memory",
          "QSPI",
-         "XDMAC",
-         "Systick"
+         "DMA",
+         "SYSTEM"
       ],
       "keywords":[
          "MHC",

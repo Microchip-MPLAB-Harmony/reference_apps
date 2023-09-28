@@ -37,21 +37,10 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "SAM9X60 Evaluation Kit"
-         ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
-         "BSP",
          "QSPI",
-		 "XIP",
-         "DBGU"
+         "GPIO",
+		 "TMR"
       ],
       "keywords":[
             "Harmony",

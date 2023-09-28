@@ -37,16 +37,11 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM D21 Curiosity Nano Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"Systick", "PORTS", "SERCOM(USART)"
+			"System",
+			"GPIO",
+			"SERCOM",
+			"USART"
 		],
 		"keywords": [
 			"MHC",
@@ -57,7 +52,7 @@
 			"USART",
 			"FLEXCOM",
 			"Curiosity Nano",
-			"Bootloader"	
+			"Bootloader"
 		],
 		"additionalData": {
 			"longDescription": {

@@ -37,20 +37,9 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "SAM9X75 Early Access Evaluation Board"
-         ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
-         "DBGU",
          "GPIO",
-		 "TC0",
+		 "TMR",
          "USB"
       ],
       "keywords":[

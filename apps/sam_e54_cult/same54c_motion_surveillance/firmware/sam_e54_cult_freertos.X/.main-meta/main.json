@@ -37,27 +37,16 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "SAM E54 Curiosity Ultra Development Board"
-         ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
          "NVMCTRL",
          "PORT",
-         "SYSTICK",
-         "SERCOM(I2C)",
-         "SERCOM(SPI)",
+         "SYSTEM",
+         "SERCOM",
+         "I2C",
          "RTC",
-         "SDHC",
-         "TC",
+         "TMR",
          "CRYPTO",
-         "NVIC"
+         "EIC"
       ],
       "keywords":[
          "MHC",

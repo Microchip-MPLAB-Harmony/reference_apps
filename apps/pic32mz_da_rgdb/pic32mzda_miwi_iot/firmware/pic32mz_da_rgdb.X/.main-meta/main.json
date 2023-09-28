@@ -38,10 +38,9 @@
 		},
 		"author": "Microchip",
 		"peripherals": [
-			"GPU",
-			"Touch",
+			"PTC",
 			"I2C",
-			"Display Controller"
+			"Display"
 		],
 		"keywords": [
 			"MCC",

@@ -37,24 +37,14 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "PIC32CM LE00 Curiosity Pro Evaluation Kit"
-         ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
          "EIC",
          "RTC",
-         "DMAC",
+         "DMA",
          "GPIO",
-         "STDIO",
-         "SERCOM (USART)",
-         "SERCOM (I2C)"
+         "SERCOM",
+         "USART",
+         "I2C"
       ],
       "keywords":[
             "Harmony",

@@ -3,7 +3,7 @@
     "category": "com.microchip.ide.project",
     "content": {
         "metaDataVersion": "1.3.0",
-        "name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_pic32cm_ls60_rd_smart_lock_Secure",		
+        "name": "com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_pic32cm_ls60_rd_smart_lock_Secure",
         "version": "1.6.0",
         "displayName": "SMART Lock Application Using PIC32CM LS60",
         "projectName": "pic32cm_ls60_sdl_Secure",
@@ -38,15 +38,16 @@
         },
         "author": "Microchip",
         "peripherals": [
-            "TC",
+            "TMR",
 			"SERCOM",
 			"NVMCTRL",
 			"ADC",
 			"EVSYS",
-			"External Interrupt Controller",
+			"EIC",
 			"PTC",
 			"I2C",
-			"UART",
+			"USART",
+			"SPI",
 			"TRNG"
         ],
         "keywords": [
@@ -64,7 +65,7 @@
 			"Human Machine Interface",
 			"Touch",
 			"Low Power",
-			"Motor Control PWM"	
+			"Motor Control PWM"
         ],
         "additionalData": {
             "longDescription": {

@@ -37,22 +37,13 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "SAM E51 Curiosity Nano Evaluation Kit"
-         ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
-         "SYSTICK",
+         "SYSTEM",
          "EIC",
          "GPIO",
-         "SERCOM(USART)",
-         "SERCOM(SPI)"
+         "SERCOM",
+         "USART",
+		 "SPI"
       ],
       "keywords":[
          "MHC",

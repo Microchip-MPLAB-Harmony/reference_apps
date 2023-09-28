@@ -37,16 +37,12 @@
 			}
 		},
 		"author": "Microchip",
-		"subcategories": [
-			[
-				"Development Kit", "SAM D21 Xplained Pro Evaluation Kit"
-			],
-			[
-				"Harmony", "Reference Apps"
-			]
-		],
 		"peripherals": [
-			"PORTS", "RTC", "SERCOM (I2C)", "SERCOM(USART)"
+			"GPIO",
+			"RTC",
+			"SERCOM",
+			"I2C",
+			"USART"
 		],
 		"keywords": [
 			"MCC",
@@ -59,7 +55,7 @@
 			"EIC",
 			"RTC",
 			"GPIO",
-			"Temperature"		
+			"Temperature"
 		],
 		"additionalData": {
 			"longDescription": {

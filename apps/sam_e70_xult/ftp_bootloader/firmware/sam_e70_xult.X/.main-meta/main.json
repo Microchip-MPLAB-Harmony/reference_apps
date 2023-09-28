@@ -37,20 +37,9 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "SAM E70 Xplained Ultra Evaluation Kit"
-         ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
-         "PORTS",
-         "Timer",
-         "HSMCI"
+         "GPIO",
+         "Timers"
       ],
       "keywords":[
          "MHC",

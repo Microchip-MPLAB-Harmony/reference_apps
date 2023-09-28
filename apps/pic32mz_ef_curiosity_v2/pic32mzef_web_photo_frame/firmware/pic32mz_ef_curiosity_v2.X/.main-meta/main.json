@@ -37,41 +37,9 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "Curiosity PIC32MZ EF 2.0 Development Board"
-         ],
-         [
-            "Development Board",
-            "KSZ8061 RMII Ethernet Daughter Board"
-         ],
-		 [
-			"Display Adapter",
-			"SSD1963 LCD Controller Graphics Card"
-		 ],
-		 [
-			"TFT Display",
-			"High-Performance 4.3'' WQVGA Display Module with maXTouch®"
-		 ],
-		 [
-			"Click Board",
-			"microSD Click"
-		 ],
-		 [
-			"Click Board",
-			"USB I2C Click"
-		 ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
-         "Core Timer",
-	     "EBI",
 		 "I2C",
-		 "NVM",
+		 "NVMCTRL",
          "SPI",
 		 "UART"
       ],

@@ -37,20 +37,9 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Development Kit",
-            "PIC32MK MCM Curiosity Pro Development Board"
-         ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
          "SPI",
-         "Core Timer",
-         "Timer",
+         "TMR",
          "GPIO",
          "UART",
          "DMA"
@@ -69,7 +58,7 @@
          "GPIO",
          "DMA",
          "Curiosity",
-         "Curiosity Pro",		 
+         "Curiosity Pro",
          "Temperature",
          "Weather",
          "Click Board"

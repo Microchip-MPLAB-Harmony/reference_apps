@@ -37,27 +37,15 @@
             }
         },
         "author": "Microchip",
-        "subcategories": [
-            [
-                "Development Kit",
-                "PIC32CM LS60 Curiosity Pro Evaluation Kit"
-            ],
-            [
-                "Harmony",
-                "Reference Apps"
-            ]
-        ],
         "peripherals": [
             "EIC",
-            "TC",
+            "TMR",
             "PORT",
             "ADC",
-            "Secure RTC",
-            "SERCOM(SPI)",
+            "RTC",
+            "SPI",
             "GPIO",
-            "STDIO",
-            "SERCOM (USART)",
-            "SERCOM (I2C)"
+            "SERCOM"
         ],
         "keywords": [
             "Harmony",
@@ -78,7 +66,7 @@
             "Temperature",
             "TrustZone",
             "I/O1"
-			
+
         ],
         "additionalData": {
             "longDescription": {
