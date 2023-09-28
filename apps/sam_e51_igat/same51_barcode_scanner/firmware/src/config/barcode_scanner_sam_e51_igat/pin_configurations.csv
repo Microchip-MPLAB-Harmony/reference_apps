@@ -1,0 +1,52 @@
+Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,Drive Strength
+1,PA00,GPIO_PA00,GPIO,Digital,Out,Low,,,NORMAL
+2,PA01,GPIO_PA01,GPIO,Digital,Out,Low,,,NORMAL
+3,PA02,GPIO_PA02,GPIO,Digital,Out,Low,,,NORMAL
+4,PA03,GPIO_PA03,GPIO,Digital,Out,Low,,,NORMAL
+5,PB04,GFX_DISP_INTF_PIN_CS,GPIO,Digital,Out,High,,,NORMAL
+6,PB05,GFX_DISP_INTF_PIN_RESET,GPIO,Digital,Out,High,,,NORMAL
+9,PB06,,ADC0_X24/Y24,Analog,High Impedance,n/a,,,NORMAL
+10,PB07,,ADC0_X25/Y25,Analog,High Impedance,n/a,,,NORMAL
+11,PB08,,Available,,,,,,NORMAL
+12,PB09,,Available,,,,,,NORMAL
+13,PA04,GPIO_PA04,GPIO,Digital,Out,Low,,,NORMAL
+14,PA05,GPIO_PA05,GPIO,Digital,Out,Low,,,NORMAL
+15,PA06,GPIO_PA06,GPIO,Digital,Out,Low,,,NORMAL
+16,PA07,GPIO_PA07,GPIO,Digital,Out,Low,,,NORMAL
+17,PA08,,Available,,,,,,NORMAL
+18,PA09,,Available,,,,,,NORMAL
+19,PA10,,Available,,,,,,NORMAL
+20,PA11,,Available,,,,,,NORMAL
+23,PB10,,Available,,,,,,NORMAL
+24,PB11,,Available,,,,,,NORMAL
+25,PB12,,Available,,,,,,NORMAL
+26,PB13,,Available,,,,,,NORMAL
+27,PB14,,ADC0_X28/Y28,Analog,High Impedance,n/a,,,NORMAL
+28,PB15,,ADC0_X29/Y29,Analog,High Impedance,n/a,,,NORMAL
+29,PA12,,SERCOM2_PAD0,Digital,High Impedance,n/a,No,No,NORMAL
+30,PA13,,SERCOM2_PAD1,Digital,High Impedance,n/a,No,No,NORMAL
+31,PA14,,Available,,,,,,NORMAL
+32,PA15,GFX_DISP_INTF_PIN_BACKLIGHT,GPIO,Digital,Out,High,,,NORMAL
+35,PA16,,SERCOM1_PAD0,Digital,High Impedance,n/a,No,No,NORMAL
+36,PA17,,SERCOM1_PAD1,Digital,High Impedance,n/a,No,No,NORMAL
+37,PA18,SPI_CS,GPIO,Digital,Out,High,,,NORMAL
+38,PA19,,SERCOM1_PAD3,Digital,High Impedance,n/a,No,No,NORMAL
+39,PB16,GFX_DISP_INTF_PIN_RD,GPIO,Digital,Out,High,,,NORMAL
+40,PB17,GFX_DISP_INTF_PIN_TE,GPIO,Digital,In,n/a,Yes,No,NORMAL
+41,PA20,,ADC0_X14/Y14,Analog,High Impedance,n/a,,,NORMAL
+42,PA21,,ADC0_X15/Y15,Analog,High Impedance,n/a,,,NORMAL
+43,PA22,,ADC0_X16/Y16,Analog,High Impedance,n/a,,,NORMAL
+44,PA23,,ADC0_X17/Y17,Analog,High Impedance,n/a,,,NORMAL
+45,PA24,,Available,,,,,,NORMAL
+46,PA25,,Available,,,,,,NORMAL
+49,PB22,GFX_DISP_INTF_PIN_RSDC,GPIO,Digital,Out,High,,,NORMAL
+50,PB23,,CCL_OUT0,Digital,Out,High,,,STRONG
+51,PA27,,ADC0_X18/Y18,Analog,High Impedance,n/a,,,NORMAL
+57,PA30,,Available,,,,,,NORMAL
+58,PA31,,Available,,,,,,NORMAL
+59,PB30,,Available,,,,,,NORMAL
+60,PB31,,Available,,,,,,NORMAL
+61,PB00,,ADC0_AIN12/X30/Y30,Analog,High Impedance,n/a,,,NORMAL
+62,PB01,,ADC0_AIN13/X31/Y31,Analog,High Impedance,n/a,,,NORMAL
+63,PB02,LED0,GPIO,Digital,Out,High,,,NORMAL
+64,PB03,,ADC0_AIN15/X21/Y21,Analog,High Impedance,n/a,,,NORMAL
