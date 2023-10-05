@@ -1,0 +1,7 @@
+<response>
+<led0>~led(0)~</led0>
+<led1>~led(1)~</led1>
+<led2>~led(2)~</led2>
+<pot>~data(0)~</pot>
+<img>~data(1)~</img>
+</response>
