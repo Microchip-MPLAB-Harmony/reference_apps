@@ -1515,7 +1515,7 @@ TCPIP_HTTP_DYN_PRINT_RES TCPIP_HTTP_Print_data(TCPIP_HTTP_NET_CONN_HANDLE connHa
 {
     uint16_t RandVal;
     size_t nChars;
-    char capturedFileName[JPEG_FILE_NAME];
+    char capturedFileName[24];
     const char *ptr =  NULL;
     
      // Determine which DATA (LED OR IMAGE)
