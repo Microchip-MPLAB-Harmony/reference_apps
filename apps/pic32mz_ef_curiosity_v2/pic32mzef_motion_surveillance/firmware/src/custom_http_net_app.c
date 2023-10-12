@@ -42,7 +42,7 @@ Microchip or any third party.
 #include "system/sys_time_h2_adapter.h"
 #include "tcpip/tcpip.h"
 #include "tcpip/src/common/helpers.h"
-
+#include "app_cam.h"
 /****************************************************************************
   Section:
     Definitions

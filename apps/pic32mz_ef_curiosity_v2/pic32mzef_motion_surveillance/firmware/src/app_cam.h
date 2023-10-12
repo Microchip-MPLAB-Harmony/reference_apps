@@ -304,7 +304,7 @@ void APP_CAM_Initialize ( void );
 
 void APP_CAM_Tasks( void );
 
-extern const char* APP_ARDU_CAM_Get_Image_Name(void);
+const char* APP_ARDU_CAM_Get_Image_Name(void);
 
 //DOM-IGNORE-BEGIN
 #ifdef __cplusplus
