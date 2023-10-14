@@ -51,7 +51,7 @@ nav_order: 4
 	You can procure the [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/dm320007) and remove the LAN8740 PHY Daughter board on it and use it for this demo.
 
 - [Arducam Mega 5MP Rolling Shutter camera](https://www.arducam.com/product/presale-mega-5mp-color-rolling-shutter-camera-module-with-autofocus-lens-for-any-microcontroller/) or [Arducam Mega 3MP Rolling Shutter camera](https://www.arducam.com/product/presale-mega-3mp-color-rolling-shutter-camera-module-with-solid-camera-case-for-any-microcontroller/)  
-	**Note:** <span style="color:blue"> The project is by default set up to operate with the Arducam Mega 5MP camera. In the event that you prefer to use the Arducam Mega 3MP camera instead, you can do so by modifying the CAMERA_TYPE to CAMERA_OV3640 in the "arducam.h" file of the project, as shown below.</span>
+	**Note:** <span style="color:blue"> The project is by default configured to function with the Arducam Mega 5MP camera. However, if you wish to use the Arducam Mega 3MP camera instead, you can do so by modifying the CAMERA_TYPE to CAMERA_OV3640 in the "arducam.h" file of the project, as shown below.</span>
 
 <img src = "images/camera_type_ov3640.png">
 
@@ -126,8 +126,8 @@ The pre-built hex file can be programmed by following the below steps.
 - **Serial Terminal Configuration:**
     - Open a standard terminal application on the computer (like Hyper-terminal or Tera Term) and configure the virtual COM port.
     - Set the serial baud rate to **115200** baud in the terminal application.
-    - An initial image ( IMAGE_0.jpg ) of the field of view is captured and stored before motion detection begins for future reference (shown inside blue box in the following image). 
-    - Further capturing and storing of images is performed only if motion is detected, as shown in the image.
+    - Before motion detection begins, an initial image (IMAGE_0.jpg) of the field of view is captured and stored for future reference as shown in the terminal logs below. 
+    - Further capturing and storing of images is only performed if motion is detected, as depicted in the image.
 
     <img src = "images/output_01.png" width="989" height="770" align="middle">
 
@@ -161,5 +161,5 @@ The pre-built hex file can be programmed by following the below steps.
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. 
 
 ## Revision:
-- v1.x.0 - Created demo application
+- v1.6.0 - Created demo application
 
