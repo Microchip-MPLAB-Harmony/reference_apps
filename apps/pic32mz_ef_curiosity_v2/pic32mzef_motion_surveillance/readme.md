@@ -78,7 +78,7 @@ to the Xplained Pro Extension Standard Header of the [Curiosity PIC32MZ EF 2.0 D
     - MOSI -> SPI3 MOSI -> RB3
     - CE -> GPIO OUT -> RB15
 
-    <img src = "images/pic32mz_ef_curiosity_v2_hw_setup_markings.png">
+<img src = "images/pic32mz_ef_curiosity_v2_hw_setup_markings.png">
 - Mount LAN8740 PHY daughter board on Ethernet PHY header
 
 ## TCP/IP Network Setup:
