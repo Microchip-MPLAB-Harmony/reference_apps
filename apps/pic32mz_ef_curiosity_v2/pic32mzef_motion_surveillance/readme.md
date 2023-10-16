@@ -8,7 +8,7 @@ nav_order: 4
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # Motion Surveillance Application on Curiosity PIC32MZ EF 2.0 Development Board
-<h2 align="center"> <a href="github zip link here" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mzef_motion_surveillance.zip" > Download </a> </h2>
 
 -----
 
@@ -25,7 +25,6 @@ nav_order: 4
 	- I2C
 	- SPI
 	- RTCC
-	- SD CARD ( SPI )
 	- CORE TIMER
 	- CRYPTO
 - System Services
@@ -159,6 +158,11 @@ The pre-built hex file can be programmed by following the below steps.
 	1. [Getting Started with Harmony v3 Peripheral Libraries on PIC32MZ EF MCUs](https://microchipdeveloper.com/harmony3:pic32mzef-getting-started-training-module)
 
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. 
+
+    - [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
+    - [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
+    - [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
+
 
 ## Revision:
 - v1.6.0 - Created demo application

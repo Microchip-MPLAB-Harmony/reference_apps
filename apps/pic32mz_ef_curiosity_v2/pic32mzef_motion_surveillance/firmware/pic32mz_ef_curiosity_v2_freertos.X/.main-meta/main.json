@@ -39,11 +39,10 @@
       "author":"Microchip",
       "peripherals":[
          "I2C",
-		   "NVMCTRL",
          "SPI",
 		   "UART",
          "RTCC",
-         "CORE TIMER",
+         "Core Timer",
          "CRYPTO"
       ],
       "keywords":[
@@ -53,19 +52,15 @@
          "I2C",
          "SPI",
          "RTCC",
-         "SD CARD ( SPI )",
-         "CORE TIMER",
+         "Core Timer",
          "TCP/IP",
          "Curiosity",
 		   "Motion Detection",
-         "Video Surveillance",
          "Click Board",
 		   "Sensor",
-         "Arduino",
          "Camera",
          "Ethernet",
-         "File System",
-         "Curiosity"
+         "File System"
       ],
       "additionalData":{
          "longDescription":{
