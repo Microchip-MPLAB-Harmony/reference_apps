@@ -69,7 +69,7 @@ extern const lePalette leGlobalPalette;
  * Format: RGB_565
  ***********************************/
 extern leImage mchpLogo_small;
-extern leImage IMAGE_0;
+
 /*****************************************************************************
  * Legato Graphics Font Assets
  *****************************************************************************/

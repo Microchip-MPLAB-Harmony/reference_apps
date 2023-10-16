@@ -458,31 +458,3 @@ leImage mchpLogo_small =
     NULL, // palette
 };
 
-extern uint8_t imageBuffer[12800];
-
-leImage IMAGE_0 =
-{
-    {
-        LE_STREAM_LOCATION_ID_INTERNAL, // data location id
-        &imageBuffer[0], // data address
-        12800, // data size
-    },
-    LE_IMAGE_FORMAT_RAW,
-    {
-        LE_COLOR_MODE_RGB_565,
-        {
-            320,
-            20
-        },
-        6400,
-        12800,
-        &imageBuffer[0], // data address
-        0, // flags
-    },
-    0, // image flags
-    {
-        0x0, // color mask
-    },
-    NULL, // alpha mask
-    NULL, // palette
-};

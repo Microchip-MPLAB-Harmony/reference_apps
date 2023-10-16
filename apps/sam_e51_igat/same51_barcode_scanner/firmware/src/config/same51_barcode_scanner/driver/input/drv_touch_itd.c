@@ -71,7 +71,7 @@ typedef struct
 
 DRV_TOUCH_ITD_OBJ drv_touch_itd_obj[TOUCH_POINTS_COUNT];
 
-qtm_surface_cs_control_t qtm_surface_cs_control1;
+extern qtm_surface_cs_control_t qtm_surface_cs_control1;
 
 extern volatile uint8_t time_to_measure_touch_var;
 extern volatile uint8_t measurement_done_touch;

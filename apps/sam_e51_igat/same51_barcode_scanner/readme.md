@@ -34,20 +34,15 @@ nav_order: 1
 	- SERCOM - SPI
 	- SERCOM - UART
 	- TC
-	- ADC
-	- CCL
-	- RTC
+
 - Drivers
 	- SPI Driver
-	- Integrated Touch Driver
 	- External Display Controller Driver
 - System Services
-  	- Time
-  	- STDIO
-	- Input System
+  - Time
+  - STDIO
 - Middleware libraries
 	- Harmony Core
-	- Touch Library
 	- Legato Graphics
 
 <div align="center">
@@ -64,7 +59,7 @@ nav_order: 1
 ## Software/Tools Used:
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
-Refer [Project Manifest](./firmware/src/config/barcode_scanner_sam_e51_igat/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/barcode_scanner_sam_e51_igat*  
+Refer [Project Manifest](./firmware/src/config/same51_barcode_scanner/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/same51_barcode_scanner*  
 
 - Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB® X IDE** and **MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools)
 - Any Serial Terminal application like Tera Term terminal application.

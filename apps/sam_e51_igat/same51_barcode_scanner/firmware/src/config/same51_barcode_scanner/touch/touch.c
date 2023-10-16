@@ -168,7 +168,7 @@ qtm_surface_cs_config_t qtm_surface_cs_config1 = {
 qtm_surface_contact_data_t qtm_surface_cs_data1;
 
 /* Container */
-static qtm_surface_cs_control_t qtm_surface_cs_control1 = {&qtm_surface_cs_data1, &qtm_surface_cs_config1};
+qtm_surface_cs_control_t qtm_surface_cs_control1 = {&qtm_surface_cs_data1, &qtm_surface_cs_config1};
 
 
 

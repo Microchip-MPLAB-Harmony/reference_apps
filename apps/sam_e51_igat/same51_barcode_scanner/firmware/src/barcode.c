@@ -391,7 +391,7 @@ uint8_t Measure_Barcode_Width(uint16_t* Buf, uint16_t pixelThreshold, bool direc
 int Bar_Decode(uint8_t index)
 {
     uint8_t i;
-    int prefix, error;
+    int prefix, error = 0;
     char *cp;
     short *wp;
 
