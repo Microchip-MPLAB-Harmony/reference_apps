@@ -52,7 +52,7 @@ nav_order: 4
 - [Arducam Mega 5MP Rolling Shutter camera](https://www.arducam.com/product/presale-mega-5mp-color-rolling-shutter-camera-module-with-autofocus-lens-for-any-microcontroller/) or [Arducam Mega 3MP Rolling Shutter camera](https://www.arducam.com/product/presale-mega-3mp-color-rolling-shutter-camera-module-with-solid-camera-case-for-any-microcontroller/)  
 	**Note:** <span style="color:blue"> The project is by default configured to function with the Arducam Mega 5MP camera. However, if you wish to use the Arducam Mega 3MP camera instead, you can do so by modifying the CAMERA_TYPE to CAMERA_OV3640 in the "arducam.h" file of the project, as shown below.</span>
 
-<img src = "images/camera_type_ov3640.png">
+    <img src = "images/camera_type_ov3640.png">
 
 ## Software/Tools Used:
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
