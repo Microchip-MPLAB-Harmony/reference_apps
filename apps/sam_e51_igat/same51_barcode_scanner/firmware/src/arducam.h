@@ -43,19 +43,19 @@
  */
 
 #ifndef ARDUCAM_H
-#define	ARDUCAM_H
+#define ARDUCAM_H
 
 
-#ifdef	__cplusplus
+#ifdef  __cplusplus
 extern "C" {
 #endif
-    
+
 #include <stdint.h>
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdlib.h>
 
-#define ARDUCHIP_FRAMES                             0x01  
+#define ARDUCHIP_FRAMES                             0x01
 #define ARDUCHIP_TEST1                              0x00  //TEST register
 #define ARDUCHIP_FIFO                               0x04  //FIFO and I2C control
 #define ARDUCHIP_FIFO_2                             0x07  // FIFO and I2C control
@@ -65,7 +65,7 @@ extern "C" {
 #define FIFO_WRPTR_RST_MASK                         0x20
 #define FIFO_CLEAR_MASK                             0x01
 
-    
+
 #define ARDUCHIP_TRIG                               0x44  //Trigger source
 #define VSYNC_MASK                                  0x01
 #define SHUTTER_MASK                                0x02
@@ -126,12 +126,6 @@ extern "C" {
 #define SET_EXPOSURE                                0x01
 #define SET_GAIN                                    0x00
 
-#define CAMERA_TYPE_NUMBER                          2
-
-#define CAMERA_OV5640                               0
-#define CAMERA_OV3640                               1
-#define CAMERA_TYPE									CAMERA_OV5640
-
 #define FORMAT_JPEG                                 0x01
 #define FORMAT_RGB                                  0x02
 #define FORMAT_YUV                                  0x03
@@ -160,8 +154,8 @@ extern "C" {
 #define SPECIAL_OVEREXPOSURE                        (1 << 6)
 #define SPECIAL_SOLARIZE                            (1 << 7)
 #define SPECIAL_YELLOWISH                           (1 << 8)
-    
-    
+
+
 #define RESET_CAMERA                                0xFF
 
 #define SET_PICTURE_RESOLUTION                      0x01
@@ -186,16 +180,17 @@ extern "C" {
 #define GET_SDK_VER_INFO                            0x40
 #define SET_IMAGE_QUALITY                           0x50
 
-#define CAMERA_DEVICE_ADDRESS						0x78
-#define CAMERA_OV5640_ID                            0x81
-#define CAMERA_OV3640_ID                            0x82
+#define CAMERA_DEVICE_ADDRESS                       0x78
+#define MEGA_5MP_ID                                 0x81
+#define MEGA_3MP_ID                                 0x82
+
 
 
 /**
   * @enum CAM_IMAGE_MODE
   * @brief Configure camera resolution
   */
-typedef enum 
+typedef enum
 {
     CAM_IMAGE_MODE_QQVGA    = 0x00,     /**<160x120 */
     CAM_IMAGE_MODE_QVGA     = 0x01,     /**<320x240*/
@@ -221,151 +216,151 @@ typedef enum
   * @enum CAM_CONTRAST_LEVEL
   * @brief Configure camera contrast level
   */
-typedef enum 
+typedef enum
 {
-	CAM_CONTRAST_LEVEL_MINUS_3  = 6, /**<Level -3 */
-	CAM_CONTRAST_LEVEL_MINUS_2  = 4, /**<Level -2 */
-	CAM_CONTRAST_LEVEL_MINUS_1  = 2, /**<Level -1 */
-	CAM_CONTRAST_LEVEL_DEFAULT  = 0, /**<Level Default*/
-	CAM_CONTRAST_LEVEL_1        = 1, /**<Level +1 */
-	CAM_CONTRAST_LEVEL_2        = 3, /**<Level +2 */
-	CAM_CONTRAST_LEVEL_3        = 5, /**<Level +3 */
-            
+    CAM_CONTRAST_LEVEL_MINUS_3  = 6, /**<Level -3 */
+    CAM_CONTRAST_LEVEL_MINUS_2  = 4, /**<Level -2 */
+    CAM_CONTRAST_LEVEL_MINUS_1  = 2, /**<Level -1 */
+    CAM_CONTRAST_LEVEL_DEFAULT  = 0, /**<Level Default*/
+    CAM_CONTRAST_LEVEL_1        = 1, /**<Level +1 */
+    CAM_CONTRAST_LEVEL_2        = 3, /**<Level +2 */
+    CAM_CONTRAST_LEVEL_3        = 5, /**<Level +3 */
+
 }CAM_CONTRAST_LEVEL;
 
 /**
   * @enum CAM_EV_LEVEL
   * @brief Configure camera EV level
   */
-typedef enum 
+typedef enum
 {
-	CAM_EV_LEVEL_MINUS_3        = 6, /**<Level -3 */
-	CAM_EV_LEVEL_MINUS_2        = 4, /**<Level -2 */
-	CAM_EV_LEVEL_MINUS_1        = 2, /**<Level -1 */
-	CAM_EV_LEVEL_DEFAULT        = 0, /**<Level Default*/
-	CAM_EV_LEVEL_1              = 1, /**<Level +1 */
-	CAM_EV_LEVEL_2              = 3, /**<Level +2 */
-	CAM_EV_LEVEL_3              = 5, /**<Level +3 */
-            
-}CAM_EV_LEVEL;                       
+    CAM_EV_LEVEL_MINUS_3        = 6, /**<Level -3 */
+    CAM_EV_LEVEL_MINUS_2        = 4, /**<Level -2 */
+    CAM_EV_LEVEL_MINUS_1        = 2, /**<Level -1 */
+    CAM_EV_LEVEL_DEFAULT        = 0, /**<Level Default*/
+    CAM_EV_LEVEL_1              = 1, /**<Level +1 */
+    CAM_EV_LEVEL_2              = 3, /**<Level +2 */
+    CAM_EV_LEVEL_3              = 5, /**<Level +3 */
+
+}CAM_EV_LEVEL;
 
 
 /**
   * @enum CAM_SATURATION_LEVEL
   * @brief Configure camera saturation  level
-  */                                    
-typedef enum 
+  */
+typedef enum
 {
-	CAM_SATURATION_LEVEL_MINUS_3= 6, /**<Level -3 */
-	CAM_SATURATION_LEVEL_MINUS_2= 4, /**<Level -2 */
-	CAM_SATURATION_LEVEL_MINUS_1= 2, /**<Level -1 */
-	CAM_SATURATION_LEVEL_DEFAULT= 0, /**<Level Default*/
-	CAM_SATURATION_LEVEL_1      = 1, /**<Level +1 */
-	CAM_SATURATION_LEVEL_2      = 3, /**<Level +2 */
-	CAM_SATURATION_LEVEL_3      = 5, /**<Level +3 */
-            
+    CAM_SATURATION_LEVEL_MINUS_3= 6, /**<Level -3 */
+    CAM_SATURATION_LEVEL_MINUS_2= 4, /**<Level -2 */
+    CAM_SATURATION_LEVEL_MINUS_1= 2, /**<Level -1 */
+    CAM_SATURATION_LEVEL_DEFAULT= 0, /**<Level Default*/
+    CAM_SATURATION_LEVEL_1      = 1, /**<Level +1 */
+    CAM_SATURATION_LEVEL_2      = 3, /**<Level +2 */
+    CAM_SATURATION_LEVEL_3      = 5, /**<Level +3 */
+
 }CAM_SATURATION_LEVEL;
 
 /**
   * @enum CAM_BRIGHTNESS_LEVEL
   * @brief Configure camera brightness level
-  */       
-typedef enum 
+  */
+typedef enum
 {
-	CAM_BRIGHTNESS_LEVEL_MINUS_4= 8, /**<Level -4 */
-	CAM_BRIGHTNESS_LEVEL_MINUS_3= 6, /**<Level -3 */
-	CAM_BRIGHTNESS_LEVEL_MINUS_2= 4, /**<Level -2 */
-	CAM_BRIGHTNESS_LEVEL_MINUS_1= 2, /**<Level -1 */
-	CAM_BRIGHTNESS_LEVEL_DEFAULT= 0, /**<Level Default*/
-	CAM_BRIGHTNESS_LEVEL_1      = 1, /**<Level +1 */
-	CAM_BRIGHTNESS_LEVEL_2      = 3, /**<Level +2 */
-	CAM_BRIGHTNESS_LEVEL_3      = 5, /**<Level +3 */
-	CAM_BRIGHTNESS_LEVEL_4      = 7, /**<Level +4 */
-            
+    CAM_BRIGHTNESS_LEVEL_MINUS_4= 8, /**<Level -4 */
+    CAM_BRIGHTNESS_LEVEL_MINUS_3= 6, /**<Level -3 */
+    CAM_BRIGHTNESS_LEVEL_MINUS_2= 4, /**<Level -2 */
+    CAM_BRIGHTNESS_LEVEL_MINUS_1= 2, /**<Level -1 */
+    CAM_BRIGHTNESS_LEVEL_DEFAULT= 0, /**<Level Default*/
+    CAM_BRIGHTNESS_LEVEL_1      = 1, /**<Level +1 */
+    CAM_BRIGHTNESS_LEVEL_2      = 3, /**<Level +2 */
+    CAM_BRIGHTNESS_LEVEL_3      = 5, /**<Level +3 */
+    CAM_BRIGHTNESS_LEVEL_4      = 7, /**<Level +4 */
+
 }CAM_BRIGHTNESS_LEVEL;
 
 
 /**
   * @enum CAM_SHARPNESS_LEVEL
   * @brief Configure camera Sharpness level
-  */  
-typedef enum 
+  */
+typedef enum
 {
-	CAM_SHARPNESS_LEVEL_AUTO    = 0,/**<Sharpness Auto */
-	CAM_SHARPNESS_LEVEL_1,          /**<Sharpness Level 1 */
-	CAM_SHARPNESS_LEVEL_2,          /**<Sharpness Level 2 */
-	CAM_SHARPNESS_LEVEL_3,          /**<Sharpness Level 3 */
-	CAM_SHARPNESS_LEVEL_4,          /**<Sharpness Level 4 */
-	CAM_SHARPNESS_LEVEL_5,          /**<Sharpness Level 5 */
-	CAM_SHARPNESS_LEVEL_6,          /**<Sharpness Level 6 */
-	CAM_SHARPNESS_LEVEL_7,          /**<Sharpness Level 7 */
-	CAM_SHARPNESS_LEVEL_8,          /**<Sharpness Level 8 */
-            
+    CAM_SHARPNESS_LEVEL_AUTO    = 0,/**<Sharpness Auto */
+    CAM_SHARPNESS_LEVEL_1,          /**<Sharpness Level 1 */
+    CAM_SHARPNESS_LEVEL_2,          /**<Sharpness Level 2 */
+    CAM_SHARPNESS_LEVEL_3,          /**<Sharpness Level 3 */
+    CAM_SHARPNESS_LEVEL_4,          /**<Sharpness Level 4 */
+    CAM_SHARPNESS_LEVEL_5,          /**<Sharpness Level 5 */
+    CAM_SHARPNESS_LEVEL_6,          /**<Sharpness Level 6 */
+    CAM_SHARPNESS_LEVEL_7,          /**<Sharpness Level 7 */
+    CAM_SHARPNESS_LEVEL_8,          /**<Sharpness Level 8 */
+
 }CAM_SHARPNESS_LEVEL;
 
 
 /**
   * @enum CAM_VIDEO_MODE
-  * @brief Configure resolution in video streaming mode 
-  */  
-typedef enum 
+  * @brief Configure resolution in video streaming mode
+  */
+typedef enum
 {
-	CAM_VIDEO_MODE_0            = 1, /**< 320x240 */
-	CAM_VIDEO_MODE_1            = 2, /**< 640x480 */
-            
+    CAM_VIDEO_MODE_0            = 1, /**< 320x240 */
+    CAM_VIDEO_MODE_1            = 2, /**< 640x480 */
+
 }CAM_VIDEO_MODE;
 
 
 /**
   * @enum CAM_IMAGE_PIX_FMT
   * @brief Configure image pixel format
-  */  
-typedef enum  
+  */
+typedef enum
 {
-	CAM_IMAGE_PIX_FMT_RGB565    = 0x02, /**< RGB565 format */
-	CAM_IMAGE_PIX_FMT_JPG       = 0x01, /**< JPEG format */
-	CAM_IMAGE_PIX_FMT_YUV       = 0x03, /**< YUV format */
-	CAM_IMAGE_PIX_FMT_NONE,             /**< No defined format */
-            
+    CAM_IMAGE_PIX_FMT_RGB565    = 0x02, /**< RGB565 format */
+    CAM_IMAGE_PIX_FMT_JPG       = 0x01, /**< JPEG format */
+    CAM_IMAGE_PIX_FMT_YUV       = 0x03, /**< YUV format */
+    CAM_IMAGE_PIX_FMT_NONE,             /**< No defined format */
+
 }CAM_IMAGE_PIX_FMT;
 
 
 /**
   * @enum CAM_WHITE_BALANCE
   * @brief Configure white balance mode
-  */  
-typedef enum 
+  */
+typedef enum
 {
-	CAM_WHITE_BALANCE_MODE_DEFAULT  = 0,/**< Auto */
-	CAM_WHITE_BALANCE_MODE_SUNNY,       /**< Sunny */
-	CAM_WHITE_BALANCE_MODE_OFFICE,      /**< Office */
-	CAM_WHITE_BALANCE_MODE_CLOUDY,      /**< Cloudy*/
-	CAM_WHITE_BALANCE_MODE_HOME,        /**< Home */
-            
+    CAM_WHITE_BALANCE_MODE_DEFAULT  = 0,/**< Auto */
+    CAM_WHITE_BALANCE_MODE_SUNNY,       /**< Sunny */
+    CAM_WHITE_BALANCE_MODE_OFFICE,      /**< Office */
+    CAM_WHITE_BALANCE_MODE_CLOUDY,      /**< Cloudy*/
+    CAM_WHITE_BALANCE_MODE_HOME,        /**< Home */
+
 }CAM_WHITE_BALANCE;
 
 
 /**
   * @enum CAM_COLOR_FX
   * @brief Configure special effects
-  */  
+  */
 typedef enum  {
-	CAM_COLOR_FX_NONE               = 0,/**< no effect   */
-	CAM_COLOR_FX_BLUEISH,               /**< cool light   */
-	CAM_COLOR_FX_REDISH,                /**< warm   */
-	CAM_COLOR_FX_BW,                    /**< Black/white   */
-	CAM_COLOR_FX_SEPIA,                 /**<Sepia   */
-	CAM_COLOR_FX_NEGATIVE,              /**<positive/negative inversion  */
-	CAM_COLOR_FX_GRASS_GREEN,           /**<Grass green */
-	CAM_COLOR_FX_OVER_EXPOSURE,         /**<Over exposure*/
-	CAM_COLOR_FX_SOLARIZE,              /**< Solarize   */
-            
+    CAM_COLOR_FX_NONE               = 0,/**< no effect   */
+    CAM_COLOR_FX_BLUEISH,               /**< cool light   */
+    CAM_COLOR_FX_REDISH,                /**< warm   */
+    CAM_COLOR_FX_BW,                    /**< Black/white   */
+    CAM_COLOR_FX_SEPIA,                 /**<Sepia   */
+    CAM_COLOR_FX_NEGATIVE,              /**<positive/negative inversion  */
+    CAM_COLOR_FX_GRASS_GREEN,           /**<Grass green */
+    CAM_COLOR_FX_OVER_EXPOSURE,         /**<Over exposure*/
+    CAM_COLOR_FX_SOLARIZE,              /**< Solarize   */
+
 }CAM_COLOR_FX;
 
 
-#ifdef	__cplusplus
+#ifdef  __cplusplus
 }
 #endif
 
-#endif	/* ARDUCAM_H */
+#endif  /* ARDUCAM_H */
 

@@ -17,6 +17,30 @@
     internally by the application (such as the "APP_CAM_STATES" definition).  Both
     are defined here for convenience.
 *******************************************************************************/
+// DOM-IGNORE-BEGIN
+/*******************************************************************************
+* Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
+*
+* Subject to your compliance with these terms, you may use Microchip software
+* and any derivatives exclusively with Microchip products. It is your
+* responsibility to comply with third party license terms applicable to your
+* use of third party software (including open source software) that may
+* accompany Microchip software.
+*
+* THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
+* EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
+* WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
+* PARTICULAR PURPOSE.
+*
+* IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
+* INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
+* WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
+* BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
+* FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
+* ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
+* THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+*******************************************************************************/
+// DOM-IGNORE-END
 
 #ifndef _APP_CAM_H
 #define _APP_CAM_H
@@ -32,7 +56,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include "configuration.h"
-#include "definitions.h" 
+#include "definitions.h"
 #include "arducam.h"
 #include "barcode.h"
 
@@ -50,9 +74,16 @@ extern "C" {
 // *****************************************************************************
 // *****************************************************************************
 
+/* SPI Driver reads one extra byte while initiate the capture command. Hence, the
+ * image buffer has one additional byte size is added to the actual buffer size.
+ */
+
+// Image Buffer[1920 x 20]
 #define CAP_BUF_SIZE    (IMG_ACT_WIDTH * IMAGE_HEIGHT * 2) + 1
+
+// Barcode Scanning Buffer[320 x 20]
 #define SCAN_BUF_SIZE   (IMAGE_WIDTH * IMAGE_HEIGHT * 2)
-    
+
 // *****************************************************************************
 /* Application states
 
@@ -100,25 +131,25 @@ typedef struct
 {
     /* The application's current state */
     APP_CAM_STATES state;
-    
+
     DRV_SPI_TRANSFER_SETUP spiSetup;
 
     DRV_HANDLE  spiHandle;
-    
+
     DRV_SPI_TRANSFER_HANDLE transferHandle;
-    
+
     volatile bool isTransferComplete;
     volatile bool transferStatus;
     volatile bool status;
-    
+
     char userInput;
-    
+
     uint8_t writeReg[2];
     uint8_t readReg[4];
-    
+
     uint8_t captureBuffer[CAP_BUF_SIZE];
     uint8_t scanBuffer[SCAN_BUF_SIZE];
-    
+
     uint32_t imageSize;
 
 } APP_CAM_DATA;

@@ -1,0 +1,89 @@
+{
+   "metaDataVersion":"1.0.0",
+   "category":"com.microchip.ide.project",
+   "content":{
+      "metaDataVersion":"1.3.0",
+      "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_barcode_scanner_sam_e51_igat",
+      "version":"1.7.0",
+      "displayName":"Barcode Scanner Application using SAM E51 Integrated Graphics & Touch (IGAT) Curiosity Evaluation Kit",
+      "projectName":"barcode_scanner_sam_e51_igat",
+      "shortDescription":"Demonstrates how to detects the EAN-13 barcode and decodes it with the help of the ArduCAM Mega camera module",
+      "ide":{
+         "name":"MPLABX",
+         "semverRange":">=6.15"
+      },
+      "compiler":[
+         {
+            "name":"XC32",
+            "semverRange":">=4.30"
+         }
+      ],
+      "dfp":{
+         "name":"SAME51_DFP",
+         "semverRange":"^3.6.130"
+      },
+      "configurator":{
+         "name":"MCC",
+         "semverRange":">=5.3.7"
+      },
+      "device":{
+         "metaDataVersion":"1.0.0",
+         "category":"com.microchip.portal.contentRef",
+         "content":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.device",
+            "name":"ATSAME51J20A",
+            "versionRange":"*"
+         }
+      },
+      "author":"Microchip",
+      "subcategories":[
+         [
+            "Evaluation Kit",
+            "SAM E51 Integrated Graphics & Touch (IGAT) Curiosity Evaluation Kit"
+         ],
+         [
+            "Harmony",
+            "Reference Apps"
+         ]
+      ],
+      "peripherals":[
+         "ADC",
+         "CCL",
+         "EIC",
+         "NVIC",
+         "EYSYS",
+         "RTC",
+         "GPIO",
+         "SYSTICK",
+         "STDIO",
+         "SERCOM (USART)",
+         "SERCOM (SPI)"
+      ],
+      "keywords":[
+            "Harmony",
+			   "MCC",
+            "UART",
+            "Serial Communication",
+            "USART",
+            "SERCOM",
+            "EIC",
+            "SPI",
+            "GFX",
+            "RTC",
+            "CCL",
+            "GPIO"
+      ],
+      "additionalData":{
+         "longDescription":{
+            "metaDataVersion":"1.0.0",
+            "category":"com.microchip.portal.fileRef",
+            "content":{
+               "metaDataVersion":"1.0.0",
+               "fileName":"./../../readme.md",
+               "mimeType":"text/markdown"
+            }
+         }
+      }
+   }
+}

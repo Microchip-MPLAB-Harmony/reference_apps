@@ -1,5 +1,5 @@
 /*******************************************************************************
-    barcode Source File
+    Barcode Source File
 
   Company:
     Microchip Technology Inc.
@@ -70,8 +70,8 @@ const uint8_t mod_table[30] = {
 /*
  * parity_table[] is used to find first prefix character.
  *
- * 0b000000, 0b001011, 0b001101, 0b001110, 0b010011,	0..4
- * 0b011001, 0b011100, 0b010101, 0b010110, 0b011010,	5..9
+ * 0b000000, 0b001011, 0b001101, 0b001110, 0b010011,    0..4
+ * 0b011001, 0b011100, 0b010101, 0b010110, 0b011010,    5..9
  */
 static const uint8_t parity_tab[10] =   {
                                             0x00, 0x0b, 0x0d, 0x0e, 0x13,
@@ -91,55 +91,55 @@ int find_char_val(int zflag, int *plen)
     val = i = 0;
 
     if (zflag)                          /* Left side. starts with white bar */
-    {	
-        while (i < 4) 
+    {
+        while (i < 4)
         {
             nb = plen[i];
-            
+
             if (i&1)                    /* odd number bar is black */
-            {	
+            {
                 val = val << nb;
                 val |= otab[nb];        /* shift and set bits */
-            } 
-            
+            }
+
             else                        /* even number bar is white */
-            {		
+            {
                 val = val << nb;        /* shift only */
             }
-        
-            i++;
-        }
-    } 
-    
-    else                                /* Right side. starts with black bar */
-    {	
-        while (i < 4) 
-        {
-            nb = plen[i];
-            
-            if (i&1)                    /* odd number bar is white */
-            {	
-                val = val << nb;
-            } 
-            
-            else                        /* event number bar is black */
-            {		
-                val = val << nb;
-                val |= otab[nb];        /* shift and set bits */
-            }
-        
+
             i++;
         }
     }
-    
+
+    else                                /* Right side. starts with black bar */
+    {
+        while (i < 4)
+        {
+            nb = plen[i];
+
+            if (i&1)                    /* odd number bar is white */
+            {
+                val = val << nb;
+            }
+
+            else                        /* event number bar is black */
+            {
+                val = val << nb;
+                val |= otab[nb];        /* shift and set bits */
+            }
+
+            i++;
+        }
+    }
+
     /* Try to find the value in our module table */
-    for (i = 0; i < sizeof(mod_table); i++) 
+    for (i = 0; i < sizeof(mod_table); i++)
     {
         if (val == mod_table[i])
             return(i);
     }
-    
-    return -1;	/* Not found. Failed to decode */
+
+    return -1;  /* Not found. Failed to decode */
 }
 
 /*
@@ -156,16 +156,16 @@ int decode7(int index, short *wtab)
      * It is obvious that each bar has at least one bar width.
      */
     for (i = 0; i < 4; i++)             /* Total four bars */
-    {  
+    {
       mod_len[i] = 1;                   /* Each bar has at least one module */
       wval[i] = wtab[i] << 2;
     }
-    
+
     /* Because data character always have 7 modules,
      * we have three modules remain.
      */
     remain = 3;
-    
+
     /* Compute average module width */
     av = 0;
     for (i = 0; i < 4; i++) av += wval[i];
@@ -173,7 +173,7 @@ int decode7(int index, short *wtab)
     for (i = 0; i < 4; i++) wval[i] -= av;
 
     /* Allocate module length from bigger bars */
-    while (remain > 0) 
+    while (remain > 0)
     {
       /* Find biggest */
       maxid = 0;
@@ -186,32 +186,32 @@ int decode7(int index, short *wtab)
     }
 
     if (index < 6)                      /* Left side digit character */
-    {	
+    {
       i = find_char_val(1, mod_len);
-    } 
+    }
     else                                /* Right side character */
-    {		
+    {
       i = find_char_val(0, mod_len);
     }
 
     return i;
 }
 
-static uint16_t Calculate_Threshold(uint16_t* imageData, int imageSize) 
+static uint16_t Calculate_Threshold(uint16_t* imageData, int imageSize)
 {
     uint64_t totalIntensity = 0;
     uint64_t totalPixels = 0;
-    
+
     uint64_t sumAbove = 0;
     uint64_t countAbove = 0;
     uint64_t sumBelow = 0;
     uint64_t countBelow = 0;
-    
+
     uint16_t threshold;
     uint16_t meanAbove;
     uint16_t meanBelow;
 
-    for (int i = 0; i < imageSize; i++) 
+    for (int i = 0; i < imageSize; i++)
     {
         totalIntensity += imageData[i];
         totalPixels++;
@@ -221,7 +221,7 @@ static uint16_t Calculate_Threshold(uint16_t* imageData, int imageSize)
 
     int prevThreshold = -1;
 
-    while (threshold != prevThreshold) 
+    while (threshold != prevThreshold)
     {
         prevThreshold = threshold;
 
@@ -230,35 +230,35 @@ static uint16_t Calculate_Threshold(uint16_t* imageData, int imageSize)
         sumBelow = 0;
         countBelow = 0;
 
-        for (int i = 0; i < imageSize; i++) 
+        for (int i = 0; i < imageSize; i++)
         {
-            if (imageData[i] >= threshold) 
+            if (imageData[i] >= threshold)
             {
                 sumAbove += imageData[i];
                 countAbove++;
-            } 
-            
-            else 
+            }
+
+            else
             {
                 sumBelow += imageData[i];
                 countBelow++;
             }
         }
 
-        if (countAbove > 0 && countBelow > 0) 
+        if (countAbove > 0 && countBelow > 0)
         {
             meanAbove = (uint16_t)(sumAbove / countAbove);
             meanBelow = (uint16_t)(sumBelow / countBelow);
             threshold = (meanAbove + meanBelow) / 2;
         }
     }
-    
+
     #ifdef  TEST
 
         printf("\n\r Image Threshold: %d", threshold);
 
     #endif
-    
+
 
     return threshold;
 }
@@ -266,18 +266,18 @@ static uint16_t Calculate_Threshold(uint16_t* imageData, int imageSize)
 uint8_t Measure_Barcode_Width(uint16_t* Buf, uint16_t pixelThreshold, bool direction)
 {
     bool mark = false;
-    
-    uint8_t idx = 0;      
-    
+
+    uint8_t idx = 0;
+
     int whiteWidth = 0;
     int blackWidth = 0;
 
     if(direction == true)
     {
         // Iterate through the image data to measure the bar widths and counts
-        for (int i = 0; i < IMAGE_WIDTH; i++) 
+        for (int i = 0; i < IMAGE_WIDTH; i++)
         {
-            if (Buf[i] <= pixelThreshold) 
+            if (Buf[i] <= pixelThreshold)
             {
                 if ((mark == false) && (whiteWidth > 0))
                 {
@@ -291,16 +291,16 @@ uint8_t Measure_Barcode_Width(uint16_t* Buf, uint16_t pixelThreshold, bool direc
                 blackWidth++;
 
                 mark = true;
-            } 
+            }
 
-            else 
+            else
             {
                 if ((mark == true) && (blackWidth > 0))
-                {                
+                {
                     bar_width[idx] = blackWidth;
                     idx++;
 
-                    blackWidth = 0; 
+                    blackWidth = 0;
                 }
 
                 // Current pixel is white (above the threshold)
@@ -308,7 +308,7 @@ uint8_t Measure_Barcode_Width(uint16_t* Buf, uint16_t pixelThreshold, bool direc
 
                 mark = false;
             }
-            
+
             if(idx > JAN_BARS)
             {
                 return 0;
@@ -331,9 +331,9 @@ uint8_t Measure_Barcode_Width(uint16_t* Buf, uint16_t pixelThreshold, bool direc
     else
     {
         // Iterate through the image data to measure the bar widths and counts
-        for (int i = IMAGE_WIDTH -1 ; i > 0; i--) 
+        for (int i = IMAGE_WIDTH -1 ; i > 0; i--)
         {
-            if (Buf[i] <= pixelThreshold) 
+            if (Buf[i] <= pixelThreshold)
             {
                 if ((mark == false) && (whiteWidth > 0))
                 {
@@ -347,16 +347,16 @@ uint8_t Measure_Barcode_Width(uint16_t* Buf, uint16_t pixelThreshold, bool direc
                 blackWidth++;
 
                 mark = true;
-            } 
+            }
 
-            else 
+            else
             {
                 if ((mark == true) && (blackWidth > 0))
-                {                
+                {
                     bar_width[idx] = blackWidth;
                     idx++;
 
-                    blackWidth = 0; 
+                    blackWidth = 0;
                 }
 
                 // Current pixel is white (above the threshold)
@@ -364,7 +364,7 @@ uint8_t Measure_Barcode_Width(uint16_t* Buf, uint16_t pixelThreshold, bool direc
 
                 mark = false;
             }
-            
+
             if(idx > JAN_BARS)
             {
                 return 0;
@@ -382,7 +382,7 @@ uint8_t Measure_Barcode_Width(uint16_t* Buf, uint16_t pixelThreshold, bool direc
             bar_width[idx] = whiteWidth;
             idx++;
         }
-    }    
+    }
 
     return idx;
 }
@@ -396,59 +396,59 @@ int Bar_Decode(uint8_t index)
     short *wp;
 
     /* We should find total 61 bars. If not, report as error */
-    if (index != JAN_BARS) 
+    if (index != JAN_BARS)
     {
         #ifdef TEST
-            
+
             printf("\n\r APP_CAM_Task: Incomplete Scan");
-        
+
         #endif
-        
+
         return 1;
     }
 
     prefix = 0;
-    
+
     /* Decode left 6 digits */
     wp = bar_width + 4;
     cp = &bar_digits[1];
-    
+
     for (i = 0; i < 6; i++)             /* Left side index starts from zero */
-    {	
+    {
         index = decode7(i, wp);
         prefix <<= 1;
-        
+
         if (index < 0 || index > 19)    /* Error */
-        { 
+        {
             *cp = '?';
             error++;
-        } 
-        
-        else 
+        }
+
+        else
         {
             if (index >= 10)            /* Even parity */
-            {	
+            {
                 prefix++;
             }
-            
+
             *cp = (index % 10) + '0';
         }
-        
+
         wp += 4;
         cp++;
     }
-    
+
     /* Find first prefix character */
-    for (i = 0; i < 10; i++) 
+    for (i = 0; i < 10; i++)
     {
-        if (parity_tab[i] == prefix) 
+        if (parity_tab[i] == prefix)
         {
             bar_digits[0] = i + '0';
             break;
         }
     }
-  
-    if (i == 10) 
+
+    if (i == 10)
     {
         bar_digits[0] = '?';
         error++;
@@ -457,67 +457,67 @@ int Bar_Decode(uint8_t index)
     /* Decode right 6 digits */
     wp = bar_width + 33;
     cp = &bar_digits[7];
-    
+
     for (i = 6; i < 12; i++)            /* right side index starts from six */
-    {	
+    {
         index = decode7(i, wp);
-    
+
         if (index < 20)                 /* Error */
         {
             *cp = '?';
             error++;
-        } 
-        
-        else 
+        }
+
+        else
         {
             *cp = index - 20 + '0';
         }
-        
+
         wp += 4;
         cp++;
     }
-      
+
     *cp = 0;
-    
+
     if (error == 0)                     /* validate check digit */
-    {	
+    {
         short even_sum, odd_sum;
         int dval;
 
         even_sum = odd_sum = 0;
-        
-        for (i = 0; i < 12; i++) 
+
+        for (i = 0; i < 12; i++)
         {
             dval = bar_digits[i] - '0';
-            
+
             if (i & 1)
                 odd_sum += dval;
-      
+
             else
                 even_sum += dval;
         }
-    
+
         even_sum += odd_sum * 3;
         i = 10 - (even_sum % 10);
-    
+
         if (i == 10) i = 0;
 
-        if (error == 0) 
+        if (error == 0)
         {
-            if (('0' + i) != bar_digits[12]) 
+            if (('0' + i) != bar_digits[12])
             {
                 error++;
             }
         }
     }
-    
+
     if(error == 0)
-    {               
+    {
         // Decode success
         printf("\n\r APP_CAM_Task: Result:   ");
         printf("%s",bar_digits);
     }
-    
+
     return error;
 }
 
@@ -529,7 +529,7 @@ bool Barcode_Scan(uint16_t* Buf)
     uint8_t barCounts, result;
 
     uint16_t thres = Calculate_Threshold(Buf, IMAGE_WIDTH * IMAGE_HEIGHT);
-       
+
     barCounts = Measure_Barcode_Width(Buf, thres, true);
 
     result = Bar_Decode(barCounts);
@@ -538,24 +538,24 @@ bool Barcode_Scan(uint16_t* Buf)
     {
         /*
          * Decode failed.
-         * Try to decode data scanned from right to left direction.         
+         * Try to decode data scanned from right to left direction.
          */
-        
+
         barCounts = Measure_Barcode_Width(Buf + IMAGE_WIDTH, thres, false);
 
         result = Bar_Decode(barCounts);
-        
+
         if(result != 0)
         {
             return false;
         }
     }
-    
-    return true;    
+
+    return true;
 }
 
 void Get_Barcode(char* output)
 {
-    memcpy(output, bar_digits, sizeof(bar_digits));    
+    memcpy(output, bar_digits, sizeof(bar_digits));
 }
 

@@ -43,9 +43,9 @@
  */
 
 #ifndef BARCODE_H
-#define	BARCODE_H
+#define BARCODE_H
 
-#ifdef	__cplusplus
+#ifdef  __cplusplus
 extern "C" {
 #endif
 
@@ -53,21 +53,21 @@ extern "C" {
 #include <string.h>
 #include <stdio.h>
 #include <stdbool.h>
-    
-#define	JAN_BARS        61
+
+#define JAN_BARS        61
 
 #define IMG_ACT_WIDTH   1920
 #define IMG_ACT_HEIGHT  1080
 
-#define IMAGE_WIDTH		320
-#define IMAGE_HEIGHT	20
-    
-bool Barcode_Scan(uint16_t* Buf);  
+#define IMAGE_WIDTH     320
+#define IMAGE_HEIGHT    20
+
+bool Barcode_Scan(uint16_t* Buf);
 void Get_Barcode(char* output);
 
-#ifdef	__cplusplus
+#ifdef  __cplusplus
 }
 #endif
 
-#endif	/* BARCODE_H */
+#endif  /* BARCODE_H */
 

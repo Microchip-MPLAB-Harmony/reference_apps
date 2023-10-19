@@ -1,20 +1,20 @@
 /*******************************************************************************
-  Main Source File
-
-  Company:
-    Microchip Technology Inc.
+  User Configuration Header
 
   File Name:
-    main.c
+    user.h
 
   Summary:
-    This file contains the "main" function for a project.
+    Build-time configuration header for the user defined by this project.
 
   Description:
-    This file contains the "main" function for a project.  The
-    "main" function calls the "SYS_Initialize" function to initialize the state
-    machines of all modules in the system
- *******************************************************************************/
+    An MPLAB Project may have multiple configurations.  This file defines the
+    build-time options for a single configuration.
+
+  Remarks:
+    It only provides macro definitions for build-time configuration options
+
+*******************************************************************************/
 // DOM-IGNORE-BEGIN
 /*******************************************************************************
 * Copyright (C) 2022 Microchip Technology Inc. and its subsidiaries.
@@ -39,42 +39,32 @@
 * THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
 *******************************************************************************/
 // DOM-IGNORE-END
+
+#ifndef USER_H
+#define USER_H
+
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+
+extern "C" {
+
+#endif
+// DOM-IGNORE-END
+
 // *****************************************************************************
 // *****************************************************************************
-// Section: Included Files
+// Section: User Configuration macros
 // *****************************************************************************
 // *****************************************************************************
 
-#include <stddef.h>                     // Defines NULL
-#include <stdbool.h>                    // Defines true
-#include <stdlib.h>                     // Defines EXIT_FAILURE
-#include "definitions.h"                // SYS function prototypes
 
-
-// *****************************************************************************
-// *****************************************************************************
-// Section: Main Entry Point
-// *****************************************************************************
-// *****************************************************************************
-
-int main ( void )
-{
-    /* Initialize all modules */
-    SYS_Initialize ( NULL );
-
-    while ( true )
-    {
-        /* Maintain state machines of all polled MPLAB Harmony modules. */
-        SYS_Tasks ( );
-    }
-
-    /* Execution should not come here during normal operation */
-
-    return ( EXIT_FAILURE );
+//DOM-IGNORE-BEGIN
+#ifdef __cplusplus
 }
+#endif
+//DOM-IGNORE-END
 
-
+#endif // USER_H
 /*******************************************************************************
  End of File
 */
-

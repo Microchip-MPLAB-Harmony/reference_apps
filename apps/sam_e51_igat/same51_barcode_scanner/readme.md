@@ -1,7 +1,7 @@
 ---
 
 grand_parent: Reference Applications
-parent: SAM E51 Integrated Graphics & Touch Curiosity Evaluation Kit
+parent: SAM E51 Integrated Graphics & Touch (IGAT) Curiosity Evaluation Kit
 title: Barcode Scanner
 nav_order: 1
 
@@ -12,20 +12,21 @@ nav_order: 1
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
-# Barcode Scanner Application using SAM E51 Integrated Graphics & Touch Curiosity Evaluation Kit
+# Barcode Scanner Application using SAM E51 Integrated Graphics & Touch (IGAT) Curiosity Evaluation Kit
 
-<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/same51_barcode_scanner.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/barcode_scanner_sam_e51_igat.zip" > Download </a> </h2>
 
 -----
 
 ## Description:
 
-> This application detects the barcode and decodes it with the help of the ArduCAM Mega camera module. The ArduCAM Mega captures an image with resolution 1920x1080 and stores the image in an internal memory. The decoded barcode is then displayed on the serial console and graphical display.
+> This application detects the EAN-13 barcode and decodes it with the help of the ArduCAM Mega camera module. The ArduCAM Mega captures an image with resolution 1920x1080 and stores the image in an internal memory. The decoded barcode is then displayed on the serial console and graphical display.
 
 
 ## Modules/Technology Used:
 
 - Peripheral Modules
+	- ADC
 	- NVMCTRL
 	- EVSYS
 	- NVIC
@@ -34,6 +35,7 @@ nav_order: 1
 	- SERCOM - SPI
 	- SERCOM - UART
 	- TC
+	- CCL
 
 - Drivers
 	- SPI Driver
@@ -41,6 +43,7 @@ nav_order: 1
 - System Services
   - Time
   - STDIO
+  - Input System
 - Middleware libraries
 	- Harmony Core
 	- Legato Graphics
@@ -51,7 +54,7 @@ nav_order: 1
 
 ## Hardware Used:
 
-- [SAM E51 Integrated Graphics & Touch Curiosity Evaluation Kit](https://www.microchip.com/en-us/development-tool/ev14c17a)
+- [SAM E51 Integrated Graphics & Touch (IGAT) Curiosity Evaluation Kit](https://www.microchip.com/en-us/development-tool/ev14c17a)
 - [ArduCAM Mega 3MP Camera Module](https://www.arducam.com/product/presale-mega-3mp-color-rolling-shutter-camera-module-with-solid-camera-case-for-any-microcontroller/) or [ArduCAM Mega 5MP Camera Module with Autofocus](https://www.arducam.com/product/presale-mega-5mp-color-rolling-shutter-camera-module-with-autofocus-lens-for-any-microcontroller/)
 
 
@@ -59,7 +62,7 @@ nav_order: 1
 ## Software/Tools Used:
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
-Refer [Project Manifest](./firmware/src/config/same51_barcode_scanner/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/same51_barcode_scanner*  
+Refer [Project Manifest](./firmware/src/config/sam_e51_igat/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/sam_e51_igat*  
 
 - Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB® X IDE** and **MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools)
 - Any Serial Terminal application like Tera Term terminal application.
@@ -69,7 +72,7 @@ Refer [Project Manifest](./firmware/src/config/same51_barcode_scanner/harmony-ma
 To download original version of MPLAB® Harmony v3 packages, refer to document [How to Use the MPLAB® Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
 
 ## Setup:
-- Connect the ArduCAM Camera module to the **SAM E51 Curiosity Evaluation Kit** as shown below.
+- Connect the ArduCAM Camera module to the **SAM E51 Integrated Graphics & Touch (IGAT) Curiosity Evaluation Kit** as shown below.
 
 	<div align="center">
 		<img src = "images/hardware_setup1.png" width = "350"> 
@@ -80,7 +83,7 @@ To download original version of MPLAB® Harmony v3 packages, refer to document [
 		<img src = "images/hardware_setup2.png" align="middle" width = "250">  
 		<img src = "images/hardware_setup3.png" align="middle" width = "250">
 
-- Connect a micro-USB cable to the **DEBUG USB** port of the **SAM E51 Integrated Graphics & Touch Curiosity board**  to power the board and for programming and debugging.
+- Connect a micro-USB cable to the **DEBUG USB** port of the **SAM E51 Integrated Graphics & Touch (IGAT) Curiosity Evaluation Kit**  to power the board and for programming and debugging.
 
 <div align="center">
 	<img src = "images/hardware_setup4.png"> 
@@ -105,7 +108,7 @@ The pre-built hex file can be programmed by following the below steps
 - Follow the steps in "Running the Demo" section below
 
 ## Programming/Debugging Application Project:
-- Open the project (same51_barcode_scanner/firmware/sam_e51_igat.X) in MPLAB® X IDE
+- Open the project (same51_barcode_scanner/firmware/barcode_scanner_sam_e51_igat.X) in MPLAB® X IDE
 - Ensure "SAM E51 Integrated Graphics & Touch Curiosity" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB® X IDE tool bar
 - Debugging the project can be done by clicking on the “Debug Main Project” button in MPLAB® X IDE tool bar
@@ -119,8 +122,12 @@ The pre-built hex file can be programmed by following the below steps
 - When the **ArduCAM Mega Camera** is enabled in the demonstration, wait for the initialization confirmation from the development board. This will be printed on the serial port terminal.
 - Show the Barcode in front of the camera for capture (maintain a minimum distance of 10 to 15 cm).
 - Give the command “**1**” through terminal console.
-	- An LED “**LED0**” on the **SAM E51 Integrated Graphics & Touch Curiosity Evaluation Kit** toggles when the scanning is in progress.
+	- An LED “**LED0**” on the **SAM E51 Integrated Graphics & Touch (IGAT) Curiosity Evaluation Kit** toggles when the scanning is in progress.
 - Once the scanning is completed, the result will be displayed in the terminal console as well as graphical display also.
+
+**Note:** 
+ - This demo supports EAN-13 barcodes only. 
+ - Print the EAN-13 type barcode on a A4 sheet and show it before the ArduCAM Mega Camera module (keep a distance of  10 to 15 cm). 
 
 <div align="center">
 	<img src = "images/console_output.png" width = "500"> 
@@ -138,4 +145,4 @@ The pre-built hex file can be programmed by following the below steps
 
 ## Revision:
 
-- v1.5.0 - Released demo application
+- v1.7.0 - Released demo application
