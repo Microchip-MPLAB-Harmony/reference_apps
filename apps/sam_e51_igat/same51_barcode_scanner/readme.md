@@ -108,7 +108,7 @@ The pre-built hex file can be programmed by following the below steps
 - Follow the steps in "Running the Demo" section below
 
 ## Programming/Debugging Application Project:
-- Open the project (same51_barcode_scanner/firmware/barcode_scanner_sam_e51_igat.X) in MPLAB® X IDE
+- Open the project (same51_barcode_scanner/firmware/sam_e51_igat.X) in MPLAB® X IDE
 - Ensure "SAM E51 Integrated Graphics & Touch Curiosity" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB® X IDE tool bar
 - Debugging the project can be done by clicking on the “Debug Main Project” button in MPLAB® X IDE tool bar
