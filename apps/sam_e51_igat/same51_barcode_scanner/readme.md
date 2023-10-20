@@ -14,13 +14,13 @@ nav_order: 1
 
 # Barcode Scanner Application using SAM E51 Integrated Graphics & Touch (IGAT) Curiosity Evaluation Kit
 
-<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/barcode_scanner_sam_e51_igat.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/same51_barcode_scanner.zip" > Download </a> </h2>
 
 -----
 
 ## Description:
 
-> This application detects the EAN-13 barcode and decodes it with the help of the ArduCAM Mega camera module. The ArduCAM Mega captures an image with resolution 1920x1080 and stores the image in an internal memory. The decoded barcode is then displayed on the serial console and graphical display.
+> This application detects the EAN-13 barcode and decodes it with the help of the ArduCAM Mega camera module. The ArduCAM Mega captures an image with a resolution of 1920x1080 and stores the image in an internal memory. The decoded barcode is then displayed on the serial console and graphical display.
 
 
 ## Modules/Technology Used:

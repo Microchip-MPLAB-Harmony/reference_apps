@@ -37,16 +37,6 @@
          }
       },
       "author":"Microchip",
-      "subcategories":[
-         [
-            "Evaluation Kit",
-            "SAM E51 Integrated Graphics & Touch (IGAT) Curiosity Evaluation Kit"
-         ],
-         [
-            "Harmony",
-            "Reference Apps"
-         ]
-      ],
       "peripherals":[
          "ADC",
          "CCL",
@@ -57,8 +47,8 @@
          "GPIO",
          "SYSTICK",
          "STDIO",
-         "SERCOM (USART)",
-         "SERCOM (SPI)"
+         "USART",
+         "SPI"
       ],
       "keywords":[
             "Harmony",

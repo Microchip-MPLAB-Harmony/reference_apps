@@ -13,7 +13,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
-| 1 | [Barcode Scanner](./same51_barcode_scanner/readme.md) | Click Here |
+| 1 | [Barcode Scanner](./same51_barcode_scanner/readme.md) | [Click Here] (https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/same51_barcode_scanner.zip) |
 
 
 
