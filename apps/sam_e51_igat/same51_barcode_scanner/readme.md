@@ -125,14 +125,17 @@ The pre-built hex file can be programmed by following the below steps
 	- An LED “**LED0**” on the **SAM E51 Integrated Graphics & Touch (IGAT) Curiosity Evaluation Kit** toggles when the scanning is in progress.
 - Once the scanning is completed, the result will be displayed in the terminal console as well as graphical display also.
 
-**Note:** 
- - This demo supports EAN-13 barcodes only. 
- - Print the EAN-13 type barcode on a A4 sheet and show it before the ArduCAM Mega Camera module (keep a distance of  10 to 15 cm). 
-
+## Output:
 <div align="center">
 	<img src = "images/console_output.png" width = "500"> 
 	<img src = "images/output.png" width = "500"> 
 </div>
+
+**Note:** 
+ - This demo supports EAN-13 barcodes only. 
+ - Print the EAN-13 type barcode on a A4 sheet and show it before the ArduCAM Mega Camera module (keep a distance of  10 to 15 cm). 
+
+
 
 
 ## Comments:

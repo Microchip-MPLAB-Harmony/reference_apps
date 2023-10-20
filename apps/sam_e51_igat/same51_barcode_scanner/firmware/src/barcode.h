@@ -57,7 +57,6 @@ extern "C" {
 #define JAN_BARS        61
 
 #define IMG_ACT_WIDTH   1920
-#define IMG_ACT_HEIGHT  1080
 
 #define IMAGE_WIDTH     320
 #define IMAGE_HEIGHT    20
