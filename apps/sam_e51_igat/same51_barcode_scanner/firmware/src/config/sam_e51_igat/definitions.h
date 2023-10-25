@@ -50,10 +50,10 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include "peripheral/nvmctrl/plib_nvmctrl.h"
-#include "driver/input/drv_touch_itd.h"
-#include "peripheral/tc/plib_tc0.h"
 #include "peripheral/rtc/plib_rtc.h"
 #include "touch/touch.h"
+#include "driver/input/drv_touch_itd.h"
+#include "peripheral/tc/plib_tc0.h"
 #include "system/time/sys_time.h"
 #include "peripheral/adc/plib_adc0.h"
 #include "driver/spi/drv_spi.h"

@@ -1,4 +1,4 @@
-<config configName="ili9488_rgb565_e51_igat" projectName="legato_quickstart_e51_igat" configVersion="1.1" device="ATSAME51J20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
+<config configName="sam_e51_igat" projectName="barcode_scanner_sam_e51_igat" configVersion="1.1" device="ATSAME51J20A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.5.7">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -19620,7 +19620,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_igat\initialization.c</file>
-         <hash>fab9fd2c2ad8aab970b7678306ed392d94957ff3901bfe262909bd875f01182a</hash>
+         <hash>a2c7c166bfb5c33196fc55a9d363606f233ee3d2f65b66c07b25394c7339a8a9</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\NN\Source\NNSupportFunctions\arm_nn_depthwise_conv_nt_t_padded_s8.c</file>
@@ -20012,7 +20012,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_e51_igat\definitions.h</file>
-         <hash>b1dd01b86c850de314c11d4c0136e28766ed19f4e49ca4b31e88852d730567a2</hash>
+         <hash>061c9b359a74019d23070002bbb9a9798db42e9d6b1ee29b94860bee705b6615</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAME51J20A_DFP\instance\sercom0.h</file>

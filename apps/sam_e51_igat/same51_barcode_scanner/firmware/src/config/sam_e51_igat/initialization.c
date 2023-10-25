@@ -253,9 +253,9 @@ void SYS_Initialize ( void* data )
 
 
 
-    TC0_TimerInitialize();
-
     RTC_Initialize();
+
+    TC0_TimerInitialize();
 
     ADC0_Initialize();
     SERCOM2_USART_Initialize();

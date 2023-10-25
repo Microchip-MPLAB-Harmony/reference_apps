@@ -559,6 +559,8 @@ void APP_CAM_Tasks ( void )
 
             else
             {
+                printf("\n\r APP_CAM_Task: Scan Again...! ");
+                
                 //convert the character string to leFixedString object
                 OutputString.fn->setFromCStr(&OutputString, app_cam_err_msg);
 
@@ -584,7 +586,7 @@ void APP_CAM_Tasks ( void )
 
         case APP_CAM_STATE_ERROR:
         {
-            printf("\n\r APP_CAM_Task: Task Error...! ");
+            printf("\n\r APP_CAM_Task: Task Error...! \n\r");
 
             app_camData.state = APP_CAM_STATE_IDLE;
             break;
