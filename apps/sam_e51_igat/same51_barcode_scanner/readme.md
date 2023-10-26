@@ -71,23 +71,18 @@ Refer [Project Manifest](./firmware/src/config/sam_e51_igat/harmony-manifest-suc
 
 To download original version of MPLAB® Harmony v3 packages, refer to document [How to Use the MPLAB® Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
 
-## Setup:
-- Connect the ArduCAM Camera module to the **SAM E51 Integrated Graphics & Touch (IGAT) Curiosity Evaluation Kit** as shown below.
+## Setup:  
 
-	<div align="center">
-		<img src = "images/hardware_setup1.png" width = "350"> 
-	</div>
-
-	- Connect the ArduCAM pins directly to the Extra Port pins interface (J203). i.e.
-		<img src = "images/hardware_connection.png" align="middle" width = "250">
-		<img src = "images/hardware_setup2.png" align="middle" width = "250">  
-		<img src = "images/hardware_setup3.png" align="middle" width = "250">
+- Connect the ArduCAM Camera module to the **SAM E51 Integrated Graphics & Touch (IGAT) Curiosity Evaluation Kit** as shown below.  
+	<div align="center"> <img src = "images/hardware_setup1.png" width = "350"> </div>
+	
+- Connect the ArduCAM pins directly to the Extra Port pins interface (J203). i.e.  
+	<img src = "images/hardware_connection.png" align="middle" width = "250">
+	<img src = "images/hardware_setup2.png" align="middle" width = "250">
+	<img src = "images/hardware_setup3.png" align="middle" width = "250">
 
 - Connect a micro-USB cable to the **DEBUG USB** port of the **SAM E51 Integrated Graphics & Touch (IGAT) Curiosity Evaluation Kit**  to power the board and for programming and debugging.
-
-<div align="center">
-	<img src = "images/hardware_setup4.png"> 
-</div>
+	<div align="center"> <img src = "images/hardware_setup4.png"> </div>
 
 ## Programming hex file:
 
@@ -126,10 +121,8 @@ The pre-built hex file can be programmed by following the below steps
 - Once the scanning is completed, the result will be displayed in the terminal console as well as graphical display also.
 
 ## Output:
-<div align="center">
-	<img src = "images/console_output.png" width = "500"> 
-	<img src = "images/output.png" width = "500"> 
-</div>
+<div align="center"> <img src = "images/console_output.png" width = "500"> </div>
+<div align="center"> <img src = "images/output.png" width = "500"> </div>
 
 **Note:** 
  - This demo supports EAN-13 barcodes only. 
