@@ -78,6 +78,8 @@ to the Xplained Pro Extension Standard Header of the [Curiosity PIC32MZ EF 2.0 D
     - MOSI -> SPI3 MOSI -> RB3
     - CE -> GPIO OUT -> RB15
 
+- **Note:** <span style="color:blue"> The above pin configuration can be followed while using an Arducam Mega 3MP Rolling Shutter camera as well.
+
 <img src = "images/pic32mz_ef_curiosity_v2_hw_setup_markings.png">
 - Mount LAN8740 PHY daughter board on Ethernet PHY header
 
@@ -111,14 +113,14 @@ The pre-built hex file can be programmed by following the below steps.
 - Follow the steps in "Running the Demo" section below
 
 ## Programming/Debugging Application Project:
-- Open the project **(pic32mzefc_motion_surveillance\firmware\pic32mz_ef_curiosity_v2_freertos.X)** in MPLAB X IDE
+- Open the project **(pic32mzef_motion_surveillance\firmware\pic32mz_ef_curiosity_v2_freertos.X)** in MPLAB X IDE
 - Ensure "Curiosity PIC32 MZ EF 2.0" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below
 
 ## Running the Surveillance application demo:
 - Perform **"Hardware Setup"** steps mentioned above, if not done already.
-- Ensure a microSD Card is formatted and loaded with the **web_pages** provided within the **pic32mzefc_motion_surveillance\firmware\src\web_pages** directory.
+- Ensure a microSD Card is formatted and loaded with the **web_pages** provided within the **pic32mzef_motion_surveillance\firmware\src\web_pages** directory.
     - Insert the microSD Card in the [microSD click](https://www.mikroe.com/microsd-click) board mounted on the mikroBUS interface of the [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/en-us/development-tool/dm320209).
 - Build and download the demonstration project on the target board.
 
@@ -165,5 +167,5 @@ The pre-built hex file can be programmed by following the below steps.
 
 
 ## Revision:
-- v1.6.0 - Created demo application
+- v1.7.0 - Created demo application
 

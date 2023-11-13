@@ -57,7 +57,7 @@
 #include <stddef.h>
 
 #include "configuration.h"
-#include "definitions.h" 
+#include "definitions.h"
 
 // DOM-IGNORE-BEGIN
 #ifdef __cplusplus  // Provide C++ Compatibility
@@ -75,14 +75,14 @@ extern "C" {
 
 #define APP_LED_2StateGet()         LED_AH_PB12_Get()
 #define APP_LED_3StateGet()         LED_AH_PB13_Get()
-  
+
 #define APP_SWITCH_1StateGet()      (0)
 #define APP_LED_1StateGet()         LED_AH_PB11_Get()
 #define APP_LED_1StateSet()         LED_AH_PB11_On()
 #define APP_LED_1StateClear()       LED_AH_PB11_Off()
 #define APP_LED_1StateToggle()      LED_AH_PB11_Toggle()
-#else    
-#if defined (__PIC32C__) || defined(__SAMA5D2__)        
+#else
+#if defined (__PIC32C__) || defined(__SAMA5D2__)
 /* This section is highly customizable based on application's specific needs. */
 #define APP_SWITCH_1StateGet()      SWITCH_Get()
 #define APP_SWITCH_2StateGet()      SWITCH_Get()
@@ -111,19 +111,19 @@ extern "C" {
 #define APP_LED_3StateToggle()      LED3_Toggle()
 #endif
 #endif
-    
-  
+
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Type Definitions
 // *****************************************************************************
 // *****************************************************************************
-    
+
 #define BUF_SIZE    (20 * 1024)
 #define SDCARD_MOUNT_NAME    "/mnt/mchpSite1/web_pages"//"/mnt/mchpSite1"//"/mnt/mydrive"
 #define SDCARD_DEV_NAME      "/dev/mmcblka1"
 #define SDCARD_DIR_NAME      "web_pages/arducam"
-    
+
 #define MAX_FILE_NAMES                          255
 #define MAX_FILE_NAME_LEN                       255
 #define JPEG_FILE_NAME                          24
@@ -137,11 +137,11 @@ extern "C" {
   Description:
     This enumeration defines the valid application states.  These states
     determine the behavior of the application at various times.
-*/    
-  
+*/
+
 typedef enum
 {
-    /* Application's state machine's initial state. */      
+    /* Application's state machine's initial state. */
     APP_FS_TCPIP_STATE_MOUNT_DISK = 0,
 
     /* The app unmounts the disk */
@@ -158,7 +158,7 @@ typedef enum
 
     /* An app error has occurred */
     APP_FS_TCPIP_STATE_ERROR,
-            
+
     /* In this state, the application waits for the initialization of the TCP/IP stack
        to complete. */
     APP_FS_TCPIP_STATE_WAIT_INIT,
@@ -185,8 +185,8 @@ typedef enum
 typedef struct
 {
     /* Application's current state */
-    APP_FS_TCPIP_STATES                  state;   
-    
+    APP_FS_TCPIP_STATES                  state;
+
     bool fs_sys_ready;
 
 } APP_FS_TCPIP_DATA;
@@ -210,7 +210,7 @@ typedef enum
     APP_FS_TCPIP_LED_STATE_OFF = 0,
    /* LED State is off */
     APP_FS_TCPIP_LED_STATE_ON = 1,
-            
+
 } APP_FS_TCPIP_LED_STATE;
 
 // *****************************************************************************

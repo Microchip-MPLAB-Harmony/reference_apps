@@ -4,7 +4,7 @@
    "content":{
       "metaDataVersion":"1.3.0",
       "name":"com.microchip.mcu32.mplabx.project.MPLAB-Harmony-Reference-Apps_motion_surveillance",
-      "version":"1.6.0",
+      "version":"1.7.0",
       "displayName":"Motion Surveillance Application",
       "projectName":"motion_surveillance_pic32mz_ef_curiosity_v2",
       "shortDescription":"Demonstrates the detection of motion in front of camera and live preview of captured images on webnet server",

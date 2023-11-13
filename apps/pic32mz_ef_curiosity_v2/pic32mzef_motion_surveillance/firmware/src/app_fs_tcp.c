@@ -88,7 +88,7 @@ APP_FS_TCPIP_LED_STATE LEDstate = APP_FS_TCPIP_LED_STATE_OFF;
 // *****************************************************************************
 
 
-bool APP_FS_SystemIsReady(void) 
+bool APP_FS_SystemIsReady(void)
 {
     return app_fs_tcpip_Data.fs_sys_ready;
 }
@@ -111,9 +111,9 @@ bool APP_FS_SystemIsReady(void)
 void APP_FS_TCPIP_Initialize ( void )
 {
     /* Place the App state machine in its initial state. */
-    app_fs_tcpip_Data.state        = APP_FS_TCPIP_STATE_MOUNT_DISK; 
+    app_fs_tcpip_Data.state        = APP_FS_TCPIP_STATE_MOUNT_DISK;
     app_fs_tcpip_Data.fs_sys_ready = false;
-    
+
 }
 
 /******************************************************************************
@@ -134,7 +134,7 @@ void APP_FS_TCPIP_Tasks ( void )
     int                 i;
     const char          *netName, *netBiosName;
     static uint32_t     startTick = 0;
-    
+
     /* Check the application's current state. */
     switch ( app_fs_tcpip_Data.state )
     {
@@ -181,7 +181,7 @@ void APP_FS_TCPIP_Tasks ( void )
             }
             else
             {
-                SYS_CONSOLE_PRINT("Mount was successful\n\r");  
+                SYS_CONSOLE_PRINT("Mount was successful\n\r");
                 /* Mount was successful. Set current drive so that we do not have to use absolute path. */
                 app_fs_tcpip_Data.state = APP_FS_TCPIP_STATE_SET_CURRENT_DRIVE;
             }
@@ -199,16 +199,16 @@ void APP_FS_TCPIP_Tasks ( void )
             {
                 /* create arducam directory*/
                 SYS_FS_DirectoryMake(SDCARD_DIR_NAME);
-                
-                SYS_CONSOLE_PRINT("FILESYSTEM READY\n\r");  
+
+                SYS_CONSOLE_PRINT("FILESYSTEM READY\n\r");
                 /* Setting current drive was successful. */
                 app_fs_tcpip_Data.state = APP_FS_TCPIP_STATE_WAIT_INIT;
                 app_fs_tcpip_Data.fs_sys_ready = true;
-   
+
             }
             break;
         }
-        
+
         case APP_FS_TCPIP_STATE_WAIT_INIT:
             tcpipStat = TCPIP_STACK_Status(sysObj.tcpip);
             if(tcpipStat < 0)
@@ -235,7 +235,7 @@ void APP_FS_TCPIP_Tasks ( void )
 #else
                     SYS_CONSOLE_PRINT("    Interface %s on host %s - NBNS disabled\r\n", netName, netBiosName);
 #endif
-                    (void)netName;          // avoid compiler warning 
+                    (void)netName;          // avoid compiler warning
                     (void)netBiosName;      // if SYS_CONSOLE_PRINT is null macro
 
 #if defined(TCPIP_STACK_USE_ZEROCONF_MDNS_SD)
@@ -300,8 +300,8 @@ void APP_FS_TCPIP_Tasks ( void )
                     SYS_CONSOLE_PRINT("%d.%d.%d.%d \r\n", ipAddr.v[0], ipAddr.v[1], ipAddr.v[2], ipAddr.v[3]);
                 }
             }
-            break;        
-       
+            break;
+
         case APP_FS_TCPIP_STATE_IDLE:
         {
             break;
@@ -310,9 +310,9 @@ void APP_FS_TCPIP_Tasks ( void )
         case APP_FS_TCPIP_STATE_ERROR:
         {
              app_fs_tcpip_Data.fs_sys_ready = false;
-             
-            SYS_CONSOLE_PRINT("APP_FS_TCPIP_STATE_Task: Error...!\n\r");    
-            
+
+            SYS_CONSOLE_PRINT("APP_FS_TCPIP_STATE_Task: Error...!\n\r");
+
             break;
         }
 

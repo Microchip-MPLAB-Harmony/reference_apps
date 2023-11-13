@@ -57,7 +57,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include "configuration.h"
-#include "definitions.h" 
+#include "definitions.h"
 
 
 // DOM-IGNORE-BEGIN
@@ -76,8 +76,8 @@ extern "C" {
 
 /*PIR sensor Macros*/
 #define PIR_SENSOR_ADDR                     0x4D
-#define PIR_MOTION_THRESHOLD                (7.0) 
-#define PIR_ADC_MAX                         4095   
+#define PIR_MOTION_THRESHOLD                (7.0)
+#define PIR_ADC_MAX                         4095
 #define PIR_ADC_MIN                         0
 #define PIR_OUT_MAX                         3303
 
@@ -85,7 +85,7 @@ extern "C" {
  * detecting the motion from distance nearly 4-5 feet and with
  * "APP_PIR_MOTION_DETECTED = 7.0" the motion is detected from a distance
  * nearly 2-3 feet. Configure the value based on the requirement. */
-    
+
 
 /* Reference Year in tm structure year (C standard) */
 #define APP_TM_STRUCT_REFERENCE_YEAR           (1900U)
@@ -143,8 +143,8 @@ extern "C" {
     )
 
 #define constrain(amt,low,high) ((amt)<(low)?(low):((amt)>(high)?(high):(amt)))
-    
-    
+
+
 #define BUF_SIZE    (20 * 1024)
 // *****************************************************************************
 /* Application states
@@ -195,30 +195,30 @@ typedef struct
 {
     /* The application's current state */
     APP_CAM_STATES state;
-    
+
     DRV_SPI_TRANSFER_SETUP spiSetup;
 
     DRV_HANDLE  spiHandle;
-    
+
     SYS_FS_HANDLE fileHandle;
-    
+
     SYS_CONSOLE_HANDLE consoleHandle;
-    
+
     SYS_TIME_HANDLE timeHandle;
-    
+
     uint8_t writeReg[2];
     uint8_t readReg[4];
-    
+
     /* FIFO Variables */
     uint32_t fifo_size;
-    
+
     bool status;
-    
+
     /* Buffer to store QVGA data */
     uint8_t captureBuffer[BUF_SIZE];
-    
+
     char input;
-    
+
     /* Stores the Current time from RTCC */
     struct tm rtcTime;
 
