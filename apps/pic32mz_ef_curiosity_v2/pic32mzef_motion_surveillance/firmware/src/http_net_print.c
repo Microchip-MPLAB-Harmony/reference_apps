@@ -9,7 +9,8 @@
  *
 *********************************************************************/
 
-/*
+//DOM-IGNORE-BEGIN
+/*******************************************************************************
 Copyright (C) 2012-2023, Microchip Technology Inc., and its subsidiaries. All rights reserved.
 
 The software and documentation is provided by microchip and its contributors
@@ -30,7 +31,14 @@ for any third-party software incorporated in the software and any applicable ope
 source software license terms, no license or other rights, whether express or
 implied, are granted under any patent or other intellectual property rights of
 Microchip or any third party.
-*/
+*******************************************************************************/
+//DOM-IGNORE-END
+
+// *****************************************************************************
+// *****************************************************************************
+// Section: Included Files
+// *****************************************************************************
+// *****************************************************************************
 
 #include "configuration.h"
 #include "definitions.h" 
