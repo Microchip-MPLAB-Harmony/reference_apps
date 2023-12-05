@@ -1,0 +1,14 @@
+format_version: v1.0
+configName: mclv2_pic32_mk_mcm_pim
+folderName: pic32mk_mcm_control_board
+frameworkPath: C:\Harmony3
+processor: PIC32MK1024MCM100
+projectName: pic32mk_mcm_control_board
+settings:
+  PackageFilter: ''
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: dev_packs\Microchip\PIC32MK-MC_DFP\1.11.151\atdf\PIC32MK1024MCM100.atdf
