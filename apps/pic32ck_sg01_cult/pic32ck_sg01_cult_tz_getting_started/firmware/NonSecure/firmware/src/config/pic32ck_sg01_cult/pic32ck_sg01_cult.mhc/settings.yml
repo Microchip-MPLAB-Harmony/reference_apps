@@ -1,0 +1,14 @@
+format_version: v1.0
+configName: pic32ck_sg01_cult
+folderName: pic32ck_sg01_cult_NonSecure
+frameworkPath: C:\Harmony_V3_Content
+processor: PIC32CK2051SG01144
+projectName: pic32ck_sg01_cult_NonSecure
+settings:
+  PackageFilter: ''
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'true'
+  CMSISPath: dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: dev_packs\Microchip\PIC32CK-SG_DFP\1.0.141\PIC32CK-SG01\atdf\PIC32CK2051SG01144.atdf
