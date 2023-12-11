@@ -40,6 +40,7 @@ The following reference applications are provided to evaluate solutions on 32-bi
 |  <img src = "./sam_e70_xpld/image.jpg">  | [SAM E70 Xplained Evaluation Kit](./sam_e70_xpld/readme.md) |
 |  <img src = "./sam_e54_xpro/image.jpg">  | [SAM E54 Xplained Pro Evaluation Kit](./sam_e54_xpro/readme.md) |
 |  <img src = "./sam_e54_cult/image.jpg">  | [SAM E54 Curiosity Ultra Development Board](./sam_e54_cult/readme.md) |
+|  <img src = "./sam_e54_mcpim_mclv2/image.jpg">  | [dsPICDEM™ MCLV-2 Development Board with SAME54 Motor Control PIM](./sam_e54_mcpim_mclv2/readme.md) |
 |  <img src = "./sam_d21_xpro/image.jpg">  | [SAM D21 Xplained Pro Evaluation Kit](./sam_d21_xpro/readme.md) |
 |  <img src = "./pic32mk_gp_db/image.jpg">  | [PIC32MK General Purpose (GP) Development Kit](./pic32mk_gp_db/readme.md) |
 |  <img src = "./pic32mx470_curiosity/image.jpg">  | [Curiosity PIC32MX470 Development Board](./pic32mx470_curiosity/readme.md) |

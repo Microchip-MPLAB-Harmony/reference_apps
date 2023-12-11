@@ -114,12 +114,16 @@ The pre-built hex file can be programmed by following the below steps
 ## Running the Demo:
 
 - Press the **S2** swtich on the **dsPICDEM™ MCLV-2 Development Board** to start the motor.
+<div align="center"> <img src = "images/output_1.png" width = "350"> </div>
 
 - Press the **S3** swtich to toggle the motor direction.
+<div align="center"> <img src = "images/output_2.png" width = "350"> </div>
 
 - Vary the potentiometer to change the speed of the motor.
+<div align="center"> <img src = "images/output_3.png" width = "350"> </div>
 
 - Press the **S2** swtich again to stop the motor.
+<div align="center"> <img src = "images/output_1.png" width = "350"> </div>
 
 **Note:** Stop the motor before changing the motor direction. 
 
