@@ -14,7 +14,7 @@ nav_order: 4
 
 ## Description:
 
-> The Motion Surveillance application detects a motion in front of the ArduCAM (camera) using the PIR Click (motion sensor) board. ArduCAM captures an image with resolution 320x240 and stores the image in an external storage device (microSD Card). Additionally, the application demonstrates a live preview of captured images.
+> The Motion Surveillance application detects a motion in front of the Arducam Mega (camera module) using the PIR Click (motion sensor) board. ArduCAM captures an image with resolution 320x240 and stores the image in an external storage device (microSD Card). Additionally, the application demonstrates a live preview of captured images.
 
 > The live preview of captured images is demonstrated by running an HTTP web server on the development board. The user connects to the webserver through an internet browser and view the live preview of the captured images.
 
@@ -58,7 +58,7 @@ nav_order: 4
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
 Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/default*  
-- Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MCC/MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools).  
+- Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools).  
 - [MPLAB XC32 C/C++ Compiler v4.30](https://www.microchip.com/en-us/tools-resources/archives/mplab-ecosystem)  
 - Any Serial Terminal application like Tera Term terminal application.  
 
@@ -69,18 +69,16 @@ Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.
 ## Hardware Setup:
 - Mount the [MikroElektronika PIR Click](https://www.mikroe.com/pir-click) and the [microSD click](https://www.mikroe.com/microsd-click) on to the mikroBUS interfaces of the [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/en-us/development-tool/dm320209), as shown in the image.
 - Connect the pins of [Arducam Mega 5MP Rolling Shutter camera](https://www.arducam.com/product/presale-mega-5mp-color-rolling-shutter-camera-module-with-autofocus-lens-for-any-microcontroller/) 
-to the Xplained Pro Extension Standard Header of the [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/en-us/development-tool/dm320209) as described below.
+to the Xplained Pro Extension Standard Header (J501) of the [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/en-us/development-tool/dm320209) as described below.
 
-    - VCC -> VCC_P3V3 pin (3.3V)
-    - GND -> GND
-    - SCK -> SPI3 SCK -> RB14
-    - MISO -> SPI3 MISO -> RB5
-    - MOSI -> SPI3 MOSI -> RB3
-    - CE -> GPIO OUT -> RB15
+<img src = "images/hardware_connection.png"> 
 
-- **Note:** <span style="color:blue"> The above pin configuration can be followed while using an Arducam Mega 3MP Rolling Shutter camera as well.
+<img src = "images/arducam_mega_pinout.png">
+
+**Note:** <span style="color:blue"> The above pin configuration can be followed while using an Arducam Mega 3MP Rolling Shutter camera as well.
 
 <img src = "images/pic32mz_ef_curiosity_v2_hw_setup_markings.png">
+
 - Mount LAN8740 PHY daughter board on Ethernet PHY header
 
 ## TCP/IP Network Setup:
@@ -106,9 +104,9 @@ The pre-built hex file can be programmed by following the below steps.
 - In the "Import Image File" window, Step 1 - Create Prebuilt Project, Click the "Browse" button to select the prebuilt hex file.
 - Select Device has "PIC32MZ2048EFM144"
 - Ensure the proper tool is selected under "Hardware Tool"
-- Click on Next button
+- Click on "Next" button
 - In the "Import Image File" window, Step 2 - Select Project Name and Folder, select appropriate project name and folder
-- Click on Finish button
+- Click on "Finish" button
 - In MPLAB X IDE, click on "Make and Program Device" Button. The device gets programmed in sometime
 - Follow the steps in "Running the Demo" section below
 
@@ -116,7 +114,9 @@ The pre-built hex file can be programmed by following the below steps.
 - Open the project **(pic32mzef_motion_surveillance\firmware\pic32mz_ef_curiosity_v2_freertos.X)** in MPLAB X IDE
 - Ensure "Curiosity PIC32 MZ EF 2.0" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB X IDE tool bar
+- Debugging the project can be done by clicking on the “Debug Main Project” button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below
+
 
 ## Running the Surveillance application demo:
 - Perform **"Hardware Setup"** steps mentioned above, if not done already.
@@ -146,18 +146,17 @@ The pre-built hex file can be programmed by following the below steps.
 
         <img src = "images/webnet_server.png" width="753" height="640" align="middle">
 
-        - **Note:**
-            - When the motion sensor detects a motion, the ArduCAM captures an image (resolution **320x240**) and stores in **web_pages/arducam** folder on the microSD Card.
-            - The maximum number of images that the application stores on the microSD Card is **255**. If the number of images captured exceeds **255**, the application overwrites the images from the beginning. User can increase the storage size based on the available free size of the microSD Card by changing the **MAX_FILE_NAMES** macro in the **app_fs_tcp.h** header file.
-            - If any error (check logs in the terminal), reset the device, simply reload the page, click **Motion Surveillance** menu option, or clear the web browser cache and then reload the page.
+       **Note:**
+        - When the motion sensor detects a motion, the ArduCAM captures an image (resolution **320x240**) and stores in **web_pages/arducam** folder on the microSD Card. The maximum number of images that the application stores on the microSD Card is **255**. If the number of images captured exceeds **255**, the application overwrites the images from the beginning. User can increase the storage size based on the available free size of the microSD Card by changing the **MAX_FILE_NAMES** macro in the **app_fs_tcp.h** header file. 
+        - If any error (check logs in the terminal), reset the device, simply reload the page, click **Motion Surveillance** menu option, or clear the web browser cache and then reload the page.
 
     - **Step 2: Preview the images stored on the microSD Card using Windows Photo Viewer application:**
         - Remove the microSD Card from the [microSD click](https://www.mikroe.com/microsd-click) board mounted on the mikroBUS interface of the [Curiosity PIC32MZ EF 2.0 Development Board](https://www.microchip.com/en-us/development-tool/dm320209) and insert into personal computer.
-        - Goto **web_pages/arducam** folder and preview the captured images using any photo preview application.
+        - Go to **web_pages/arducam** folder and preview the captured images using any photo preview application.
 
 ## Comments:
 - Reference Training Module:
-	1. [Getting Started with Harmony v3 Peripheral Libraries on PIC32MZ EF MCUs](https://microchipdeveloper.com/harmony3:pic32mzef-getting-started-training-module)
+	- [Getting Started with Harmony v3 Peripheral Libraries on PIC32MZ EF MCUs](https://microchipdeveloper.com/harmony3:pic32mzef-getting-started-training-module)
 
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. 
 

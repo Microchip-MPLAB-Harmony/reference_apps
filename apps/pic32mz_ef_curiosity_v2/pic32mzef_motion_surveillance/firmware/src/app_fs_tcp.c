@@ -231,7 +231,7 @@ void APP_FS_TCPIP_Tasks ( void )
                     netBiosName = TCPIP_STACK_NetBIOSName(netH);
 
 #if defined(TCPIP_STACK_USE_NBNS)
-                    SYS_CONSOLE_PRINT("    Interface %s on host %s - NBNS enabled\r\n", netName, netBiosName);
+                    SYS_CONSOLE_PRINT("Interface %s on host %s - NBNS enabled\r\n", netName, netBiosName);
 #else
                     SYS_CONSOLE_PRINT("    Interface %s on host %s - NBNS disabled\r\n", netName, netBiosName);
 #endif
