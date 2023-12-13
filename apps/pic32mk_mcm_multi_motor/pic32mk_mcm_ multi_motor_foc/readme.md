@@ -10,14 +10,14 @@ nav_order: 1
 
 
 
-# Encoder-based Field Oriented Control for Three Permanant Magnet Synchronous Motors on PIC32MK MCM Multi-Motor Control Platform
+# Encoder-based Field Oriented Control for Three Permanent Magnet Synchronous Motors on PIC32MK MCM Multi-Motor Control Platform
 <h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mk_mcm_multi_motor_foc.zip"> Download </a> </h2>
 
 ---
 
 ## Description:
 
-The application implements an encoder-based Field Oriented Control (FOC) for up to three Permanant Magnet Synchronous Motors (PMSMs) on PIC32MK MCM multi-motor control platform. The key features include:
+The application implements an encoder-based Field Oriented Control (FOC) for up to three Permanent Magnet Synchronous Motors (PMSMs) on PIC32MK MCM multi-motor control platform. The key features include:
 - Quadrature encoder signal and HALL signal based FOC for each PMSM.
 - Easily configurable PMSM parameters, the number of PMSM to drive, and PWM period.
 - PI gains can be automatically calculated by the SW.
@@ -64,7 +64,7 @@ Refer [Project Manifest](./firmware/src/config/mclv2_pic32_mk_mcm_pim/harmony-ma
 - Connection
     - Plug the DC power into the connector CN1 or CN2 on each driver board.
     - Plug the motor power lines into the connector CON1 on each driver board.
-    - Plug each driver board into the connector J13, J14, J15 on the PIC32MKMCM control board.
+    - Plug each driver board into the connector J13, J14, J15 on the PIC32MK MCM control board.
     - Connect position sensor pins of each motor with the connector CN1, CN2, CN3 respectively on the control board.
 
 ## Software configurations
@@ -75,8 +75,8 @@ Refer [Project Manifest](./firmware/src/config/mclv2_pic32_mk_mcm_pim/harmony-ma
 - Connect ICD4 with the connector P1 on the control board.
 - Power on.
 - Make sure that the LEDs D1, D2, D3 are all on, indicating the 12V, 5V, 3.3V are being supplied.
-- Open MPLAB X IDE. Open the demo project and set it as the main project.
-- Click "make and programm device main project".
+- Open the demo project( pic32mk_mcm_ multi_motor_foc/firmware/pic32mk_mcm_control_board.X) in MPLAB X IDE and set it as the main project.
+- Click "make and program device main project".
 
 ## Running/Tuning The Demo 
 - To start the motor, click the SWx button on the control board, where x equals 1, 2, 3.
