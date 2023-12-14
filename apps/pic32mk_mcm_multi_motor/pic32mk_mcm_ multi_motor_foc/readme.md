@@ -35,7 +35,7 @@ The application implements an encoder-based Field Oriented Control (FOC) for up 
 
 
 ## Hardware Used:
-- [Hurst motor DMA0204024B101](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNo/AC300022)
+- [24V 3-PHASE BRUSHLESS DC MOTOR WITH ENCODER](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNo/AC300022)
 - [MCP2200 isolated USB to UART demo board](https://www.microchip.com/en-us/development-tool/adm00276)
 - DC 24V power supply
 - (PIC32MK MCM multi-motor) control board (version 2.0) 
