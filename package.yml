@@ -61,3 +61,8 @@ package:
     - name: "cryptoauthlib"
       type: "package"
       version: "v3.5.1"
+    - name: "x2c"
+      type: "package"
+      version: "v1.4.0"      
+      
+      
