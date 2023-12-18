@@ -20,7 +20,7 @@
         ],
         "dfp": {
             "name": "PIC32CK-SG_DFP",
-            "semverRange": "^1.2.162"
+            "semverRange": "^1.2.161"
         },
         "configurator": {
             "name": "MCC",

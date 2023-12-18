@@ -52,10 +52,8 @@ Refer Manifest for [Secure](./firmware/Secure/firmware/src/config/pic32ck_sg01_c
 
 <span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
 
-**Note:** If any problem while programming, Ensure that you are using PKoB4 Tool Pack version 1.13.1141 and above. 
-You can verify the PKoB4 Tool Pack version in the following directory: 
+**Note: The Application is built and developed using PIC32CK-SG_DFP version 1.2.161. Please use PIC32CK-SG_DFP version 1.2.161 or above to build this Application. If you need help regarding the DFP versions, Kindly contact Microchip Sales.**   
 
-*C:/Users/sour(Your Computer name)/.mchp_packs/Microchip/PKOB4_TP*
 
 ## Hardware Setup 1: <span id="Setup1"><span>
 - The PIC32CK SG01 Curiosity Ultra Development Board allows the Embedded Debugger (PKoB4) to be used for debugging.
@@ -67,7 +65,7 @@ You can verify the PKoB4 Tool Pack version in the following directory:
 - The PIC32CK SG01 Curiosity Ultra Development Board allows the Embedded Debugger (PKoB4) to be used for debugging.
 - Connect the Type-A male to Micro-B USB cable to Micro-B DEBUG USB port (J900) to power and debug the PIC32CK SG01 Curiosity Ultra Development Board  
 - To test the extended functionality, connect the [I/O1 Xplained Pro Extension Kit](https://www.microchip.com/Developmenttools/ProductDetails/ATIO1-XPRO) to the extension header EXT1 (J500) on the PIC32CK SG01 Curiosity Ultra Development Board.  
-  <img src = "images/hardware_setup_ext.png" align="middle">
+  <img src = "images/hardware_setup_ext.jpg" align="middle">
 
 ## TrustZone Application Development Use Cases
 - There are two use cases:
@@ -214,9 +212,9 @@ You can verify the PKoB4 Tool Pack version in the following directory:
       <img src = "images/result1.png">
     - Also, notice the LED0 blinking at 500 millisecond rate
     - You may vary the temperature by placing your finger on the temperature sensor (for a few seconds)  
-      <img src = "images/temp_sensor_placement.png">
+      <img src = "images/temp_sensor_placement.jpg">
     - Press the switch **SW0** on PIC32CK SG01 Curiosity Ultra Development Board to change the default sampling rate to 1 second.  
-      <img src = "images/user_button_placement.png">  
+      <img src = "images/user_button_placement.jpg">  
       <img src = "images/result2.png">
     - Every subsequent pressing of switch **SW0** on PIC32CK SG01 Curiosity Ultra Development Board changes the default sampling
       rate to 2 seconds, 4 seconds, and 500 ms and back to 1 second in cyclic order as shown below.  
