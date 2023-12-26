@@ -64,5 +64,7 @@ package:
     - name: "x2c"
       type: "package"
       version: "v1.4.0"      
-      
+    - name: "wireless_rnbd"
+      type: "package"
+      version: "v2.0.0"  
       
