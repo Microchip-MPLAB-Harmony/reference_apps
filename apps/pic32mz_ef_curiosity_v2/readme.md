@@ -21,7 +21,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 | 6 | [Snake Game](./snake_game/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/snake_game.zip) |
 | 7 | [Thermal Camera based Heat Map](./pic32mzef_thermal_camera_heat_map/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mzef_thermal_camera_heat_map.zip) |
 | 8 | [Web Photo Frame](./pic32mzef_web_photo_frame/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mzef_web_photo_frame.zip) |
-| 9 | [Motion Surveillance](./pic32mzef_motion_surveillance/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/) |
+| 9 | [Motion Surveillance](./pic32mzef_motion_surveillance/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mzef_motion_surveillance.zip) |
 
 ### More Application Demos
 
