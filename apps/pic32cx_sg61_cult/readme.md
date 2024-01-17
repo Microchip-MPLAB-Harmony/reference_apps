@@ -14,7 +14,7 @@ This repository contains the MPLAB® Harmony 3 reference applications developed 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
 | 1 | [Getting Started](./pic32cx_sg61_getting_started/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cx_sg61_getting_started.zip) |
-
+| 2 | [Barcode Scanner](./pic32cx_sg61_barcode_scanner/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cx_sg61_barcode_scanner.zip) |
 
 ### More Application Demos
 
