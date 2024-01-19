@@ -71,9 +71,9 @@ To download original version of MPLAB® Harmony v3 packages, refer to document [
 - Connect the ArduCAM Camera module and OLED C Click board to the **PIC32CX SG61 Curiosity Ultra Evaluation Board** as shown below.
 	<div align="center"> <img src = "images/hardware_setup1.png" width = "350">	</div>
 
-	- Connect the ArduCAM pins directly to the Extension 2 (EXT2) pins i.e.
+	- Connect the ArduCAM pins directly to the Extension 2 (EXT2) pins i.e.  
 		<img src = "images/hardware_connection.png" align="middle" width = "250">
-		<img src = "images/hardware_setup2.png" align="middle" width = "250">  
+		<img src = "images/hardware_setup2.png" align="middle" width = "250">
 		<img src = "images/hardware_setup3.png" align="middle" width = "250">
 
 	- Mount the OLED C Click board on mikroBUS connector of PIC32CX SG61 Curiosity Ultra Evaluation Board.
