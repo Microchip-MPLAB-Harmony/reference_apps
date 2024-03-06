@@ -77,7 +77,7 @@ static void GCLK0_Initialize(void)
     {
         /* Wait for the Main Clock to be Ready */
     }
-    GCLK_REGS->GCLK_GENCTRL[0] = GCLK_GENCTRL_DIV(0U) | GCLK_GENCTRL_SRC(1U) | GCLK_GENCTRL_GENEN_Msk;
+    GCLK_REGS->GCLK_GENCTRL[0] = GCLK_GENCTRL_DIV(12U) | GCLK_GENCTRL_SRC(1U) | GCLK_GENCTRL_GENEN_Msk;
 
     while((GCLK_REGS->GCLK_SYNCBUSY & GCLK_SYNCBUSY_GENCTRL_GCLK0) == GCLK_SYNCBUSY_GENCTRL_GCLK0)
     {
@@ -95,16 +95,6 @@ static void GCLK1_Initialize(void)
     }
 }
 
-static void GCLK2_Initialize(void)
-{
-    GCLK_REGS->GCLK_GENCTRL[2] = GCLK_GENCTRL_DIV(12U) | GCLK_GENCTRL_SRC(1U) | GCLK_GENCTRL_GENEN_Msk;
-
-    while((GCLK_REGS->GCLK_SYNCBUSY & GCLK_SYNCBUSY_GENCTRL_GCLK2) == GCLK_SYNCBUSY_GENCTRL_GCLK2)
-    {
-        /* wait for the Generator 2 synchronization */
-    }
-}
-
 void CLOCK_Initialize (void)
 {
     /* MISRAC 2012 deviation block start */
@@ -119,7 +109,6 @@ void CLOCK_Initialize (void)
     DFLL_Initialize();
     GCLK0_Initialize();
     GCLK1_Initialize();
-    GCLK2_Initialize();
 
     /* MISRAC 2012 deviation block end */
 
@@ -131,7 +120,7 @@ void CLOCK_Initialize (void)
         /* Wait for synchronization */
     }
     /* Selection of the Generator and write Lock for EIC */
-    GCLK_REGS->GCLK_PCHCTRL[4] = GCLK_PCHCTRL_GEN(0x2U)  | GCLK_PCHCTRL_CHEN_Msk;
+    GCLK_REGS->GCLK_PCHCTRL[4] = GCLK_PCHCTRL_GEN(0x0U)  | GCLK_PCHCTRL_CHEN_Msk;
 
     while ((GCLK_REGS->GCLK_PCHCTRL[4] & GCLK_PCHCTRL_CHEN_Msk) != GCLK_PCHCTRL_CHEN_Msk)
     {
@@ -145,14 +134,14 @@ void CLOCK_Initialize (void)
         /* Wait for synchronization */
     }
     /* Selection of the Generator and write Lock for SERCOM2_CORE */
-    GCLK_REGS->GCLK_PCHCTRL[23] = GCLK_PCHCTRL_GEN(0x2U)  | GCLK_PCHCTRL_CHEN_Msk;
+    GCLK_REGS->GCLK_PCHCTRL[23] = GCLK_PCHCTRL_GEN(0x0U)  | GCLK_PCHCTRL_CHEN_Msk;
 
     while ((GCLK_REGS->GCLK_PCHCTRL[23] & GCLK_PCHCTRL_CHEN_Msk) != GCLK_PCHCTRL_CHEN_Msk)
     {
         /* Wait for synchronization */
     }
     /* Selection of the Generator and write Lock for ADC0 */
-    GCLK_REGS->GCLK_PCHCTRL[40] = GCLK_PCHCTRL_GEN(0x2U)  | GCLK_PCHCTRL_CHEN_Msk;
+    GCLK_REGS->GCLK_PCHCTRL[40] = GCLK_PCHCTRL_GEN(0x0U)  | GCLK_PCHCTRL_CHEN_Msk;
 
     while ((GCLK_REGS->GCLK_PCHCTRL[40] & GCLK_PCHCTRL_CHEN_Msk) != GCLK_PCHCTRL_CHEN_Msk)
     {
