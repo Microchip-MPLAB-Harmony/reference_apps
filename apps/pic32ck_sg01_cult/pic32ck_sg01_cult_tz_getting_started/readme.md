@@ -46,11 +46,13 @@ The application includes Basic and Extended functionalities.
 ## Software/Tools Used:
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
-Refer Manifest for [Secure](./firmware/Secure/firmware/src/config/pic32ck_sg01_cult/harmony-manifest-success.yml) and [NonSecure](./firmware/NonSecure/firmware/src/config/pic32ck_sg01_cult/harmony-manifest-success.yml) projects present in harmony-manifest-success.yml under the project folder *firmware/{Secure or NonSecure}/firmware/src/config/pic32ck_sg01_cult*
+Refer Manifest for [Secure](./firmware_secure/src/config/default/harmony-manifest-success.yml) and [NonSecure](./firmware/src/config/default/harmony-manifest-success.yml) projects present in harmony-manifest-success.yml under the project folder *{firmware_secure or firmware}/src/config/default*
 - Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools).  
 - Any Serial Terminal application like Tera Term terminal application.
 
 <span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
+
+**Note: The Application is built and developed using PIC32CK-SG_DFP version 1.2.161. Please use PIC32CK-SG_DFP version 1.2.161 or above to build this Application. If you need help regarding the DFP versions, Kindly contact Microchip Sales.**   
 
 
 ## Hardware Setup 1: <span id="Setup1"><span>
