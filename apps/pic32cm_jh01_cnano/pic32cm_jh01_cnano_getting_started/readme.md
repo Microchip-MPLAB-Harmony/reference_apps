@@ -29,7 +29,7 @@ nav_order: 1
 
 ## Hardware Used:
 
-- [PIC32CM JH01 Curiosity Nano+ Touch Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV81X90A)
+- [PIC32CM JH01 Curiosity Nano+ Touch Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV29G58A)
 
 ## Software/Tools Used:
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
