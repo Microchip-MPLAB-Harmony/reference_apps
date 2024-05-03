@@ -64,7 +64,7 @@ nav_order: 2
 ## Software/Tools Used:
 This project has been verified to work with the following versions of software tools:
 
-Refer Project Manifest present in mcc-manifest-generated-success.yml under the project folder *firmware\pic32cm_jh01_cnano.X*
+Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.yml) present in mcc-manifest-generated-success.yml under the project folder *firmware\pic32cm_jh01_cnano.X*
 
 Refer the [Release Notes](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools) to know the **MPLAB X IDE** and **MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools)
 
