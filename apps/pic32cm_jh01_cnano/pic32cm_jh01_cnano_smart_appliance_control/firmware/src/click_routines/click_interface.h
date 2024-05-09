@@ -47,6 +47,8 @@
 
 #include <xc.h>
 #include <stdint.h>
+#include <rnbd/rnbd.h>
+#include "rnbd/rnbd_interface.h"
 
 /**	Click routine interfaces/resources Macro Declarations
  *
@@ -119,10 +121,21 @@
 // I2C Definitions
 #define EPAPER_2_9_296_128_SPI_Write 			SERCOM2_SPI_Write
 #define EPAPER_2_9_296_128_SPI_Read  			SERCOM2_SPI_Read
-#define EPAPER_2_9_296_128_SPI_WriteRead			SERCOM2_SPI_WriteRead
+#define EPAPER_2_9_296_128_SPI_WriteRead		SERCOM2_SPI_WriteRead
 
 // Timer Definitions
 #define EPAPER_2_9_296_128_TimerStart 			SYSTICK_TimerStart
 #define EPAPER_2_9_296_128_DelayMs				SYSTICK_DelayMs
 
+
+//RNBD451 API
+#define CLICK_RNBD451_Init                             RNBD_Init
+#define CLICK_RNBD451_SetAsyncMessageHandler           RNBD_SetAsyncMessageHandler
+#define CLICK_RNBD451_IsStreamopen                     RNBD_IsStreamopen
+#define CLICK_RNBD451_IsOTABegin                       RNBD_IsOTABegin
+#define CLICK_RNBD451_DataReady                        RNBD_DataReady
+#define CLICK_RNBD451_Read                             RNBD_Read
+#define CLICK_RNBD451_IsConnected                      RNBD_IsConnected                 
+#define CLICK_RNBD451_EnterCmdMode                     RNBD_EnterCmdMode
+#define CLICK_RNBD451_RebootCmd                        RNBD_RebootCmd
 #endif // _CLICK_INTERFACES_H

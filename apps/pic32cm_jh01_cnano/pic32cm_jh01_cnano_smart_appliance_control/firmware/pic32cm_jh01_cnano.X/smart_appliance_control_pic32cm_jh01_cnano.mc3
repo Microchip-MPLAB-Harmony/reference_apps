@@ -79,7 +79,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.5.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.5.2"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -3331,7 +3331,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;RNBD_Dependency&gt;
   &lt;RNBD_Dependency dnOrder=&quot;0&quot; id=&quot;RN_HOST_EXAMPLE_APPLICATION_CHOICE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;TRANSPARENT UART&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;NONE&quot;/&gt;
     &lt;/Values&gt;
   &lt;/RNBD_Dependency&gt;
 &lt;/RNBD_Dependency&gt;
@@ -3409,30 +3409,30 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;449&quot; canvasWidth=&quot;1326&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;GraphSettings canvasHeight=&quot;681&quot; canvasWidth=&quot;589&quot; dnOrder=&quot;0&quot;/&gt;
     &lt;PowerProfiles dnOrder=&quot;1&quot;&gt;
       &lt;Profile dnOrder=&quot;0&quot; id=&quot;profile0&quot; name=&quot;Main&quot;/&gt;
     &lt;/PowerProfiles&gt;
     &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_default&quot; x=&quot;800&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;490&quot; y=&quot;60&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;RNBD_Dependency&quot; x=&quot;1140&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;cmsis&quot; x=&quot;660&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;core&quot; x=&quot;560&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;dfp&quot; x=&quot;340&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_default&quot; x=&quot;422&quot; y=&quot;56&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;347&quot; y=&quot;102&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;RNBD_Dependency&quot; x=&quot;266&quot; y=&quot;501&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;cmsis&quot; x=&quot;194&quot; y=&quot;78&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;core&quot; x=&quot;333&quot; y=&quot;57&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;dfp&quot; x=&quot;321&quot; y=&quot;19&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;evsys&quot; x=&quot;180&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;lib_qtouch&quot; x=&quot;783&quot; y=&quot;203&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;lib_qtouch&quot; x=&quot;278&quot; y=&quot;356&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;nvmctrl&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;ptc&quot; x=&quot;508&quot; y=&quot;355&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;rtc&quot; x=&quot;650&quot; y=&quot;160&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;sercom0&quot; x=&quot;331&quot; y=&quot;59&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;sercom1&quot; x=&quot;670&quot; y=&quot;60&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;sercom2&quot; x=&quot;490&quot; y=&quot;160&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;sercom4&quot; x=&quot;980&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;stdio&quot; x=&quot;824&quot; y=&quot;73&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;sys_time&quot; x=&quot;170&quot; y=&quot;80&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;tc0&quot; x=&quot;285&quot; y=&quot;235&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;ptc&quot; x=&quot;57&quot; y=&quot;440&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;rtc&quot; x=&quot;44&quot; y=&quot;340&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;sercom0&quot; x=&quot;46&quot; y=&quot;204&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;sercom1&quot; x=&quot;348&quot; y=&quot;252&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;sercom2&quot; x=&quot;198&quot; y=&quot;206&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;sercom4&quot; x=&quot;59&quot; y=&quot;543&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;stdio&quot; x=&quot;514&quot; y=&quot;266&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;sys_time&quot; x=&quot;17&quot; y=&quot;96&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;tc0&quot; x=&quot;191&quot; y=&quot;110&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -41228,7 +41228,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>88214da0777c5f30ebbf1fb68bfb44d4579b4387f3acf42fe0a9d95036932179</hash>
+         <hash>7e959d7516b899f632a5a8b02931660ed4fd7fe7333a8a5eeaa09c5ae517dfa6</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device.h</file>
@@ -41256,7 +41256,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>c19912f6b5f2e589a855a16a7fc776c7cd25a4c2b3b2d909985ca37caafa7d08</hash>
+         <hash>d6083e1506d7e0ad4ea57cc5d0a931770a4ba3e95cef71fdf21952133a529cd0</hash>
       </entry>
       <entry>
          <file>..\src\config\default\interrupts.c</file>
@@ -41400,11 +41400,11 @@
       </entry>
       <entry>
          <file>..\src\config\default\rnbd\rnbd_interface.c</file>
-         <hash>2d1a415dfb0bbd7b4c5116227cba11a8eded105ed6558cab2d68cc856529c84e</hash>
+         <hash>24c592852e5343c96ffe8896148d1ab2f60fed6fad7ae065df311ea73706dc77</hash>
       </entry>
       <entry>
          <file>..\src\config\default\rnbd\rnbd_interface.h</file>
-         <hash>96b879a145094dbf39a9c990c210ddd81f28087dc000f3b4c03562e2751daea1</hash>
+         <hash>72b84a4708a98c76138d38663ad66155564a74dbf4e5e7b73b7ea997999ec704</hash>
       </entry>
       <entry>
          <file>..\src\config\default\startup_xc32.c</file>
@@ -41420,7 +41420,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\system\debug\sys_debug.h</file>
-         <hash>9ee0362649aa389b355ecff1ce0e64d124f8f83eda7e40a0c5195ee099c1a0ff</hash>
+         <hash>4162d9e1fab93b8b33f6c8a24726f5dc287ea05c31e3ab984c3c920c725d0882</hash>
       </entry>
       <entry>
          <file>..\src\config\default\system\dma\sys_dma.c</file>
@@ -41549,14 +41549,6 @@
       <entry>
          <file>..\src\config\default\user.h</file>
          <hash>451e0878e9fcf6cf9fab046c1452ea662757988346c7f39e6bc98478ca25f995</hash>
-      </entry>
-      <entry>
-         <file>..\src\examples\rnbd_example.c</file>
-         <hash>7871c8a9d3a47f62c770397909c022cfa9145639fa54719451e220a77a4f37ed</hash>
-      </entry>
-      <entry>
-         <file>..\src\examples\rnbd_example.h</file>
-         <hash>a6ab164c8630852eacb619f6e89fafc55aea3c2a930b0466d33e801de48446c5</hash>
       </entry>
       <entry>
          <file>..\src\main.c</file>
@@ -41948,7 +41940,7 @@
       </entry>
       <entry>
          <file>..\src\rnbd\rnbd.c</file>
-         <hash>f737cb7cdb895e109fefbe52f5a58b0ef1652ed54b3931814e66738d6e7f3d9b</hash>
+         <hash>d663d58cb61e9cb72661d9aead3ef6955e49520c1cdc1135ec49946c30150669</hash>
       </entry>
       <entry>
          <file>..\src\rnbd\rnbd.h</file>

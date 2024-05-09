@@ -33,7 +33,6 @@ static bool connected = false,OTABegin = false, stream_open = false;//**< RNBD c
 static uint32_t delay_ms_cycles = CPU_CLOCK_FREQUENCY/1000; 
 static uint8_t readbuffer[1];
 static size_t dummyread=0;
-static uint8_t cdcreadbuffer[1];
 
 static char ReadData[100];
 
@@ -200,64 +199,6 @@ static inline bool RNBD_is_rx_ready(void);
  */
 static inline void RNBD_Delay(uint32_t delayCount);
 /*****************************************************
-*   *OPTIONAL* APPLICATION MESSAGE FORMATTING API(s)
-******************************************************/  
-/**
- * \ingroup RNBD_MESSAGE_TYPE
- * Enum of the MESSAGE TYPES supported in Driver Example(s)
- */
-typedef enum 
-{
-    DISCONNECT_MSG  = 0,
-    STREAM_OPEN_MSG = 1,
-    GENERAL_MSG     = 2,
-}RNBD_MESSAGE_TYPE;
-/**
- * \def GENERAL_PRINT_SIZE_LIMIT
- * This macro provide a definition used to process 
- */
-#define GENERAL_PRINT_SIZE_LIMIT        (100)
-/**
- * \ingroup RNBD_MESSAGE
- * \brief Prints the START Message "<<< " for UART_CDC
- * 
- * This API prints *Optional Application* Messages
- *
- * \param N/A
- * \return N/A
- */
-static inline void RNBD_PrintMessageStart(void);
-/**
- * \ingroup RNBD_MESSAGE
- * \brief Prints the END Message ">>>\r\n" for UART_CDC
- * 
- * This API prints *Optional Application* Messages
- *
- * \param N/A
- * \return N/A
- */
-static inline void RNBD_PrintMessageEnd(void);
-/**
- * \ingroup RNBD_MESSAGE
- * \brief Prints the Indicator [ or ] to UART_CDC
- *        [ - Disconnected | ] - Connected
- * 
- * This API prints *Optional Application* Messages
- *
- * \param N/A
- * \return N/A
- */
-static inline void RNBD_PrintIndicatorCharacters(RNBD_MESSAGE_TYPE msgType);
-/**
- * \ingroup RNBD_MESSAGE
- * 
- * This API prints *Optional Application* Messages
- *
- * \param N/A
- * \return N/A
- */
-static inline void RNBD_PrintMessage(char* passedMessage);
-/*****************************************************
 *   Driver Instance Declaration(s) API(s)
 ******************************************************/  
 
@@ -355,16 +296,6 @@ static inline bool RNBD_is_rx_ready(void)
 }
 
 
-uint8_t UART_CDC_Read(void)
-{    
-    return *(uint8_t*)cdcreadbuffer;
-}
-void UART_CDC_write(uint8_t buffer)
-{
-}
-size_t UART_CDC_DataReady(void)
-{
-}
 uint8_t UART_BLE_Read(void)
 {
     dummyread=SERCOM4_USART_Read(readbuffer,1);
@@ -424,67 +355,22 @@ static void RNBD_SetSystemMode(RNBD_SYSTEM_MODES_t mode)
 /*****************************************************
 *   *Optional* Message Formatting Private API(s)
 ******************************************************/  
-static inline void RNBD_PrintMessageStart(void)
-{
-    UART_CDC_write((uint8_t)'<');
-    UART_CDC_write((uint8_t)'<');
-    UART_CDC_write((uint8_t)'<');
-    UART_CDC_write((uint8_t)' ');
-}
-static inline void RNBD_PrintMessageEnd(void)
-{
-    UART_CDC_write((uint8_t)' ');
-    UART_CDC_write((uint8_t)'>');
-    UART_CDC_write((uint8_t)'>');
-    UART_CDC_write((uint8_t)'>');
-    UART_CDC_write((uint8_t)' ');
-    UART_CDC_write((uint8_t)'\r');
-    UART_CDC_write((uint8_t)'\n');
-}
-static inline void RNBD_PrintIndicatorCharacters(RNBD_MESSAGE_TYPE msgType)
-{
-    if (DISCONNECT_MSG == msgType)
-    {
-        UART_CDC_write((uint8_t)'[');
-    }
-    else if (STREAM_OPEN_MSG == msgType)
-    {
-        UART_CDC_write((uint8_t)']');
-    }
-    else
-    {
-		// Left Intentionally Blank: For General Messages
-    }
-}
-static inline void RNBD_PrintMessage(char* passedMessage)
-{
-    char printCharacter [GENERAL_PRINT_SIZE_LIMIT];
-    (void)strcpy(printCharacter, passedMessage);
-    for (uint8_t messageIndex = 0; messageIndex < strlen(passedMessage); messageIndex++)
-    {
-       UART_CDC_write((uint8_t)printCharacter[messageIndex]);  
-    }
-}
 
 static void RNBD_MessageHandler(char* message)
 {
 	RNBD_Convert_DataBufferValue_Integer_to_Hexadecimal();
 	
-    RNBD_MESSAGE_TYPE messageType = GENERAL_MSG;
-    RNBD_PrintMessageStart();
 
 
 
     if (strstr(message, "DISCONNECT")!= NULL)
     {
-        messageType = DISCONNECT_MSG;
         connected = false;
         OTABegin = false;
         stream_open = false;
     }
     else if (strstr(message, "STREAM_OPEN")!= NULL)
     {
-        messageType = STREAM_OPEN_MSG;
         stream_open = true;
     }
     else if (strstr(message, "OTA_REQ")!= NULL)
@@ -545,9 +431,6 @@ static void RNBD_MessageHandler(char* message)
     }
     else
     {
-        messageType = GENERAL_MSG;
+     // Left Intentionally Blank: For General Messages
     }
-    RNBD_PrintMessage(message);
-    RNBD_PrintMessageEnd();
-    RNBD_PrintIndicatorCharacters(messageType);
 }

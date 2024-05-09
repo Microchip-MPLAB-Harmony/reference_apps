@@ -87,9 +87,6 @@ struct OTA_REQ_PARAMETER{
  * \retval false - Not Connected
  */
 bool RNBD_IsConnected(void);
-uint8_t UART_CDC_Read(void);
-void UART_CDC_write(uint8_t buffer);
-size_t UART_CDC_DataReady(void);
 uint8_t UART_BLE_Read(void);
 void UART_BLE_write(uint8_t buffer);
 size_t UART_BLE_DataReady(void);

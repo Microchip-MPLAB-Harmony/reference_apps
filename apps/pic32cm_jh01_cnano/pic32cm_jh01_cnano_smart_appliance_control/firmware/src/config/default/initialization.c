@@ -46,7 +46,6 @@
 #include "configuration.h"
 #include "definitions.h"
 #include "device.h"
-#include "app_ble.h"
 
 
 // ****************************************************************************
@@ -183,11 +182,11 @@ void SYS_Initialize ( void* data )
 
 
 
-    SERCOM2_SPI_Initialize();
-
+	BSP_Initialize();
     NVMCTRL_Initialize( );
 
-	BSP_Initialize();
+    SERCOM2_SPI_Initialize();
+
     SERCOM1_USART_Initialize();
 
     SERCOM0_I2C_Initialize();
@@ -197,9 +196,9 @@ void SYS_Initialize ( void* data )
 	SYSTICK_TimerInitialize();
     SERCOM4_USART_Initialize();
 
-    RTC_Initialize();
-
     TC0_TimerInitialize();
+
+    RTC_Initialize();
 
 
 
@@ -219,7 +218,7 @@ void SYS_Initialize ( void* data )
     
 	touch_init();
 
-    APP_BLE_Initialize();
+
     /* MISRAC 2012 deviation block end */
     NVIC_Initialize();
 

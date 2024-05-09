@@ -141,7 +141,6 @@ bool RNBD_ReadMsg(const char *expectedMsg, uint8_t msgLen)
     while(RNBD.DataReady())
     {
         resp[ResponseRead]=(char)RNBD.Read();
-		UART_CDC_write((uint8_t)resp[ResponseRead]);
         ResponseRead++;
     }
 	//Comparing length of response expected
@@ -174,7 +173,6 @@ bool RNBD_ReadDefaultResponse(void)
     while(RNBD.DataReady())
     {
         DefaultResponse[DataReadcount]=(char)RNBD.Read();
-		UART_CDC_write((uint8_t)DefaultResponse[DataReadcount]);
         DataReadcount++;
     }
     switch (DefaultResponse[0])
@@ -197,11 +195,11 @@ bool RNBD_ReadDefaultResponse(void)
 
             break;
         }
-       /* default:
+        default:
         {
 			//Returns the status as default case
             break;
-        }*/
+        }
     }
 
 
@@ -228,7 +226,6 @@ bool RNBD_SendCommand_ReceiveResponse(const char *cmdMsg, uint8_t cmdLen, const 
     while(RNBD.DataReady())
     {
         resp[ResponseRead]=(char)RNBD.Read();
-		UART_CDC_write((uint8_t)resp[ResponseRead]);
         ResponseRead++;
     }
 	//Comparing length of response expected

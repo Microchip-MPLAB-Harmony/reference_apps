@@ -53,7 +53,7 @@
 #include "configuration.h"
 #include "definitions.h"
 #include "sys_tasks.h"
-#include "app_ble.h"
+
 
 
 

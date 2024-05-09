@@ -17,6 +17,9 @@
         <logicalFolder name="fan" displayName="fan" projectFiles="true">
           <itemPath>../src/click_routines/fan/fan.h</itemPath>
         </logicalFolder>
+        <logicalFolder name="rnbd451" displayName="rnbd451" projectFiles="true">
+          <itemPath>../src/click_routines/rnbd451/rnbd451.h</itemPath>
+        </logicalFolder>
         <logicalFolder name="weather" displayName="weather" projectFiles="true">
           <itemPath>../src/click_routines/weather/bme280.h</itemPath>
           <itemPath>../src/click_routines/weather/weather.h</itemPath>
@@ -126,9 +129,6 @@
           <itemPath>../src/config/default/configuration.h</itemPath>
           <itemPath>../src/config/default/definitions.h</itemPath>
         </logicalFolder>
-      </logicalFolder>
-      <logicalFolder name="examples" displayName="examples" projectFiles="true">
-        <itemPath>../src/examples/rnbd_example.h</itemPath>
       </logicalFolder>
       <logicalFolder name="packs" displayName="packs" projectFiles="true">
         <logicalFolder name="CMSIS" displayName="CMSIS" projectFiles="true">
@@ -249,9 +249,7 @@
       <logicalFolder name="rnbd" displayName="rnbd" projectFiles="true">
         <itemPath>../src/rnbd/rnbd.h</itemPath>
       </logicalFolder>
-      <itemPath>../src/app_ble.h</itemPath>
       <itemPath>../src/click_routines/click_interface.h</itemPath>
-      <itemPath>../src/app_temp.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -283,6 +281,9 @@
         </logicalFolder>
         <logicalFolder name="fan" displayName="fan" projectFiles="true">
           <itemPath>../src/click_routines/fan/fan.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="rnbd451" displayName="rnbd451" projectFiles="true">
+          <itemPath>../src/click_routines/rnbd451/rnbd451.c</itemPath>
         </logicalFolder>
         <logicalFolder name="weather" displayName="weather" projectFiles="true">
           <itemPath>../src/click_routines/weather/bme280.c</itemPath>
@@ -361,16 +362,11 @@
           <itemPath>../src/config/default/tasks.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <logicalFolder name="examples" displayName="examples" projectFiles="true">
-        <itemPath>../src/examples/rnbd_example.c</itemPath>
-      </logicalFolder>
       <logicalFolder name="rnbd" displayName="rnbd" projectFiles="true">
         <itemPath>../src/rnbd/rnbd.c</itemPath>
       </logicalFolder>
       <itemPath>../src/config/default/pin_configurations.csv</itemPath>
       <itemPath>../src/main.c</itemPath>
-      <itemPath>../src/app_ble.c</itemPath>
-      <itemPath>../src/app_temp.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -384,7 +380,7 @@
         <targetDevice>PIC32CM5164JH01048</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>nEdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.35</languageToolchainVersion>
         <platform>3</platform>
@@ -427,7 +423,6 @@
       <C32>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
@@ -484,7 +479,6 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -524,7 +518,6 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
-        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
