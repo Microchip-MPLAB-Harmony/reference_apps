@@ -425,7 +425,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;HarmonyCore&gt;
   &lt;HarmonyCore dnOrder=&quot;0&quot; id=&quot;GEN_APP_RTOS_TASK_2_SIZE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;128&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;256&quot;/&gt;
     &lt;/Values&gt;
   &lt;/HarmonyCore&gt;
 &lt;/HarmonyCore&gt;
@@ -806,11 +806,11 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;459&quot; canvasWidth=&quot;710&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;GraphSettings canvasHeight=&quot;459&quot; canvasWidth=&quot;714&quot; dnOrder=&quot;0&quot;/&gt;
     &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_SAM_C21_Xplained_Pro&quot; x=&quot;310&quot; y=&quot;60&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;FreeRTOS&quot; x=&quot;300&quot; y=&quot;140&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;FreeRTOS&quot; x=&quot;299&quot; y=&quot;140&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;HarmonyCore&quot; x=&quot;102&quot; y=&quot;120&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;cmsis&quot; x=&quot;600&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;core&quot; x=&quot;500&quot; y=&quot;20&quot;/&gt;
@@ -3644,11 +3644,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\tasks.c</file>
-         <hash>a62e9e06e772e35a6f4b26df738a6899617f9e1bb25ed3c7d215ddd69d6a2498</hash>
+         <hash>f5875291497a900d4aea9c26b00684f82ac81109e08403e9bbe494b20ba4a1a9</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\definitions.h</file>
-         <hash>fb4ea381fc6f742a02518a2663653e6688a10406b5638c1d736155b74c26b803</hash>
+         <hash>1c984414f2812229cdad041b0f1df3f50d159667ddda0658af1b9d4e6a6a0d17</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMC21J18A_DFP\component\tcc.h</file>
@@ -3884,7 +3884,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\initialization.c</file>
-         <hash>b6ed0790cfdda06053a193651f103ac740eb49245c9a564c938d47a0c422141a</hash>
+         <hash>71e0c238cf4289d66f97ce20ff2daace2d6ba4bd904ea007ae1803fed60c39f1</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMC21J18A_DFP\instance\sercom2.h</file>
@@ -4228,7 +4228,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\system\debug\sys_debug.h</file>
-         <hash>bc6fa321b0be542d074e4564065b7fd69f52556486ac3d892d315b51c434f9ec</hash>
+         <hash>9ee0362649aa389b355ecff1ce0e64d124f8f83eda7e40a0c5195ee099c1a0ff</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_c21_xpro\interrupts.c</file>

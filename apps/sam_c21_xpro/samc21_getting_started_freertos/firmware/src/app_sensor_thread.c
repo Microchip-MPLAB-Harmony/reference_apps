@@ -122,7 +122,7 @@ int8_t APP_SENSOR_CalcTemperature(uint8_t* pRawValue)
         temp *= -0.5;
     }
         
-    //temp = (temp * (float)9/5) + 32;
+    temp = (temp * (float)9/5) + 32;
     
     return (int8_t)temp;
 }
@@ -214,7 +214,7 @@ void APP_SENSOR_THREAD_Tasks ( void )
          * value to EEPROM thread. */        
         xQueueSend( eventQueue, (void*)&app_sensorData.eventInfo, portMAX_DELAY);
         
-        strlen = sprintf((char*)app_sensorData.usartTxBuffer, "Temperature = %d C\r\n", app_sensorData.temperature);       
+        strlen = sprintf((char*)app_sensorData.usartTxBuffer, "Temperature = %d F\r\n", app_sensorData.temperature);       
         
         /* Print the temperature value by submitting a blocking USART write request. */        
         DRV_USART_WriteBuffer(app_sensorData.usartHandle, app_sensorData.usartTxBuffer, strlen ); 

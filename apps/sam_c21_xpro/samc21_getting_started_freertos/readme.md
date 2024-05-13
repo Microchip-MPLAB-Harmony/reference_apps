@@ -46,7 +46,9 @@ Refer [Project Manifest](./firmware/src/config/sam_c21_xpro/harmony-manifest-suc
 <span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
 
 ## Setup:
-- Verify that the temperature sensor (I/O1 Xplained Pro Extension Kit) is connected to Extension Header 1 (EXT1) on the SAM C21 Xplained Pro Evaluation Kit
+- Verify that the temperature sensor (I/O1 Xplained Pro Extension Kit) is connected to Extension Header 2 (EXT2) on the SAM C21 Xplained Pro Evaluation Kit
+  <img src = "images/hardware_setup1.png" width="500" height="425" align="middle">
+
 - The SAM C21 Xplained Pro Evaluation Kit allows using the Embedded Debugger (EDBG) for debugging. Connect the Type-A male to micro-B USB cable to micro-B DEBUG USB port to power and debug the SAM C21 Xplained Pro Evaluation Kit  
 
   <img src = "images/to_pc.png" width="500" height="425" align="middle">
@@ -76,7 +78,7 @@ The pre-built hex file can be programmed by following the below steps
 ## Running the Demo:
 - Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button)
 - Change the baud rate to 115200
-- You should see the temperature values (in °C) being displayed on the terminal every second, as shown below  
+- You should see the temperature values (in °F) being displayed on the terminal every second, as shown below  
 
   <img src = "images/result1.png" width="325" height="185" align="middle">  
 - Also, notice the LED0 blinking at one second rate

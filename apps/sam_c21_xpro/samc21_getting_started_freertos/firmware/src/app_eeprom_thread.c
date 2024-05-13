@@ -112,7 +112,7 @@ void APP_EEPROM_PrintTemperature(uint8_t* pTemperatureValue, uint8_t wrIndex)
     len = sprintf((char*)pBuffer, "EEPROM:");
     for (i = wrIndex; i < APP_EEPROM_MAX_LOG_VALUES; i++)
     {
-        len += sprintf((char*)&pBuffer[len], "%dC|", (int8_t)pTemperatureValue[i]);
+        len += sprintf((char*)&pBuffer[len], "%dF|", (int8_t)pTemperatureValue[i]);
     }
     if (wrIndex > 0)
     {

@@ -244,9 +244,9 @@ void SYS_Initialize ( void* data )
 
     EVSYS_Initialize();
 
+	BSP_Initialize();
     SERCOM4_USART_Initialize();
 
-	BSP_Initialize();
 
 
     /* MISRAC 2012 deviation block start */

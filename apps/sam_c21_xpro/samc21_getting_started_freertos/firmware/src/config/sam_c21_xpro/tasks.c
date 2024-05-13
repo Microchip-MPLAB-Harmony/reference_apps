@@ -138,7 +138,7 @@ void SYS_Tasks ( void )
     /* Create OS Thread for APP_USER_INPUT_THREAD_Tasks. */
     (void) xTaskCreate((TaskFunction_t) lAPP_USER_INPUT_THREAD_Tasks,
                 "APP_USER_INPUT_THREAD_Tasks",
-                32,
+                64,
                 NULL,
                 1,
                 &xAPP_USER_INPUT_THREAD_Tasks);
