@@ -127,7 +127,7 @@ The pre-built hex file can be programmed by following the below steps.
 
 - To switch to BLE control mode, press the touch button once. The LED in the Curiosity Nano turns ON indicating a touch event has happened.
 
-- Once the device switches to BLE control mode, the fan will be turned off for the user to control. Now, follow the below steps to control the device in BLE mode
+- Once the device switches to BLE control mode, the user can control the fan by following the steps mentioned below
 
 Note: Users should wait for the e-paper display to stabilize before pressing the touch button
 
@@ -167,7 +167,7 @@ Note: Users should wait for the e-paper display to stabilize before pressing the
 
 - User can provide the available BLE commands for this application to control the fan as desired
 
-- In order to return to Temperature control mode again, user can either press the touch button again or send the BLE command TEMP_MODE
+- In order to return to Temperature control mode again, user can either press the touch button again or send the BLE command 'TEMP_MODE'
 
 
 ## Comments:
