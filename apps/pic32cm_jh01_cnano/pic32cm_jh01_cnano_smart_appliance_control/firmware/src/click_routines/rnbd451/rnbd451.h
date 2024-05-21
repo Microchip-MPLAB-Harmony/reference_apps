@@ -109,7 +109,6 @@ uint8_t rnbd451_read(void);
 
 
 bool rnbd451_basicdataexchange (void);
-bool rnbd451_setasyncmessagehandler(char* pbuffer, uint8_t len);
 
 bool rnbd451_isconnected(void);
 bool rnbd451_entercmdmode(void);

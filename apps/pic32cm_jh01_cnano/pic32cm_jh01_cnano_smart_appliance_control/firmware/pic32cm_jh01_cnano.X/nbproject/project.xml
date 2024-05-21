@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>pic32cm_jh01_cnano</name>
+            <name>smart_appliance_control_pic32cm_jh01_cnano</name>
             <creation-uuid>8f316545-3a8e-475b-98f5-202c309e9d68</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>

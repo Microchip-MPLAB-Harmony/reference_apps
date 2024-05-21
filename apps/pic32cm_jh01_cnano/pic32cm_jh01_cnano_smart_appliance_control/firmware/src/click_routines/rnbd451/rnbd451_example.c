@@ -42,10 +42,11 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 #include "click_routines/rnbd451/rnbd451_example.h"
 #include "click_routines/rnbd451/rnbd451.h"
 #include "click_routines/click_interface.h"
-
+#include "click_routines/fan/fan.h"
 
 /** MACRO used to configure the application used buffer sizes.
  *  This is used by the application for communication buffers.
@@ -60,6 +61,20 @@ static char statusBuf[MAX_BUFFER_SIZE];
  * This macro provide a definition for a periodic data transmission demostration
  */
 #define DEMO_PERIODIC_TRANSMIT_COUNT           (uint8_t)(100)
+
+/**
+ * Application variables
+ */
+char readBuffer[128];
+static uint8_t dummyread;
+uint8_t unread_bytes = 0;
+static bool connected;
+unsigned int ResponseRead=0;
+char ble_resp[10];
+RNBD451_DATA rnbdData;
+
+extern int touch_count;
+extern void check_touch();
 
 
 bool rnbd451_setasyncmessagehandler(char* pbuffer, uint8_t len)
@@ -90,4 +105,82 @@ bool rnbd451_example_tasks(void)
         }
     }
     return (false);     // ^ Held if Successful; Return failure if reaching this.
+}
+
+
+/** 
+  @Function
+    void  rnbd451_app_initialize(void) 
+
+  @Summary
+ Initialize RNBD state in state machine.
+ */
+
+void rnbd451_app_initialize(void) 
+{
+    rnbd451_init();
+    rnbd451_setasyncmessagehandler(statusBuf, (uint8_t)sizeof(statusBuf)); 
+}
+
+/** 
+  @Function
+    static bool rnbd451_fan_control(void) 
+
+  @Summary
+ In BLE Control mode, based on the BLE command, the speed of the DC fan is controlled.
+
+ */
+static bool rnbd451_fan_control(void)
+{
+    rnbd451_isconnected();
+    memset(ble_resp, '\0', sizeof(ble_resp));
+
+    while(!RNBD.DataReady())
+    {
+        RNBD.DelayMs(1);
+        check_touch();                  //To check if touch button pressed, to switch back to Temperature Control Mode
+        if(touch_count%2 == 0)
+        {
+           return 0;
+        }
+    }
+    
+    //Read Ready data 
+    while(RNBD.DataReady())
+    {   
+        ble_resp[ResponseRead]=(char)RNBD_Read();
+        RNBD.DelayMs(1);
+        ResponseRead++;  
+    }
+    
+    ResponseRead = 0;
+    return true;
+    
+}
+
+/******************************************************************************
+  Function:
+    void rnbd451_ble_tasks( void )
+
+  @Summary
+ The user can control the speed of the DC fan from MBD App and also switch back to Temperature Control mode using the defined commands.
+ */
+
+void rnbd451_ble_tasks(void) 
+{
+    check_touch();                          //To check whether touch is pressed to switch back to Temperature Control Mode
+            
+    if(touch_count%2 !=0)
+    {  
+        if (rnbd451_fan_control()== true)
+        {
+            
+        }
+        
+        else
+        {
+            rnbd451_init();
+        }
+        
+    }
 }

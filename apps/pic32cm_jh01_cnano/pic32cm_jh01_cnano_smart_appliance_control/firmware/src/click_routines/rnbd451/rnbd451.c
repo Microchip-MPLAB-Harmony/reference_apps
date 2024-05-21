@@ -133,9 +133,3 @@ bool rnbd451_basicdataexchange(void)
     return isstreamopen;
 }
 
-bool rnbd451_setasyncmessagehandler(char* pbuffer, uint8_t len)
-{
-    return CLICK_RNBD451_SetAsyncMessageHandler(pbuffer, len);
-}
-
-

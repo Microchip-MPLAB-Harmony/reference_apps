@@ -182,10 +182,10 @@ void SYS_Initialize ( void* data )
 
 
 
+    SERCOM2_SPI_Initialize();
+
 	BSP_Initialize();
     NVMCTRL_Initialize( );
-
-    SERCOM2_SPI_Initialize();
 
     SERCOM1_USART_Initialize();
 
@@ -196,9 +196,9 @@ void SYS_Initialize ( void* data )
 	SYSTICK_TimerInitialize();
     SERCOM4_USART_Initialize();
 
-    TC0_TimerInitialize();
-
     RTC_Initialize();
+
+    TC0_TimerInitialize();
 
 
 

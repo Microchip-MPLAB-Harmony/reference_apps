@@ -19,6 +19,7 @@
         </logicalFolder>
         <logicalFolder name="rnbd451" displayName="rnbd451" projectFiles="true">
           <itemPath>../src/click_routines/rnbd451/rnbd451.h</itemPath>
+          <itemPath>../src/click_routines/rnbd451/rnbd451_example.h</itemPath>
         </logicalFolder>
         <logicalFolder name="weather" displayName="weather" projectFiles="true">
           <itemPath>../src/click_routines/weather/bme280.h</itemPath>
@@ -284,6 +285,7 @@
         </logicalFolder>
         <logicalFolder name="rnbd451" displayName="rnbd451" projectFiles="true">
           <itemPath>../src/click_routines/rnbd451/rnbd451.c</itemPath>
+          <itemPath>../src/click_routines/rnbd451/rnbd451_example.c</itemPath>
         </logicalFolder>
         <logicalFolder name="weather" displayName="weather" projectFiles="true">
           <itemPath>../src/click_routines/weather/bme280.c</itemPath>
@@ -423,6 +425,7 @@
       <C32>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
@@ -479,6 +482,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -518,6 +522,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>

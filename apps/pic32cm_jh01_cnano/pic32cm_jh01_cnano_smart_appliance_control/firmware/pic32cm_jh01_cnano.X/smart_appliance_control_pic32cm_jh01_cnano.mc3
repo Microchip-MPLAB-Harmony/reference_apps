@@ -1,4 +1,4 @@
-<config configName="default" projectName="Test" configVersion="1.1" device="PIC32CM5164JH01048" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.0">
+<config configName="default" projectName="Test" configVersion="1.1" device="PIC32CM5164JH01048" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.1">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -3415,24 +3415,24 @@
     &lt;/PowerProfiles&gt;
     &lt;ComponentGraph dnOrder=&quot;2&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
-        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_default&quot; x=&quot;422&quot; y=&quot;56&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;347&quot; y=&quot;102&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;RNBD_Dependency&quot; x=&quot;266&quot; y=&quot;501&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;cmsis&quot; x=&quot;194&quot; y=&quot;78&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;core&quot; x=&quot;333&quot; y=&quot;57&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;BSP_default&quot; x=&quot;403&quot; y=&quot;57&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;HarmonyCore&quot; x=&quot;324&quot; y=&quot;100&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;RNBD_Dependency&quot; x=&quot;251&quot; y=&quot;446&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;cmsis&quot; x=&quot;182&quot; y=&quot;79&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;core&quot; x=&quot;324&quot; y=&quot;57&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;dfp&quot; x=&quot;321&quot; y=&quot;19&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;evsys&quot; x=&quot;180&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;lib_qtouch&quot; x=&quot;278&quot; y=&quot;356&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;lib_qtouch&quot; x=&quot;248&quot; y=&quot;317&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;nvmctrl&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;ptc&quot; x=&quot;57&quot; y=&quot;440&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;rtc&quot; x=&quot;44&quot; y=&quot;340&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;sercom0&quot; x=&quot;46&quot; y=&quot;204&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;sercom1&quot; x=&quot;348&quot; y=&quot;252&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;sercom2&quot; x=&quot;198&quot; y=&quot;206&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;sercom4&quot; x=&quot;59&quot; y=&quot;543&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;stdio&quot; x=&quot;514&quot; y=&quot;266&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;ptc&quot; x=&quot;20&quot; y=&quot;406&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;rtc&quot; x=&quot;20&quot; y=&quot;317&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;sercom0&quot; x=&quot;20&quot; y=&quot;192&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;sercom1&quot; x=&quot;325&quot; y=&quot;225&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;sercom2&quot; x=&quot;175&quot; y=&quot;193&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;14&quot; id=&quot;sercom4&quot; x=&quot;21&quot; y=&quot;488&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;15&quot; id=&quot;stdio&quot; x=&quot;473&quot; y=&quot;239&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;16&quot; id=&quot;sys_time&quot; x=&quot;17&quot; y=&quot;96&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;tc0&quot; x=&quot;191&quot; y=&quot;110&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;17&quot; id=&quot;tc0&quot; x=&quot;180&quot; y=&quot;112&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -41228,7 +41228,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\definitions.h</file>
-         <hash>7e959d7516b899f632a5a8b02931660ed4fd7fe7333a8a5eeaa09c5ae517dfa6</hash>
+         <hash>8db17f4ddd5de6e577de5a786b936772d9b6ecbd128bcafb952876965df00ba0</hash>
       </entry>
       <entry>
          <file>..\src\config\default\device.h</file>
@@ -41256,7 +41256,7 @@
       </entry>
       <entry>
          <file>..\src\config\default\initialization.c</file>
-         <hash>d6083e1506d7e0ad4ea57cc5d0a931770a4ba3e95cef71fdf21952133a529cd0</hash>
+         <hash>717ee4f8dd25c7073d0dc079f27a2e382d6d747c1bc8d2a48360edfd54e4e647</hash>
       </entry>
       <entry>
          <file>..\src\config\default\interrupts.c</file>
