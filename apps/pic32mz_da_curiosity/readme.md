@@ -14,8 +14,9 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 | --- | --- | -- |
 | 1 | [Getting Started](./pic32mzda_getting_started/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mzda_getting_started.zip) |
 | 2 | [SD Card USB Audio Player](./pic32mzda_sdcard_usb_audio_player/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mzda_sdcard_usb_audio_player.zip) |
-
+| 3 | [Web Photo Frame](./pic32mzda_web_photo_frame/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32mzda_web_photo_frame.zip) |
 
 ### More Application Demos
 
 For more application demos on **PIC32MZ DA Curiosity Development Kit** and other Development Boards/Kits having the same part number **(PIC32MZ2064DAR176)** <a href="https://mplab-discover.microchip.com/v1/itemtype/com.microchip.ide.project?s0=PIC32MZ2064DAR176" target="_blank"> CLICK HERE </a>
+
