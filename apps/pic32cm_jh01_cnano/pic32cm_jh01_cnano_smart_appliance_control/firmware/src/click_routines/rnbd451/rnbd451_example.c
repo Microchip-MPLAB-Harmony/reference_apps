@@ -66,9 +66,7 @@ static char statusBuf[MAX_BUFFER_SIZE];
  * Application variables
  */
 char readBuffer[128];
-static uint8_t dummyread;
 uint8_t unread_bytes = 0;
-static bool connected;
 unsigned int ResponseRead=0;
 char ble_resp[10];
 RNBD451_DATA rnbdData;

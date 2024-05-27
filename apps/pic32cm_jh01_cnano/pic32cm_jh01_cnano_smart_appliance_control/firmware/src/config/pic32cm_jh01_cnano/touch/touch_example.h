@@ -1,19 +1,19 @@
-
 /*******************************************************************************
-  Touch Library v3.15.0 Release
+  Touch Library v3.16.0 Release
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    touch_api_ptc.h
+    touch_example.h
 
   Summary:
     QTouch Modular Library
 
   Description:
-    Includes the Module API header files based on the configured modules,
-    prototypes for touch.c file and Application helper API functions
+    Provides Initialization, Processing and ISR handler of touch library,
+    Simple API functions to get/set the key touch parameters from/to the
+    touch library data structures
 *******************************************************************************/
 
 /*******************************************************************************
@@ -38,44 +38,31 @@ source software license terms, no license or other rights, whether express or
 implied, are granted under any patent or other intellectual property rights of
 Microchip or any third party.
 ************************************************************************************/
+#ifndef TOUCH_EXMAPLE_H
+#define TOUCH_EXMAPLE_H
 
-#ifndef TOUCH_API_PTC_H
-#define TOUCH_API_PTC_H
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
 
-#ifdef __cplusplus
-extern "C" {
-#endif // __cplusplus
+    extern "C" {
 
-/*----------------------------------------------------------------------------
- *     include files
- *----------------------------------------------------------------------------*/
-
-#include "qtm_common_components_api.h"
-#include "qtm_acq_pic32cmjh_0x002f_api.h"
-#include "qtm_touch_key_0x0002_api.h"
-#include "qtm_freq_hop_auto_0x0004_api.h"
-/*----------------------------------------------------------------------------
- *   prototypes
- *----------------------------------------------------------------------------*/
-/* Application Helper API's */
-uint16_t get_sensor_node_signal(uint16_t sensor_node);
-void     update_sensor_node_signal(uint16_t sensor_node, uint16_t new_signal);
-uint16_t get_sensor_node_reference(uint16_t sensor_node);
-void     update_sensor_node_reference(uint16_t sensor_node, uint16_t new_reference);
-uint16_t get_sensor_cc_val(uint16_t sensor_node);
-void     update_sensor_cc_val(uint16_t sensor_node, uint16_t new_cc_value);
-uint8_t  get_sensor_state(uint16_t sensor_node);
-void     update_sensor_state(uint16_t sensor_node, uint8_t new_state);
-void     calibrate_node(uint16_t sensor_node);
-
-void touch_timer_handler(void);
-void touch_init(void);
-void touch_process(void);
-
-void touch_timer_config(void);
-
-#ifdef __cplusplus
-}
 #endif
+// DOM-IGNORE-END
 
-#endif /* TOUCH_API_PTC_H */
+
+#include <stddef.h>                     // Defines NULL
+#include <stdbool.h>                    // Defines true
+#include <stdlib.h>                     // Defines EXIT_FAILURE
+#include "definitions.h"                // SYS function prototypes
+#include "touch.h"
+
+void touch_mainloop_example(void);
+void touch_status_display(void);
+// DOM-IGNORE-BEGIN
+#ifdef __cplusplus  // Provide C++ Compatibility
+
+    }
+
+#endif
+// DOM-IGNORE-END
+#endif // TOUCH_H

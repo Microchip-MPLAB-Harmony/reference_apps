@@ -49,8 +49,8 @@
 #include <stddef.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include "peripheral/sercom/spi_master/plib_sercom2_spi_master.h"
 #include "bsp/bsp.h"
+#include "peripheral/sercom/spi_master/plib_sercom2_spi_master.h"
 #include "peripheral/nvmctrl/plib_nvmctrl.h"
 #include "peripheral/sercom/usart/plib_sercom1_usart.h"
 #include "peripheral/sercom/i2c_master/plib_sercom0_i2c_master.h"
@@ -60,9 +60,9 @@
 #include "peripheral/nvic/plib_nvic.h"
 #include "peripheral/systick/plib_systick.h"
 #include "peripheral/sercom/usart/plib_sercom4_usart.h"
+#include "touch/touch.h"
 #include "peripheral/rtc/plib_rtc.h"
 #include "peripheral/tc/plib_tc0.h"
-#include "touch/touch.h"
 #include "system/time/sys_time.h"
 #include "system/int/sys_int.h"
 #include "system/ports/sys_ports.h"

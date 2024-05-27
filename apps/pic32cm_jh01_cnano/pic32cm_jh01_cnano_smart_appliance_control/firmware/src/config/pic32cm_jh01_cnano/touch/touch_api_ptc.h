@@ -1,19 +1,19 @@
+
 /*******************************************************************************
-  Touch Library v3.15.0 Release
+  Touch Library v3.16.0 Release
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    touch_example.c
+    touch_api_ptc.h
 
   Summary:
     QTouch Modular Library
 
   Description:
-    Provides Initialization, Processing and ISR handler of touch library,
-    Simple API functions to get/set the key touch parameters from/to the
-    touch library data structures
+    Includes the Module API header files based on the configured modules,
+    prototypes for touch.c file and Application helper API functions
 *******************************************************************************/
 
 /*******************************************************************************
@@ -39,42 +39,43 @@ implied, are granted under any patent or other intellectual property rights of
 Microchip or any third party.
 ************************************************************************************/
 
+#ifndef TOUCH_API_PTC_H
+#define TOUCH_API_PTC_H
 
-#include "touch_example.h"
+#ifdef __cplusplus
+extern "C" {
+#endif // __cplusplus
 
-void touch_mainloop_example(void){
+/*----------------------------------------------------------------------------
+ *     include files
+ *----------------------------------------------------------------------------*/
 
-    /* call touch process function */
-    touch_process();
+#include "qtm_common_components_api.h"
+#include "qtm_acq_pic32cmjh_0x002f_api.h"
+#include "qtm_touch_key_0x0002_api.h"
+#include "qtm_freq_hop_auto_0x0004_api.h"
+/*----------------------------------------------------------------------------
+ *   prototypes
+ *----------------------------------------------------------------------------*/
+/* Application Helper API's */
+uint16_t get_sensor_node_signal(uint16_t sensor_node);
+void     update_sensor_node_signal(uint16_t sensor_node, uint16_t new_signal);
+uint16_t get_sensor_node_reference(uint16_t sensor_node);
+void     update_sensor_node_reference(uint16_t sensor_node, uint16_t new_reference);
+uint16_t get_sensor_cc_val(uint16_t sensor_node);
+void     update_sensor_cc_val(uint16_t sensor_node, uint16_t new_cc_value);
+uint8_t  get_sensor_state(uint16_t sensor_node);
+void     update_sensor_state(uint16_t sensor_node, uint8_t new_state);
+void     calibrate_node(uint16_t sensor_node);
 
-    if(measurement_done_touch == 1u)
-    {
-        measurement_done_touch = 0u;
-        // process touch data
-    }
+void touch_timer_handler(void);
+void touch_init(void);
+void touch_process(void);
 
+void touch_timer_config(void);
+
+#ifdef __cplusplus
 }
+#endif
 
-/*============================================================================
-void touch_status_display(void)
-------------------------------------------------------------------------------
-Purpose: Sample code snippet to demonstrate how to check the status of the 
-         sensors
-Input  : none
-Output : none
-Notes  : none
-============================================================================*/
-void touch_status_display(void)
-{
-uint8_t key_status = 0u;
-    key_status = get_sensor_state(0) & KEY_TOUCHED_MASK;
-    if (0u != key_status) {
-        //Touch detect
-    } else {
-        //Touch No detect
-    }
-
-
-}
-
-
+#endif /* TOUCH_API_PTC_H */

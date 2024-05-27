@@ -60,7 +60,7 @@ bool rnbd451_setasyncmessagehandler(char* pBuffer, uint8_t len);
 
 void rnbd451_app_initialize(void);
 void rnbd451_ble_tasks(void);
-static bool rnbd451_fan_control(void);
+
 
 
 

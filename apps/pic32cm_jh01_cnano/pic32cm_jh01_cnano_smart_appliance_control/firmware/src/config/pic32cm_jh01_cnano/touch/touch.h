@@ -1,5 +1,5 @@
 /*******************************************************************************
-  Touch Library v3.15.0 Release
+  Touch Library v3.16.0 Release
 
   Company:
     Microchip Technology Inc.
@@ -64,7 +64,7 @@ SUBSTITUTE  GOODS,  TECHNOLOGY,  SERVICES,  OR  ANY  CLAIMS  BY  THIRD   PARTIES
  * Range: 1 to 255.
  * Default value: 20.
  */
-#define DEF_TOUCH_MEASUREMENT_PERIOD_MS 100u
+#define DEF_TOUCH_MEASUREMENT_PERIOD_MS 20u
 
 /* Defines the Type of sensor
  * Default value: NODE_MUTUAL.

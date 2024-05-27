@@ -13,6 +13,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
 | 1 | [Getting Started](./pic32cm_jh01_cnano_getting_started/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cm_jh01_cnano_getting_started.zip) |
+| 2 | [Smart Appliance Control](./pic32cm_jh01_cnano_smart_appliance_control/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cm_jh01_cnano_smart_appliance_control.zip) |
 
 ### More Application Demos
 

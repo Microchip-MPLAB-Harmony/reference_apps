@@ -52,7 +52,7 @@
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include <string.h>
 #include <stdio.h>
-#include "config/default/definitions.h"
+#include "config/pic32cm_jh01_cnano/definitions.h"
 #include "click_routines/weather/bme280.h"
 #include "click_routines/weather/weather.h"
 #include "click_routines/click_interface.h"
@@ -77,17 +77,6 @@ uint8_t key_status0;
 
 //RNBD
 extern char ble_resp[10];
-
-
-// *****************************************************************************
-// *****************************************************************************
-// Section: Function Declarations
-// *****************************************************************************
-// *****************************************************************************
-// *****************************************************************************
-
-void check_touch();
-
 
 /* ************************************************************************** */
 /* ************************************************************************** */
@@ -116,7 +105,6 @@ void check_touch()
         {
           do
           {
-             LED_On();
              touch_process();
 		     if (measurement_done_touch == 1) 
              {
@@ -130,8 +118,6 @@ void check_touch()
         }
 		else
         {
-           
-		 LED_Off();
                  
         }
 	}
@@ -174,7 +160,8 @@ int main ( void )
         if(touch_count%2 == 0)
         { 
             //Temperature Control Mode
-            //printf(" Entered into Temperature Control Mode");
+            
+            LED_On();
             
             Weather_readSensors();
             temperature =(int16_t)Weather_getTemperatureDegC();
@@ -214,8 +201,7 @@ int main ( void )
         else
         {
             //BlE Control Mode
-            //printf(" Entered into BLE Control Mode");
-            
+            LED_Off();
             rnbd451_ble_tasks();
               
             if(!strcmp(ble_resp, "FAN_ON"))

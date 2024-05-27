@@ -19,6 +19,7 @@ nav_order: 2
   Users can switch between these modes using the touch sensor built into the Curiosity Nano board. Upon initialization, the application defaults to Temperature control mode. A single press on the touch sensor activates BLE control mode, while a subsequent press reverts the system to Temperature control mode. Furthermore, once the device is in BLE control mode, users can revert to Temperature control mode by either employing the touch sensor or issuing a BLE command.  
 
 1.	**Temperature Control Mode** - Automatically controls the DC fan based on the temperature measurement from Weather Click. Both the temperature value and fan speed are displayed on e-paper display. The temperature ranges for the respective fan speed are;
+
 	a. Temperature between 18 (64 F) to 25 (77 F) degree Celsius, the fan rotates at LOW speed.  
 	b. Temperature between 26 (78 F) to 30 (86 F) degree Celsius, the fan rotates at MEDIUM speed.  
 	c. Temperature is greater than 30 degree Celsius (86 F), the fan rotates at HIGH speed.  
@@ -48,6 +49,10 @@ nav_order: 2
 	- STDIO Library
 	- Touch Library
 
+	The MCC Harmony project graph with all the components would look like this; 
+
+	<p align = "center"> <img src = "images/project_graph.png">
+
 ## Hardware Used:
 
 - [PIC32CM JH01 Curiosity Nano+ Touch Evaluation Kit](https://www.microchip.com/en-us/development-tool/EV29G58A)
@@ -68,9 +73,8 @@ Refer [Project Manifest](./firmware/src/config/default/harmony-manifest-success.
 
 Refer the [Release Notes](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md) to know the **MPLAB X IDE** and **MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md)
 
-·    Install [Microchip Bluetooth Data Android App](https://play.google.com/store/apps/details?id=com.microchip.bluetooth.data&hl=en_IN&gl=US) in your Android mobile **or**
-
-·    Install [Microchip Bluetooth Data iOS App](https://apps.apple.com/in/app/microchip-bluetooth-data/id1319166097) in your iOS mobile
+-    Install [Microchip Bluetooth Data Android App](https://play.google.com/store/apps/details?id=com.microchip.bluetooth.data&hl=en_IN&gl=US) in your Android mobile **or**
+-    Install [Microchip Bluetooth Data iOS App](https://apps.apple.com/in/app/microchip-bluetooth-data/id1319166097) in your iOS mobile
 
 Because Microchip regularly updates tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, it is recommended to double-check and use the same versions that the project was tested with. https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
 
@@ -103,7 +107,7 @@ The pre-built hex file can be programmed by following the below steps.
 
 
 ## Programming/Debugging Application Project:
-- Open the project (pic32cmjh01_smart_appliance_control/pic32cm_jh01_cnano.X)     in MPLAB X IDE
+- Open the project *pic32cm_jh01_cnano_smart_appliance_control/firmware/pic32cm_jh01_cnano.X*    in MPLAB X IDE
 - Ensure "PIC32CM JH01 Curiosity Nano" is selected as     hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "Make     and Program" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below
@@ -111,7 +115,7 @@ The pre-built hex file can be programmed by following the below steps.
 ## Running the Demo:
 **Temperature Control Mode:**
 
-- The demo initializes working in Temperature control mode. Based on the temperature measurement from Weather click, the fan speed will be controlled automatically
+- The demo initializes working in Temperature Control Mode. Based on the temperature measurement from Weather click, the fan speed will be controlled automatically. The LED1 on the Curiosity Nano is turned ON to indicate that the application is in Temperature Control Mode
 
 - The temperature reading in degree Celsius, and the fan speed will be displayed on the e-paper display. The fan speed will be indicated as follows:
 
@@ -125,9 +129,9 @@ The pre-built hex file can be programmed by following the below steps.
 
  <p align = "center"> <img src = "images/fan_speed.png"> 
 
-- To switch to BLE control mode, press the touch button once. The LED in the Curiosity Nano turns ON indicating a touch event has happened.
+- To switch to BLE Control Mode, press the touch button once. LED1 turns OFF indicating that the application has switched to BLE Control Mode.
 
-- Once the device switches to BLE control mode, the user can control the fan by following the steps mentioned below
+- Once the device switches to BLE Control Mode, the user can control the fan by following the steps mentioned below
 
 Note: Users should wait for the e-paper display to stabilize before pressing the touch button
 
@@ -167,7 +171,7 @@ Note: Users should wait for the e-paper display to stabilize before pressing the
 
 - User can provide the available BLE commands for this application to control the fan as desired
 
-- In order to return to Temperature control mode again, user can either press the touch button again or send the BLE command 'TEMP_MODE'
+- In order to return to Temperature Control Mode again, user can either press the touch button again or send the BLE command 'TEMP_MODE'. LED1 turns on again, indicating that the application has switched to Temperatue Control Mode
 
 
 ## Comments:
@@ -175,7 +179,8 @@ Note: Users should wait for the e-paper display to stabilize before pressing the
   
 	- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
 	- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-	- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)	
+	- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
+	- [Creating the First Application on PIC32CM JH01 Microcontrollers Using MPLAB Harmony v3 with MPLAB Code Configurator (MCC)](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/SupportingCollateral/Creating-the-First-Application-on-PIC32CM-JH01-Microcontrollers-Using-MPLAB-Harmony-v3-with-MCC-DS90003353.pdf)	
 
 
 ## Revision:

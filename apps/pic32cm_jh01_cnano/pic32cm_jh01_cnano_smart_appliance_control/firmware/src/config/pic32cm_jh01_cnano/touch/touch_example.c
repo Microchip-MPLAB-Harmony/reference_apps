@@ -1,11 +1,11 @@
 /*******************************************************************************
-  Touch Library v3.15.0 Release
+  Touch Library v3.16.0 Release
 
   Company:
     Microchip Technology Inc.
 
   File Name:
-    touch_example.h
+    touch_example.c
 
   Summary:
     QTouch Modular Library
@@ -38,31 +38,43 @@ source software license terms, no license or other rights, whether express or
 implied, are granted under any patent or other intellectual property rights of
 Microchip or any third party.
 ************************************************************************************/
-#ifndef TOUCH_EXMAPLE_H
-#define TOUCH_EXMAPLE_H
-
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
-
-    extern "C" {
-
-#endif
-// DOM-IGNORE-END
 
 
-#include <stddef.h>                     // Defines NULL
-#include <stdbool.h>                    // Defines true
-#include <stdlib.h>                     // Defines EXIT_FAILURE
-#include "definitions.h"                // SYS function prototypes
-#include "touch.h"
+#include "touch_example.h"
 
-void touch_mainloop_example(void);
-void touch_status_display(void);
-// DOM-IGNORE-BEGIN
-#ifdef __cplusplus  // Provide C++ Compatibility
+void touch_mainloop_example(void){
 
+    /* call touch process function */
+    touch_process();
+
+    if(measurement_done_touch == 1u)
+    {
+        measurement_done_touch = 0u;
+        // process touch data
     }
 
-#endif
-// DOM-IGNORE-END
-#endif // TOUCH_H
+}
+
+/*============================================================================
+void touch_status_display(void)
+------------------------------------------------------------------------------
+Purpose: Sample code snippet to demonstrate how to check the status of the 
+         sensors
+Input  : none
+Output : none
+Notes  : none
+============================================================================*/
+void touch_status_display(void)
+{
+uint8_t key_status = 0u;
+    key_status = get_sensor_state(0) & KEY_TOUCHED_MASK;
+    if (0u != key_status) {
+        //Touch detect
+    } else {
+        //Touch No detect
+    }
+
+
+}
+
+
