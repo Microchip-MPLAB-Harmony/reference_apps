@@ -66,10 +66,8 @@ static char statusBuf[MAX_BUFFER_SIZE];
  * Application variables
  */
 char readBuffer[128];
-uint8_t unread_bytes = 0;
 unsigned int ResponseRead=0;
 char ble_resp[10];
-RNBD451_DATA rnbdData;
 
 extern int touch_count;
 extern void check_touch();
@@ -80,6 +78,10 @@ bool rnbd451_setasyncmessagehandler(char* pbuffer, uint8_t len)
     return CLICK_RNBD451_SetAsyncMessageHandler(pbuffer, len);
 }
 
+bool rnbd451_factoryreset(RNBD_FACTORY_RESET_MODE_t resetMode)
+{
+    return CLICK_RNBD451_FactoryReset(resetMode);
+}
 bool rnbd451_example_tasks(void)
 {
     rnbd451_init();
@@ -117,6 +119,9 @@ bool rnbd451_example_tasks(void)
 void rnbd451_app_initialize(void) 
 {
     rnbd451_init();
+    rnbd451_entercmdmode();
+    rnbd451_factoryreset(1);
+    
     rnbd451_setasyncmessagehandler(statusBuf, (uint8_t)sizeof(statusBuf)); 
 }
 

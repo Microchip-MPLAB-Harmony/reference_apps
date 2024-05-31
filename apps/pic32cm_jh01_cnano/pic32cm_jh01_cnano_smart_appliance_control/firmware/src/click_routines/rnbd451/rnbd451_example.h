@@ -39,22 +39,6 @@
 // ----------------------------------------------------------------------------
 
 
-typedef enum
-{
-    RNBD_STATE_INIT=0,
-    RNBD_START_CONNECTION,
-    RNBD_STATE_WRITE_DATA,
-    RNBD_STATE_COMPLETE,
-            
-} RNBD451_STATES;
-
-typedef struct
-{
-    RNBD451_STATES state;
-    
-} RNBD451_DATA;
-
-
 bool rnbd451_example_tasks(void);
 bool rnbd451_setasyncmessagehandler(char* pBuffer, uint8_t len);
 

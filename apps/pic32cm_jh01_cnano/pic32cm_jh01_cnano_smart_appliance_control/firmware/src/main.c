@@ -160,9 +160,7 @@ int main ( void )
         if(touch_count%2 == 0)
         { 
             //Temperature Control Mode
-            
             LED_On();
-            
             Weather_readSensors();
             temperature =(int16_t)Weather_getTemperatureDegC();
 

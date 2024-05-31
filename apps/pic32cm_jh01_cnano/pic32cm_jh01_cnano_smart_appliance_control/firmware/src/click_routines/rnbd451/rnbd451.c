@@ -91,6 +91,7 @@ bool rnbd451_rebootcmd(void)
     return CLICK_RNBD451_RebootCmd();
 }
 
+
 bool rnbd451_basicdataexchange(void)
 {
    static uint16_t periodic_counter = 0;

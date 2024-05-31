@@ -80,7 +80,7 @@ Because Microchip regularly updates tools, occasionally issue(s) could be discov
 
 ## Hardware Setup:
 - Mount PIC32CM JH01 Curiosity Nano Evaluation Kit on "CNANO56_HOST_CONN"(U3) connector of Curiosity Nano Base board
-- First connect the 4 wires from the Fan Click to the Fan and then mount the Fan Click board onto mikroBUS socket 1 connector of Curiosity Nano Base. The fan click uses the SERCOM0 I2C interface
+- First connect the 4 wires from the Fan Click to the Fan *(Red wire to +5V, Black wire to GND, Blue wire to PWM and Yellow wire to TACH of the Fan Click)* and then mount the Fan Click board onto mikroBUS socket 1 connector of Curiosity Nano Base. The fan click uses the SERCOM0 I2C interface
 - Mount the Weather Click board onto mikroBUS socket 2 connector of Curiosity Nano Base. This Weather Click uses the SERCOM0 I2C interface
 - Connect the RNBD451 Add On Board to the mikroBUS socket 3 connector of Curiosity Nano Base. The RNBD module uses the SERCOM4 USART interface
 - Connect the mikroBUS Xplained Pro to EXT 1 connector of Curiosity Nano Base board and mount the eINK Click and e-paper display onto the mikroBUS Xplained Pro. The e-paper display uses the SERCOM2 SPI interface

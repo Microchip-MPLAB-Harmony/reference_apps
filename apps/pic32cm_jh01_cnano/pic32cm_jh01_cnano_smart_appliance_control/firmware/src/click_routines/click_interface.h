@@ -138,4 +138,7 @@
 #define CLICK_RNBD451_IsConnected                      RNBD_IsConnected                 
 #define CLICK_RNBD451_EnterCmdMode                     RNBD_EnterCmdMode
 #define CLICK_RNBD451_RebootCmd                        RNBD_RebootCmd
+#define CLICK_RNBD451_FactoryReset                     RNBD_FactoryReset
+
+
 #endif // _CLICK_INTERFACES_H
