@@ -46,7 +46,7 @@ nav_order: 1
 ## Software/Tools Used:
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  
 
-Refer Manifest for [Secure](./firmware/Secure/firmware/src/config/pic32cm_ls60_cpro/harmony-manifest-success.yml) and [NonSecure](./firmware/NonSecure/firmware/src/config/pic32cm_ls60_cpro/harmony-manifest-success.yml) projects present in harmony-manifest-success.yml under the project folder *firmware/{Secure or NonSecure}/firmware/src/config/pic32cm_ls60_cpro*
+Refer Manifest for [Secure](./firmware_secure/src/config/default/harmony-manifest-success.yml) and [NonSecure](./firmware/src/config/default/harmony-manifest-success.yml) projects present in harmony-manifest-success.yml under the project folder *(firmware or firmware_secure/src/config/default*
 - Refer the [Release Notes](../../../release_notes.md#development-tools) to know the **MPLAB X IDE** and **MCC** Plugin version. Alternatively, [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/blob/master/release_notes.md#development-tools).  
 - Any Serial Terminal application like Tera Term terminal application.
 
@@ -107,14 +107,11 @@ Refer Manifest for [Secure](./firmware/Secure/firmware/src/config/pic32cm_ls60_c
 - Go to File -> Import -> Hex/ELF File
 - In the **"Import Image File"** window,
     - Step 1 - Create Prebuilt Project,
-        - Click the **"Browse"** button to select the prebuilt **"tz_pic32cm_ls60_cpro_Secure.X.production.hex"** file from project path **"pic32cm_ls60_cpro_tz_getting_started/hex"**
+        - Click the **"Browse"** button to select the prebuilt **"tz_pic32cm_ls60_cpro_secure.X.production.hex"** file from project path **"pic32cm_ls60_cpro_tz_getting_started/hex"**
         - Select Device as **"PIC32CM5164LS60100"**
         - Ensure **"PIC32CM LS60 Curiosity Pro"** is selected under **"Hardware Tool"** and click **"Next"** button
     - Step 2 - Select Project Name and Folder,
         - Select appropriate project name and folder and click **"Finish"** button
-- Once the project opens, set the **"tz_pic32cm_ls60_cpro_Secure.X.prebuilt"** project as Main Project by right clicking on the project.
-
-    <img src = "images/hex_s_prebuilt_prj_set_as_main_project.png">
 
 - Go to project properties and set Program Options under EDBG categories to erase and program only Secure memory region.
 
@@ -126,16 +123,13 @@ Refer Manifest for [Secure](./firmware/Secure/firmware/src/config/pic32cm_ls60_c
 - Go to File -> Import -> Hex/ELF File
 - In the **"Import Image File"** window,
     - Step 1 - Create Prebuilt Project,
-        - Click the **"Browse"** button to select the prebuilt **"tz_pic32cm_ls60_cpro_NonSecure.X.production.hex"** file from project path **"pic32cm_ls60_cpro_tz_getting_started/hex"**
+        - Click the **"Browse"** button to select the prebuilt **"tz_pic32cm_ls60_cpro.X.production.hex"** file from project path **"pic32cm_ls60_cpro_tz_getting_started/hex"**
         - Select Device as **"PIC32CM5164LS60100"**
         - Ensure **"PIC32CM LS60 Curiosity Pro"** is selected under **"Hardware Tool"** and click **"Next"** button
     - Step 2 - Select Project Name and Folder,
         - Select appropriate project name and folder and click **"Finish"** button
-- Once the project opens, set the **"tz_pic32cm_ls60_cpro_NonSecure.X.prebuilt"** project as Main Project by right clicking on the project.
 
-    <img src = "images/hex_ns_prebuilt_prj_set_as_main_project.png">
-
-- In the **"tz_pic32cm_ls60_cpro_NonSecure.X.prebuilt"** project, right click on Loadables folder and click on **"Add Loadable File"** to add Secure Gateway veneer library as shown below.
+- In the **"tz_pic32cm_ls60_cpro.X.prebuilt"** project, right click on Loadables folder and click on **"Add Loadable File"** to add Secure Gateway veneer library as shown below.
 
     <img src = "images/hex_ns_prj_add_veneer_lib.png">
 
@@ -162,25 +156,26 @@ Refer Manifest for [Secure](./firmware/Secure/firmware/src/config/pic32cm_ls60_c
     - Go to File -> Open Project
     - Go to **reference_apps** repo path and navigate to following path
         - `<reference_apps_path>/apps/pic32cm_ls60_curiosity_pro/pic32cm_ls60_cpro_tz_getting_started`
-    - Select "firmware" folder, enable "Open Required Projects" and click on "Open Project" button  
+    - Select "firmware" folder and then select "tz_pic32cm_ls60_cprogroup" folder, enable "Open Required Projects" and click on "Open Project" button  
 
     <img src = "images/group_project_path.png">
 
     <img src = "images/opened_group_project.png">
 
-    - Once the project opens, set the "tz_pic32cm_ls60_cpro_NonSecure" project as Main Project by right clicking on the project.  
+    - Once the project opens, set the "tz_pic32cm_ls60_cpro" project as Main Project by right clicking on the project.
+	
     <img src = "images/set_as_main_project.png">  
   - Procedure 2:
     - Open MPLAB X IDE
     - Close all existing projects in IDE (if any project is opened)
-    - Open the project (../pic32cm_ls60_cpro_tz_getting_started/firmware/NonSecure/firmware/tz_pic32cm_ls60_cpro_NonSecure.X) in MPLAB X IDE.  
+    - Open the project (../pic32cm_ls60_cpro_tz_getting_started/firmware/tz_pic32cm_ls60_cpro.X) in MPLAB X IDE.  
 
         <img src = "images/opened_non_secure_project.png" >
 - Ensure "PIC32CM LS60 Curiosity Pro" is selected as hardware tool to program/debug the application.
 - Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below.  
 - **Note:**
-    - Windows OS has a maximum path length of 260 characters and a command-line limitation for Windows OS of 8191 characters. For details, see [6.5.5 Path, File and Folder Name Restrictions](https://onlinedocs.microchip.com/oxy/GUID-D79ACEBE-41BD-43EF-8E1B-9462847AE13E-en-US-9/GUID-87B07C9C-6305-4E40-9BD9-F9418D80761A.html).
+    - Windows OS has a maximum path length of 260 characters and a command-line limitation for Windows OS of 8191 characters.
     - The TrustZone based project come with long path name, hence the project build may fail due to exceeding Windows maximum path length.
     - **Workaround:** Move the project folder to C:/ drive to reduce the project path length then open in MPLAB X IDE to build the project.
 
@@ -224,14 +219,14 @@ Refer Manifest for [Secure](./firmware/Secure/firmware/src/config/pic32cm_ls60_c
 - [ Dual Developer Application Development Use Case with TrustZone on SAM L11 Using MPLAB Harmony v3](https://ww1.microchip.com/downloads/en/DeviceDoc/Dual-Developer-Application-Development-Use-Case-with-TrustZone-on-SAM-L11-Using-MPLAB-Harmony-DS90003306.pdf)
     - **Note:** Though this technical brief is on SAM L11 MCUs, the TrustZone concepts it describes also applies to PIC32CM MC LS60 MCUs.
 - This application demo builds and works out of box by following the instructions above in "Running the Demo" section. If you need to enhance/customize this application demo, you need to use the MPLAB Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB Harmony.
-	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Setup_MPLAB_%20Harmony_v3_Software_Development_Framework_DS90003232C.pdf)
-	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](http://ww1.microchip.com/downloads/en/DeviceDoc/How_to_Build_Application_Adding_PLIB_%20Driver_or_Middleware%20_to_MPLAB_Harmony_v3Project_DS90003253A.pdf)  
-	- <span style="color:blue"> **MPLAB Harmony v3 is also configurable through MPLAB Code Configurator (MCC). Refer to the below links for specific instructions to use MPLAB Harmony v3 with MCC.**</span>
-		- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
-		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
-		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
+	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/SupportingCollateral/How-to-Setup-MPLAB-Harmony-v3-Software-Development-Framework-DS90003232.pdf)
+	- [Create a new MPLAB Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)	
+	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/SupportingCollateral/How-to-Build-an-Application-by-Adding-a-New-PLIB-Driver-or-Middleware-to-an-Existing-MPLAB-Harmony-v3-Project-DS90003253.pdf)  
+	- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
+	- [How to Set up the Tools Required to Get Started with MPLAB® Harmony v3 and MCC](https://youtu.be/0rNFSlsVwVw)
+
 
 
 ## Revision:
+- v1.7.0 - Updated demo application for new trustzone folder structure.
 - v1.6.0 - Released demo application
