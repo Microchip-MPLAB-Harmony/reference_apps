@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="65">
+  <logicalFolder name="root" displayName="root" projectFiles="true">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <logicalFolder name="config" displayName="config" projectFiles="true">
+        <logicalFolder name="pic32cm_ls00_cnano"
+                       displayName="pic32cm_ls00_cnano"
+                       projectFiles="true">
+          <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="adc" displayName="adc" projectFiles="true">
+              <itemPath>../src/config/pic32cm_ls00_cnano/peripheral/adc/plib_adc_common.h</itemPath>
+              <itemPath>../src/config/pic32cm_ls00_cnano/peripheral/adc/plib_adc.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="dac" displayName="dac" projectFiles="true">
+              <itemPath>../src/config/pic32cm_ls00_cnano/peripheral/dac/plib_dac.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="eic" displayName="eic" projectFiles="true">
+              <itemPath>../src/config/pic32cm_ls00_cnano/peripheral/eic/plib_eic.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="nvic" displayName="nvic" projectFiles="true">
+              <itemPath>../src/config/pic32cm_ls00_cnano/peripheral/nvic/plib_nvic.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="port" displayName="port" projectFiles="true">
+              <itemPath>../src/config/pic32cm_ls00_cnano/peripheral/port/plib_port.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="sercom" displayName="sercom" projectFiles="true">
+              <logicalFolder name="usart" displayName="usart" projectFiles="true">
+                <itemPath>../src/config/pic32cm_ls00_cnano/peripheral/sercom/usart/plib_sercom_usart_common.h</itemPath>
+                <itemPath>../src/config/pic32cm_ls00_cnano/peripheral/sercom/usart/plib_sercom3_usart.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="systick" displayName="systick" projectFiles="true">
+              <itemPath>../src/config/pic32cm_ls00_cnano/peripheral/systick/plib_systick.h</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <itemPath>../src/config/pic32cm_ls00_cnano/device_vectors.h</itemPath>
+          <itemPath>../src/config/pic32cm_ls00_cnano/toolchain_specifics.h</itemPath>
+          <itemPath>../src/config/pic32cm_ls00_cnano/interrupts.h</itemPath>
+          <itemPath>../src/config/pic32cm_ls00_cnano/device.h</itemPath>
+          <itemPath>../src/config/pic32cm_ls00_cnano/device_cache.h</itemPath>
+          <itemPath>../src/config/pic32cm_ls00_cnano/definitions.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="packs" displayName="packs" projectFiles="true">
+        <logicalFolder name="CMSIS" displayName="CMSIS" projectFiles="true">
+          <logicalFolder name="CMSIS" displayName="CMSIS" projectFiles="true">
+            <logicalFolder name="Core" displayName="Core" projectFiles="true">
+              <logicalFolder name="Include" displayName="Include" projectFiles="true">
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/mpu_armv8.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_iccarm.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/core_cm23.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/tz_context.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang_ltm.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armcc.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_armclang.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_version.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_compiler.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cachel1_armv7.h</itemPath>
+                <itemPath>../src/packs/CMSIS/CMSIS/Core/Include/cmsis_gcc.h</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="PIC32CM5164LS00048_DFP"
+                       displayName="PIC32CM5164LS00048_DFP"
+                       projectFiles="true">
+          <logicalFolder name="component" displayName="component" projectFiles="true">
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/ac.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/tc.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/supc.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/mclk.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/wdt.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/pac.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/trng.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/nvmctrl.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/dmac.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/rstc.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/eic.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/osc32kctrl.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/i2s.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/port.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/adc.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/idau.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/usb.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/ccl.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/oscctrl.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/fuses.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/evsys.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/gclk.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/dsu.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/tcc.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/opamp.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/rtc.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/sercom.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/ptc.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/tram.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/pm.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/freqm.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/component/dac.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="instance" displayName="instance" projectFiles="true">
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/trng.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/sercom5.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/oscctrl.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/tc1.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/dac.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/nvmctrl.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/sercom0.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/rtc.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/tcc3.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/ccl.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/sercom2.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/gclk.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/i2s.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/tram.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/tc0.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/mclk.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/dsu.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/evsys.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/sercom1.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/tcc2.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/pm.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/sercom3.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/ac.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/adc.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/opamp.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/idau.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/usb.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/port.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/tcc1.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/osc32kctrl.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/eic.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/ptc.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/fuses.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/sercom4.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/wdt.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/tc2.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/freqm.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/rstc.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/dmac.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/supc.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/pac.h</itemPath>
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/instance/tcc0.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="pio" displayName="pio" projectFiles="true">
+            <itemPath>../src/packs/PIC32CM5164LS00048_DFP/pio/pic32cm5164ls00048.h</itemPath>
+          </logicalFolder>
+          <itemPath>../src/packs/PIC32CM5164LS00048_DFP/pic32cm5164ls00048.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="trustZone" displayName="trustZone" projectFiles="true">
+        <itemPath>../src/trustZone/nonsecure_entry.h</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <itemPath>Makefile</itemPath>
+      <itemPath>pic32cm_ls00_cnano.mc3</itemPath>
+    </logicalFolder>
+    <logicalFolder name="LinkerScript"
+                   displayName="Linker Files"
+                   projectFiles="true">
+      <logicalFolder name="config" displayName="config" projectFiles="true">
+        <logicalFolder name="pic32cm_ls00_cnano"
+                       displayName="pic32cm_ls00_cnano"
+                       projectFiles="true">
+          <itemPath>../src/config/pic32cm_ls00_cnano/PIC32CM5164LS00048.ld</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="config" displayName="config" projectFiles="true">
+        <logicalFolder name="pic32cm_ls00_cnano"
+                       displayName="pic32cm_ls00_cnano"
+                       projectFiles="true">
+          <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
+            <logicalFolder name="adc" displayName="adc" projectFiles="true">
+              <itemPath>../src/config/pic32cm_ls00_cnano/peripheral/adc/plib_adc.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="dac" displayName="dac" projectFiles="true">
+              <itemPath>../src/config/pic32cm_ls00_cnano/peripheral/dac/plib_dac.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="eic" displayName="eic" projectFiles="true">
+              <itemPath>../src/config/pic32cm_ls00_cnano/peripheral/eic/plib_eic.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="nvic" displayName="nvic" projectFiles="true">
+              <itemPath>../src/config/pic32cm_ls00_cnano/peripheral/nvic/plib_nvic.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="port" displayName="port" projectFiles="true">
+              <itemPath>../src/config/pic32cm_ls00_cnano/peripheral/port/plib_port.c</itemPath>
+            </logicalFolder>
+            <logicalFolder name="sercom" displayName="sercom" projectFiles="true">
+              <logicalFolder name="usart" displayName="usart" projectFiles="true">
+                <itemPath>../src/config/pic32cm_ls00_cnano/peripheral/sercom/usart/plib_sercom3_usart.c</itemPath>
+              </logicalFolder>
+            </logicalFolder>
+            <logicalFolder name="systick" displayName="systick" projectFiles="true">
+              <itemPath>../src/config/pic32cm_ls00_cnano/peripheral/systick/plib_systick.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="stdio" displayName="stdio" projectFiles="true">
+            <itemPath>../src/config/pic32cm_ls00_cnano/stdio/xc32_monitor.c</itemPath>
+          </logicalFolder>
+          <itemPath>../src/config/pic32cm_ls00_cnano/initialization.c</itemPath>
+          <itemPath>../src/config/pic32cm_ls00_cnano/libc_syscalls.c</itemPath>
+          <itemPath>../src/config/pic32cm_ls00_cnano/interrupts.c</itemPath>
+          <itemPath>../src/config/pic32cm_ls00_cnano/startup_xc32.c</itemPath>
+          <itemPath>../src/config/pic32cm_ls00_cnano/exceptions.c</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <itemPath>../src/config/pic32cm_ls00_cnano/pin_configurations.csv</itemPath>
+      <itemPath>../src/main.c</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="pic32cm_ls00_cnano" type="2">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <targetDevice>PIC32CM5164LS00048</targetDevice>
+        <targetHeader></targetHeader>
+        <targetPluginBoard></targetPluginBoard>
+        <platformTool>noID</platformTool>
+        <languageToolchain>XC32</languageToolchain>
+        <languageToolchainVersion>4.35</languageToolchainVersion>
+        <platform>3</platform>
+      </toolsSet>
+      <packs>
+        <pack name="PIC32CM-LS_DFP" vendor="Microchip" version="1.3.278"/>
+        <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+      </packs>
+      <ScriptingSettings>
+      </ScriptingSettings>
+      <compileType>
+        <linkerTool>
+          <linkerLibItems>
+          </linkerLibItems>
+        </linkerTool>
+        <archiverTool>
+        </archiverTool>
+        <loading>
+          <makeArtifact PL="../../adc_secure/pic32cm_ls00_cnano_secure.X"
+                        CT="1"
+                        CN="pic32cm_ls00_cnano"
+                        AC="true"
+                        BL="true"
+                        WD="../../adc_secure/pic32cm_ls00_cnano_secure.X"
+                        BC="${MAKE}  -f Makefile CONF=pic32cm_ls00_cnano"
+                        DBC="${MAKE}  -f Makefile CONF=pic32cm_ls00_cnano TYPE_IMAGE=DEBUG_RUN"
+                        CC="rm -rf &quot;build/pic32cm_ls00_cnano&quot; &quot;dist/pic32cm_ls00_cnano&quot;"
+                        OP="dist/pic32cm_ls00_cnano/production/pic32cm_ls00_cnano_secure.X.production.hex"
+                        DOP="dist/pic32cm_ls00_cnano/debug/pic32cm_ls00_cnano_secure.X.debug.elf"
+                        FL="dist/pic32cm_ls00_cnano/production/pic32cm_ls00_cnano_secure.X.production.hex"
+                        PD="dist/pic32cm_ls00_cnano/production/pic32cm_ls00_cnano_secure.X.production.elf"
+                        DD="dist/pic32cm_ls00_cnano/debug/pic32cm_ls00_cnano_secure.X.debug.elf">
+          </makeArtifact>
+          <useAlternateLoadableFile>false</useAlternateLoadableFile>
+          <parseOnProdLoad>false</parseOnProdLoad>
+          <alternateLoadableFile></alternateLoadableFile>
+        </loading>
+        <subordinates>
+        </subordinates>
+      </compileType>
+      <makeCustomizationType>
+        <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
+        <makeCustomizationPreStep></makeCustomizationPreStep>
+        <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
+        <makeCustomizationPostStep> rm -rf ${ProjectDir}/../../../hex &amp;&amp; mkdir ${ProjectDir}/../../../hex &amp;&amp; cp ${ProjectDir}/${ImageDir}/*.unified.hex ${ProjectDir}/../../../hex/ </makeCustomizationPostStep>
+        <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
+        <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
+        <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
+      </makeCustomizationType>
+      <C32>
+        <property key="additional-warnings" value="true"/>
+        <property key="addresss-attribute-use" value="false"/>
+        <property key="enable-app-io" value="false"/>
+        <property key="enable-omit-frame-pointer" value="false"/>
+        <property key="enable-symbols" value="true"/>
+        <property key="enable-unroll-loops" value="false"/>
+        <property key="exclude-floating-point" value="false"/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/pic32cm_ls00_cnano;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/PIC32CM5164LS00048_DFP"/>
+        <property key="generate-16-bit-code" value="false"/>
+        <property key="generate-micro-compressed-code" value="false"/>
+        <property key="isolate-each-function" value="true"/>
+        <property key="make-warnings-into-errors" value="true"/>
+        <property key="optimization-level" value="-O1"/>
+        <property key="place-data-into-section" value="true"/>
+        <property key="post-instruction-scheduling" value="default"/>
+        <property key="pre-instruction-scheduling" value="default"/>
+        <property key="preprocessor-macros" value=""/>
+        <property key="strict-ansi" value="false"/>
+        <property key="support-ansi" value="false"/>
+        <property key="tentative-definitions" value="-fno-common"/>
+        <property key="toplevel-reordering" value=""/>
+        <property key="unaligned-access" value=""/>
+        <property key="use-cci" value="false"/>
+        <property key="use-iar" value="false"/>
+        <property key="use-indirect-calls" value="false"/>
+      </C32>
+      <C32-AR>
+        <property key="additional-options-chop-files" value="false"/>
+      </C32-AR>
+      <C32-AS>
+        <property key="assembler-symbols" value=""/>
+        <property key="enable-symbols" value="true"/>
+        <property key="exclude-floating-point-library" value="false"/>
+        <property key="expand-macros" value="false"/>
+        <property key="extra-include-directories-for-assembler" value=""/>
+        <property key="extra-include-directories-for-preprocessor" value=""/>
+        <property key="false-conditionals" value="false"/>
+        <property key="generate-16-bit-code" value="false"/>
+        <property key="generate-micro-compressed-code" value="false"/>
+        <property key="keep-locals" value="false"/>
+        <property key="list-assembly" value="false"/>
+        <property key="list-source" value="false"/>
+        <property key="list-symbols" value="false"/>
+        <property key="oXC32asm-list-to-file" value="false"/>
+        <property key="omit-debug-dirs" value="false"/>
+        <property key="omit-forms" value="false"/>
+        <property key="preprocessor-macros" value=""/>
+        <property key="warning-level" value=""/>
+      </C32-AS>
+      <C32-CO>
+        <property key="coverage-enable" value=""/>
+        <property key="stack-guidance" value="false"/>
+      </C32-CO>
+      <C32-LD>
+        <property key="additional-options-use-response-files" value="false"/>
+        <property key="additional-options-write-sla" value="false"/>
+        <property key="allocate-dinit" value="false"/>
+        <property key="code-dinit" value="false"/>
+        <property key="ebase-addr" value=""/>
+        <property key="enable-check-sections" value="false"/>
+        <property key="exclude-floating-point-library" value="false"/>
+        <property key="exclude-standard-libraries" value="false"/>
+        <property key="extra-lib-directories" value="./"/>
+        <property key="fill-flash-options-addr" value=""/>
+        <property key="fill-flash-options-const" value=""/>
+        <property key="fill-flash-options-how" value="0"/>
+        <property key="fill-flash-options-inc-const" value="1"/>
+        <property key="fill-flash-options-increment" value=""/>
+        <property key="fill-flash-options-seq" value=""/>
+        <property key="fill-flash-options-what" value="0"/>
+        <property key="generate-16-bit-code" value="false"/>
+        <property key="generate-cross-reference-file" value="false"/>
+        <property key="generate-micro-compressed-code" value="false"/>
+        <property key="heap-size" value="512"/>
+        <property key="input-libraries" value=""/>
+        <property key="kseg-length" value=""/>
+        <property key="kseg-origin" value=""/>
+        <property key="linker-symbols" value=""/>
+        <property key="map-file" value="${DISTDIR}/${PROJECTNAME}.${IMAGE_TYPE}.map"/>
+        <property key="no-device-startup-code" value="true"/>
+        <property key="no-startup-files" value="false"/>
+        <property key="oXC32ld-extra-opts" value=""/>
+        <property key="optimization-level" value=""/>
+        <property key="preprocessor-macros"
+                  value="AS_SIZE=0x40000;BOOTPROT_SIZE=0x0;NONSECURE;RS_SIZE=0x8000"/>
+        <property key="remove-unused-sections" value="true"/>
+        <property key="report-memory-usage" value="false"/>
+        <property key="serial-length" value=""/>
+        <property key="serial-origin" value=""/>
+        <property key="stack-size" value=""/>
+        <property key="symbol-stripping" value=""/>
+        <property key="trace-symbols" value=""/>
+        <property key="warn-section-align" value="false"/>
+        <appendMe value="-l:pic32cm_ls00_cnano_secure_sg_veneer.lib"/>
+      </C32-LD>
+      <C32CPP>
+        <property key="additional-warnings" value="false"/>
+        <property key="addresss-attribute-use" value="false"/>
+        <property key="check-new" value="false"/>
+        <property key="eh-specs" value="true"/>
+        <property key="enable-app-io" value="false"/>
+        <property key="enable-omit-frame-pointer" value="false"/>
+        <property key="enable-symbols" value="true"/>
+        <property key="enable-unroll-loops" value="false"/>
+        <property key="exceptions" value="true"/>
+        <property key="exclude-floating-point" value="false"/>
+        <property key="extra-include-directories"
+                  value="../src;../src/config/pic32cm_ls00_cnano;../src/packs/CMSIS/;../src/packs/CMSIS/CMSIS/Core/Include;../src/packs/PIC32CM5164LS00048_DFP"/>
+        <property key="generate-16-bit-code" value="false"/>
+        <property key="generate-micro-compressed-code" value="false"/>
+        <property key="isolate-each-function" value="true"/>
+        <property key="make-warnings-into-errors" value="false"/>
+        <property key="optimization-level" value="-O1"/>
+        <property key="place-data-into-section" value="false"/>
+        <property key="post-instruction-scheduling" value="default"/>
+        <property key="pre-instruction-scheduling" value="default"/>
+        <property key="preprocessor-macros" value=""/>
+        <property key="rtti" value="true"/>
+        <property key="strict-ansi" value="false"/>
+        <property key="toplevel-reordering" value=""/>
+        <property key="unaligned-access" value=""/>
+        <property key="use-cci" value="false"/>
+        <property key="use-iar" value="false"/>
+        <property key="use-indirect-calls" value="false"/>
+      </C32CPP>
+      <C32Global>
+        <property key="common-include-directories" value=""/>
+        <property key="gp-relative-option" value=""/>
+        <property key="legacy-libc" value="false"/>
+        <property key="mdtcm" value=""/>
+        <property key="mitcm" value=""/>
+        <property key="mstacktcm" value="false"/>
+        <property key="omit-pack-options" value="1"/>
+        <property key="relaxed-math" value="false"/>
+        <property key="save-temps" value="false"/>
+        <property key="stack-smashing" value=""/>
+        <property key="wpo-lto" value="false"/>
+      </C32Global>
+      <Tool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
+        <property key="communication.activationmode" value="nohv"/>
+        <property key="communication.interface" value="swd"/>
+        <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
+        <property key="firmware.path"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="firmware.toolpack"
+                  value="Press to select which tool pack to use"/>
+        <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="0-7ffff"/>
+        <property key="poweroptions.powerenable" value="false"/>
+        <property key="programmerToGoFilePath"
+                  value="C:/Users/x55309/Documents/adc/adc_sample/firmware/adc/pic32cm_ls00_cnano.X/debug/pic32cm_ls00_cnano/pic32cm_ls00_cnano_ptg"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
+        <property key="script.log_level" value="1"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
+        <property key="voltagevalue" value=""/>
+        <property key="x.erase.key" value="0xFFFFFFFF,0xFFFFFFFF,0xFFFFFFFF,0xFFFFFFFF"/>
+        <property key="x.erase.type" value="ChipEraseAll"/>
+        <property key="x.tz_computecrc" value="true"/>
+        <property key="x.tz_computesign" value="true"/>
+      </Tool>
+      <nEdbgTool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="arm.use_vtor" value="false"/>
+        <property key="arm.vtor_adr" value="exception_table"/>
+        <property key="communication.activationmode" value="nohv"/>
+        <property key="communication.interface" value="swd"/>
+        <property key="communication.speed" value="2.000"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
+        <property key="event.recorder.enabled" value="false"/>
+        <property key="event.recorder.scvd.files" value=""/>
+        <property key="firmware.path"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="firmware.toolpack"
+                  value="Press to select which tool pack to use"/>
+        <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
+        <property key="lastid" value=""/>
+        <property key="loader.board_file" value="${ProjectDir}/board.xboard"/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="0-7ffff"/>
+        <property key="poweroptions.powerenable" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value=""/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="script.has_reset" value="true"/>
+        <property key="script.log_level" value="1"/>
+        <property key="script.reset_delay" value="0"/>
+        <property key="script.show_output" value="false"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
+        <property key="voltagevalue" value=""/>
+        <property key="x.erase.key" value="0xFFFFFFFF,0xFFFFFFFF,0xFFFFFFFF,0xFFFFFFFF"/>
+        <property key="x.erase.type" value="ChipEraseAll"/>
+        <property key="x.tz_computecrc" value="true"/>
+        <property key="x.tz_computesign" value="true"/>
+      </nEdbgTool>
+    </conf>
+  </confs>
+</configurationDescriptor>
