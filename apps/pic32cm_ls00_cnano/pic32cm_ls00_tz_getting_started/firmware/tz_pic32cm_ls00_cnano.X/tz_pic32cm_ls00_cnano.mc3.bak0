@@ -1,0 +1,9 @@
+<config configName="default" projectName="tz_pic32cm_ls00_cnano" configVersion="1.1" device="PIC32CM5164LS00048" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.1">
+   <usedPackages class="java.util.ArrayList"/>
+   <usedClasses class="java.util.TreeMap"/>
+   <usedLibraries class="java.util.ArrayList">
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.5.2"/>
+   </usedLibraries>
+   <tokenMap class="java.util.TreeMap"/>
+   <generatedFileHashHistoryMap class="java.util.TreeMap"/>
+</config>
