@@ -18,6 +18,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 | 3 | [Getting Started with FreeRTOS](./getting_started_freertos/readme.md) |  [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/getting_started_freertos.zip) |
 | 4 | [XDMAC with QSPI](./qspi_xdmac_read_write/readme.md) |  [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/qspi_xdmac_read_write.zip) |
 | 5 | [Ethernet bootloader - File Transfer Protocol](./ftp_bootloader/readme.md) |  [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/ftp_bootloader.zip) |
+| 6 | [TCM Performance](./same70_tcm_performance/readme.md) |  [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sam_e70_tcm_performance.zip) |
 
 
 ### More Application Demos

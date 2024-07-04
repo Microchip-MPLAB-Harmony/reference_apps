@@ -14,7 +14,7 @@ This repository contains the MPLAB® Harmony 3 reference applications developed 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
 | 1 | [Getting Started Extended](./pic32cz_ca90_getting_started_ext/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cz_ca90_getting_started_ext.zip) |
-
+| 2 | [TCM Performance](./pic32cz_ca90_tcm_performance/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cz_ca90_tcm_performance.zip) |
 
 ### More Application Demos
 
