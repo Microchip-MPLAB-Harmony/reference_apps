@@ -35,6 +35,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 | 23 | [Eink E-Paper display 2,9" 296x128 dots Click Example](./eink_epaper_2_9_296_128/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/eink_epaper_2_9_296_128.zip)  |
 | 24 | [13DOF Click Example](./13dof/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/13dof.zip)  |
 | 25 | [microSD Click Example](./microsd/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/microsd.zip)  |
+| 26 | [DRAM Click Example](./dram/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/dram.zip)  |
 
 ### More Application Demos
 
