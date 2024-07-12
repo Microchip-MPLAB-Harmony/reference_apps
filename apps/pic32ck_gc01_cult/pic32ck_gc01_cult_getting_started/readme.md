@@ -29,7 +29,9 @@ nav_order: 1
 	- DMA
 - System Services
 	- STDIO
-	
+<div align="center">
+<img src = "images/project_graph.png">
+</div>
 
 ## Hardware Used:
 
@@ -46,13 +48,16 @@ Refer [Project Manifest](./firmware/src/config/pic32ck_gc01_cult/harmony-manifes
 
 <span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
 
+
+
+
 ## Setup 1:
-- Connect the Type-A male to Micro-B USB cable to Micro-B DEBUG USB port (J900) to program and debug the PIC32CK GC Curiosity Ultra Development Board.
+- Connect the Type-A male to the host computer and Micro-B USB to the Micro-B DEBUG USB port (J900) for programming and debugging the PIC32CK GC Curiosity Ultra Development Board.
   
-  <img src = "images/hardware_setup1.png">
+<img src = "images/hardware_setup1.png">
 
 ## Setup 2:  
-- Connect the PIC32CK GC01 Curiosity Ultra Development Board to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B Debug USB (J900) port.
+- Connect the PIC32CK GC01 Curiosity Ultra Development Board to the host computer using a Type-A male to micro-B USB cable and insert the cable into the Micro-B Debug USB (J900) port to establish the device as a USB connection.
 - To test the extended functionality, connect the I/O1 Xplained Pro Extension Kit (Temperature Sensor) to J500 (Extension Header 1 (EXT1)) on the PIC32CK GC01 Curiosity Ultra Development Board 
 
 <img src = "images/hardware_setup2.png">
