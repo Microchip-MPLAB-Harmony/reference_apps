@@ -13,6 +13,7 @@ This folder contains the MPLAB® Harmony 3 reference applications developed on [
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
 | 1 | [Getting Started](./pic32cm_ls00_tz_getting_started/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cm_ls00_tz_getting_started.zip)|
+| 2 | [MIcrochip Academic Program example applications](./pic32cm_ls00_map_examples/readme.md) | |
 
 ### More Application Demos
 
