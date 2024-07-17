@@ -46,7 +46,7 @@ Refer [Project Manifest](./firmware/src/config/pic32ck_gc01_cult/harmony-manifes
 
 <span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
 
-**Note:** This demo works with PKOB4 tool pack v1.14.1168
+**Note:** The application requires the installation of the PKOB4 tool pack v1.14.1168. Please ensure this tool pack version is installed and used accordingly.
 
 ## Setup 1:
 - Connect the Type-A male to Micro-B USB cable to Micro-B DEBUG USB port (J900) to program and debug the PIC32CK GC Curiosity Ultra Development Board.
@@ -81,7 +81,7 @@ The pre-built hex file can be programmed by following the below steps
 - Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below  
 
-**Note**: If you see a programming error, Use the alternate programming option with [MPLAB® PICkit™ 4 In-Circuit Debugger](https://www.microchip.com/en-us/development-tool/pg164140)
+**Note**: If a programming issue is encountered, please install PKOB4 tool pack v1.14.1168 from Tools->Packs.
 
 ## Running the Demo:
 - Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button).
@@ -108,8 +108,9 @@ The pre-built hex file can be programmed by following the below steps
 		- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://microchipdeveloper.com/harmony3:update-and-configure-existing-mhc-proj-to-mcc-proj)
 		- [Getting Started with MPLAB Harmony v3 Using MPLAB Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
 		- [MPLAB Code Configurator Content Manager for MPLAB Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
-		- [Arm® TrustZone® Technology Getting Started Application on PIC32CK SG01 (Cortex®-M33) MCUs](https://developerhelp.microchip.com/xwiki/bin/view/software-tools/harmony/pic32ck-trustzone-getting-started-training-module/)	
-		- [TrustZone Getting Started on PIC32CK SG01 Curiosity Ultra Development Board](https://www.microchip.com/content/dam/mchp/softwarelibrary/mcu32/pic32ck_sg01_cult_tz_getting_started.zip)	
+- The PIC32CK SG01 MCU, part of the same family, employs TrustZone technology to Secure - memory, peripherals, and I/O against unauthorized access.
+	- [Training Module: Arm® TrustZone® Technology Getting Started Application on PIC32CK SG01 (Cortex®-M33) MCUs](https://developerhelp.microchip.com/xwiki/bin/view/software-tools/harmony/pic32ck-trustzone-getting-started-training-module/) 
+		- Download the[ Application Demo: TrustZone Getting Started on PIC32CK SG01 Curiosity Ultra Development Board](https://www.microchip.com/content/dam/mchp/softwarelibrary/mcu32/pic32ck_sg01_cult_tz_getting_started.zip)
 		
 
 ## Revision:
