@@ -2,7 +2,7 @@
 grand_parent: Reference Applications
 parent: PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit
 title: TrustZone basic demonstration
-nav_order: 3
+nav_order: 16
 ---
 
 <img src = "images/microchip_logo.png">

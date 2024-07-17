@@ -2,7 +2,7 @@
 grand_parent: Reference Applications
 parent: PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit
 title: TC Timer Mode
-nav_order: 2
+nav_order: 14
 ---
 
 <img src = "images/microchip_logo.png">
@@ -14,7 +14,7 @@ nav_order: 2
 -----
 ## Description:
 
-> TC channel is configured in timer mode and generates periodic interrupt. LED is toggled in the interrupt handler to indicate periodic callback you can see the LED(LED1) blink on the PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit.
+> This application show how to use the Timer Counter (TC) peripheral to generate periodic timeouts. The TC channel is configured in timer mode and generates periodic interrupt. LED is toggled in the interrupt handler to indicate periodic callback you can see the LED(LED1) blink on the PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit.
 
 
 ## Modules/Technology Used:

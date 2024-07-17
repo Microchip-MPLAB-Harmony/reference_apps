@@ -2,7 +2,7 @@
 grand_parent: Reference Applications
 parent: PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit
 title: SERCOM USART Blocking
-nav_order: 5
+nav_order: 17
 ---
 
 <img src = "images/microchip_logo.png">

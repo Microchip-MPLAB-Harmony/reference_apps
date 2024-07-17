@@ -2,7 +2,7 @@
 grand_parent: Reference Applications
 parent: PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit
 title: SERCOM I2C EEPROM read write
-nav_order: 6
+nav_order: 11
 ---
 
 <img src = "images/microchip_logo.png">
@@ -14,7 +14,7 @@ nav_order: 6
 -----
 ## Description:
 
-> This example uses the I2C peripheral library to write an array of values to the I2C Serial EEPROM and verify the value written by reading the values back and comparing it to the value written and the LED indicates the success or failure by turning ON and OFF the LED(LED1) on the PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit.
+> This example shows how to use the I2C peripheral to write an array of values to the I2C Serial EEPROM and verify the value written by reading the values back and comparing it to the value written and the LED indicates the success or failure by turning ON and OFF the LED(LED1) on the PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit.
 
 
 ## Modules/Technology Used:
@@ -32,7 +32,7 @@ The MCC Harmony project graph would look like this:
 ## Hardware Used:
 
 - [PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/PartNO/EV41C56A)
-- [Curiosity Nano Explorer](https://www.microchip.com/)
+- [Curiosity Nano Explorer](https://www.microchip.com/en-us/development-tool/EV58G97A)
 
 ## Software/Tools Used:
 <span style="color:blue"> This project has been verified to work with the following versions of software tools:</span>  

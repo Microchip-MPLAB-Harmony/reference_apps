@@ -2,7 +2,7 @@
 grand_parent: Reference Applications
 parent: PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit
 title: Systic Periodic Interrupt
-nav_order: 1
+nav_order: 13
 ---
 
 <img src = "images/microchip_logo.png">
@@ -14,7 +14,7 @@ nav_order: 1
 -----
 ## Description:
 
-> This example application configures how the SysTick Peripheral Library to generate periodic ticks. The application registers a periodic timeout callback. It toggles an LED every time the callback is triggered you can see the LED(LED1) blink on the PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit.
+> This example application shows how to use the SysTick Peripheral to generate periodic ticks. The application registers a periodic timeout callback. It toggles an LED every time the callback is triggered you can see the LED(LED1) blink on the PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit.
 
 
 ## Modules/Technology Used:

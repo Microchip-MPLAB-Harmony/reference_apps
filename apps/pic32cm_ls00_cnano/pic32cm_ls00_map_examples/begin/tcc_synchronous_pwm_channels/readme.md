@@ -2,7 +2,7 @@
 grand_parent: Reference Applications
 parent: PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit
 title: TCC PWM generation
-nav_order: 4
+nav_order: 15
 ---
 
 <img src = "images/microchip_logo.png">
@@ -14,7 +14,7 @@ nav_order: 4
 -----
 ## Description:
 
-> The Timer Counter for Control Applications (TCC) module is configured to generate synchronous 2 or 3 phase PWM signals with dead time. The duty cycle of the PWM signals is updated in the period interrupt handler.
+> This application example shows how to use Timer Counter for Control Applications (TCC) module to generate PWM signals. The TCC is configured to generate synchronous 2 or 3 phase PWM signals with dead time. The duty cycle of the PWM signals is updated in the period interrupt handler.
 
 
 ## Modules/Technology Used:
