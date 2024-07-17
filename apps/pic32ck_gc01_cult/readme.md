@@ -9,11 +9,11 @@ nav_order: 1
 <h4 align="left"> <img src = "image.png"> </h4>
 
 
-This repository contains the MPLAB® Harmony 3 reference applications developed on [PIC32CK GC01 Curiosity Ultra Development Board](https://www.microchip.com/en-us/development-tool/ev44p93a)   
+This repository contains the MPLAB® Harmony 3 reference applications developed on [PIC32CK GC01 Curiosity Ultra Development Board](https://www.microchip.com/en-us/development-tool/ea23j82a)   
 
 |SI No| Demo Name | Download Link |
 | --- | --- | -- |
-| 1 | [Getting Started ](./pic32ck_gc01_cult_getting_started/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/getting_started_pic32ck_gc01_ext.zip) |
+| 1 | [Getting Started ](./getting_started_pic32ck_gc01_cult/readme.md) | [Click Here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/getting_started_pic32ck_gc01_ext.zip) |
 
 
 ### More Application Demos
