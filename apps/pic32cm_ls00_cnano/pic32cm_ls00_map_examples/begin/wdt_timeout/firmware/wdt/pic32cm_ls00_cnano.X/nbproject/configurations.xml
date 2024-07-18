@@ -218,14 +218,14 @@
         <targetDevice>PIC32CM5164LS00048</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>noID</platformTool>
+        <platformTool>nEdbgTool</platformTool>
         <languageToolchain>XC32</languageToolchain>
         <languageToolchainVersion>4.35</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
+        <pack name="PIC32CM-LS_DFP" vendor="Microchip" version="1.2.274"/>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
-        <pack name="PIC32CM-LS_DFP" vendor="Microchip" version="1.3.278"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>

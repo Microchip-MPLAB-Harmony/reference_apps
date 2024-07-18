@@ -73,7 +73,7 @@ int main ( void )
     printf ("\n\r -------------------------------------------------------------");
     printf ("\n\r                           WDT DEMO                           ");
     printf ("\n\r -------------------------------------------------------------");
-    printf ("\n\r Press SW0 to emulate deadlock "); 
+    printf ("\n\r Press SW1 to emulate deadlock "); 
     SYSTICK_TimerStart();
     EIC_CallbackRegister(EIC_PIN_2,EIC_User_Handler, 0);
     switch_pressed = false;

@@ -27,7 +27,7 @@ nav_order: 9
 	- SYSTICK
 	- WDT
 	
-	The MCC Harmony project graph with all the components would look like this; 
+	The MCC Harmony project graph with all the components would look like this:
 
     <img src = "images/project_graph.png" width="650" height="460" align="center">
 
@@ -78,17 +78,17 @@ The pre-built hex file can be programmed by following the below steps.
   <img src = "images/LS00_cnano_output.png" width="650" height="220" align="middle">
 - The LED1 should be blinking and the console displays the following message
 
-  <img src = "images/output1.png" width="650" height="100" align="middle">
+  <img src = "images/output1.png" width="650" height="170" align="middle">
 - Press the switch SW1 on the PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit to put the system in deadlock 
 - LED1 should stop blinking and the console displays the following message
 
-  <img src = "images/output2.png" width="650" height="120" align="middle"> 
+  <img src = "images/output2.png" width="650" height="130" align="middle"> 
 - WDT will reset the device in four seconds and the demonstration should restart
 
 ## Tera Term Output:
 - The following output is displayed in serial terminal
 
-	<img src = "images/tera_term.png" width="650" height="270" align="middle">
+	<img src = "images/tera_term.png" width="650" height="260" align="middle">
 
 ## Comments:
 - Reference Training Module: [Arm TrustZone Getting Started Application on PIC32CM LS60 (Arm Cortex-M23) MCUs](https://developerhelp.microchip.com/xwiki/bin/view/software-tools/harmony/pic32cm-trustzone-getting-started-training-module/)
