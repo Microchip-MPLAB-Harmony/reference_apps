@@ -27,7 +27,7 @@ nav_order: 3
 	- EIC
 	- PORT
 
-	The MCC Harmony project graph with all the components would look like this; 
+	The MCC Harmony project graph with all the components would look like this:
 
     <img src = "images/project_graph.png" width="650" height="440" align="center">
 
@@ -48,7 +48,7 @@ Refer [Project Manifest](./firmware/dac/src/config/pic32cm_ls00_cnano/harmony-ma
 ## Setup:
 - Connect the PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port  
 - To establish the connection with the Saleae Logic Analyzer to the Host PC
-- Configure the Channel 0 is PA02 to monitor the DAC output
+- Configure PA02 as channel 0 to monitor the DAC output
 
   <img src = "images/hardware_setup.png" width="650" height="330" align="middle">
 ## Programming hex file:
