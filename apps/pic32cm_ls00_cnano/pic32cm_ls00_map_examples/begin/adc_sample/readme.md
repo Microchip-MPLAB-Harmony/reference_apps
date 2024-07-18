@@ -29,7 +29,7 @@ nav_order: 1
 	- SYSTICK
 	- PORT
 
-	The MCC Harmony project graph with all the components would look like this; 
+	The MCC Harmony project graph with all the components would look like this: 
 
     <img src = "images/project_graph.png" width="650" height="470" align="center">
 
@@ -47,9 +47,17 @@ Refer [Project Manifest](./firmware/adc/src/config/pic32cm_ls00_cnano/harmony-ma
 <span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
 
 ## Setup:
-- Connect the PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port  
+- Analog input (AIN1) is fed from the DAC output
+	- Analog input AIN1 is mapped to Port Pin PA03
+	- DAC output DAC is mapped to Port Pin PA02
+	- Use a jumper to Connect Pin PA02 to Pin PA03
 
-  <img src = "images/LS00_cnano_setup.png" width="650" height="200" align="middle">
+	<img src = "images/LS00_cnano_setup.png" width="670" height="220" align="middle"> 
+
+
+- Connect the PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit to the Host PC as a USB Device through a Type-A male to micro-B USB cable connected to Micro-B USB (Debug USB) port    
+
+
 ## Programming hex file:
 The pre-built hex file can be programmed by following the below steps.  
 
@@ -76,9 +84,11 @@ The pre-built hex file can be programmed by following the below steps.
 ## Running the Demo:
 - Open the Tera Term/PuTTY terminal application on your PC (from the Windows® Start menu by pressing the Start button)
 - Set the baud rate to 115200
+- Press SW1 to change the DAC value
+- ADC input voltage changes by 0.1 V when the switch is pressed, from 0.0 V to 3.3 V
 
 ## Tera Term Output:
-- Observe the output message on console (Tera Term).
+- Console displays the ADC count and the ADC input voltage as shown below:
 
    <img src = "images/tera.png" width="650" height="210" align="middle">
 
