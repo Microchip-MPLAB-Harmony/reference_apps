@@ -24,7 +24,7 @@ nav_order: 5
 	- EIC
 	- PORT
 
-	The MCC Harmony project graph with all the components would look like this; 
+	The MCC Harmony project graph with all the components would look like this:
 
     <img src = "images/project_graph.png" width="650" height="470" align="center">
 
