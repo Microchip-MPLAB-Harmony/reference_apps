@@ -32,7 +32,7 @@ nav_order: 7
 	- SYSTICK
 	- WDT
 
-	The MCC Harmony project graph with all the components would look like this; 
+	The MCC Harmony project graph with all the components would look like this: 
 
     <img src = "images/project_graph.png" width="650" height="430" align="center">
 
@@ -87,13 +87,13 @@ The pre-built hex file can be programmed by following the below steps.
   
   **NOTE**: *The PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit does not include a reset button. Therefore, the device can be reset by executing the reset command in the CMD prompt.*
 - The following message is displayed on the serial terminal
-  <img src = "images/console_output_1.png" width="650" height="280" align="middle">
+  <img src = "images/console_output_1.png" width="650" height="250" align="middle">
 - Watchdog timer is fed periodically using System Timer (SysTick) to prevent the WDT reset and the LED1 is toggled
-- Press the switch SW1 on the PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit to put the system in deadlock (LED1 should stop blinking)
+- Press the SW1 on the PIC32CM LS00 Curiosity Nano+ Touch Evaluation Kit to put the system in deadlock (LED1 should stop blinking)
 - WDT will reset the device in four seconds and the demonstration should restart
  
 ## Tera Term Output:
-- <img src = "images/console_output_2.png" width="650" height="330" align="middle">
+- <img src = "images/console_output_2.png" width="650" height="340" align="middle">
 
 ## Comments:
 - Reference Training Module: [Arm TrustZone Getting Started Application on PIC32CM LS60 (Arm Cortex-M23) MCUs](https://developerhelp.microchip.com/xwiki/bin/view/software-tools/harmony/pic32cm-trustzone-getting-started-training-module/)

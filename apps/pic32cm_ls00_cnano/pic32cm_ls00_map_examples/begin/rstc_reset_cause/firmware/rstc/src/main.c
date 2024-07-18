@@ -74,7 +74,7 @@ int main ( void )
     printf ("\n\r                           RSTC DEMO                           ");
     printf ("\n\r -------------------------------------------------------------");
     printf ("\n\r Press RESET button to emulate External Reset"); 
-    printf ("\n\r Press SW0 button to emulate Watchdog Timer Reset"); 
+    printf ("\n\r Press SW1 button to emulate Watchdog Timer Reset"); 
     printf ("\n\r Load and run in debug mode to emulate System Reset"); 
     printf ("\n\r ------------------------------------------------------------- \r\n");
     
