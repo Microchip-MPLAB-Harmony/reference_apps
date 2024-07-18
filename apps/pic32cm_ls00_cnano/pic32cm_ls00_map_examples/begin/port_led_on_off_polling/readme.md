@@ -23,7 +23,7 @@ nav_order: 6
 	- PM
 	- PORT
 	
-	The MCC Harmony project graph with all the components would look like this; 
+	The MCC Harmony project graph with all the components would look like this: 
 
     <img src = "images/project_graph.png" width="650" height="350" align="center">
 
