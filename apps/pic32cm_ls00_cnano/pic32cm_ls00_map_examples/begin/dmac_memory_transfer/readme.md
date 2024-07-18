@@ -27,7 +27,7 @@ nav_order: 4
 	- SYSTICK
 	- DMAC
 	
-	The MCC Harmony project graph with all the components would look like this; 
+	The MCC Harmony project graph with all the components would look like this:
 
     <img src = "images/project_graph.png" width="650" height="400" align="center">
 
