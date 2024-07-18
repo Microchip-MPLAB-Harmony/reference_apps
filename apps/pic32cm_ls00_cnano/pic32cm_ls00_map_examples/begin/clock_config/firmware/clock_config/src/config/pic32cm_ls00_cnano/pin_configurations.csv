@@ -24,11 +24,11 @@ Pin Number,Pin ID,Custom Name,Function,Mode, Direction,Latch,Pull Up,Pull Down,D
 29,PA20,,Available,,,,,,NORMAL
 30,PA21,,Available,,,,,,NORMAL
 31,PA22,,Available,,,,,,NORMAL
-32,PA23,,GCLK_IO1,Digital,High Impedance,n/a,No,No,NORMAL
+32,PA23,,Available,,,,,,NORMAL
 33,PA24,,Available,,,,,,NORMAL
 34,PA25,,Available,,,,,,NORMAL
 37,PB22,,Available,,,,,,NORMAL
-38,PB23,,Available,,,,,,NORMAL
+38,PB23,,GCLK_IO1,Digital,High Impedance,n/a,No,No,NORMAL
 45,PA30,,Available,,,,,,NORMAL
 46,PA31,,Available,,,,,,NORMAL
 47,PB02,,Available,,,,,,NORMAL

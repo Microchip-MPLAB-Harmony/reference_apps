@@ -4,17 +4,17 @@
 
 
 project: clock_config
-creation_date: 2024-06-13T14:51:08.243+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2024-06-10T12:06:43.206+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mcc_mode: IDE            # [IDE|Standalone|Headless]
 mcc_version: v5.5.1
 mcc_core_version: v5.7.1
 mplabx_version: v6.20        # if MPLAB X plugin only
 harmony_version: v1.5.2
-compiler: XC32 4.21
+compiler: XC32 4.40
 
 modules:
-    - {name: "csp", version: "master"}
+    - {name: "csp", version: "v3.18.5"}
     - {name: "CMSIS_5", version: "5.9.0"}
 
 packs:
