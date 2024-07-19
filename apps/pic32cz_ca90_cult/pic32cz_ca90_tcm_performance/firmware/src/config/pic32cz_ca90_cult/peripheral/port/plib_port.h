@@ -155,36 +155,6 @@ PERIPHERAL_FUNCTION_N = 0xD,
 
 typedef enum
 {
-    /* PA00 pin */
-    PORT_PIN_PA00 = 0U,
-
-    /* PA01 pin */
-    PORT_PIN_PA01 = 1U,
-
-    /* PA02 pin */
-    PORT_PIN_PA02 = 2U,
-
-    /* PA03 pin */
-    PORT_PIN_PA03 = 3U,
-
-    /* PA04 pin */
-    PORT_PIN_PA04 = 4U,
-
-    /* PA05 pin */
-    PORT_PIN_PA05 = 5U,
-
-    /* PA06 pin */
-    PORT_PIN_PA06 = 6U,
-
-    /* PA07 pin */
-    PORT_PIN_PA07 = 7U,
-
-    /* PA08 pin */
-    PORT_PIN_PA08 = 8U,
-
-    /* PA09 pin */
-    PORT_PIN_PA09 = 9U,
-
     /* PA10 pin */
     PORT_PIN_PA10 = 10U,
 
@@ -250,36 +220,6 @@ typedef enum
 
     /* PA31 pin */
     PORT_PIN_PA31 = 31U,
-
-    /* PB00 pin */
-    PORT_PIN_PB00 = 32U,
-
-    /* PB01 pin */
-    PORT_PIN_PB01 = 33U,
-
-    /* PB02 pin */
-    PORT_PIN_PB02 = 34U,
-
-    /* PB03 pin */
-    PORT_PIN_PB03 = 35U,
-
-    /* PB04 pin */
-    PORT_PIN_PB04 = 36U,
-
-    /* PB05 pin */
-    PORT_PIN_PB05 = 37U,
-
-    /* PB06 pin */
-    PORT_PIN_PB06 = 38U,
-
-    /* PB07 pin */
-    PORT_PIN_PB07 = 39U,
-
-    /* PB08 pin */
-    PORT_PIN_PB08 = 40U,
-
-    /* PB09 pin */
-    PORT_PIN_PB09 = 41U,
 
     /* PB10 pin */
     PORT_PIN_PB10 = 42U,
@@ -347,36 +287,6 @@ typedef enum
     /* PB31 pin */
     PORT_PIN_PB31 = 63U,
 
-    /* PC00 pin */
-    PORT_PIN_PC00 = 64U,
-
-    /* PC01 pin */
-    PORT_PIN_PC01 = 65U,
-
-    /* PC02 pin */
-    PORT_PIN_PC02 = 66U,
-
-    /* PC03 pin */
-    PORT_PIN_PC03 = 67U,
-
-    /* PC04 pin */
-    PORT_PIN_PC04 = 68U,
-
-    /* PC05 pin */
-    PORT_PIN_PC05 = 69U,
-
-    /* PC06 pin */
-    PORT_PIN_PC06 = 70U,
-
-    /* PC07 pin */
-    PORT_PIN_PC07 = 71U,
-
-    /* PC08 pin */
-    PORT_PIN_PC08 = 72U,
-
-    /* PC09 pin */
-    PORT_PIN_PC09 = 73U,
-
     /* PC10 pin */
     PORT_PIN_PC10 = 74U,
 
@@ -440,36 +350,6 @@ typedef enum
     /* PC31 pin */
     PORT_PIN_PC31 = 95U,
 
-    /* PD00 pin */
-    PORT_PIN_PD00 = 96U,
-
-    /* PD01 pin */
-    PORT_PIN_PD01 = 97U,
-
-    /* PD02 pin */
-    PORT_PIN_PD02 = 98U,
-
-    /* PD03 pin */
-    PORT_PIN_PD03 = 99U,
-
-    /* PD04 pin */
-    PORT_PIN_PD04 = 100U,
-
-    /* PD05 pin */
-    PORT_PIN_PD05 = 101U,
-
-    /* PD06 pin */
-    PORT_PIN_PD06 = 102U,
-
-    /* PD07 pin */
-    PORT_PIN_PD07 = 103U,
-
-    /* PD08 pin */
-    PORT_PIN_PD08 = 104U,
-
-    /* PD09 pin */
-    PORT_PIN_PD09 = 105U,
-
     /* PD10 pin */
     PORT_PIN_PD10 = 106U,
 
@@ -527,98 +407,11 @@ typedef enum
     /* PD29 pin */
     PORT_PIN_PD29 = 125U,
 
-    /* PE00 pin */
-    PORT_PIN_PE00 = 128U,
-
-    /* PE01 pin */
-    PORT_PIN_PE01 = 129U,
-
-    /* PE02 pin */
-    PORT_PIN_PE02 = 130U,
-
-    /* PE03 pin */
-    PORT_PIN_PE03 = 131U,
-
-    /* PE04 pin */
-    PORT_PIN_PE04 = 132U,
-
-    /* PE05 pin */
-    PORT_PIN_PE05 = 133U,
-
-    /* PE06 pin */
-    PORT_PIN_PE06 = 134U,
-
-    /* PE07 pin */
-    PORT_PIN_PE07 = 135U,
-
-    /* PE08 pin */
-    PORT_PIN_PE08 = 136U,
-
-    /* PE09 pin */
-    PORT_PIN_PE09 = 137U,
-
     /* PE10 pin */
     PORT_PIN_PE10 = 138U,
 
     /* PE11 pin */
     PORT_PIN_PE11 = 139U,
-
-    /* PF00 pin */
-    PORT_PIN_PF00 = 160U,
-
-    /* PF01 pin */
-    PORT_PIN_PF01 = 161U,
-
-    /* PF02 pin */
-    PORT_PIN_PF02 = 162U,
-
-    /* PF03 pin */
-    PORT_PIN_PF03 = 163U,
-
-    /* PF04 pin */
-    PORT_PIN_PF04 = 164U,
-
-    /* PF05 pin */
-    PORT_PIN_PF05 = 165U,
-
-    /* PF06 pin */
-    PORT_PIN_PF06 = 166U,
-
-    /* PF07 pin */
-    PORT_PIN_PF07 = 167U,
-
-    /* PF08 pin */
-    PORT_PIN_PF08 = 168U,
-
-    /* PG00 pin */
-    PORT_PIN_PG00 = 192U,
-
-    /* PG01 pin */
-    PORT_PIN_PG01 = 193U,
-
-    /* PG02 pin */
-    PORT_PIN_PG02 = 194U,
-
-    /* PG03 pin */
-    PORT_PIN_PG03 = 195U,
-
-    /* PG04 pin */
-    PORT_PIN_PG04 = 196U,
-
-    /* PG05 pin */
-    PORT_PIN_PG05 = 197U,
-
-    /* PG06 pin */
-    PORT_PIN_PG06 = 198U,
-
-    /* PG07 pin */
-    PORT_PIN_PG07 = 199U,
-
-    /* PG08 pin */
-    PORT_PIN_PG08 = 200U,
-
-    /* PG09 pin */
-    PORT_PIN_PG09 = 201U,
 
     /* PG10 pin */
     PORT_PIN_PG10 = 202U,

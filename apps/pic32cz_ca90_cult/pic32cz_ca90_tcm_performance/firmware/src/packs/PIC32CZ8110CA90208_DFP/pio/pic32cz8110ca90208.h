@@ -1,26 +1,23 @@
 /*
  * Peripheral I/O description for PIC32CZ8110CA90208
  *
- * Copyright (c) 2023 Microchip Technology Inc. and its subsidiaries.
+ * Copyright (c) 2024 Microchip Technology Inc. and its subsidiaries.
  *
- * Subject to your compliance with these terms, you may use Microchip software and any derivatives
- * exclusively with Microchip products. It is your responsibility to comply with third party license
- * terms applicable to your use of third party software (including open source software) that may
- * accompany Microchip software.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATUTORY,
- * APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND
- * FITNESS FOR A PARTICULAR PURPOSE.
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
- * IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE, INCIDENTAL OR CONSEQUENTIAL
- * LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF
- * MICROCHIP HAS BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE FULLEST EXTENT
- * ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT
- * EXCEED THE AMOUNT OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  *
  */
 
-/* file generated from device description version 2023-05-18T19:14:33Z */
+/* file generated from device description file (ATDF) version 2024-06-28T20:38:26Z */
 #ifndef _PIC32CZ8110CA90208_GPIO_H_
 #define _PIC32CZ8110CA90208_GPIO_H_
 
@@ -616,20 +613,10 @@
 #define PINMUX_PC04H_CAN0_RX                       ((PIN_PC04H_CAN0_RX << 16) | MUX_PC04H_CAN0_RX)
 #define PORT_PC04H_CAN0_RX                         (_UINT32_(1) << 4)
 
-#define PIN_PC19H_CAN0_RX                          _UINT32_(83)
-#define MUX_PC19H_CAN0_RX                          _UINT32_(7) 
-#define PINMUX_PC19H_CAN0_RX                       ((PIN_PC19H_CAN0_RX << 16) | MUX_PC19H_CAN0_RX)
-#define PORT_PC19H_CAN0_RX                         (_UINT32_(1) << 19)
-
 #define PIN_PC05H_CAN0_TX                          _UINT32_(69)
 #define MUX_PC05H_CAN0_TX                          _UINT32_(7) 
 #define PINMUX_PC05H_CAN0_TX                       ((PIN_PC05H_CAN0_TX << 16) | MUX_PC05H_CAN0_TX)
 #define PORT_PC05H_CAN0_TX                         (_UINT32_(1) << 5)
-
-#define PIN_PC20H_CAN0_TX                          _UINT32_(84)
-#define MUX_PC20H_CAN0_TX                          _UINT32_(7) 
-#define PINMUX_PC20H_CAN0_TX                       ((PIN_PC20H_CAN0_TX << 16) | MUX_PC20H_CAN0_TX)
-#define PORT_PC20H_CAN0_TX                         (_UINT32_(1) << 20)
 
 /* ========== PORT definition for CAN1 peripheral ========== */
 #define PIN_PC06H_CAN1_RX                          _UINT32_(70)
@@ -697,21 +684,6 @@
 #define PORT_PA21H_CAN5_TX                         (_UINT32_(1) << 21)
 
 /* ========== PORT definition for EBI peripheral ========== */
-#define PIN_PC19E_EBI_A2                           _UINT32_(83)
-#define MUX_PC19E_EBI_A2                           _UINT32_(4) 
-#define PINMUX_PC19E_EBI_A2                        ((PIN_PC19E_EBI_A2 << 16) | MUX_PC19E_EBI_A2)
-#define PORT_PC19E_EBI_A2                          (_UINT32_(1) << 19)
-
-#define PIN_PC18E_EBI_A3                           _UINT32_(82)
-#define MUX_PC18E_EBI_A3                           _UINT32_(4) 
-#define PINMUX_PC18E_EBI_A3                        ((PIN_PC18E_EBI_A3 << 16) | MUX_PC18E_EBI_A3)
-#define PORT_PC18E_EBI_A3                          (_UINT32_(1) << 18)
-
-#define PIN_PC17E_EBI_A4                           _UINT32_(81)
-#define MUX_PC17E_EBI_A4                           _UINT32_(4) 
-#define PINMUX_PC17E_EBI_A4                        ((PIN_PC17E_EBI_A4 << 16) | MUX_PC17E_EBI_A4)
-#define PORT_PC17E_EBI_A4                          (_UINT32_(1) << 17)
-
 #define PIN_PC15E_EBI_A5                           _UINT32_(79)
 #define MUX_PC15E_EBI_A5                           _UINT32_(4) 
 #define PINMUX_PC15E_EBI_A5                        ((PIN_PC15E_EBI_A5 << 16) | MUX_PC15E_EBI_A5)
@@ -897,11 +869,6 @@
 #define PINMUX_PC06E_EBI_NBS1_NWR1                 ((PIN_PC06E_EBI_NBS1_NWR1 << 16) | MUX_PC06E_EBI_NBS1_NWR1)
 #define PORT_PC06E_EBI_NBS1_NWR1                   (_UINT32_(1) << 6)
 
-#define PIN_PC20E_EBI_NBS2_NWR2_A1                 _UINT32_(84)
-#define MUX_PC20E_EBI_NBS2_NWR2_A1                 _UINT32_(4) 
-#define PINMUX_PC20E_EBI_NBS2_NWR2_A1              ((PIN_PC20E_EBI_NBS2_NWR2_A1 << 16) | MUX_PC20E_EBI_NBS2_NWR2_A1)
-#define PORT_PC20E_EBI_NBS2_NWR2_A1                (_UINT32_(1) << 20)
-
 #define PIN_PC08E_EBI_NCS0                         _UINT32_(72)
 #define MUX_PC08E_EBI_NCS0                         _UINT32_(4) 
 #define PINMUX_PC08E_EBI_NCS0                      ((PIN_PC08E_EBI_NCS0 << 16) | MUX_PC08E_EBI_NCS0)
@@ -1033,12 +1000,6 @@
 #define PORT_PC02A_EIC_EXTINT1                     (_UINT32_(1) << 2)
 #define PIN_PC02A_EIC_EXTINT_NUM                   _UINT32_(1)  /* EIC signal: PIN_PC02 External Interrupt Line */
 
-#define PIN_PC17A_EIC_EXTINT1                      _UINT32_(81)
-#define MUX_PC17A_EIC_EXTINT1                      _UINT32_(0) 
-#define PINMUX_PC17A_EIC_EXTINT1                   ((PIN_PC17A_EIC_EXTINT1 << 16) | MUX_PC17A_EIC_EXTINT1)
-#define PORT_PC17A_EIC_EXTINT1                     (_UINT32_(1) << 17)
-#define PIN_PC17A_EIC_EXTINT_NUM                   _UINT32_(1)  /* EIC signal: PIN_PC17 External Interrupt Line */
-
 #define PIN_PD01A_EIC_EXTINT1                      _UINT32_(97)
 #define MUX_PD01A_EIC_EXTINT1                      _UINT32_(0) 
 #define PINMUX_PD01A_EIC_EXTINT1                   ((PIN_PD01A_EIC_EXTINT1 << 16) | MUX_PD01A_EIC_EXTINT1)
@@ -1099,12 +1060,6 @@
 #define PORT_PB18A_EIC_EXTINT2                     (_UINT32_(1) << 18)
 #define PIN_PB18A_EIC_EXTINT_NUM                   _UINT32_(2)  /* EIC signal: PIN_PB18 External Interrupt Line */
 
-#define PIN_PC18A_EIC_EXTINT2                      _UINT32_(82)
-#define MUX_PC18A_EIC_EXTINT2                      _UINT32_(0) 
-#define PINMUX_PC18A_EIC_EXTINT2                   ((PIN_PC18A_EIC_EXTINT2 << 16) | MUX_PC18A_EIC_EXTINT2)
-#define PORT_PC18A_EIC_EXTINT2                     (_UINT32_(1) << 18)
-#define PIN_PC18A_EIC_EXTINT_NUM                   _UINT32_(2)  /* EIC signal: PIN_PC18 External Interrupt Line */
-
 #define PIN_PD02A_EIC_EXTINT2                      _UINT32_(98)
 #define MUX_PD02A_EIC_EXTINT2                      _UINT32_(0) 
 #define PINMUX_PD02A_EIC_EXTINT2                   ((PIN_PD02A_EIC_EXTINT2 << 16) | MUX_PD02A_EIC_EXTINT2)
@@ -1164,12 +1119,6 @@
 #define PINMUX_PC03A_EIC_EXTINT3                   ((PIN_PC03A_EIC_EXTINT3 << 16) | MUX_PC03A_EIC_EXTINT3)
 #define PORT_PC03A_EIC_EXTINT3                     (_UINT32_(1) << 3)
 #define PIN_PC03A_EIC_EXTINT_NUM                   _UINT32_(3)  /* EIC signal: PIN_PC03 External Interrupt Line */
-
-#define PIN_PC19A_EIC_EXTINT3                      _UINT32_(83)
-#define MUX_PC19A_EIC_EXTINT3                      _UINT32_(0) 
-#define PINMUX_PC19A_EIC_EXTINT3                   ((PIN_PC19A_EIC_EXTINT3 << 16) | MUX_PC19A_EIC_EXTINT3)
-#define PORT_PC19A_EIC_EXTINT3                     (_UINT32_(1) << 19)
-#define PIN_PC19A_EIC_EXTINT_NUM                   _UINT32_(3)  /* EIC signal: PIN_PC19 External Interrupt Line */
 
 #define PIN_PD03A_EIC_EXTINT3                      _UINT32_(99)
 #define MUX_PD03A_EIC_EXTINT3                      _UINT32_(0) 
@@ -1879,11 +1828,6 @@
 #define PORT_PD14A_EIC_EXTINT15                    (_UINT32_(1) << 14)
 #define PIN_PD14A_EIC_EXTINT_NUM                   _UINT32_(15) /* EIC signal: PIN_PD14 External Interrupt Line */
 
-#define PIN_PC20A_EIC_NMI                          _UINT32_(84)
-#define MUX_PC20A_EIC_NMI                          _UINT32_(0) 
-#define PINMUX_PC20A_EIC_NMI                       ((PIN_PC20A_EIC_NMI << 16) | MUX_PC20A_EIC_NMI)
-#define PORT_PC20A_EIC_NMI                         (_UINT32_(1) << 20)
-
 /* ========== PORT definition for ETH peripheral ========== */
 #define PIN_PD08K_ETH_COL                          _UINT32_(104)
 #define MUX_PD08K_ETH_COL                          _UINT32_(10)
@@ -1980,11 +1924,6 @@
 #define PINMUX_PC05K_ETH_TSUCOMP                   ((PIN_PC05K_ETH_TSUCOMP << 16) | MUX_PC05K_ETH_TSUCOMP)
 #define PORT_PC05K_ETH_TSUCOMP                     (_UINT32_(1) << 5)
 
-#define PIN_PC17K_ETH_TSUCOMP                      _UINT32_(81)
-#define MUX_PC17K_ETH_TSUCOMP                      _UINT32_(10)
-#define PINMUX_PC17K_ETH_TSUCOMP                   ((PIN_PC17K_ETH_TSUCOMP << 16) | MUX_PC17K_ETH_TSUCOMP)
-#define PORT_PC17K_ETH_TSUCOMP                     (_UINT32_(1) << 17)
-
 #define PIN_PA01K_ETH_TXD0                         _UINT32_(1) 
 #define MUX_PA01K_ETH_TXD0                         _UINT32_(10)
 #define PINMUX_PA01K_ETH_TXD0                      ((PIN_PA01K_ETH_TXD0 << 16) | MUX_PA01K_ETH_TXD0)
@@ -2046,16 +1985,6 @@
 #define PORT_PD05K_ETH_TX_CLK                      (_UINT32_(1) << 5)
 
 /* ========== PORT definition for GCLK peripheral ========== */
-#define PIN_PC20M_GCLK_IO0                         _UINT32_(84)
-#define MUX_PC20M_GCLK_IO0                         _UINT32_(12)
-#define PINMUX_PC20M_GCLK_IO0                      ((PIN_PC20M_GCLK_IO0 << 16) | MUX_PC20M_GCLK_IO0)
-#define PORT_PC20M_GCLK_IO0                        (_UINT32_(1) << 20)
-
-#define PIN_PC19M_GCLK_IO1                         _UINT32_(83)
-#define MUX_PC19M_GCLK_IO1                         _UINT32_(12)
-#define PINMUX_PC19M_GCLK_IO1                      ((PIN_PC19M_GCLK_IO1 << 16) | MUX_PC19M_GCLK_IO1)
-#define PORT_PC19M_GCLK_IO1                        (_UINT32_(1) << 19)
-
 #define PIN_PD00M_GCLK_IO2                         _UINT32_(96)
 #define MUX_PD00M_GCLK_IO2                         _UINT32_(12)
 #define PINMUX_PD00M_GCLK_IO2                      ((PIN_PD00M_GCLK_IO2 << 16) | MUX_PD00M_GCLK_IO2)
@@ -2417,40 +2346,20 @@
 #define PINMUX_PC04D_SERCOM1_PAD0                  ((PIN_PC04D_SERCOM1_PAD0 << 16) | MUX_PC04D_SERCOM1_PAD0)
 #define PORT_PC04D_SERCOM1_PAD0                    (_UINT32_(1) << 4)
 
-#define PIN_PC20D_SERCOM1_PAD0                     _UINT32_(84)
-#define MUX_PC20D_SERCOM1_PAD0                     _UINT32_(3) 
-#define PINMUX_PC20D_SERCOM1_PAD0                  ((PIN_PC20D_SERCOM1_PAD0 << 16) | MUX_PC20D_SERCOM1_PAD0)
-#define PORT_PC20D_SERCOM1_PAD0                    (_UINT32_(1) << 20)
-
 #define PIN_PC05D_SERCOM1_PAD1                     _UINT32_(69)
 #define MUX_PC05D_SERCOM1_PAD1                     _UINT32_(3) 
 #define PINMUX_PC05D_SERCOM1_PAD1                  ((PIN_PC05D_SERCOM1_PAD1 << 16) | MUX_PC05D_SERCOM1_PAD1)
 #define PORT_PC05D_SERCOM1_PAD1                    (_UINT32_(1) << 5)
-
-#define PIN_PC19D_SERCOM1_PAD1                     _UINT32_(83)
-#define MUX_PC19D_SERCOM1_PAD1                     _UINT32_(3) 
-#define PINMUX_PC19D_SERCOM1_PAD1                  ((PIN_PC19D_SERCOM1_PAD1 << 16) | MUX_PC19D_SERCOM1_PAD1)
-#define PORT_PC19D_SERCOM1_PAD1                    (_UINT32_(1) << 19)
 
 #define PIN_PC06D_SERCOM1_PAD2                     _UINT32_(70)
 #define MUX_PC06D_SERCOM1_PAD2                     _UINT32_(3) 
 #define PINMUX_PC06D_SERCOM1_PAD2                  ((PIN_PC06D_SERCOM1_PAD2 << 16) | MUX_PC06D_SERCOM1_PAD2)
 #define PORT_PC06D_SERCOM1_PAD2                    (_UINT32_(1) << 6)
 
-#define PIN_PC18D_SERCOM1_PAD2                     _UINT32_(82)
-#define MUX_PC18D_SERCOM1_PAD2                     _UINT32_(3) 
-#define PINMUX_PC18D_SERCOM1_PAD2                  ((PIN_PC18D_SERCOM1_PAD2 << 16) | MUX_PC18D_SERCOM1_PAD2)
-#define PORT_PC18D_SERCOM1_PAD2                    (_UINT32_(1) << 18)
-
 #define PIN_PC07D_SERCOM1_PAD3                     _UINT32_(71)
 #define MUX_PC07D_SERCOM1_PAD3                     _UINT32_(3) 
 #define PINMUX_PC07D_SERCOM1_PAD3                  ((PIN_PC07D_SERCOM1_PAD3 << 16) | MUX_PC07D_SERCOM1_PAD3)
 #define PORT_PC07D_SERCOM1_PAD3                    (_UINT32_(1) << 7)
-
-#define PIN_PC17D_SERCOM1_PAD3                     _UINT32_(81)
-#define MUX_PC17D_SERCOM1_PAD3                     _UINT32_(3) 
-#define PINMUX_PC17D_SERCOM1_PAD3                  ((PIN_PC17D_SERCOM1_PAD3 << 16) | MUX_PC17D_SERCOM1_PAD3)
-#define PORT_PC17D_SERCOM1_PAD3                    (_UINT32_(1) << 17)
 
 /* ========== PORT definition for SERCOM2 peripheral ========== */
 #define PIN_PC08D_SERCOM2_PAD0                     _UINT32_(72)
@@ -3103,11 +3012,6 @@
 #define MUX_PG10F_TCC9_WO4                         _UINT32_(5) 
 #define PINMUX_PG10F_TCC9_WO4                      ((PIN_PG10F_TCC9_WO4 << 16) | MUX_PG10F_TCC9_WO4)
 #define PORT_PG10F_TCC9_WO4                        (_UINT32_(1) << 10)
-
-#define PIN_PC20F_TCC9_WO5                         _UINT32_(84)
-#define MUX_PC20F_TCC9_WO5                         _UINT32_(5) 
-#define PINMUX_PC20F_TCC9_WO5                      ((PIN_PC20F_TCC9_WO5 << 16) | MUX_PC20F_TCC9_WO5)
-#define PORT_PC20F_TCC9_WO5                        (_UINT32_(1) << 20)
 
 #define PIN_PG11F_TCC9_WO5                         _UINT32_(203)
 #define MUX_PG11F_TCC9_WO5                         _UINT32_(5) 

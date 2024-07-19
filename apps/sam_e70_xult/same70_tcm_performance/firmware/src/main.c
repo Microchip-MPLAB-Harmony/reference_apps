@@ -16,6 +16,31 @@
     machines of all modules in the system
  *******************************************************************************/
 
+//DOM-IGNORE-BEGIN
+/*******************************************************************************
+* Copyright (C) 2024 Microchip Technology Inc. and its subsidiaries.
+*
+* Subject to your compliance with these terms, you may use Microchip software
+* and any derivatives exclusively with Microchip products. It is your
+* responsibility to comply with third party license terms applicable to your
+* use of third party software (including open source software) that may
+* accompany Microchip software.
+*
+* THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
+* EXPRESS, IMPLIED OR STATUTORY, APPLY TO THIS SOFTWARE, INCLUDING ANY IMPLIED
+* WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A
+* PARTICULAR PURPOSE.
+*
+* IN NO EVENT WILL MICROCHIP BE LIABLE FOR ANY INDIRECT, SPECIAL, PUNITIVE,
+* INCIDENTAL OR CONSEQUENTIAL LOSS, DAMAGE, COST OR EXPENSE OF ANY KIND
+* WHATSOEVER RELATED TO THE SOFTWARE, HOWEVER CAUSED, EVEN IF MICROCHIP HAS
+* BEEN ADVISED OF THE POSSIBILITY OR THE DAMAGES ARE FORESEEABLE. TO THE
+* FULLEST EXTENT ALLOWED BY LAW, MICROCHIP'S TOTAL LIABILITY ON ALL CLAIMS IN
+* ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT OF FEES, IF ANY,
+* THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS SOFTWARE.
+*******************************************************************************/
+//DOM-IGNORE-END
+
 // *****************************************************************************
 // *****************************************************************************
 // Section: Included Files
@@ -27,12 +52,12 @@
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "definitions.h"                // SYS function prototypes
 
+#define LOCK_ACCESS_KEY         0xC5ACCE55
 #define BUFF_SIZE               0x1000
 
-uint8_t SrcBuff[BUFF_SIZE], DestBuff[BUFF_SIZE];
-
-static uint8_t __attribute__((tcm)) TCM_SrcBuff[BUFF_SIZE], TCM_DestBuff[BUFF_SIZE];
-
+/* 
+ The following buffers and function/APIs are placed in the Flash Memory 
+ */
 
 const char *pBuffer = "The ARM architecture is defined in a hierarchical manner, where the features are described in Chapter A2\
                        Application Level Programmers?Model at the application level, with underlying system support. What\
@@ -81,6 +106,12 @@ const void Flash_memcpy(uint8_t *pDest, uint8_t *pSrc, uint16_t len)
 
 }
 
+/* 
+ The following buffers and function/APIs are placed in the Tightly Coupled Memory 
+ */
+
+static uint8_t __attribute__((tcm)) TCM_SrcBuff[BUFF_SIZE], TCM_DestBuff[BUFF_SIZE];
+
 static void  __attribute__((tcm)) TCM_memcpy(uint8_t *pDest, uint8_t *pSrc, uint16_t len)
 {
     uint32_t i;
@@ -113,6 +144,10 @@ static void  __attribute__((tcm)) TCM_memcpy(uint8_t *pDest, uint8_t *pSrc, uint
     __ISB();
 
 }
+
+/* 
+ The following buffers and function/APIs are placed in the SRAM 
+ */
 
 uint8_t SrcBuff[BUFF_SIZE], DestBuff[BUFF_SIZE];
 
@@ -167,10 +202,11 @@ int main ( void )
     CoreDebug->DEMCR = CoreDebug_DEMCR_TRCENA_Msk;
     __DSB();
 
-    DWT->LAR = 0xC5ACCE55;
+    DWT->LAR = LOCK_ACCESS_KEY;
     __DSB();    
     
-
+    printf("\n\r\n\r Disabled Instruction & Data Cache \n\r\n\r");
+    
     printf(" Code/Buffer - Cycles");
 
     printf("\n\r Flash/SRAM - ");
@@ -204,7 +240,7 @@ int main ( void )
     printf(" %ld ",DWT_CounterGet());
     
     
-    printf("\n\r\n\r Enable Instruction Cache \n\r\n\r");
+    printf("\n\r\n\r Enabled Instruction Cache \n\r\n\r");
     SCB_EnableICache();
     
     printf(" Code/Buffer - Cycles");
@@ -240,7 +276,7 @@ int main ( void )
     printf(" %ld ",DWT_CounterGet());
 
 
-    printf("\n\r\n\r Enable Instruction & Data Cache \n\r\n\r");
+    printf("\n\r\n\r Enabled Instruction & Data Cache \n\r\n\r");
     SCB_EnableDCache();
     
     printf(" Code/Buffer - Cycles");

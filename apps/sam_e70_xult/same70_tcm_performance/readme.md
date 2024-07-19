@@ -8,17 +8,18 @@ nav_order: 1
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
 # TCM Performance on SAM E70 Xplained Ultra Evaluation Kit
-<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/sam_e70_tcm_performance.zip" > Download </a> </h2>
+<h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/same70_tcm_performance.zip" > Download </a> </h2>
 
 
 -----
 ## Description:
 
-> The application demonstrate code execution from various memory locations and compares the time taken to execute the code from Flash Memory, SRAM, and TCM with and without the Instruction Cache and Data Cache. The result is displayed MPLAB® Data Visualizer Serial Console.
+> The application demonstrate code execution from various memory locations and compares the time taken to execute the code from Flash Memory, SRAM, and Tightly-Coupled Memory (TCM) with and without the Instruction Cache and Data Cache. The result is displayed MPLAB® Data Visualizer Serial Console.
 
 ## Modules/Technology Used:
 - Peripheral Modules  
-	- PORT
+	- EFC 
+  - PORT
 	- USART - UART
 
 - System Services
@@ -66,7 +67,7 @@ The pre-built hex file can be programmed by following the below steps
 - Follow the steps in "Running the Demo" section below
 
 ## Programming/Debugging Application Project:
-- Open the project (same70_tcm_performance\firmware\sam_e70_xult.X) in MPLAB® X IDE
+- Open the project (same70_tcm_performance\firmware\tcm_performance_same70_xult.X) in MPLAB® X IDE
 - Ensure "SAM E70 Xplained Ultra" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB® X IDE tool bar
 - Follow the steps in "Running the Demo" section below

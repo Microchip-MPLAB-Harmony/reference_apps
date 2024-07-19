@@ -66,7 +66,7 @@ The pre-built hex file can be programmed by following the below steps
 - Follow the steps in "Running the Demo" section below
 
 ## Programming/Debugging Application Project:
-- Open the project (pic32cz_ca90_tcm_performance\firmware\pic32cz_ca90_cult.X) in MPLAB® X IDE
+- Open the project (pic32cz_ca90_tcm_performance\firmware\tcm_performance_pic32cz_ca90_cult.X) in MPLAB® X IDE
 - Ensure "PIC32CZ CA90 Curiosity Ultra" is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB® X IDE tool bar
 - Follow the steps in "Running the Demo" section below
