@@ -46,7 +46,6 @@ Refer [Project Manifest](./firmware/src/config/pic32ck_gc01_cult/harmony-manifes
 
 <span style="color:blue"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB Harmony v3 packages, refer to document [How to Use the MPLAB Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
 
-**Note:** This application is programmed using the PKOB4 tool pack v1.14.1168. If the user sees issues with programming, please install this tool pack version and use it accordingly.
 
 ## Setup 1:
 - Connect the Type-A male to Micro-B USB cable to Micro-B DEBUG USB port (J900) to program and debug the PIC32CK GC Curiosity Ultra Development Board.
@@ -81,6 +80,7 @@ The pre-built hex file can be programmed by following the below steps
 - Build the code and program the device by clicking on the "Make and Program Device" button in MPLAB X IDE tool bar
 - Follow the steps in "Running the Demo" section below  
 
+**Note:** This application is programmed using the PKOB4 tool pack v1.14.1168. If the user sees issues with programming, please install this tool pack version and use it accordingly.
 
 ## Running the Demo:
 - Open the Tera Term terminal application on your PC (from the Windows® Start menu by pressing the Start button).
