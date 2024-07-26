@@ -2,12 +2,12 @@
 
 manifest_file_version: 1.0.0
 project: evsys_pic32cm_ls00_cnano_secure
-creation_date: 2024-07-15T11:13:49.730+05:30[Asia/Calcutta]
+creation_date: 2024-07-26T15:12:23.266+05:30[Asia/Calcutta]
 operating_system: Windows 10
 mcc_mode: IDE
 mcc_mode_version: v6.20
 device_name: PIC32CM5164LS00048
-compiler: XC32 4.35
+compiler: XC32 4.40
 mcc_version: 5.5.1
 mcc_core_version: 5.7.1
 content_manager_version: 5.0.0
