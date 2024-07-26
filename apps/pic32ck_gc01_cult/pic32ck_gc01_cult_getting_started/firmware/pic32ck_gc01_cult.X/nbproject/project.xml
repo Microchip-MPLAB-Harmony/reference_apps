@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>pic32ck_gc01_cult</name>
+            <name>getting_started_pic32ck_gc01_cult</name>
             <creation-uuid>e7a1d380-34d7-45b6-8298-5a207330c18a</creation-uuid>
             <make-project-type>0</make-project-type>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
