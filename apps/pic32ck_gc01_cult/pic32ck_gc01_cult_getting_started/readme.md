@@ -95,7 +95,8 @@ The pre-built hex file can be programmed by following the below steps
 	- The temperature read is displayed on a serial console on a periodical basis.
 	- Press the switch SW0 (toggles LED0) on the PIC32CK GC01 Curiosity Ultra Development Board to change the periodicity of the temperature values displayed on the serial console. The periodicity will be changed between 500 milliseconds, one second, two seconds, four seconds and back to 500 milliseconds every time the user presses the switch SW0 on the PIC32CK GC01 Curiosity Ultra Development Board.
 
-- Below diagram shows the sample output log displayed on command prompt.
+- Below diagram shows the sample output log displayed on command prompt.  
+
      <img src = "images/output.png">
 	
 ## Comments:
