@@ -241,7 +241,7 @@
         <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
-        <makeCustomizationPostStep> rm -rf ${ProjectDir}/../../../hex &amp;&amp; mkdir ${ProjectDir}/../../../hex &amp;&amp; cp ${ProjectDir}/${ImageDir}/*.unified.hex ${ProjectDir}/../../../hex/ </makeCustomizationPostStep>
+        <makeCustomizationPostStep> if $(IsDebug) == "false"  ( rm -rf ${ProjectDir}/../../../hex &amp;&amp; mkdir ${ProjectDir}/../../../hex &amp;&amp; cp ${ProjectDir}/${ImageDir}/*.unified.hex ${ProjectDir}/../../../hex)</makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>

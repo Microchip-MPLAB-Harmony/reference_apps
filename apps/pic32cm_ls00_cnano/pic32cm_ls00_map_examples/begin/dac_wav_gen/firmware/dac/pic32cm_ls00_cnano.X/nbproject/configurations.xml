@@ -214,8 +214,8 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC32CM-LS_DFP" vendor="Microchip" version="1.3.278"/>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="PIC32CM-LS_DFP" vendor="Microchip" version="1.3.278"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -254,7 +254,7 @@
         <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>true</makeCustomizationPostStepEnabled>
-        <makeCustomizationPostStep>rm -rf ${ProjectDir}/../../../hex &amp;&amp; mkdir ${ProjectDir}/../../../hex &amp;&amp; cp ${ProjectDir}/${ImageDir}/*.unified.hex ${ProjectDir}/../../../hex/</makeCustomizationPostStep>
+        <makeCustomizationPostStep> if $(IsDebug) == "false"  ( rm -rf ${ProjectDir}/../../../hex &amp;&amp; mkdir ${ProjectDir}/../../../hex &amp;&amp; cp ${ProjectDir}/${ImageDir}/*.unified.hex ${ProjectDir}/../../../hex)</makeCustomizationPostStep>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
