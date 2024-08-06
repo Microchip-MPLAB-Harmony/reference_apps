@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>com.microchip.mplab.nbide.embedded.makeproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/make-project/1">
+            <name>smart_smoke_detector</name>
+            <creation-uuid>dcb4e7c4-e66c-425e-89af-a82b3348c05a</creation-uuid>
+            <make-project-type>0</make-project-type>
+            <sourceEncoding>ISO-8859-1</sourceEncoding>
+            <c-extensions>c</c-extensions>
+            <cpp-extensions/>
+            <header-extensions>h,ld</header-extensions>
+            <asminc-extensions/>
+            <make-dep-projects/>
+            <sourceRootList>
+                <sourceRootElem>../src</sourceRootElem>
+            </sourceRootList>
+            <confList>
+                <confElem>
+                    <name>pic32cm_le00</name>
+                    <type>2</type>
+                </confElem>
+            </confList>
+            <formatting>
+                <project-formatting-style>false</project-formatting-style>
+            </formatting>
+        </data>
+    </configuration>
+</project>
