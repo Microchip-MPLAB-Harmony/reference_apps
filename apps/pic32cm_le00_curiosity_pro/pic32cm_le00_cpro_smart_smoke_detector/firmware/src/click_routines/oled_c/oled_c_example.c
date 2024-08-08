@@ -14,7 +14,7 @@
 
 // DOM-IGNORE-BEGIN
 /*
-    (c) 2021 Microchip Technology Inc. and its subsidiaries. You may use this
+    (c) 2024 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
 
     THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
@@ -53,8 +53,6 @@ void oled_c_example(void)
 {
 
     oled_c_Image_mchplogo_visible();
-
-  //  oled_c_Text_Field_counter(temperatureVal);  
 
     SYSTICK_DelayMs(100);
     

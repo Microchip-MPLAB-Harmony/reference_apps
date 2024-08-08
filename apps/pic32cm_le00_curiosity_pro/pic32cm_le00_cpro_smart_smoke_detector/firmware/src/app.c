@@ -22,7 +22,7 @@
  *******************************************************************************/
 // DOM-IGNORE-BEGIN
 /*
-    (c) 2021 Microchip Technology Inc. and its subsidiaries. You may use this
+    (c) 2024 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
 
     THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS". NO WARRANTIES, WHETHER
@@ -295,10 +295,10 @@ void APP_Tasks_Set_Time( void )
             sys_time.tm_hour    = 12;   /* hour [0,23] */
             sys_time.tm_min     = 00;   /* minutes [0,59] */
             sys_time.tm_sec     = 00;   /* seconds [0,61] */
-            sys_time.tm_mday    = 16;   /* day of month [1,31] */
-            sys_time.tm_mon     = 02;   /* month of year [0,11] */
+            sys_time.tm_mday    = 8;   /* day of month [1,31] */
+            sys_time.tm_mon     = 7;   /* month of year [0,11] */
             sys_time.tm_year    = 124;  /* years since 1900 */
-            sys_time.tm_wday    = 5;    /* day of week [0,6] (Sunday = 0) */
+            sys_time.tm_wday    = 4;    /* day of week [0,6] (Sunday = 0) */
             
             appDataRTC.state = APP_RTC_START_TIME_DATE;                    
             break;
@@ -330,13 +330,13 @@ void APP_Tasks_Set_Time( void )
         /* An RTC app error has occurred */
         case APP_RTC_ERROR:
         {
+            /* TODO: Handle error in RTC application's state machine. */            
+            appDataRTC.state = APP_RTC_STATE_INIT;
             break;
         }
         
         default:
         {
-            /* TODO: Handle error in RTC application's state machine. */            
-            appDataRTC.state = APP_RTC_STATE_INIT;            
             break;
         }
     }          
@@ -472,8 +472,6 @@ void APP_Tasks_SD_Card ( void )
         /* SD Card write data state*/
         case APP_SD_FS_WRITE_TO_FILE:
         {
-            {
-            
             RTC_RTCCTimeGet(&sys_time);
             
             appDataSDCard.fileHandle=SYS_FS_FileOpen(SDCARD_DIR_NAME"/"SDCARD_FILE_NAME, (SYS_FS_FILE_OPEN_APPEND_PLUS));
@@ -500,9 +498,7 @@ void APP_Tasks_SD_Card ( void )
             
             /* Closing the file in the SD Card */
             appDataSDCard.state = APP_SD_FS_CLOSE_FILE;  
-            
             break;
-          }
         }
         
         /* SD Card Close File State */
@@ -525,16 +521,16 @@ void APP_Tasks_SD_Card ( void )
             break;
         }
 
-        /* The default state should never be executed. */
         case APP_SD_FS_ERROR:
-        {
-            break;
-        }
-        
-        default:
         {
             /* TODO: Handle error in application's state machine. */
             appDataSDCard.state = APP_SD_FS_STATE_INIT;
+            break;
+        }
+
+        /* The default state should never be executed. */        
+        default:
+        {
             break;
         }
     }
