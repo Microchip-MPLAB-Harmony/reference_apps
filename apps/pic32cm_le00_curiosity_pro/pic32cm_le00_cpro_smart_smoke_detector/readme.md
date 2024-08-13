@@ -48,7 +48,7 @@ nav_order: 1
 | SD Card                                                                                                   | 1 |
 ## Software/Tools Used:
 This project has been verified to work with the following versions of software/development tools:</span>
-- Refer [Project Manifest](./firmware/src/config/pic32cm_le00/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/pic32cm_le00*
+- Refer [Project Manifest](./firmware/src/config/pic32cm_le00_cpro/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/pic32cm_le00_cpro*
 
 <span style="color:red; font-weight:bold"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB® Harmony v3 packages, refer to the document [How to Use the MPLAB® Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB®-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
 
@@ -90,7 +90,7 @@ The pre-built hex file can be programmed by following the below steps:
 - In MPLAB® X IDE, click on "**Make and Program Device**" Button. The device gets programmed in sometime.
 - Follow the steps in the [Running the Demo](#running-the-demo) section below
 ## Programming/Debugging Application Project:
-- Open the project (**pic32cm_le00_cpro_smart_smoke_detector/firmware/smart_smoke_detector.X**) in MPLAB® X IDE
+- Open the project (**pic32cm_le00_cpro_smart_smoke_detector/firmware/pic32cm_le00_cpro.X**) in MPLAB® X IDE
 - Ensure **"PIC32CM LE00 Curiosity Pro"** is selected as hardware tool to program/debug the application
 - Build the code and program the device by clicking on the **"Make and Program Device"** button in MPLAB® X IDE tool bar
 - Once programming is complete and successful, **perform a power cycle of the board**.
@@ -101,7 +101,7 @@ The pre-built hex file can be programmed by following the below steps:
 - For demonstration, the **Flame Click** is used to detect the smoke. Shining a flashlight on the flame click sensor should be good enough to trigger it, for demo purposes.
 - If the smoke has been detected, the **Flame** Labeled LED(Flame Presence LED Indicator) in the **Flame Click** will glow.
 - The OLED display shows the ADC result values of the Flame sensor periodically as shown here:
-  <p align = "center"> <img src = "images/oled_display.png" width="30%">
+  <p align = "center"> <img src = "images/oled_display.png" width="20%">
 - The SD Card log the smoke detection message along with the Timestamp (RTC).
 - To get the fire alarm detection in the mobile app, please proceed the following steps:
   - Install the Microchip Bluetooth Data Android App in your Android Smartphone using the **MicrochipBluetoothData_Smartsmoke.apk** file under the project folder *Android_App*. Alternatively, [Click here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/MicrochipBluetoothData_Smartsmoke.apk) to download it.

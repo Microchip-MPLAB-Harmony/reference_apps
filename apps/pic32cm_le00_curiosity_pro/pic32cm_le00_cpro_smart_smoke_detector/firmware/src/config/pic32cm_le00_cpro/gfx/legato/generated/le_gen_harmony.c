@@ -46,7 +46,7 @@ void Legato_Initialize(void)
     leInitialize(&gfxDriverInterface, &gfxGPUInterface);
 
     pal.palette = leGlobalPalette.header.address;
-    pal.mode = leGlobalPalette.colorMode;
+    pal.mode = (int)leGlobalPalette.colorMode;
     pal.colorCount = leGlobalPalette.colorCount;
 
     gfxDriverInterface.ioctl(GFX_IOCTL_SET_PALETTE, &pal);

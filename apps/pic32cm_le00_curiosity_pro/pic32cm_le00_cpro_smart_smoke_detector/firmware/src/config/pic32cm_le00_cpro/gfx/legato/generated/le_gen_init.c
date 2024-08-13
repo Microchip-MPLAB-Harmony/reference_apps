@@ -45,6 +45,9 @@ void legato_showScreen(uint32_t id)
 
 void legato_updateScreenState(void)
 {
+    if(leIsDrawing() == LE_TRUE)
+        return;
+
     if(changingToScreen >= 0)
     {
         legato_hideCurrentScreen();

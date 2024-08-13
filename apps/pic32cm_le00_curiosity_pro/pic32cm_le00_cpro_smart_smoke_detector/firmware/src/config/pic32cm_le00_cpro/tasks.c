@@ -53,7 +53,7 @@
 #include "configuration.h"
 #include "definitions.h"
 #include "sys_tasks.h"
-extern bool status_flag; 
+
 
 
 
@@ -74,7 +74,7 @@ void SYS_Tasks ( void )
 {
     /* Maintain system services */
     
-    SYS_FS_Tasks();
+SYS_FS_Tasks();
 
 
 
@@ -91,11 +91,15 @@ void SYS_Tasks ( void )
 
 
     SYS_INP_Tasks();
-    
+
+
+
     /* Maintain the application's state machine. */
         /* Call Application task APP. */
-    
     APP_Tasks();
+
+
+
 
 }
 
