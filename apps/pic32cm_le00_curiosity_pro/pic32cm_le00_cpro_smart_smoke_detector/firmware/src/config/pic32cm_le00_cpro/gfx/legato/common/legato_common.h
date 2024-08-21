@@ -56,11 +56,12 @@
 #ifndef LEGATO_COMMON_H
 #define LEGATO_COMMON_H
 
-#include "gfx/legato/legato_config.h"
+#include "../legato_config.h"
 
 #include <stddef.h>
 #include <assert.h>
 #include <string.h>
+
 
 #ifdef _WIN32
 #ifndef int8_t

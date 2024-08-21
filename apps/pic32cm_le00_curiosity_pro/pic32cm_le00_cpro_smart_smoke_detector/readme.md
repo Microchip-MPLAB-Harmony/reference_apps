@@ -50,7 +50,7 @@ nav_order: 1
 This project has been verified to work with the following versions of software/development tools:</span>
 - Refer [Project Manifest](./firmware/src/config/pic32cm_le00_cpro/harmony-manifest-success.yml) present in harmony-manifest-success.yml under the project folder *firmware/src/config/pic32cm_le00_cpro*
 
-<span style="color:red; font-weight:bold"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB® Harmony v3 packages, refer to the document [How to Use the MPLAB® Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB®-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
+<span style="color:red; font-weight:bold"> Because Microchip regularly update tools, occasionally issue(s) could be discovered while using the newer versions of the tools. If the project doesn’t seem to work and version incompatibility is suspected, It is recommended to double-check and use the same versions that the project was tested with. </span> To download original version of MPLAB® Harmony v3 packages, refer to the document [How to Use the MPLAB® Harmony v3 Project Manifest Feature](https://ww1.microchip.com/downloads/en/DeviceDoc/How-to-Use-the-MPLAB-Harmony-v3-Project-Manifest-Feature-DS90003305.pdf)
 
 ## Hardware Setup:
 - Connect the two **mikroBUS Xplained Pro** boards to the **Extension Header EXT1 (J601)** and **Extension Header EXT3 (J603)** of the **PIC32CM LE00 Curiosity Pro Evaluation Kit**, as shown below:
@@ -107,14 +107,14 @@ The pre-built hex file can be programmed by following the below steps:
   - Install the Microchip Bluetooth Data Android App in your Android Smartphone using the **MicrochipBluetoothData_Smartsmoke.apk** file under the project folder *Android_App*. Alternatively, [Click here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/MicrochipBluetoothData_Smartsmoke.apk) to download it.
   - Enable and allow Bluetooth and location from Smartphone settings
   - Open the "**Microchip Bluetooth Data (MBD)**" android app from your smartphone and tap on "**BLE UART**" icon on the dashboard. If prompted, allow the application to turn on Bluetooth, as shown:
-    <p align = "center"> <img src = "images/mobile_app_ble_uart.png">
-  - Click on flame detector option from the list, as shown:  
-    <p align = "center"> <img src = "images/flamedetector.png" width="20%"> 
-  - Now, scan for RNBD451 Bluetooth device under the Device window and connect it. The RNBD device should appear as **RNBD451_XXXX (deviceId)** in the list of Bluetooth devices. After, click on it. *Note, for your setup, the deviceId may vary*
-    <p align = "center"> <img src = "images/rnbd_scan.png" width="20%">
-  - Select the **"Text Mode option"**, as shown:  
-    <p align = "center"> <img src = "images/mobile_app_text_mode.png">
-  - Then, the GUI of the mobile app, displays the fire detection data, as shown:
+    <p align = "center"> <img src = "images/mobile_app_ble_uart.png">  
+	- Click on flame detector option from the list, as shown:  
+	<p align = "center"> <img src = "images/flamedetector.png" width="20%">  
+	- Now, scan for RNBD451 Bluetooth device under the Device window and connect it. The RNBD device should appear as **RNBD451_XXXX (deviceId)** in the list of Bluetooth devices. After, click on it. *Note, for your setup, the deviceId may vary*
+    <p align = "center"> <img src = "images/rnbd_scan.png" width="20%">  
+	- Select the **"Text Mode option"**, as shown:  
+    <p align = "center"> <img src = "images/mobile_app_text_mode.png">  
+	- Then, the GUI of the mobile app, displays the fire detection data, as shown:
     <p align = "center"> <img src = "images/mobile_app_display_data.png">
 
 ## Comments:
@@ -122,11 +122,10 @@ The pre-built hex file can be programmed by following the below steps:
   - [Getting Started With the PIC32CM LE00 Curiosity Pro Evaluation Kit](https://youtu.be/Z5cWjyYZa5g?si=-j7fUB_kQp6PpTFr)
   - [Low Power Application on PIC32CM LE00 (Cortex M23) MCUs Using MPLAB® Harmony v3 Peripheral Libraries](https://microchipdeveloper.com/xwiki/bin/view/software-tools/harmony/low-power-application-on-pic32cm-le00)
 - This application demo builds and works out of box by following the instructions above in [Running the Demo](#running-the-demo) section. If you need to enhance/customize this application demo, you need to use the MPLAB® Harmony v3 Software framework. Refer links below to setup and build your applications using MPLAB® Harmony v3.
-	- [How to Setup MPLAB® Harmony v3 Software Development Framework](https://www.microchip.com/content/dam/mchp/documents/MCU32/ProductDocuments/SupportingCollateral/How-to-Setup-MPLAB-Harmony-v3-Software-Development-Framework-DS90003232.pdf)
-	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB® Harmony v3 Project](https://www.microchip.com/content/dam/mchp/documents/MCU32/ProductDocuments/SupportingCollateral/How-to-Build-an-Application-by-Adding-a-New-PLIB-Driver-or-Middleware-to-an-Existing-MPLAB-Harmony-v3-Project-DS90003253.pdf)  
-	- <span style="color:red; font-weight:bold"> **MPLAB® Harmony v3 is also configurable through MPLAB® Code Configurator (MCC). Refer to the below links for specific instructions to use MPLAB® Harmony v3 with MCC.**</span>
-		- [Create a new MPLAB® Harmony v3 project using MCC](https://microchipdeveloper.com/harmony3:getting-started-training-module-using-mcc)
-		- [Getting Started with MPLAB® Harmony v3 Using MPLAB® Code Configurator](https://www.youtube.com/watch?v=KdhltTWaDp0)
-		- [MPLAB® Code Configurator Content Manager for MPLAB® Harmony v3 Projects](https://www.youtube.com/watch?v=PRewTzrI3iE)
+	- [How to Setup MPLAB Harmony v3 Software Development Framework](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/SupportingCollateral/How-to-Setup-MPLAB-Harmony-v3-Software-Development-Framework-DS90003232.pdf)	
+	- [Video - How to Set up the Tools Required to Get Started with MPLAB® Harmony v3 and MCC](https://www.youtube.com/watch?v=0rNFSlsVwVw)	
+	- [Create a new MPLAB Harmony v3 project using MCC](https://developerhelp.microchip.com/xwiki/bin/view/software-tools/harmony/getting-started-training-module-using-mcc/)
+	- [Update and Configure an Existing MHC-based MPLAB Harmony v3 Project to MCC-based Project](https://developerhelp.microchip.com/xwiki/bin/view/software-tools/harmony/update-and-configure-existing-mhc-proj-to-mcc-proj/)
+	- [How to Build an Application by Adding a New PLIB, Driver, or Middleware to an Existing MPLAB Harmony v3 Project](https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/SupportingCollateral/How-to-Build-an-Application-by-Adding-a-New-PLIB-Driver-or-Middleware-to-an-Existing-MPLAB-Harmony-v3-Project-DS90003253.pdf)	
 ## Revision
 - v1.7.0 Initial Release of the demo.

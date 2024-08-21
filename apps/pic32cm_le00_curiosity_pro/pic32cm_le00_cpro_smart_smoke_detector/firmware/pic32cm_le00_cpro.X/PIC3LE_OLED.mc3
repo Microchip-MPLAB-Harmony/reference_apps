@@ -4303,7 +4303,7 @@
         &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;drv_spi&quot; x=&quot;235&quot; y=&quot;334&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;8&quot; id=&quot;evsys&quot; x=&quot;36&quot; y=&quot;29&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;9&quot; id=&quot;gfx_hal_le&quot; x=&quot;44&quot; y=&quot;317&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;gfx_legato&quot; x=&quot;877&quot; y=&quot;466&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;10&quot; id=&quot;gfx_legato&quot; x=&quot;874&quot; y=&quot;465&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;11&quot; id=&quot;le_gfx_driver_external&quot; x=&quot;628&quot; y=&quot;396&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;12&quot; id=&quot;le_gfx_intf_spi4&quot; x=&quot;408&quot; y=&quot;418&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;13&quot; id=&quot;nvmctrl&quot; x=&quot;182&quot; y=&quot;29&quot;/&gt;
@@ -24926,7 +24926,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00_cpro\definitions.h</file>
-         <hash>5620410c3cf6708b62842ba277a2cb2673b7769011e96eb32cb4884d99359271</hash>
+         <hash>d3b8097ef8fb6b5259b2e43fd1c34dc9bf8b8a3676fe0caae6ee62fa0a6528d7</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00_cpro\device.h</file>
@@ -25894,7 +25894,7 @@
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00_cpro\initialization.c</file>
-         <hash>03a29544b20d0cd29ef1582b76b51e2a2a305716a506924a525d9b611a449cb8</hash>
+         <hash>269e73a5ab205eba79769f91c09ae5b256f683b073387f4f8151f2e077d6a978</hash>
       </entry>
       <entry>
          <file>..\src\config\pic32cm_le00_cpro\interrupts.c</file>

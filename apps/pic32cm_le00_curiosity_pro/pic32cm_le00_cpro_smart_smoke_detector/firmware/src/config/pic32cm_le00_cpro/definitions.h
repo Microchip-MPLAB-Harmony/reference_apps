@@ -50,8 +50,8 @@
 #include <stdbool.h>
 #include "peripheral/nvmctrl/plib_nvmctrl.h"
 #include "peripheral/adc/plib_adc.h"
-#include "peripheral/tc/plib_tc0.h"
 #include "peripheral/rtc/plib_rtc.h"
+#include "peripheral/tc/plib_tc0.h"
 #include "driver/sdspi/drv_sdspi.h"
 #include "system/time/sys_time.h"
 #include "driver/spi/drv_spi.h"

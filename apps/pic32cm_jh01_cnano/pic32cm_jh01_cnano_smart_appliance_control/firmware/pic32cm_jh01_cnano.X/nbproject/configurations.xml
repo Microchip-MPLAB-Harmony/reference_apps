@@ -661,7 +661,7 @@
         <property key="memories.programmemory.ranges" value="0-7ffff"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programmerToGoFilePath"
-                  value="D:/Smart_Appliance_Control/smart-appliance-control/pic32cm_jh01_cnano_smart_appliance_control/firmware/pic32cm_jh01_cnano.X/debug/pic32cm_jh01_cnano/pic32cm_jh01_cnano_ptg"/>
+                  value="D:/MCU32_BitBucket/reference_apps/apps/pic32cm_jh01_cnano/pic32cm_jh01_cnano_smart_appliance_control/firmware/pic32cm_jh01_cnano.X/debug/pic32cm_jh01_cnano/pic32cm_jh01_cnano_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
