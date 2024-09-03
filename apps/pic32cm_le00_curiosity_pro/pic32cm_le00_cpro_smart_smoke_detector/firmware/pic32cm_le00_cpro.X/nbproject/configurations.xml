@@ -1073,7 +1073,7 @@
         <property key="memories.programmemory.ranges" value="0-7ffff"/>
         <property key="poweroptions.powerenable" value="false"/>
         <property key="programmerToGoFilePath"
-                  value="D:/MCU32_BitBucket/reference_apps/apps/pic32cm_le00_curiosity_pro/pic32cm_le00_cpro_smart_smoke_detector/firmware/pic32cm_le00_cpro.X/debug/pic32cm_le00_cpro/pic32cm_le00_cpro_ptg"/>
+                  value="D:/00_PIC32CMLEDemo/firmware/PIC3LE_OLED.X/debug/pic321e_oled/PIC3LE_OLED_ptg"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.preservedataflash" value="false"/>
         <property key="programoptions.preservedataflash.ranges"
