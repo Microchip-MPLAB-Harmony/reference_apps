@@ -4,13 +4,13 @@ nav_order: 1
 <img src = "images/microchip_logo.png">
 <img src = "images/microchip_mplab_harmony_logo_small.png">
 
-# Smart Smoke Detector Application Demonstration on PIC32CM LE00 Curiosity Pro Evaluation Kit
+# Smart Flame Detector Application Demonstration on PIC32CM LE00 Curiosity Pro Evaluation Kit
 <h2 align="center"> <a href="https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/pic32cm_le00_cpro_smart_smoke_detector.zip" > Download </a> </h2>
 
 ## Description:
-> This application demonstrates detection of smoke using Flame Click, and if the smoke has been detected, it alerts through the Microchip Bluetooth Data (MDB App) and on the OLED Display.
+> This application demonstrates detection of flame using Flame Click, and if the flame has been detected, it alerts through the Microchip Bluetooth Data (MDB App) and on the OLED Display.
 
-> Further, the smoke detection data is also logged with the help of SD Card (Along RTC Timestamp). Additionally, user can reset the RTC timestamp by pressing SW0 switch.
+> Further, the flame detection data is also logged with the help of SD Card (Along RTC Timestamp). Additionally, user can reset the RTC timestamp by pressing SW0 switch.
 
 ## Modules/Technology Used:
 - Peripheral Modules
@@ -98,11 +98,11 @@ The pre-built hex file can be programmed by following the below steps:
 - Follow the steps in [Running the demo](#running-the-demo) section below
 ## Running the Demo:
 - Perform [Hardware Setup](#hardware-setup) and [Programming/Debugging Application Project](#programmingdebugging-application-project) steps mentioned above, if not done already.
-- For demonstration, the **Flame Click** is used to detect the smoke. Shining a flashlight on the flame click sensor should be good enough to trigger it, for demo purposes.
-- If the smoke has been detected, the **Flame** Labeled LED(Flame Presence LED Indicator) in the **Flame Click** will glow.
+- For demonstration, the **Flame Click** is used to detect the flame. Shining a flashlight on the flame click sensor should be good enough to trigger it, for demo purposes.
+- If the flame has been detected, the **Flame** Labeled LED(Flame Presence LED Indicator) in the **Flame Click** will glow.
 - The OLED display shows the ADC result values of the Flame sensor periodically as shown here:
   <p align = "center"> <img src = "images/oled_display.png" width="20%">
-- The SD Card log the smoke detection message along with the Timestamp (RTC).
+- The SD Card log the flame detection message along with the Timestamp (RTC).
 - To get the fire alarm detection in the mobile app, please proceed the following steps:
   - Install the Microchip Bluetooth Data Android App in your Android Smartphone using the **MicrochipBluetoothData_Smartsmoke.apk** file under the project folder *Android_App*. Alternatively, [Click here](https://github.com/Microchip-MPLAB-Harmony/reference_apps/releases/latest/download/MicrochipBluetoothData_Smartsmoke.apk) to download it.
   - Enable and allow Bluetooth and location from Smartphone settings
