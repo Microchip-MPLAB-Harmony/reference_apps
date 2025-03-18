@@ -1,25 +1,3 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <Package name="reference_apps">
-    <Dependencies>
-        <Dependency name="csp" version="v3.19.3"/>
-        <Dependency name="dev_packs" version="v3.18.0"/>
-        <Dependency name="core" version="3.13.5"/>
-        <Dependency name="bsp" version="3.17.0"/>
-        <Dependency name="usb" version="v3.11.0-E2"/>
-        <Dependency name="audio" version="3.6.0"/>
-        <Dependency name="gfx" version="3.15.1"/>
-        <Dependency name="touch" version="3.14.0"/>
-        <Dependency name="net" version="3.10.1"/>
-        <Dependency name="wireless_wifi" version="3.9.0"/>
-        <Dependency name="bt" version="3.4.1"/>
-        <Dependency name="bootloader" version="3.6.0"/>
-        <Dependency name="bootloader_apps_uart" version="3.2.0"/>
-        <Dependency name="CMSIS-FreeRTOS" version="v10.5.1"/>
-        <Dependency name="wolfssl", version: "v5.4.0"/>
-        <Dependency name="crypto", version: "v3.8.0"/>
-        <Dependency name="aws_cloud", version: "v3.2.0"/>
-        <Dependency name="cryptoauthlib", version: "v3.5.1"/>
-        <Dependency name="x2c", version: "v1.4.0"/>
-		<Dependency name="wireless_rnbd", version: "v2.0.1"/>			
-    </Dependencies>
 </Package>

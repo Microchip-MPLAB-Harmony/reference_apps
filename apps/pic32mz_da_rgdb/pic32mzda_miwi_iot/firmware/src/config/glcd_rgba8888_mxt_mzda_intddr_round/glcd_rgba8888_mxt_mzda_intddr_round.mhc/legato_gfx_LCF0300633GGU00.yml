@@ -1,6 +1,0 @@
-format_version: v1.0
-type: UniqueComponent
-attributes: {id: legato_gfx_LCF0300633GGU00}
-children:
-- type: ElementPosition
-  attributes: {x: '711', y: '112', id: legato_gfx_LCF0300633GGU00}

@@ -1,2 +1,0 @@
-python winc_provisioner.py
-Pause

@@ -1,53 +1,38 @@
----
-title: 32-bit MCU Reference Applications
-has_children: true
-has_toc: false
-nav_order: 2
----
-# Reference Application Repository
+﻿![Microchip logo](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_logo.png)
+![Harmony logo small](https://raw.githubusercontent.com/wiki/Microchip-MPLAB-Harmony/Microchip-MPLAB-Harmony.github.io/images/microchip_mplab_harmony_logo_small.png)
 
-This repository contains the MPLAB® Harmony 3 reference applications developed on Microchip 32-bit SAM/PIC MCU and MPU development boards/kits.
+# MPLAB® Harmony 3 Reference Applications
 
-## 32-bit MCU Reference Applications
+**"For reference application examples, see the following repositories under the Microchip-MPLAB-Harmony GitHub project:"**
 
-The following reference applications are provided to evaluate solutions on 32-bit SAM and PIC MCUs.
+| Repository | Product family | Latest release |
+| ---------- | -------------- |-------------- |
+| [reference_apps_pic32cm](https://github.com/Microchip-MPLAB-Harmony/reference_apps_pic32cm) | Reference Applications for PIC32CM family | [v1.0.0](https://github.com/Microchip-MPLAB-Harmony/reference_apps_pic32cm/blob/master/release_notes.md#reference-applications-for-pic32cm-mcus-release-v100): Moved in applications from earlier reference_apps repo and added 28 new examples  |
+| [reference_apps_pic32ck](https://github.com/Microchip-MPLAB-Harmony/reference_apps_pic32ck) | Reference Applications for PIC32CK family | [v1.0.0](https://github.com/Microchip-MPLAB-Harmony/reference_apps_pic32ck/blob/master/release_notes.md#reference-applications-for-pic32ck-mcus-release-v100): Added 4 new examples |
+| [reference_apps_pic32cx](https://github.com/Microchip-MPLAB-Harmony/reference_apps_pic32cx) | Reference Applications for PIC32CX family | [v1.0.0](https://github.com/Microchip-MPLAB-Harmony/reference_apps_pic32cx/blob/master/release_notes.md#reference-applications-for-pic32cx-mcus-release-v100): Moved in applications from earlier reference_apps repo and added 3 new examples  |
+| [reference_apps_pic32cz](https://github.com/Microchip-MPLAB-Harmony/reference_apps_pic32cz) | Reference Applications for PIC32CZ family | [v1.0.0](https://github.com/Microchip-MPLAB-Harmony/reference_apps_pic32cz/blob/master/release_notes.md#reference-applications-for-pic32cz-mcus-release-v100): Moved in applications from earlier reference_apps repo and added 4 new examples  |
+| [reference_apps_pic32m](https://github.com/Microchip-MPLAB-Harmony/reference_apps_pic32m) | Reference Applications for PIC32M family | [v1.0.0](https://github.com/Microchip-MPLAB-Harmony/reference_apps_pic32m/blob/master/release_notes.md#reference-applications-for-pic32m-mcus-release-v100): Moved in applications from earlier reference_apps repo and added 4 new examples  |
+| [reference_apps_sam_mcu](https://github.com/Microchip-MPLAB-Harmony/reference_apps_sam_mcu) | Reference Applications for SAM MCU family | [v1.0.0](https://github.com/Microchip-MPLAB-Harmony/reference_apps_sam_mcu/blob/master/release_notes.md#reference-applications-for-sam-mcus-release-v100): Moved in applications from earlier reference_apps repo and added 13 new examples  |
+| [reference_apps_sam_mpu](https://github.com/Microchip-MPLAB-Harmony/reference_apps_sam_mpu) | Reference Applications for SAM MPU family | [v1.0.0](https://github.com/Microchip-MPLAB-Harmony/reference_apps_sam_mpu/blob/master/release_notes.md#reference-applications-for-sam-mpus-release-v100): Moved in applications from earlier reference_apps repo and added 2 new examples  |
 
-| Board/Kit | Link |
-| ---   | --- |
-|  <img src = "./pic32cz_ca90_cult/image.jpg"> | [PIC32CZ CA90 Curiosity Ultra Development Board](./pic32cz_ca90_cult/readme.md) |
-|  <img src = "./pic32cz_ca80_cult/image.jpg"> | [PIC32CZ CA80 Curiosity Ultra Development Board](./pic32cz_ca80_cult/readme.md) |
-|  <img src = "./pic32cx_sg41_cult/image.jpg"> | [PIC32CX SG41 Curiosity Ultra Evaluation Board](./pic32cx_sg41_cult/readme.md) |
-|  <img src = "./pic32cx_sg61_cult/image.jpg"> | [PIC32CX SG61 Curiosity Ultra Evaluation Board](./pic32cx_sg61_cult/readme.md) |
-|  <img src = "./pic32cm_le00_curiosity_pro/image.jpg"> | [PIC32CM LE00 Curiosity Pro Evaluation Kit](./pic32cm_le00_curiosity_pro/readme.md) |
-|  <img src = "./pic32cm_ls00_curiosity_pro/image.jpg"> | [PIC32CM LS00 Curiosity Pro Evaluation Kit](./pic32cm_ls00_curiosity_pro/readme.md) |
-|  <img src = "./pic32cm_ls60_curiosity_pro/image.jpg"> | [PIC32CM LS60 Curiosity Pro Evaluation Kit](./pic32cm_ls60_curiosity_pro/readme.md) |
-|  <img src = "./pic32cm_jh01_curiosity_pro/image.jpg"> | [PIC32CM JH01 Curiosity Pro Development Board](./pic32cm_jh01_curiosity_pro/readme.md) |
-|  <img src = "./sam_d21_iot_v2/image.jpg">  | [SAM D21 IoT v2 Development Board](./sam_d21_iot_v2/readme.md) |
-|  <img src = "./pic32cm_ls60_rd/image.jpg"> | [PIC32CM LS60 Smart Lock Reference Board](./pic32cm_ls60_rd/readme.md) |
-|  <img src = "./pic32mz_da_rgdb/image.jpg">  | [PIC32MZ DA Radial Graphics Development Board (RGDB)](./pic32mz_da_rgdb/readme.md) |
-|  <img src = "./pic32mk_mcm_curiosity_pro/image.jpg"> | [PIC32MK MCM Curiosity Pro Development Board](./pic32mk_mcm_curiosity_pro/readme.md) |
-|  <img src = "./pic32cm_mc00_curiosity_pro/image.jpg">  | [PIC32CM MC00 Curiosity Pro Development Board](./pic32cm_mc00_curiosity_pro/readme.md) |
-|  <img src = "./pic32cm_mc00_cnano/image.jpg">  | [PIC32CM MC00 Curiosity Nano Evaluation Kit](./pic32cm_mc00_cnano/readme.md) |
-|  <img src = "./sam_e51_cnano/image.jpg">  | [SAM E51 Curiosity Nano Evaluation Kit](./sam_e51_cnano/readme.md) |
-|  <img src = "./pic32mz_da_curiosity/image.jpg">  | [PIC32MZ DA Curiosity Development Kit](./pic32mz_da_curiosity/readme.md) |
-|  <img src = "./sam_d21_cnano/image.jpg">  | [SAM D21 Curiosity Nano Evaluation Kit](./sam_d21_cnano/readme.md) |
-|  <img src = "./pic32mz_ef_curiosity_v2/image.jpg">  | [Curiosity PIC32MZ EF 2.0 Development Board](./pic32mz_ef_curiosity_v2/readme.md) |
-|  <img src = "./sam_l10_xpro/image.jpg">  | [SAM L10 Xplained Pro Evaluation Kit](./sam_l10_xpro/readme.md) |
-|  <img src = "./sam_l21_xpro/image.jpg">  | [SAM L21 Xplained Pro Evaluation Kit](./sam_l21_xpro/readme.md) |
-|  <img src = "./sam_c21_xpro/image.jpg">  | [SAM C21 Xplained Pro evaluation kit](./sam_c21_xpro/readme.md) |
-|  <img src = "./sam_c21n_xpro/image.jpg">  | [SAMC21N Xplained Pro Evaluation Kit](./sam_c21n_xpro/readme.md) |
-|  <img src = "./sam_e70_xult/image.jpg">  | [SAM E70 Xplained Ultra Evaluation Kit](./sam_e70_xult/readme.md) |
-|  <img src = "./sam_e70_xpld/image.jpg">  | [SAM E70 Xplained Evaluation Kit](./sam_e70_xpld/readme.md) |
-|  <img src = "./sam_e54_xpro/image.jpg">  | [SAM E54 Xplained Pro Evaluation Kit](./sam_e54_xpro/readme.md) |
-|  <img src = "./sam_e54_cult/image.jpg">  | [SAM E54 Curiosity Ultra Development Board](./sam_e54_cult/readme.md) |
-|  <img src = "./sam_e54_mcpim_mclv2/image.jpg">  | [dsPICDEM™ MCLV-2 Development Board with SAME54 Motor Control PIM](./sam_e54_mcpim_mclv2/readme.md) |
-|  <img src = "./sam_d21_xpro/image.jpg">  | [SAM D21 Xplained Pro Evaluation Kit](./sam_d21_xpro/readme.md) |
-|  <img src = "./pic32mk_gp_db/image.jpg">  | [PIC32MK General Purpose (GP) Development Kit](./pic32mk_gp_db/readme.md) |
-|  <img src = "./pic32mx470_curiosity/image.jpg">  | [Curiosity PIC32MX470 Development Board](./pic32mx470_curiosity/readme.md) |
-|  <img src = "./pic32mz_ef_sk/image.jpg">  | [PIC32MZ Embedded Connectivity with FPU (EF) Starter Kit](./pic32mz_ef_sk/readme.md) |
-|  <img src = "./sam_l11_xpro/image.jpg">  | [SAM L11 Xplained Pro Evaluation Kit](./sam_l11_xpro/readme.md) |
-|  <img src = "./sam_l22_xpro/image.jpg">  | [SAM L22 Xplained Pro Evaluation Kit](./sam_l22_xpro/readme.md) |
 
-### **Note:**
-The applications in this repository are an alternative source of reference involving integration of multiple technologies, extending hardware capabilities and demonstrating specific MCU features.
-Peripheral/Technology specific applications are available in technology repositories like [csp](https://github.com/Microchip-MPLAB-Harmony/csp), [core](https://github.com/Microchip-MPLAB-Harmony/core), [usb](https://github.com/Microchip-MPLAB-Harmony/usb), [net](https://github.com/Microchip-MPLAB-Harmony/net), [audio](https://github.com/Microchip-MPLAB-Harmony/audio), [gfx_apps](https://github.com/Microchip-MPLAB-Harmony/gfx_apps), etc
+
+____
+
+[![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/Microchip-MPLAB-Harmony/replaceme/blob/master/Microchip_SLA001.md)
+[![Commit activity](https://img.shields.io/github/commit-activity/y/Microchip-MPLAB-Harmony/replaceme.svg)](https://github.com/Microchip-MPLAB-Harmony/replaceme/graphs/commit-activity)
+[![Contributors](https://img.shields.io/github/contributors-anon/Microchip-MPLAB-Harmony/replaceme.svg)]()
+
+____
+[![Developer Help](https://img.shields.io/badge/Youtube-Developer%20Help-red.svg)](https://www.youtube.com/MicrochipDeveloperHelp)
+[![Developer Help](https://img.shields.io/badge/XWiki-Developer%20Help-torquiose.svg)](https://developerhelp.microchip.com/xwiki/bin/view/software-tools/harmony/)
+[![Follow us on Youtube](https://img.shields.io/badge/Youtube-Follow%20us%20on%20Youtube-red.svg)](https://www.youtube.com/user/MicrochipTechnology)
+[![Follow us on LinkedIn](https://img.shields.io/badge/LinkedIn-Follow%20us%20on%20LinkedIn-blue.svg)](https://www.linkedin.com/company/microchip-technology)
+[![Follow us on Facebook](https://img.shields.io/badge/Facebook-Follow%20us%20on%20Facebook-blue.svg)](https://www.facebook.com/microchiptechnology/)
+[![Follow us on Twitter](https://img.shields.io/twitter/follow/MicrochipTech.svg?style=social)](https://twitter.com/MicrochipTech)
+
+
+[![](https://img.shields.io/github/stars/Microchip-MPLAB-Harmony/replaceme.svg?style=social)]()
+[![](https://img.shields.io/github/watchers/Microchip-MPLAB-Harmony/replaceme.svg?style=social)]()
+
+

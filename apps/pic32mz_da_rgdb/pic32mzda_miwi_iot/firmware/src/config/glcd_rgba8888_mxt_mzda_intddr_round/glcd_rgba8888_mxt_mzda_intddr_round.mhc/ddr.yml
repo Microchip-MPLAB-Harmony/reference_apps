@@ -1,6 +1,0 @@
-format_version: v1.0
-type: UniqueComponent
-attributes: {id: ddr}
-children:
-- type: ElementPosition
-  attributes: {x: '351', y: '16', id: ddr}

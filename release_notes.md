@@ -6,6 +6,24 @@ nav_order: 99
 # Microchip MPLAB® Harmony 3 Release Notes
 
 ---
+
+## Reference Applications Release v1.6.1 (March 2025)
+ - Moved applications to the below product specific repositories
+	- [reference_apps_pic32cm](https://github.com/Microchip-MPLAB-Harmony/reference_apps_pic32cm)
+	- [reference_apps_pic32ck](https://github.com/Microchip-MPLAB-Harmony/reference_apps_pic32ck)
+	- [reference_apps_pic32cx](https://github.com/Microchip-MPLAB-Harmony/reference_apps_pic32cx)
+	- [reference_apps_pic32cz](https://github.com/Microchip-MPLAB-Harmony/reference_apps_pic32cz)
+	- [reference_apps_pic32m](https://github.com/Microchip-MPLAB-Harmony/reference_apps_pic32m)
+	- [reference_apps_sam_mcu](https://github.com/Microchip-MPLAB-Harmony/reference_apps_sam_mcu)
+	- [reference_apps_sam_mpu](https://github.com/Microchip-MPLAB-Harmony/reference_apps_sam_mpu)
+
+### Known Issues
+- NA
+
+### Development Tools
+- NA
+
+
 ## Reference Applications Release v1.6.0 (September 2023)
 
 ### New Applications

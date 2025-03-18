@@ -1,1 +1,0 @@
-~picture_content~
