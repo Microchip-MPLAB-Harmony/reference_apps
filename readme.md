@@ -29,7 +29,7 @@ The typical types of **Reference Applications** include:
 
 ____
 
-[![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/blob/master/mplab_harmony_license.md)
+[![License](https://img.shields.io/badge/license-Harmony%20license-orange.svg)](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/blob/master/License.md)
 [![Latest release](https://img.shields.io/github/release/MicrochipTech/MPLAB-Harmony-Reference-Apps.svg)](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest)
 [![Latest release date](https://img.shields.io/github/release-date/MicrochipTech/MPLAB-Harmony-Reference-Apps.svg)](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/releases/latest)
 [![Commit activity](https://img.shields.io/github/commit-activity/y/MicrochipTech/MPLAB-Harmony-Reference-Apps.svg)](https://github.com/MicrochipTech/MPLAB-Harmony-Reference-Apps/graphs/commit-activity)

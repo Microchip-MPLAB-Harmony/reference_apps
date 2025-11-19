@@ -7,6 +7,15 @@ nav_order: 99
 
 ---
 
+## Reference Applications Release v1.6.2 (Nov 2025)
+ - Updated family specific repo latest release information 
+
+### Known Issues
+- NA
+
+### Development Tools
+- NA
+
 ## Reference Applications Release v1.6.1 (March 2025)
  - Moved applications to the below product specific repositories
 	- [reference_apps_pic32cm](https://github.com/Microchip-MPLAB-Harmony/reference_apps_pic32cm)
